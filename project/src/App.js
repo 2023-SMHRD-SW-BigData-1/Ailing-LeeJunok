@@ -1,5 +1,6 @@
 
 import './App.css';
+import './css/index.css';
 import HeaderMenuList from './components/HeaderMenuList';
 import HeaderTnb from './components/HeaderTnb';
 import MainBan from './components/MainBan';

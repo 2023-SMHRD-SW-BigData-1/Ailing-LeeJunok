@@ -1,0 +1,91 @@
+@charset "UTF-8";
+/* 전체 */
+* {
+  margin: 0;
+  padding: 0;
+}
+* body {
+  font-size: 12px;
+  color: #111;
+  line-height: 1.25;
+}
+* body .header {
+  z-index: 1000;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  border: 1px solid black;
+}
+* body .header .contentBox {
+  width: 1600px;
+  margin: auto;
+  border: 1px solid black;
+}
+* body .header .headerTnb {
+  height: 45px;
+  margin: 0 auto;
+  font-size: 12px;
+}
+* body .header .headerTnb .tnbRight {
+  height: 100%;
+  float: right;
+}
+* body .header .headerTnb .tnbRight ul {
+  position: relative;
+  top: 30%;
+}
+* body .header .headerTnb .tnbRight ul li {
+  display: inline;
+}
+* body .header .headerTnb .tnbRight ul li a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+* body .header .headerTnb .tnbRight ul li::after {
+  content: "|";
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #ddd;
+}
+* body .header .headerTop {
+  text-align: center;
+  height: 55px;
+  border: 1px solid black;
+}
+* body .header .headerTop h1 {
+  font-size: 40px;
+  position: relative;
+}
+* body .header .headerGnb {
+  min-width: 1100px;
+}
+* body .header .headerGnb .gnbInner {
+  margin: 0 auto;
+  position: relative;
+  width: 1100px;
+}
+* body .header .headerGnb .gnbInner .gnbWrap {
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  justify-items: center;
+  text-align: center;
+  top: 10%;
+}
+* body .header .headerGnb .gnbInner .gnbWrap li {
+  flex-grow: 1;
+  width: 25%;
+  padding: 20px 0;
+  border: 1px solid black;
+}
+* body .header .headerGnb .gnbInner .gnbWrap li a {
+  display: block;
+  height: 40px;
+  font-size: 20px;
+  color: #4c4c4c;
+  line-height: 40px;
+  white-space: nowrap;
+  text-decoration: none;
+}/*# sourceMappingURL=index.css.map */
