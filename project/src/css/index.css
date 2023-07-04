@@ -1,83 +1,91 @@
-.header {
+@charset "UTF-8";
+/* 전체 */
+* {
+  margin: 0;
+  padding: 0;
+}
+* body {
+  font-size: 12px;
+  color: #111;
+  line-height: 1.25;
+}
+* body .header {
+  z-index: 1000;
   position: sticky;
   top: 0;
   width: 100%;
   background-color: white;
   border: 1px solid black;
 }
-.header .contentBox {
+* body .header .contentBox {
   width: 1600px;
   margin: auto;
   border: 1px solid black;
 }
-.header .headerTnb {
+* body .header .headerTnb {
   height: 45px;
   margin: 0 auto;
   font-size: 12px;
 }
-.header .headerTnb .tnbRight {
+* body .header .headerTnb .tnbRight {
   height: 100%;
   float: right;
 }
-.header .headerTnb .tnbRight ul {
+* body .header .headerTnb .tnbRight ul {
   position: relative;
   top: 30%;
 }
-.header .headerTnb .tnbRight ul li {
+* body .header .headerTnb .tnbRight ul li {
   display: inline;
 }
-.header .headerTnb .tnbRight ul li::after {
+* body .header .headerTnb .tnbRight ul li a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+* body .header .headerTnb .tnbRight ul li::after {
   content: "|";
   margin-left: 10px;
   margin-right: 10px;
   color: #ddd;
 }
-.header .headerTop {
+* body .header .headerTop {
   text-align: center;
   height: 55px;
   border: 1px solid black;
 }
-.header .headerTop h1 {
+* body .header .headerTop h1 {
   font-size: 40px;
   position: relative;
-  top: 10%;
 }
-.header .headerGnb {
+* body .header .headerGnb {
   min-width: 1100px;
 }
-.header .headerGnb .gnbInner {
+* body .header .headerGnb .gnbInner {
   margin: 0 auto;
   position: relative;
   width: 1100px;
 }
-.header .headerGnb .gnbInner .gnbWrap {
+* body .header .headerGnb .gnbInner .gnbWrap {
+  margin: 0 auto;
+  padding: 0;
   display: flex;
+  justify-items: center;
   text-align: center;
+  top: 10%;
 }
-.header .headerGnb .gnbInner .gnbWrap li {
+* body .header .headerGnb .gnbInner .gnbWrap li {
   flex-grow: 1;
   width: 25%;
   padding: 20px 0;
   border: 1px solid black;
 }
-.header .headerGnb .gnbInner .gnbWrap li a {
+* body .header .headerGnb .gnbInner .gnbWrap li a {
   display: block;
   height: 40px;
   font-size: 20px;
   color: #4c4c4c;
   line-height: 40px;
   white-space: nowrap;
-}
-
-.mainBanner {
-  width: 100%;
-  border: 1px solid black;
-}
-.mainBanner .innerBan {
-  width: 100%;
-  height: 700px;
-}
-.mainBanner .innerBan img {
-  width: 100%;
-  height: 100%;
+  text-decoration: none;
 }/*# sourceMappingURL=index.css.map */

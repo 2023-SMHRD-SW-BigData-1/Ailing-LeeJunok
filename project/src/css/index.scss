@@ -1,83 +1,103 @@
-.header{
-    position: sticky;
-    top: 0;
-    width: 100%;
-    background-color: white;
-    border: 1px solid black;
-    .contentBox{
-        width: 1600px;
-        margin: auto;
-        border: 1px solid black;
-    }
-    .headerTnb{
-        height: 45px;
-        margin: 0 auto;
+/* 전체 */
+
+
+*{
+    margin: 0;
+    padding: 0;
+    body{
         font-size: 12px;
-        .tnbRight{
-            height: 100%;
-            float: right;
-            ul{
-                position: relative;
-                top: 30%;
-                li{
-                    display: inline;
-                    &::after{
-                        content: "|";
-                        margin-left: 10px;
-                        margin-right: 10px;
-                        color: #ddd;
+        color: #111;
+        line-height: 1.25;
+        .header{
+            z-index: 1000;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background-color: white;
+            border: 1px solid black;
+            .contentBox{
+                width: 1600px;
+                margin: auto;
+                border: 1px solid black;
+            }
+            .headerTnb{
+                height: 45px;
+                margin: 0 auto;
+                font-size: 12px;
+                .tnbRight{
+                    height: 100%;
+                    float: right;
+                    ul{
+                        position: relative;
+                        top: 30%;
+                        li{
+                            display: inline;
+                            a{
+                                text-decoration: none;
+                                color: black;
+                                cursor: pointer;
+                            }
+                            &::after{
+                                content: "|";
+                                margin-left: 10px;
+                                margin-right: 10px;
+                                color: #ddd;
+                            }
+                        }
                     }
                 }
             }
-        }
-    }
-    .headerTop{
-        text-align: center;
-        height: 55px;
-        border: 1px solid black;
-        h1{
-            font-size: 40px;
-            position: relative;
-            top: 10%;
-        }
-    }
-    .headerGnb {
-        min-width: 1100px;
-        .gnbInner {
-            margin: 0 auto;
-            position: relative;
-            width: 1100px;
-            .gnbWrap{
-                display: flex;
+            .headerTop{
                 text-align: center;
-                li{
-                    flex-grow: 1;
-                    width: 25%;
-                    padding: 20px 0;
-                    border: 1px solid black;
-                    a{
-                        display: block;
-                        height: 40px;
-                        font-size: 20px;
-                        color: #4c4c4c;
-                        line-height: 40px;
-                        white-space: nowrap;
+                height: 55px;
+                border: 1px solid black;
+                h1{
+                    font-size: 40px;
+                    position: relative;
+                }
+            }
+            .headerGnb {
+                min-width: 1100px;
+                .gnbInner {
+                    margin: 0 auto;
+                    position: relative;
+                    width: 1100px;
+                    .gnbWrap{
+                        margin: 0 auto;
+                        padding: 0 ;
+                        display: flex;
+                        justify-items: center;
+                        text-align: center;     
+                        top: 10%;       
+                        li{
+
+                            flex-grow: 1;
+                            width: 25%;
+                            padding: 20px 0;
+                            border: 1px solid black;
+                            a{
+                                display: block;
+                                height: 40px;
+                                font-size: 20px;
+                                color: #4c4c4c;
+                                line-height: 40px;
+                                white-space: nowrap;
+                                text-decoration: none;
+                            }
+                        }
                     }
                 }
             }
         }
+        .mainContentWrapper{
+    
+            
+        }
+
+
     }
+
 }
 
-.mainBanner{
-    width: 100%;
-    border: 1px solid black;
-    .innerBan{
-        width: 100%;
-        height: 700px;
-        img{
-            width: 100%;
-            height: 100%;
-        }
-    }
-}
+
+
