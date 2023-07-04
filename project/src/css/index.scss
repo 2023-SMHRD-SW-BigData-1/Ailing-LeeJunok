@@ -4,21 +4,22 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: 'GmarketSansMedium';
     body{
         font-size: 12px;
         color: #111;
         line-height: 1.25;
-        .header{
+        #header{
             z-index: 1000;
             position: sticky;
             top: 0;
             width: 100%;
             background-color: white;
-            border: 1px solid black;
+            
             .contentBox{
                 width: 1600px;
                 margin: auto;
-                border: 1px solid black;
+                
             }
             .headerTnb{
                 height: 45px;
@@ -36,63 +37,167 @@
                                 text-decoration: none;
                                 color: black;
                                 cursor: pointer;
+                                
                             }
                             &::after{
                                 content: "|";
                                 margin-left: 10px;
                                 margin-right: 10px;
                                 color: #ddd;
+                                
                             }
                         }
+                    
                     }
                 }
             }
             .headerTop{
                 text-align: center;
                 height: 55px;
-                border: 1px solid black;
+                
                 h1{
                     font-size: 40px;
                     position: relative;
                 }
             }
-            .headerGnb {
-                min-width: 1100px;
-                .gnbInner {
-                    margin: 0 auto;
-                    position: relative;
-                    width: 1100px;
-                    .gnbWrap{
-                        margin: 0 auto;
-                        padding: 0 ;
-                        display: flex;
-                        justify-items: center;
-                        text-align: center;     
-                        top: 10%;       
-                        li{
+            .headerMenuList{
 
-                            flex-grow: 1;
-                            width: 25%;
-                            padding: 20px 0;
-                            border: 1px solid black;
+                .headerGnb {
+                    min-width: 1100px;
+                    .gnbInner {
+                        margin: 0 auto;
+                        position: relative;
+                        width: 1100px;
+                        .gnbWrap{
+                            margin: 0 auto;
+                            padding: 0 ;
+                            display: flex;
+                            justify-items: center;
+                            text-align: center;     
+                            top: 10%;       
+                            li{
+    
+                                flex-grow: 1;
+                                width: 25%;
+                                padding: 20px 0;
+                                
+                                a{
+                                    display: block;
+                                    height: 40px;
+                                    font-size: 20px;
+                                    color: #4c4c4c;
+                                    line-height: 40px;
+                                    white-space: nowrap;
+                                    text-decoration: none;
+                                }
+                            }
+                        }
+                    }
+                }
+                .headerLnb{
+                    position: absolute;
+                    height: 0;
+                    top: 180px;
+                    left: 0;
+                    width: 100%;
+                    overflow: hidden;
+                }
+                &:hover .headerLnb{
+                    height: 300px;
+                    background: rgba(90,90,90,0.8);
+                    transition: all 0.2s;
+                }
+                &:not(:hover) .headerLnb{
+                    height: 0;
+                    transition: all 0.2s;
+                }
+                .innerLnb{
+                    display: flex;
+                    flex-direction: row;
+                    width: 1100px;
+                    margin: 0 auto;
+                    
+                    text-align: center;
+                    ul{
+                        flex-grow: 1;
+                        width: 25%;
+                        
+                        li{
+                            padding: 8px 0;
                             a{
                                 display: block;
-                                height: 40px;
-                                font-size: 20px;
-                                color: #4c4c4c;
-                                line-height: 40px;
-                                white-space: nowrap;
+                                padding-right: 50px;
+                                font-size: 14px;
+                                color: #fff;
+                                line-height: 20px;
+                                
                                 text-decoration: none;
+                                &:hover{
+                                    transition: all 0.2s;
+                                    color: aqua;
+                                }
+                                &:not(:hover){
+                                    transition: all 0.2s;
+                                }
                             }
                         }
                     }
                 }
             }
         }
-        .mainContentWrapper{
-    
+        #mainContentWrapper{
+            width: 100%;
+            margin: 0;
+            padding: 0;
             
+            .mainBanner{
+                overflow: hidden;
+                width: 100%;
+                
+            }
+            .mainSec{
+                width: 1600px;
+                height: 100px;
+                margin: 0 auto;
+                
+                text-align: center;
+                h2{
+                    position: relative;
+                    top: 30%;
+                }
+            }
+            .contentBox{  
+                width: 1600px;
+                margin: 0 auto;
+                
+                
+                .innerDepth{
+                    display: grid;
+                    width: 1000px;
+                    margin: 0 auto;
+                    
+                    grid-template-rows: repeat(2,200px);
+                    grid-template-columns: repeat(5,1fr);
+                    justify-items: center;
+                }
+                button{
+                    position: relative;
+                    width: 150px;
+                    height: 150px;
+                    top: 12%;
+                    white-space: pre-line;
+                    box-shadow: 4px 4px 4px 2px lightgray;
+                    background-color: whitesmoke;
+                    border-radius: 15px;
+                    border-style: none;
+                    &:hover{
+                        font-size: 110%;
+                    }
+                }
+            }
         }
+            
+        
 
 
     }
