@@ -3,70 +3,68 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "GmarketSansMedium";
 }
 * body {
   font-size: 12px;
   color: #111;
   line-height: 1.25;
 }
-* body .header {
+* body #header {
   z-index: 1000;
   position: sticky;
   top: 0;
   width: 100%;
   background-color: white;
-  border: 1px solid black;
 }
-* body .header .contentBox {
+* body #header .contentBox {
   width: 1600px;
   margin: auto;
-  border: 1px solid black;
 }
-* body .header .headerTnb {
+* body #header .headerTnb {
   height: 45px;
   margin: 0 auto;
   font-size: 12px;
 }
-* body .header .headerTnb .tnbRight {
+* body #header .headerTnb .tnbRight {
   height: 100%;
   float: right;
 }
-* body .header .headerTnb .tnbRight ul {
+* body #header .headerTnb .tnbRight ul {
   position: relative;
   top: 30%;
 }
-* body .header .headerTnb .tnbRight ul li {
+* body #header .headerTnb .tnbRight ul li {
   display: inline;
 }
-* body .header .headerTnb .tnbRight ul li a {
+* body #header .headerTnb .tnbRight ul li a {
   text-decoration: none;
   color: black;
   cursor: pointer;
 }
-* body .header .headerTnb .tnbRight ul li::after {
+* body #header .headerTnb .tnbRight ul li::after {
   content: "|";
   margin-left: 10px;
   margin-right: 10px;
   color: #ddd;
 }
-* body .header .headerTop {
+* body #header .headerTop {
   text-align: center;
   height: 55px;
-  border: 1px solid black;
 }
-* body .header .headerTop h1 {
+* body #header .headerTop h1 {
   font-size: 40px;
   position: relative;
 }
-* body .header .headerGnb {
+* body #header .headerMenuList .headerGnb {
   min-width: 1100px;
 }
-* body .header .headerGnb .gnbInner {
+* body #header .headerMenuList .headerGnb .gnbInner {
   margin: 0 auto;
   position: relative;
   width: 1100px;
 }
-* body .header .headerGnb .gnbInner .gnbWrap {
+* body #header .headerMenuList .headerGnb .gnbInner .gnbWrap {
   margin: 0 auto;
   padding: 0;
   display: flex;
@@ -74,13 +72,12 @@
   text-align: center;
   top: 10%;
 }
-* body .header .headerGnb .gnbInner .gnbWrap li {
+* body #header .headerMenuList .headerGnb .gnbInner .gnbWrap li {
   flex-grow: 1;
   width: 25%;
   padding: 20px 0;
-  border: 1px solid black;
 }
-* body .header .headerGnb .gnbInner .gnbWrap li a {
+* body #header .headerMenuList .headerGnb .gnbInner .gnbWrap li a {
   display: block;
   height: 40px;
   font-size: 20px;
@@ -88,4 +85,95 @@
   line-height: 40px;
   white-space: nowrap;
   text-decoration: none;
+}
+* body #header .headerMenuList .headerLnb {
+  position: absolute;
+  height: 0;
+  top: 180px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+}
+* body #header .headerMenuList:hover .headerLnb {
+  height: 300px;
+  background: rgba(90, 90, 90, 0.8);
+  transition: all 0.2s;
+}
+* body #header .headerMenuList:not(:hover) .headerLnb {
+  height: 0;
+  transition: all 0.2s;
+}
+* body #header .headerMenuList .innerLnb {
+  display: flex;
+  flex-direction: row;
+  width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+* body #header .headerMenuList .innerLnb ul {
+  flex-grow: 1;
+  width: 25%;
+}
+* body #header .headerMenuList .innerLnb ul li {
+  padding: 8px 0;
+}
+* body #header .headerMenuList .innerLnb ul li a {
+  display: block;
+  padding-right: 50px;
+  font-size: 14px;
+  color: #fff;
+  line-height: 20px;
+  text-decoration: none;
+}
+* body #header .headerMenuList .innerLnb ul li a:hover {
+  transition: all 0.2s;
+  color: aqua;
+}
+* body #header .headerMenuList .innerLnb ul li a:not(:hover) {
+  transition: all 0.2s;
+}
+* body #mainContentWrapper {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+* body #mainContentWrapper .mainBanner {
+  overflow: hidden;
+  width: 100%;
+}
+* body #mainContentWrapper .mainSec {
+  width: 1600px;
+  height: 100px;
+  margin: 0 auto;
+  text-align: center;
+}
+* body #mainContentWrapper .mainSec h2 {
+  position: relative;
+  top: 30%;
+}
+* body #mainContentWrapper .contentBox {
+  width: 1600px;
+  margin: 0 auto;
+}
+* body #mainContentWrapper .contentBox .innerDepth {
+  display: grid;
+  width: 1000px;
+  margin: 0 auto;
+  grid-template-rows: repeat(2, 200px);
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+}
+* body #mainContentWrapper .contentBox button {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  top: 12%;
+  white-space: pre-line;
+  box-shadow: 4px 4px 4px 2px lightgray;
+  background-color: whitesmoke;
+  border-radius: 15px;
+  border-style: none;
+}
+* body #mainContentWrapper .contentBox button:hover {
+  font-size: 110%;
 }/*# sourceMappingURL=index.css.map */
