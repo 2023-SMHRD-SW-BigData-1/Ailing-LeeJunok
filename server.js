@@ -1,4 +1,5 @@
 const express = require('express');
+const oracle = require('./config/oracleDatabase')
 const app = express();
 const indexRouter = require('./routes');
 const path = require('path');
