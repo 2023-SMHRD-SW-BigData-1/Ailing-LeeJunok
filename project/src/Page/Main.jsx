@@ -1,7 +1,8 @@
 import '../css/main.css'
 import MainBan from '../components/Main/MainBan'
 import MainDepth from '../components/Main/MainDepth'
-
+import { Link } from 'react-router-dom'
+import RcProduct from '../components/Main/RcProduct'
 
 
 const Main = () => {
@@ -34,9 +35,13 @@ const Main = () => {
             <div className='innerDepth'>
             {mainDepth.map((item)=><MainDepth key={item.depthName} name={item.depthName} url={item.url}/>)}
             </div>
+            <Link to="#">+더보기</Link>
             </div>
             <div className='mainSec'>
                 <h2>추천 상품</h2>
+            </div>
+            <div className='contentBox'>
+            <RcProduct/>
             </div>
 
             
