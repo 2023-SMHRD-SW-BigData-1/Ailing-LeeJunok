@@ -6,7 +6,7 @@ const HeaderTnb = () => {
     return (
     <div className='tnbRight'>
         <ul>
-            <li><a href="#">로그인</a></li>
+            <li><Link to='/login'>로그인</Link></li>
             <li><a href="#">회원가입</a></li>
             <li><Link to='/cart'>주문조회</Link></li>
             <li><a href="#">고객센터</a></li>
