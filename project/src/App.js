@@ -8,6 +8,7 @@ import HeaderLnb from './components/Header/HeaderLnb'
 import Main from './Page/Main';
 import Cart from './Page/Cart';
 import Login from './Page/Login';
+import CustomerService from './Page/CustomerService';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
         <Route path='/' element={<Main/>}/>
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/login' element={<Login/>}/>
+        <Route path='/cutomer' element={<CustomerService/>}/>
       </Routes>
 
 

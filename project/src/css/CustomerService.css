@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 1px solid black;
+}
+* #mainContentWrapper {
+  width: 100%;
+}
+* #mainContentWrapper .contentBox {
+  width: 1600px;
+  margin: 0 auto;
+}
+* #mainContentWrapper .contentBox .mainSec {
+  width: 100%;
+  height: 200px;
+}
+* #mainContentWrapper .contentBox .category-list {
+  display: grid;
+  rid-template-rows: repeat(1, 200px);
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+}
+* #mainContentWrapper .contentBox .category-list .innerCategory {
+  width: 50%;
+}
+* #mainContentWrapper .contentBox .category-list .innerCategory .category-item {
+  width: 1px 10px;
+  opacity: 0;
+}
+* #mainContentWrapper .contentBox .category-list .innerCategory label {
+  padding: 1px 50px;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+* #mainContentWrapper .contentBox .category-list .innerCategory input[type=radio]:checked + label {
+  background: #ccc;
+  color: black;
+}/*# sourceMappingURL=CustomerService.css.map */

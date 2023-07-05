@@ -4,8 +4,6 @@
 }
 * #mainContentWrapper {
   width: 100%;
-  margin: 0;
-  padding: 0;
 }
 * #mainContentWrapper .mainBanner {
   overflow: hidden;
