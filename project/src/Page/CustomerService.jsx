@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
 
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const CustomerService = () => {
@@ -8,8 +8,6 @@ const CustomerService = () => {
   const [message, setMessage] = useState('');
   const [categories, setCategories] = useState([]);
   const navigate = useNavigate(); 
-
-
 
   const handleCategoryChange = (event) => {
     const selectedCategory = event.target.value;
