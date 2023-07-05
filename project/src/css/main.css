@@ -1,0 +1,45 @@
+#mainContentWrapper {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+#mainContentWrapper .mainBanner {
+  overflow: hidden;
+  width: 100%;
+}
+#mainContentWrapper .mainSec {
+  width: 1600px;
+  height: 200px;
+  margin: 0 auto;
+  text-align: center;
+}
+#mainContentWrapper .mainSec h2 {
+  position: relative;
+  top: 45%;
+}
+#mainContentWrapper .contentBox {
+  width: 1600px;
+  margin: 0 auto;
+}
+#mainContentWrapper .contentBox .innerDepth {
+  display: grid;
+  width: 1000px;
+  margin: 0 auto;
+  grid-template-rows: repeat(2, 200px);
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+}
+#mainContentWrapper .contentBox button {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  top: 12%;
+  white-space: pre-line;
+  box-shadow: 4px 4px 4px 2px lightgray;
+  background-color: whitesmoke;
+  border-radius: 15px;
+  border-style: none;
+}
+#mainContentWrapper .contentBox button:hover {
+  font-size: 110%;
+}/*# sourceMappingURL=main.css.map */

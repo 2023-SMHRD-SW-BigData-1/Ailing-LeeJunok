@@ -19,7 +19,7 @@
 }
 * body #header .contentBox {
   width: 1600px;
-  margin: auto;
+  margin: 0 auto;
 }
 * body #header .headerTnb {
   height: 45px;
@@ -131,49 +131,4 @@
 }
 * body #header .headerMenuList .innerLnb ul li a:not(:hover) {
   transition: all 0.2s;
-}
-* body #mainContentWrapper {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-* body #mainContentWrapper .mainBanner {
-  overflow: hidden;
-  width: 100%;
-}
-* body #mainContentWrapper .mainSec {
-  width: 1600px;
-  height: 100px;
-  margin: 0 auto;
-  text-align: center;
-}
-* body #mainContentWrapper .mainSec h2 {
-  position: relative;
-  top: 30%;
-}
-* body #mainContentWrapper .contentBox {
-  width: 1600px;
-  margin: 0 auto;
-}
-* body #mainContentWrapper .contentBox .innerDepth {
-  display: grid;
-  width: 1000px;
-  margin: 0 auto;
-  grid-template-rows: repeat(2, 200px);
-  grid-template-columns: repeat(5, 1fr);
-  justify-items: center;
-}
-* body #mainContentWrapper .contentBox button {
-  position: relative;
-  width: 150px;
-  height: 150px;
-  top: 12%;
-  white-space: pre-line;
-  box-shadow: 4px 4px 4px 2px lightgray;
-  background-color: whitesmoke;
-  border-radius: 15px;
-  border-style: none;
-}
-* body #mainContentWrapper .contentBox button:hover {
-  font-size: 110%;
 }/*# sourceMappingURL=index.css.map */
