@@ -5,15 +5,17 @@ const ShoppingCart = () => {
     <div id='contentWrapper'>
         <div id='contentWrap'>
             <div id='content'>
-                <div id='cartWrap'>
-                    <h2 className='tit-page2'>장바구니</h2>
+                <div id='mypage'>
                     <div className='page-body'>
-                        <div className='table-cart'>
+                    <div className='hd'>
+                        <h2>장바구니</h2>
+                        </div>
+                        <div className='tbl'>
                             <table summary='번호, 사진, 제품명, 수량, 가격, 배송비, 취소'>
                                 <colgroup>
                                     <col width='75'/>
-                                    <col width='90'/>
-                                    <col width='*'/>
+                                    <col width='150'/>
+                                    <col width='200'/>
                                     <col width='115'/>
                                     <col width='105'/>
                                     <col width='95'/>
@@ -55,17 +57,17 @@ const ShoppingCart = () => {
                                 </table>
                         </div>
                         <div className='orderBtn'>
-                            <a href="" className=''>주문하기</a>
-                            <a href="" className=''>계속 쇼핑하기</a>
-                            <a href="" className=''>장바구니 비우기</a>
+                            <a href="" className='cartBtn'>주문하기</a>
+                            <a href="" className='cartBtn'>계속 쇼핑하기</a>
+                            <a href="" className='cartBtn'>장바구니 비우기</a>
                         </div>
                         <h2 className="tit-page tit-space">관심상품</h2>
-                        <div className='table-cart2'>
+                        <div className='tbl'>
                             <table summary='사진, 제품명, 수량, 재고, 가격, 처리'>
                                 <caption>관심상품</caption>
                                 <colgroup>
-                                <col width='110'/>
-                                <col width='*' />
+                                <col width='200'/>
+                                <col width='200' />
                                 <col width='110' />
                                 <col width='100' />
                                 <col width='100' />

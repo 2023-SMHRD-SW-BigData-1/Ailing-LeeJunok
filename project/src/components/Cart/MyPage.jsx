@@ -3,25 +3,36 @@ import React from 'react'
 const MyPage = () => {
   return (
     <div>
-        <div>MYPAGE</div>
+ <div id='contentWrapper'>
+     <div id='contentWrap'>
         <div id='content'>
             <div id='mypage'>
                 <div className='page-body'>
                     {/* 최근 주문 정보 */}
                     <div className='hd'>
-                        <h3>최근 주문 정보</h3>
+                        <h2>최근 주문 정보</h2>
+                        <p className='dsc'>
+                        <span className='fc-blue'>[이준]</span>
+                        님께서 주문하신 내역입니다.
+                        </p>
                     </div>
                     <div className='tbl'>
-                        <table summary='주문일자, 상품명, 결제금액, 주문상세'>
-                            <caption>최근 주문 정보 목록</caption>
+                        <table summary='상품번호, 주문일자, 상품명, 결제금액, 주문상세, 배송현황'>
+                        
                             <colgroup>
+                            <col width='100'/>
                             <col width='150'/>
-                            <col width='*' />
+                            <col width='200' />
                             <col width='140' />
-                            <col width='140' />
+                            <col width='140'/>
+                            <col width='100' />
                             </colgroup>
+                            {/* <table> */}
                             <thead>
                                 <tr>
+                                    <th>
+                                    <div className="tb-center">NUMBER</div>
+                                    </th>
                                     <th>
                                     <div className="tb-center">DATE</div>
                                     </th>
@@ -33,6 +44,9 @@ const MyPage = () => {
                                     </th>
                                     <th>
                                     <div className="tb-center">DETAIL</div>
+                                    </th>
+                                    <th>
+                                    <div className="tb-center">Delivery</div>
                                     </th>
                                 </tr>
                             </thead>
@@ -47,14 +61,14 @@ const MyPage = () => {
                     </div>
                     {/* 최근 등록 게시글 */}
                     <div className='hd'>
-                        <h3>최근 등록 게시글</h3>
+                        <h2>최근 등록 게시글</h2>
                     </div>
                     <div className='tbl'>
                         <table summary='등록일자, 제목, 게시판'>
-                            <caption>최근 등록 게시물 목록</caption>
+    
                             <colgroup>
                             <col width='150'/>
-                            <col width='*'/>
+                            <col width='300'/>
                             <col width='200'/>
                             </colgroup>
                             <thead>
@@ -81,12 +95,22 @@ const MyPage = () => {
                     </div>
                     {/* 관심 상품 정보 */}
                     <div className='hd'>
-                        <h3>관심 상품 정보</h3>
+                        <h2>관심 상품 정보</h2>
+                    </div>
+                    <div className='tbl'>
+                    <th>
+                    <table>
+                        
+                        <div>등록한 관심상품이 없습니다.</div>
+                    </table>
+                    </th>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+</div>
   )
 }
 
