@@ -10,7 +10,6 @@ const ShoppingCart = () => {
                     <div className='page-body'>
                         <div className='table-cart'>
                             <table summary='번호, 사진, 제품명, 수량, 가격, 배송비, 취소'>
-                                <caption>장바구니 담긴 상품</caption>
                                 <colgroup>
                                     <col width='75'/>
                                     <col width='90'/>
@@ -59,9 +58,6 @@ const ShoppingCart = () => {
                             <a href="" className=''>주문하기</a>
                             <a href="" className=''>계속 쇼핑하기</a>
                             <a href="" className=''>장바구니 비우기</a>
-                        </div>
-                        <div className="cart-ft2">
-                            " "
                         </div>
                         <h2 className="tit-page tit-space">관심상품</h2>
                         <div className='table-cart2'>
