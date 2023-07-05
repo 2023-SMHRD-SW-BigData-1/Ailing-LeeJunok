@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+
+import { useNavigate } from 'react-router-dom';
 
 const CustomerService = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [categories, setCategories] = useState([]);
-  const history = useHistory();
+  const navigate = useNavigate(); 
+
+
 
   const handleCategoryChange = (event) => {
     const selectedCategory = event.target.value;
@@ -22,7 +25,7 @@ const CustomerService = () => {
     // 추후 DB 구조가 완성되면 여기서 결정된 name, email, messsage, categories 를 따로 전송
 
     // 처음 화면 페이지 이동
-    history.push('/');
+    navigate.push('/');
   };
 
   return (
