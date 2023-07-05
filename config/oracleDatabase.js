@@ -2,7 +2,7 @@ const oracledb = require('oracledb');
 const dbConfig = {
   user: 'campus_h_230627_2',
   password: 'smhrd2',
-  connectString: 'project1'
+  connectString: 'project-db-stu2.smhrd.com'
 };
 
 module.exports = {
