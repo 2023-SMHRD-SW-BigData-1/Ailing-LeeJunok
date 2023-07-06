@@ -23,3 +23,4 @@ async function selectDatabase() {
   await connection.close();
 
 }
+selectDatabase()

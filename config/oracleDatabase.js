@@ -8,7 +8,7 @@ const server = app.listen(8090, () => {
     console.log('server start, port 8090')
 })
 
-const oracledb = require('oracledb')
+
 oracledb.outFormat = oracledb.OUT_FORMAT_OBJECT
 
 app.get('/select', function(request, response) {
