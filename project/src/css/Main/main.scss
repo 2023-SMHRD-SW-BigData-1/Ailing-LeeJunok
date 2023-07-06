@@ -1,32 +1,10 @@
-*{
-    margin: 0;
-    padding: 0;
-    // border: 1px solid black;
-    #mainContentWrapper{
-        width: 100%;        
+    
         .mainBanner{
             overflow: hidden;
             width: 1600px;
             margin: 0 auto;
             
-        }
-        .mainSec{
-            width: 1600px;
-            height: 200px;
-            margin: 0 auto;
-            text-align: center;
-            
-            h2{
-                position: relative;
-                top: 45%;
-                
-            }
-        }
-        .contentBox{  
-            width: 1600px;
-            margin: 0 auto;
-            
-            
+        } 
             .innerDepth{
                 display: grid;
                 width: 1000px;
@@ -53,11 +31,9 @@
                 }
                 
             }
-            a{
-                margin-left: 1220px;
-                
+            .plus{
+                float: right;
             }
-        }
         .innercard{
             display: flex;
             flex-direction: column;
@@ -70,8 +46,8 @@
                 border-top-left-radius: 15px;
                 border-top-right-radius: 15px;
             }
-
         }
 
-    }
-}
+        
+
+
