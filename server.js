@@ -1,20 +1,15 @@
-const express = require('express');
-const app = express();
-const indexRouter = require('./routes');
-const path = require('path');
-const cors = require('cors');
+const express = require('express')
+const path = require('path')
+const app = express()
+const indexRouter = require('./routes/index')
+const userRouter = require('./config/oracleDatabase')
 
+app.set('port', process.env.PORT||3000)
 
-
-app.set('port',process.env.PORT||8090);
-
-app.use(express.json());
-
-app.use(cors());
-app.use(express.static(path.join(__dirname,'react-project/build')));
-app.use('/',indexRouter)
-
+app.use(express.static(path.join(__dirname,'project/public')))
+app.use('/', indexRouter)
+app.use('/home', userRouter)
 
 app.listen(app.get('port'),()=>{
-    console.log(app.get('port'),'번 port에서 서버연결 대기중...');
+    console.log(app.get('port'),'제발');
 })
