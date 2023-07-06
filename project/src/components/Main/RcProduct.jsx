@@ -1,8 +1,7 @@
-import { Pagination,A11y } from 'swiper/modules';
+import {  Navigation,A11y} from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
 import React from 'react'
@@ -22,14 +21,13 @@ const RcProduct = () => {
 
 return (
     <Swiper
-    modules={[Pagination,A11y]}
+    modules={[Navigation,A11y]}
     spaceBetween={50}
     slidesPerView={5}
-    pagination={{ clickable: true }}
-    scrollbar={{ draggable: true }}
+    navigation
     onSwiper={(swiper) => console.log(swiper)}
     onSlideChange={() => console.log('slide change')}
-    style={{height:'350px',margin:'0 auto'}}
+    style={{height:'340px',marginTop:'30px'}}
     >
     {card.map(item=><SwiperSlide><ProductCard key={item.name} url={item.url} text={item.text}/></SwiperSlide>)}
 

@@ -1,4 +1,4 @@
-import '../css/main.css'
+import '../css/Main/main.css'
 import MainBan from '../components/Main/MainBan'
 import MainDepth from '../components/Main/MainDepth'
 import { Link } from 'react-router-dom'
@@ -28,24 +28,26 @@ const Main = () => {
             <div className='mainBanner'>
             <MainBan/>
             </div>
-            <div className='mainSec'>
+            <div className='mainSec ingredient'>
                 <h2>메인성분이에요</h2>
             </div>
             <div className='contentBox'>
             <div className='innerDepth'>
             {mainDepth.map((item)=><MainDepth key={item.depthName} name={item.depthName} url={item.url}/>)}
             </div>
-            <Link to="#">+더보기</Link>
+            <Link to="#" className='plus'>+더보기</Link>
             </div>
-            <div className='mainSec'>
-                <h2>추천 상품</h2>
+            <div className='mainSec product'>
+                <h3>추천 상품</h3>
             </div>
             <div className='contentBox'>
             <RcProduct/>
+            <br />
+            <RcProduct/>
             </div>
-
-            
-
+            <div className='mainSec board'>
+                <h4>게시판</h4>
+            </div>
         </div>
 
     

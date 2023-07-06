@@ -1,70 +1,65 @@
 @charset "UTF-8";
 /* 전체 */
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "GmarketSansMedium";
-}
-* body {
-  font-size: 12px;
-  color: #111;
-  line-height: 1.25;
-}
-* body #header {
+header {
   z-index: 1000;
   position: sticky;
   top: 0;
   width: 100%;
   background-color: white;
 }
-* body #header .contentBox {
-  width: 1600px;
-  margin: 0 auto;
-}
-* body #header .headerTnb {
+header .headerTnb {
   height: 45px;
   margin: 0 auto;
   font-size: 12px;
 }
-* body #header .headerTnb .tnbRight {
+header .headerTnb .tnbRight {
   height: 100%;
   float: right;
 }
-* body #header .headerTnb .tnbRight ul {
+header .headerTnb .tnbRight .innerTnb {
   position: relative;
   top: 30%;
 }
-* body #header .headerTnb .tnbRight ul li {
+header .headerTnb .tnbRight .innerTnb li {
   display: inline;
 }
-* body #header .headerTnb .tnbRight ul li a {
+header .headerTnb .tnbRight .innerTnb li a {
   text-decoration: none;
   color: black;
   cursor: pointer;
 }
-* body #header .headerTnb .tnbRight ul li::after {
+header .headerTnb .tnbRight .innerTnb li::after {
   content: "|";
   margin-left: 10px;
   margin-right: 10px;
   color: #ddd;
 }
-* body #header .headerTop {
+header .headerTop {
   text-align: center;
   height: 55px;
 }
-* body #header .headerTop h1 {
+header .headerTop a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+header .headerTop a img {
+  width: 80px;
+  margin-bottom: 30px;
+}
+header .headerTop a span {
   font-size: 40px;
   position: relative;
 }
-* body #header .headerMenuList .headerGnb {
+header .headerMenuList .headerGnb {
   min-width: 1100px;
 }
-* body #header .headerMenuList .headerGnb .gnbInner {
+header .headerMenuList .headerGnb .gnbInner {
   margin: 0 auto;
   position: relative;
   width: 1100px;
 }
-* body #header .headerMenuList .headerGnb .gnbInner .gnbWrap {
+header .headerMenuList .headerGnb .gnbInner .gnbWrap {
   margin: 0 auto;
   padding: 0;
   display: flex;
@@ -72,12 +67,12 @@
   text-align: center;
   top: 10%;
 }
-* body #header .headerMenuList .headerGnb .gnbInner .gnbWrap li {
+header .headerMenuList .headerGnb .gnbInner .gnbWrap li {
   flex-grow: 1;
   width: 25%;
   padding: 20px 0;
 }
-* body #header .headerMenuList .headerGnb .gnbInner .gnbWrap li a {
+header .headerMenuList .headerGnb .gnbInner .gnbWrap li a {
   display: block;
   height: 40px;
   font-size: 20px;
@@ -86,7 +81,7 @@
   white-space: nowrap;
   text-decoration: none;
 }
-* body #header .headerMenuList .headerLnb {
+header .headerMenuList .headerLnb {
   position: absolute;
   height: 0;
   top: 180px;
@@ -94,30 +89,30 @@
   width: 100%;
   overflow: hidden;
 }
-* body #header .headerMenuList:hover .headerLnb {
+header .headerMenuList:hover .headerLnb {
   height: 300px;
   background: rgba(90, 90, 90, 0.8);
   transition: all 0.2s;
 }
-* body #header .headerMenuList:not(:hover) .headerLnb {
+header .headerMenuList:not(:hover) .headerLnb {
   height: 0;
   transition: all 0.2s;
 }
-* body #header .headerMenuList .innerLnb {
+header .headerMenuList .innerLnb {
   display: flex;
   flex-direction: row;
   width: 1100px;
   margin: 0 auto;
   text-align: center;
 }
-* body #header .headerMenuList .innerLnb ul {
+header .headerMenuList .innerLnb ul {
   flex-grow: 1;
   width: 25%;
 }
-* body #header .headerMenuList .innerLnb ul li {
+header .headerMenuList .innerLnb ul li {
   padding: 8px 0;
 }
-* body #header .headerMenuList .innerLnb ul li a {
+header .headerMenuList .innerLnb ul li a {
   display: block;
   padding-right: 50px;
   font-size: 14px;
@@ -125,10 +120,10 @@
   line-height: 20px;
   text-decoration: none;
 }
-* body #header .headerMenuList .innerLnb ul li a:hover {
+header .headerMenuList .innerLnb ul li a:hover {
   transition: all 0.2s;
-  color: aqua;
+  color: #78C1F3;
 }
-* body #header .headerMenuList .innerLnb ul li a:not(:hover) {
+header .headerMenuList .innerLnb ul li a:not(:hover) {
   transition: all 0.2s;
 }/*# sourceMappingURL=index.css.map */

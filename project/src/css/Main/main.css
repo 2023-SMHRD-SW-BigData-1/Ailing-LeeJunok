@@ -1,32 +1,10 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-* #mainContentWrapper {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-* #mainContentWrapper .mainBanner {
+.mainBanner {
   overflow: hidden;
   width: 1600px;
   margin: 0 auto;
 }
-* #mainContentWrapper .mainSec {
-  width: 1600px;
-  height: 200px;
-  margin: 0 auto;
-  text-align: center;
-}
-* #mainContentWrapper .mainSec h2 {
-  position: relative;
-  top: 45%;
-}
-* #mainContentWrapper .contentBox {
-  width: 1600px;
-  margin: 0 auto;
-}
-* #mainContentWrapper .contentBox .innerDepth {
+
+.innerDepth {
   display: grid;
   width: 1000px;
   margin: 0 auto;
@@ -34,7 +12,7 @@
   grid-template-columns: repeat(5, 1fr);
   justify-items: center;
 }
-* #mainContentWrapper .contentBox .innerDepth button {
+.innerDepth button {
   position: relative;
   width: 150px;
   height: 150px;
@@ -45,20 +23,22 @@
   border-radius: 15px;
   border-style: none;
 }
-* #mainContentWrapper .contentBox .innerDepth button:hover {
+.innerDepth button:hover {
   font-size: 110%;
 }
-* #mainContentWrapper .contentBox a {
-  margin-left: 1220px;
+
+.plus {
+  float: right;
 }
-* #mainContentWrapper .innercard {
+
+.innercard {
   display: flex;
   flex-direction: column;
   height: 300px;
   border-radius: 15px;
   background-color: lightgrey;
 }
-* #mainContentWrapper .innercard img {
+.innercard img {
   width: 100%;
   height: 50%;
   border-top-left-radius: 15px;

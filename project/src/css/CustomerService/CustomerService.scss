@@ -1,0 +1,23 @@
+
+            .category-list{
+                display: grid;
+                rid-template-rows: repeat(1,200px);
+                grid-template-columns: repeat(4,1fr);
+                justify-items: center;
+                .innerCategory{
+                    width: 50%;
+                    .category-item{
+                        width: 1px 10px;
+                        opacity: 0;
+                    }
+                    label{
+                        padding: 1px 50px;
+                        border: 1px solid black;
+                        border-radius: 3px;
+                    }
+                    input[type=radio]:checked+label{
+                        background: #ccc;
+                        color: black;
+                    }
+                }
+            }

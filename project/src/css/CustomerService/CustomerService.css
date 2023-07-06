@@ -1,0 +1,22 @@
+.category-list {
+  display: grid;
+  rid-template-rows: repeat(1, 200px);
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+}
+.category-list .innerCategory {
+  width: 50%;
+}
+.category-list .innerCategory .category-item {
+  width: 1px 10px;
+  opacity: 0;
+}
+.category-list .innerCategory label {
+  padding: 1px 50px;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+.category-list .innerCategory input[type=radio]:checked + label {
+  background: #ccc;
+  color: black;
+}/*# sourceMappingURL=CustomerService.css.map */
