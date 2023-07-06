@@ -2,7 +2,6 @@
   "dependencies": {
     "body-parser": "^1.20.2",
     "nodemon": "^2.0.22",
-    "nunjucks": "^3.2.4",
     "oracledb": "^6.0.2"
   },
   "scripts": {
@@ -11,7 +10,6 @@
   "name": "ailing-leejunok",
   "version": "1.0.0",
   "main": "server.js",
-  "devDependencies": {},
   "keywords": [],
   "author": "",
   "license": "ISC",
