@@ -1,27 +1,25 @@
-const express = require('express');
-const router = express.Router();
-const oracleDbConfig = require('../config/oracleDatabase'); 
+const dbcn = require('../config/oracleDatabase')
 
-router.get('/test', async (req, res) => {
-  let sql = 'SELECT PROD_IMG FROM T_PRODUCT WHERE PROD_SEQ = 1';
 
-  try {
-    const connection = await oracleDbConfig.init();
-    
-    console.log('연결 성공!'); // 연결 성공 메시지 출력
+async function selectDatabase() {
 
-    const results = await connection.execute(sql);
-    res.json(results.rows);
+  console.log("!!!!! db conenction !!!!!");
 
-    if (connection) {
-      try {
-        await connection.close();
-      } catch (error) {
-        console.error(error);
-      }
-    }
-  } catch (err) {
-    console.error(`연결 실패: ${err}`);
-    res.status(500).send('Internal Server Error');
-  }
-});
+  let connection = await oracledb.getConnection(dbcn);
+
+  let binds = {};
+  let options = {
+      outFormat: oracledb.OUT_FORMAT_OBJECT   // query result format
+    };
+
+  console.log("!!!!! db select !!!!!");
+
+  let result = await connection.execute("select * from t_product", binds, options);
+
+  console.log("!!!!! db response !!!!!");
+  console.log(result.rows[0]);
+
+  console.log("!!!!! db close !!!!!");
+  await connection.close();
+
+}
