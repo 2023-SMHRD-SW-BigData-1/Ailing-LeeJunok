@@ -1,21 +1,22 @@
-const express = require('express');
-const oracle = require('./config/oracleDatabase')
-const app = express();
-const indexRouter = require('./routes');
-const path = require('path');
-const cors = require('cors');
-'C:\Users\smhrd\.vscode\extensions\ms-dotnettools.vscode-dotnet-runtime-1.6.0'
+const express = require('express')
+const indexRouter = require('./routes/index')
+const nunjucks = require('nunjucks')
+const bodyParser = require('body-parser')
 
+const app = express()
 
-app.set('port',process.env.PORT||8090);
+app.set('views', __dirname+'/views')
+app.set('view engine', 'html')
 
-app.use(express.json());
+nunjucks.configure('views',{
+    express : app,
+    watch : true
+})
 
-app.use(cors());
-app.use(express.static(path.join(__dirname,'react-project/build')));
+app.use(bodyParser.urlencoded({extended:true}))
 app.use('/',indexRouter)
 
-
+app.set('port', process.env.PORT||8090)
 app.listen(app.get('port'),()=>{
-    console.log(app.get('port'),'번 port에서 서버연결 대기중...');
+    console.log(app.get('port'),"번 포트에서 서버연결 기다리는 중....");
 })
