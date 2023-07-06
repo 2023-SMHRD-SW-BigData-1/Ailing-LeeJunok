@@ -6,41 +6,90 @@
 
 .innerDepth {
   display: grid;
-  width: 1000px;
+  width: 100%;
   margin: 0 auto;
-  grid-template-rows: repeat(2, 200px);
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(1, 150px);
+  grid-template-columns: repeat(9, 1fr);
   justify-items: center;
 }
 .innerDepth button {
-  position: relative;
+  top: 50%;
   width: 150px;
-  height: 150px;
-  top: 12%;
-  white-space: pre-line;
-  box-shadow: 4px 4px 4px 2px lightgray;
-  background-color: whitesmoke;
-  border-radius: 15px;
-  border-style: none;
+  height: 40px;
+  text-transform: uppercase !important;
+  letter-spacing: 2px;
+  cursor: hand;
+  text-align: center;
+  text-transform: capitalize;
+  border: 1px solid lightgrey;
+  border-radius: 50px;
+  position: relative;
+  overflow: hidden !important;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 1px 1px 1px 1px lightgray;
+  background: transparent !important;
+  z-index: 10;
 }
 .innerDepth button:hover {
-  font-size: 110%;
+  border: 1px solid #78C1F3;
+  color: white !important;
+}
+.innerDepth button::before {
+  content: "";
+  width: 0%;
+  height: 100%;
+  display: block;
+  background: #78C1F3;
+  position: absolute;
+  transform: skewX(-20deg);
+  left: -10%;
+  opacity: 1;
+  top: 0;
+  z-index: -12;
+  transition: all 0.7s cubic-bezier(0.77, 0, 0.175, 1);
+  box-shadow: 2px 0px 14px rgba(0, 0, 0, 0.6);
+}
+.innerDepth button::after {
+  content: "";
+  width: 0%;
+  height: 100%;
+  display: block;
+  background: #80ffd3;
+  position: absolute;
+  transform: skewX(-20deg);
+  left: -10%;
+  opacity: 0;
+  top: 0;
+  z-index: -15;
+  transition: all 0.4s cubic-bezier(0.2, 0.95, 0.57, 0.99);
+  box-shadow: 2px 0px 14px rgba(0, 0, 0, 0.6);
+}
+.innerDepth button:hover::before, .innerDepth .btn1O:hover::before {
+  opacity: 1;
+  width: 116%;
+}
+.innerDepth button:hover::after, .innerDepth .btn1O:hover::after {
+  opacity: 1;
+  width: 120%;
 }
 
-.plus {
-  float: right;
+.runtext {
+  width: 100%;
+  text-align: center;
 }
 
 .innercard {
   display: flex;
   flex-direction: column;
+  grid-template-columns: repeat(2, 1fr);
   height: 300px;
+  width: 280px;
   border-radius: 15px;
   background-color: lightgrey;
 }
 .innercard img {
   width: 100%;
-  height: 50%;
+  height: 60%;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }/*# sourceMappingURL=main.css.map */
