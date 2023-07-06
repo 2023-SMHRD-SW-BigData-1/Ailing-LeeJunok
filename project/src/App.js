@@ -3,9 +3,6 @@ import { Route, Routes } from 'react-router-dom'
 import Main from './Page/Main';
 import Cart from './Page/Cart';
 import Login from './Page/Login';
-import CustomerService from './Page/CustomerService';
-import Header from './Page/Header';
-import Footer from './Page/Footer';
 
 function App() {
   return (
@@ -16,7 +13,6 @@ function App() {
         <Route path='/' element={<Main/>}/>
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/login' element={<Login/>}/>
-        <Route path='/cutomer' element={<CustomerService/>}/>
       </Routes>
 
 
