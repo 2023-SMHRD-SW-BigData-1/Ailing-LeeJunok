@@ -47,13 +47,17 @@ export default function LogInUI() {
 
 
 return (
-    <Container component="main" maxWidth="xs">
+  <div id='mainContentWrapper'>
+    <div className='contentBox'>
+  
+    <Container component="main" maxWidth="xs" style={{height : '500px'}}>
       <Box
           sx={{
-              marginTop: 8,
+              marginTop: 20,
               display: 'flex',
               flexDirection: 'column',
-              alignItems: 'center'
+              alignItems: 'center',
+              
             }}
             >
 
@@ -72,10 +76,7 @@ return (
         variant="contained" sx={{mt:5, mb:1, color : "#191919",  backgroundColor:"#FEE500",
         ":hover":{backgroundColor :"#FEE500" }}}
       >카카오로 로그인하기</Button>
-
-
-
-      <Button onClick={NaverLogin}
+      <Button onClick={()=>{navigate('/Login03');}}
        size ="large" fullWidth
         variant="contained" sx={{m:1, color : "white",  backgroundColor:"#03C75A",
         ":hover":{backgroundColor :"#03C75A" }}}
@@ -89,8 +90,6 @@ return (
             ":hover":{backgroundColor :"#F3F8FE" }}}>
             이메일로 로그인하기</Button>
           
-     
-
       <Grid container>
         <Grid item xs ><Button onClick={()=>{navigate('/Login05');}}
         >회원가입</Button></Grid>
@@ -102,6 +101,9 @@ return (
         
 
     </Container>
+
+    </div>
+    </div>
   );
 }
   

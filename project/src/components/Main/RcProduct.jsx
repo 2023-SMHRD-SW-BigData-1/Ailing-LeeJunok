@@ -4,22 +4,17 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 
-import React from 'react'
+import React, { useContext } from 'react'
 import ProductCard from './ProductCard';
+import { productContext } from '../../context/ProductContext';
 
 const RcProduct = () => {
 
-    const card = [{name : '약',url : 'https://i.namu.wiki/i/eWcP-Yva8-CYI_CT5iqlfwRL6gteDBFlyJCwckx_pkZUSFTEThv_z71Y4AVe9YUfJCDMdffrqiSVhyKIL2m1JA.webp',text : '아무거나'},
-                {name : '약',url : 'https://i.namu.wiki/i/eWcP-Yva8-CYI_CT5iqlfwRL6gteDBFlyJCwckx_pkZUSFTEThv_z71Y4AVe9YUfJCDMdffrqiSVhyKIL2m1JA.webp',text : '아무거나'},
-                {name : '약',url : 'https://i.namu.wiki/i/eWcP-Yva8-CYI_CT5iqlfwRL6gteDBFlyJCwckx_pkZUSFTEThv_z71Y4AVe9YUfJCDMdffrqiSVhyKIL2m1JA.webp',text : '아무거나'},
-                {name : '약',url : 'https://i.namu.wiki/i/eWcP-Yva8-CYI_CT5iqlfwRL6gteDBFlyJCwckx_pkZUSFTEThv_z71Y4AVe9YUfJCDMdffrqiSVhyKIL2m1JA.webp',text : '아무거나'},
-                {name : '약',url : 'https://i.namu.wiki/i/eWcP-Yva8-CYI_CT5iqlfwRL6gteDBFlyJCwckx_pkZUSFTEThv_z71Y4AVe9YUfJCDMdffrqiSVhyKIL2m1JA.webp',text : '아무거나'},
-                {name : '약',url : 'https://i.namu.wiki/i/eWcP-Yva8-CYI_CT5iqlfwRL6gteDBFlyJCwckx_pkZUSFTEThv_z71Y4AVe9YUfJCDMdffrqiSVhyKIL2m1JA.webp',text : '아무거나'},
-                {name : '약',url : 'https://i.namu.wiki/i/eWcP-Yva8-CYI_CT5iqlfwRL6gteDBFlyJCwckx_pkZUSFTEThv_z71Y4AVe9YUfJCDMdffrqiSVhyKIL2m1JA.webp',text : '아무거나'},]
-
+    const {product} = useContext(productContext)
 
 
 return (
+    <div className='nvbg'>
     <Swiper
     modules={[Navigation,A11y]}
     spaceBetween={50}
@@ -29,9 +24,10 @@ return (
     onSlideChange={() => console.log('slide change')}
     style={{height:'340px',marginTop:'30px'}}
     >
-    {card.map(item=><SwiperSlide><ProductCard key={item.name} url={item.url} text={item.text}/></SwiperSlide>)}
+    {product.map(item=><SwiperSlide><ProductCard key={item.url} url={item.url} text={item.text}/></SwiperSlide>)}
 
     </Swiper>
+    </div>
 )
 }
 
