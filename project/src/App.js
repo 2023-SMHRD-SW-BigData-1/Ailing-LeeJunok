@@ -5,7 +5,7 @@ import Cart from './Page/Cart';
 
 import Header from './Page/Header';
 import Footer from './Page/Footer';
-import LogInUI from './Page/Login01';
+import LogInUI from './components/Login/Login01';
 
 function App() {
   return (
