@@ -27,8 +27,12 @@ router.get('/product', async(req, res)=>{
         result = await connection.execute("select JSON_OBJECT('prod_img', prod_img) FROM t_product");
         console.log(result.rows);
 
+        // 응답 추가
+        res.json(result.rows);
     } catch (error) {
         console.log(error);
+        // 에러에 대한 응답 추가하기
+        res.status(500).send(`Error: ${error.message}`);
     } finally {
         if (connection){
             try {
