@@ -1,54 +1,87 @@
 /* 전체 */
+@use "sass:math";
+@use "sass:list";
+
         header{
             z-index: 1000;
             position: sticky;
             top: 0;
             width: 100%;
-            background-color: white;
-            .headerTnb{
-                height: 45px;
-                margin: 0 auto;
-                font-size: 12px;
-                .tnbRight{
-                    height: 100%;
-                    float: right;
-                    .innerTnb{
-                        position: relative;
-                        top: 30%;
-                        li{
-                            display: inline;
-                            a{
-                                text-decoration: none;
-                                color: black;
-                                cursor: pointer;
-                                
-                            }
-                            &::after{
-                                content: "|";
-                                margin-left: 10px;
-                                margin-right: 10px;
-                                color: #ddd;
-                                
-                            }
-                        }
-                    
-                    }
-                }
-            }
-            .headerTop{
-                text-align: center;
+            
+
+            .logo{
+                margin-top: 10px;
+                float: left;
                 height: 55px;
                 a{
                     text-decoration: none;
                     color: black;
                     cursor: pointer;
-                    img{
-                        width: 80px;
-                        margin-bottom:30px;
-                    }
-                    span{
-                        font-size: 40px;
+                    h1{
+                        font-size: 50px;
                         position: relative;
+                    }
+                }
+            }
+            .login{
+                margin-top: 13px;
+                float: right;
+                .button {
+                    --background: #78C1F3;
+                    --text: #fff;
+                    --font-size: 16px;
+                    --duration: .44s;
+                    --move-hover: -4px;
+                    --shadow: 0 2px 8px -1px #{rgba(#275efe, .32)};
+                    --shadow-hover: 0 4px 20px -2px #{rgba(#275efe, .5)};
+                    --font-shadow: var(--font-size);
+                    padding: 16px 32px;
+                    font-weight: 500;
+                    line-height: var(--font-size);
+                    border-radius: 24px;
+                    display: block;
+                    outline: none;
+                    text-decoration: none;
+                    font-size: 14px;
+                    letter-spacing: .5px;
+                    background: var(--background);
+                    color: var(--text);
+                    box-shadow: var(--shadow);
+                    transform: translateY(var(--y)) translateZ(0);
+                    transition: transform var(--duration) ease, box-shadow var(--duration) ease;
+                    div {
+                        display: flex;
+                        overflow: hidden;
+                        text-shadow: 0 var(--font-shadow) 0 var(--text);
+                        span {
+                            display: block;
+                            backface-visibility: hidden;
+                            font-style: normal;
+                            transition: transform var(--duration) ease;
+                            transform: translateY(var(--m)) translateZ(0);
+                            $i: 1;
+                            @while $i < 12 {
+                                &:nth-child(#{$i}) {
+                                    transition-delay: $i / 20 + s;
+                                }
+                                $i: $i + 1;
+                            }
+                        }
+                    }
+                    &:hover {
+                        --y: var(--move-hover);
+                        --shadow: var(--shadow-hover);
+                        span {
+                            --m: calc(var(--font-size) * -1);
+                        }
+                    }
+                    &.reverse {
+                        --font-shadow: calc(var(--font-size) * -1);
+                        &:hover {
+                            span {
+                                --m: calc(var(--font-size));
+                            }
+                        }
                     }
                 }
             }
@@ -75,7 +108,7 @@
                                 a{
                                     display: block;
                                     height: 40px;
-                                    font-size: 20px;
+                                    font-size: 18px;
                                     color: #4c4c4c;
                                     line-height: 40px;
                                     white-space: nowrap;
@@ -88,7 +121,7 @@
                 .headerLnb{
                     position: absolute;
                     height: 0;
-                    top: 180px;
+                    
                     left: 0;
                     width: 100%;
                     overflow: hidden;
@@ -136,9 +169,19 @@
                 }
             }
         }
-            
+    
         
-
+        .scroll-bag {
+            background-color: hsla(0,0%,100%,.85);
+            backdrop-filter: blur(15px); 
+            border-bottom: 1px solid transparent;
+            border-bottom-color: #e5e8eb;
+            transition: 1.5s;
+        }
+        .scrolled-bag {  
+            background-color: white;
+            transition: 1.5s;
+        }
 
 
 
