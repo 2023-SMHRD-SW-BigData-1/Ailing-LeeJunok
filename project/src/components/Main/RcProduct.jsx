@@ -14,6 +14,7 @@ const RcProduct = () => {
 
 
 return (
+    <div className='nvbg'>
     <Swiper
     modules={[Navigation,A11y]}
     spaceBetween={50}
@@ -26,6 +27,7 @@ return (
     {product.map(item=><SwiperSlide><ProductCard key={item.url} url={item.url} text={item.text}/></SwiperSlide>)}
 
     </Swiper>
+    </div>
 )
 }
 

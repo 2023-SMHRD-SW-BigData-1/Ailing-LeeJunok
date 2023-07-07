@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import RcProduct from '../components/Main/RcProduct'
 import { productContext } from '../context/ProductContext'
 import { useState } from 'react'
+import Atom from '../components/Main/Atom'
 
 
 const Main = () => {
@@ -46,11 +47,11 @@ const Main = () => {
                 <div className='runtext'>
                 <p>{productName == ""? '- 어떤 고민이 있으신가요? -' : '- '+productName+'에 대한 고민이 있으신가요? -'}</p>
                 </div>
-                <RcProduct/>
+                {productName == ""? <Atom/> : <RcProduct/>}
             </productContext.Provider>
             </div>
             <div className='mainSec board'>
-                <h4>게시판</h4>
+                <h4>Addivision 후기</h4>
             </div>
         </div>
 

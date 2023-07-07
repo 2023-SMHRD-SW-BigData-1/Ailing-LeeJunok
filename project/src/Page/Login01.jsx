@@ -25,13 +25,17 @@ const navigate = useNavigate();
 
 
 return (
-    <Container component="main" maxWidth="xs">
+  <div id='mainContentWrapper'>
+    <div className='contentBox'>
+  
+    <Container component="main" maxWidth="xs" style={{height : '500px'}}>
       <Box
           sx={{
-              marginTop: 8,
+              marginTop: 20,
               display: 'flex',
               flexDirection: 'column',
-              alignItems: 'center'
+              alignItems: 'center',
+              
             }}
             >
 
@@ -50,7 +54,7 @@ return (
         ":hover":{backgroundColor :"#FEE500" }}}
       >카카오로 로그인하기</Button>
       <Button onClick={()=>{navigate('/Login03');}}
-       size ="large" fullWidth
+        size ="large" fullWidth
         variant="contained" sx={{m:1, color : "white",  backgroundColor:"#03C75A",
         ":hover":{backgroundColor :"#03C75A" }}}
       >네이버로 로그인하기</Button>
@@ -63,8 +67,6 @@ return (
             ":hover":{backgroundColor :"#F3F8FE" }}}>
             이메일로 로그인하기</Button>
           
-     
-
       <Grid container>
         <Grid item xs ><Button onClick={()=>{navigate('/Login05');}}
         >회원가입</Button></Grid>
@@ -76,6 +78,9 @@ return (
         
 
     </Container>
+
+    </div>
+    </div>
   );
 }
   
