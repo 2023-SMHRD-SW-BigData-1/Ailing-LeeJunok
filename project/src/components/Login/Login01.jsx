@@ -7,13 +7,14 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import {useNavigate} from 'react-router-dom';
-
+import NaverLogin from './Login04';
+import KakaoLogin from './Login02';
 
 // Login[nn]
 // 01 : 메인
-// 02 : 카카오 [삭제예정]
-// 03 : 네이버
-// 04 : 이메일
+// 02 : 카카오
+// 03 : 이메일
+// 04 : 네이버
 // 05 : 회원가입
 // 06 : 아이디/패스워드 찾기
 
@@ -31,16 +32,6 @@ export default function LogInUI() {
     const kakaoURL = `https://kauth.kakao.com/Login02/authorize?client_id=${Rest_api_key}&redirect_uri=${redirect_uri}&response_type=code`
     const handleLogin = ()=>{
       window.location.href = kakaoURL
-    }
-
-    // 네이버 로그인 api
-    const NAVER_CLIENT_ID = process.env.x1JgF_YVet3WiGsR1lUU
-    const REDIRECT_URL = "http://localhost:3000"
-    const STATE = "false";
-    const NAVER_AUTH_URL=`https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=${NAVER_CLIENT_ID}&state=${STATE}&redirect_uri=${REDIRECT_URL}`;
-
-    const NaverLogin = () =>{
-      window.location.herf = NAVER_AUTH_URL
     }
 
 
@@ -76,12 +67,16 @@ return (
         variant="contained" sx={{mt:5, mb:1, color : "#191919",  backgroundColor:"#FEE500",
         ":hover":{backgroundColor :"#FEE500" }}}
       >카카오로 로그인하기</Button>
-      <Button onClick={()=>{navigate('/Login03');}}
+
+
+      {/* <Button onClick={()=>{NaverLogin()}}
        size ="large" fullWidth
         variant="contained" sx={{m:1, color : "white",  backgroundColor:"#03C75A",
         ":hover":{backgroundColor :"#03C75A" }}}
-      >네이버로 로그인하기</Button>
+      >네이버로 로그인하기</Button> */}
       
+      {/* <KakaoLogin/> */}
+       <NaverLogin/>
 
 
         <Button onClick={()=>{navigate('/Login04');}}
