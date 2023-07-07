@@ -9,17 +9,24 @@ router.use(express.urlencoded({extended:false}))
 const app = express()
 oracledb.initOracleClient({libDir:'C:/Users/smhrd/Desktop/oracleClient'})
 
-router.get('/', async(req, res)=>{
+// Oracle DB 서버와 연결할 프로필 정보 설정
+const dbConfig = {
+    user : "campus_h_230627_2",
+    password : "smhrd2",
+    connectString : 'project-db-stu2.smhrd.com'
+}
+
+// 미들웨어 설정(JSON을 파싱하는 미들웨어를 사용함)
+app.use(express.json());
+
+router.get('/product', async(req, res)=>{
     let connection;
     let result;
     try{
-        connection = await oracledb.getConnection({
-            user : "campus_h_230627_2",
-            password : "smhrd2",
-            connectString : 'project-db-stu2.smhrd.com'
-        })
-        result = await connection.execute('select prod_img from T_PRODUCT');
+        connection = await oracledb.getConnection(dbConfig)
+        result = await connection.execute("select JSON_OBJECT('prod_img', prod_img) FROM t_product");
         console.log(result.rows);
+
     } catch (error) {
         console.log(error);
     } finally {
@@ -34,80 +41,4 @@ router.get('/', async(req, res)=>{
     console.log(result.rows);
 })
 
-router.get('/Login', async(req, res)=>{
-    let connection;
-    let result;
-    try{
-        connection = await oracledb.getConnection({
-            user : "campus_h_230627_2",
-            password : "smhrd2",
-            connectString : 'project-db-stu2.smhrd.com'
-        })
-        result = await connection.execute('select * from T_PRODUCT');
-        console.log(result.rows);
-    } catch (error) {
-        console.log(error);
-    } finally {
-        if (connection){
-            try {
-                await connection.close()
-            } catch (error){
-                console.log(error);
-            }
-        }
-    }
-    console.log(result.rows);
-})
-
-
-router.get('/home', async(req, res)=>{
-    let connection;
-    let result;
-    try{
-        connection = await oracledb.getConnection({
-            user : "campus_h_230627_2",
-            password : "smhrd2",
-            connectString : 'project-db-stu2.smhrd.com'
-        })
-        result = await connection.execute('select * from T_PRODUCT');
-        console.log(result.rows);
-    } catch (error) {
-        console.log(error);
-    } finally {
-        if (connection){
-            try {
-                await connection.close()
-            } catch (error){
-                console.log(error);
-            }
-        }
-    }
-    console.log(result.rows);
-})
-
-
-router.get('/home', async(req, res)=>{
-    let connection;
-    let result;
-    try{
-        connection = await oracledb.getConnection({
-            user : "campus_h_230627_2",
-            password : "smhrd2",
-            connectString : 'project-db-stu2.smhrd.com'
-        })
-        result = await connection.execute('select * from T_PRODUCT');
-        console.log(result.rows);
-    } catch (error) {
-        console.log(error);
-    } finally {
-        if (connection){
-            try {
-                await connection.close()
-            } catch (error){
-                console.log(error);
-            }
-        }
-    }
-    console.log(result.rows);
-})
 module.exports = router;
