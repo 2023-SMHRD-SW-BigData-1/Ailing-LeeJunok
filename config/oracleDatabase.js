@@ -9,6 +9,57 @@ router.use(express.urlencoded({extended:false}))
 const app = express()
 oracledb.initOracleClient({libDir:'C:/Users/smhrd/Desktop/oracleClient'})
 
+router.get('/', async(req, res)=>{
+    let connection;
+    let result;
+    try{
+        connection = await oracledb.getConnection({
+            user : "campus_h_230627_2",
+            password : "smhrd2",
+            connectString : 'project-db-stu2.smhrd.com'
+        })
+        result = await connection.execute('select prod_img from T_PRODUCT');
+        console.log(result.rows);
+    } catch (error) {
+        console.log(error);
+    } finally {
+        if (connection){
+            try {
+                await connection.close()
+            } catch (error){
+                console.log(error);
+            }
+        }
+    }
+    console.log(result.rows);
+})
+
+router.get('/Login', async(req, res)=>{
+    let connection;
+    let result;
+    try{
+        connection = await oracledb.getConnection({
+            user : "campus_h_230627_2",
+            password : "smhrd2",
+            connectString : 'project-db-stu2.smhrd.com'
+        })
+        result = await connection.execute('select * from T_PRODUCT');
+        console.log(result.rows);
+    } catch (error) {
+        console.log(error);
+    } finally {
+        if (connection){
+            try {
+                await connection.close()
+            } catch (error){
+                console.log(error);
+            }
+        }
+    }
+    console.log(result.rows);
+})
+
+
 router.get('/home', async(req, res)=>{
     let connection;
     let result;
@@ -34,4 +85,29 @@ router.get('/home', async(req, res)=>{
     console.log(result.rows);
 })
 
+
+router.get('/home', async(req, res)=>{
+    let connection;
+    let result;
+    try{
+        connection = await oracledb.getConnection({
+            user : "campus_h_230627_2",
+            password : "smhrd2",
+            connectString : 'project-db-stu2.smhrd.com'
+        })
+        result = await connection.execute('select * from T_PRODUCT');
+        console.log(result.rows);
+    } catch (error) {
+        console.log(error);
+    } finally {
+        if (connection){
+            try {
+                await connection.close()
+            } catch (error){
+                console.log(error);
+            }
+        }
+    }
+    console.log(result.rows);
+})
 module.exports = router;
