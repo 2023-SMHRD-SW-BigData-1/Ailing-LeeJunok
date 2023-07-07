@@ -64,19 +64,20 @@ return (
 
       <Button onClick={handleLogin}
       size ="large" fullWidth
-        variant="contained" sx={{mt:5, mb:1, color : "#191919",  backgroundColor:"#FEE500",
+        variant="contained" sx={{mt:7, mb:1, color : "#191919",  backgroundColor:"#FEE500",
         ":hover":{backgroundColor :"#FEE500" }}}
+        style={{height:"75px",border:"1px solid lightgray"}}
       >카카오로 로그인하기</Button>
 
 
       {/* <Button onClick={()=>{NaverLogin()}}
-       size ="large" fullWidth
+      size ="large" fullWidth
         variant="contained" sx={{m:1, color : "white",  backgroundColor:"#03C75A",
         ":hover":{backgroundColor :"#03C75A" }}}
       >네이버로 로그인하기</Button> */}
       
       {/* <KakaoLogin/> */}
-       <NaverLogin/>
+      <NaverLogin/>
 
 
         <Button onClick={()=>{navigate('/Login04');}}
