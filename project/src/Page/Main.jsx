@@ -7,6 +7,7 @@ import { productContext } from '../context/ProductContext'
 import { useState } from 'react'
 import Atom from '../components/Main/Atom'
 import BenText from '../components/Main/BenText'
+import GrideBox from '../components/Main/GrideBox'
 
 
 
@@ -54,7 +55,7 @@ const Main = () => {
             </div>
             <div className='contentBox'>
                 <div className='maingridWarpper'>
-
+                    <GrideBox/>
                 </div>
             </div>
 
