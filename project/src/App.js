@@ -18,7 +18,6 @@ function App() {
         <Route path='/' element={<Main/>}/>
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/login' element={<LogInUI/>}/>
-        <Route path='/product' element={<Product/>}/>
       </Routes>
 
 
