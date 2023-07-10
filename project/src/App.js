@@ -5,7 +5,8 @@ import Cart from './Page/Cart';
 
 import Header from './Page/Header';
 import Footer from './Page/Footer';
-import LogInUI from './components/Login/Login01';
+import LogInUI from './Page/Login/Login01';
+import Join from './Page/Login/Login05';
 
 
 
@@ -18,7 +19,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Main/>}/>
         <Route path='/cart' element={<Cart/>}/>
+        {/* Login */}
         <Route path='/login' element={<LogInUI/>}/>
+        <Route path='/login/join' element={<Join/>}/>
       </Routes>
       </div>
 

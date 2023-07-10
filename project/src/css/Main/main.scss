@@ -122,8 +122,6 @@
                     border-top-right-radius: 15px;
                 }
             }
-
-            
             .box {
                 width: 100%;
                 height: 370px;
@@ -134,7 +132,6 @@
                 overflow: hidden;
                 transform: translate3d(0, 0, 0);
             }
-            
             .wave {
                 opacity: .4;
                 position: absolute;
@@ -149,17 +146,14 @@
                 border-radius: 43%;
                 animation: drift 3000ms infinite linear;
             }
-            
             .wave.-three {
                 animation: drift 5000ms infinite linear;
             }
-            
             .wave.-two {
                 animation: drift 7000ms infinite linear;
                 opacity: .1;
                 // background: yellow;
             }
-            
             .box:after {
                 content: '';
                 display: block;
@@ -201,12 +195,12 @@
                 height: 600px;
                 border-radius: 15px;
                 margin-top: 120px; 
+                justify-content: center;
                 p{
                     position: relative;
                     margin-top: 160px;
                     text-align: center;
                     font-size: 50px;
-                    
                 }
             }
             .top::before{
@@ -304,34 +298,23 @@
                     border: 1px solid black;
                 }
             }
-
-
-
-            
-            
+    
             @mixin white-gradient {
                 background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
             }
-            
             $animationSpeed: 40s;
-            
             // Animation
             @keyframes scroll {
                 0% { transform: translateX(0); }
                 100% { transform: translateX(calc(-250px * 7))}
             }
-            
-            
-            // Styling
             .slider {
                 background: white;
-                box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
                 height: 300px;
                 margin: auto;
                 overflow:hidden;
                 position: relative;
                 width: 100%;
-                
                 &::before,
                 &::after {
                     @include white-gradient;
@@ -341,24 +324,20 @@
                     width: 200px;
                     z-index: 2;
                 }
-                
                 &::after {
                     right: 0;
                     top: 0;
                     transform: rotateZ(180deg);
                 }
-            
                 &::before {
                     left: 0;
                     top: 0;
                 }
-                
                 .slide-track {
                     animation: scroll $animationSpeed linear infinite;
                     display: flex;
                     width: calc(250px * 14);
                 }
-                
                 .slide {
                     height: 300px;
                     width: 250px;
