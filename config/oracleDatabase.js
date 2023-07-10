@@ -13,42 +13,41 @@ router.use(express.json())
 router.use(express.urlencoded({extended:false}))
 oracledb.initOracleClient({libDir:'C:/Users/smhrd/Desktop/oracleClient'})
 
+app.use('/', router)
+
 app.get('/product', async function(request, response) {
-    const result = await getSelect(request, response)
-    response.send(result)
+    try {
+        const result = await getSelect(request, response)
+        response.send(result)
+    } catch (error) {
+        console.log(error)
+        response.sendStatus(500)
+    }
 })
+
 const dbConfig = {
     user: "campus_h_230627_2",
     password: "smhrd2",
-    connectString: 'project-db-stu2.smhrd.com'
+    connectString: 'project-db-stu2.smhrd.com:1524/'
 }
 
 async function getSelect(request, response) {
-    let connection
-    try {
-        connection = await oracledb.getConnection({dbConfig})
+    let sql = 'select prod_img from t_product'
 
-        const result = await connection.execute(
-            `SELECT * 
-            FROM t_user`,
-            [1], // num의 값 전달
-        )
+    console.log('테스트');
 
-        console.log(result)
-        return result
-    } catch (error) {
-        console.log(error)
-    } finally {
-        if (connection) {
-            try {
-                await connection.close()
-            } catch (error) {
-                console.log(error)
-            }
-        }
-    }
+    oracledb.getConnection(dbConfig,(err,conn)=>{
+        if(err) throw err;
+        conn.execute(sql,[],(err1,result)=>{
+            if(err1) throw err1;
+            console.log(result.rows);
+
+            conn.release((err2)=>{
+                if(err2) throw err2;
+                console.log('db 연결해제');
+            })
+        })
+    })
 }
-
-
 
 module.exports = router;

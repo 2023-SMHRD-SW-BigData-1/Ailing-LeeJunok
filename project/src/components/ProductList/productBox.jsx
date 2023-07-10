@@ -1,25 +1,29 @@
-import React, { useState } from 'react';
+import axios from "axios";
+import { useState, useEffect } from "react";
 
-function ProductBox({ imageUrl, productName, productDescription }) {
-  const [folded, setFolded] = useState(true);
+function ProductBox({ productId }) {
+  const [product, setProduct] = useState(null);
 
-  const toggleFold = () => {
-    setFolded(!folded);
-  };
+  useEffect(() => {
+    async function fetchData() {
+      const response = await axios.get(`/api/products/${productId}`);
+      setProduct(response.data);
+    }
 
-  return (
-    <div className="product-box">
-      <img className="product-image" src={imageUrl} alt="제품 사진" />
-      <div className={`note ${folded ? 'folded' : ''}`} onClick={toggleFold}>
-        <h2>{productName}</h2>
-        <div className="note-content">
-          <h3>{productDescription}</h3>
+    fetchData();
+  }, [productId]);
+
+  if (product) {
+    return (
+      <div className="product-box">
+        <img src={product.imageUrl} alt={product.productName} />
+        <div className="note">
+          <h2>{product.productName}</h2>
+          <h3>{product.productDescription}</h3>
         </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return <div>Loading...</div>;
+  }
 }
-
-
-
-export default ProductBox;
