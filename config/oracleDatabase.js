@@ -10,8 +10,8 @@ oracledb.outFormat = oracledb.OUT_FORMAT_OBJECT
 
 const router = express.Router()
 router.use(express.json())
-router.use(express.urlencoded({ extended: false }))
-oracledb.initOracleClient({ libDir: 'C:/Users/smhrd/Desktop/oracleClient' })
+router.use(express.urlencoded({extended:false}))
+oracledb.initOracleClient({libDir:'C:/Users/smhrd/Desktop/oracleClient'})
 
 app.use('/', router)
 

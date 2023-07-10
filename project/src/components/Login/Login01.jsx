@@ -49,7 +49,7 @@ return (
     <Container component="main" maxWidth="xs" style={{height : '500px'}}>
       <Box
           sx={{
-              marginTop: 20,
+              marginTop: 13,
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
@@ -65,6 +65,7 @@ return (
       <LockOutlinedIcon />
       </Avatar>
           로그인 
+
 
 
           <TextField
@@ -98,6 +99,7 @@ return (
       카카오 로그인</Button>
 
 
+
 <Grid container>
   <Grid item xs><Link>아이디 찾기</Link></Grid>
   <Grid item xs><Link>비밀번호 찾기</Link></Grid>
@@ -107,5 +109,6 @@ return (
 
       </Box>
       </Container>
-      
-      </div></div>)};
+      </div >
+    </div >
+)};

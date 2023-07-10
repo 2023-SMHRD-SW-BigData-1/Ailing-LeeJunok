@@ -23,6 +23,7 @@ return (
     onSwiper={(swiper) => console.log(swiper)}
     onSlideChange={() => console.log('slide change')}
     style={{height:'340px',marginTop:'30px'}}
+    
     >
     {product.map(item=><SwiperSlide><ProductCard key={item.url} url={item.url} text={item.text}/></SwiperSlide>)}
 
