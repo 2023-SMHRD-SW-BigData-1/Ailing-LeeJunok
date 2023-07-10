@@ -1,6 +1,8 @@
+
 import React, { useContext, useEffect, useState } from 'react'
 import { productContext } from '../../context/ProductContext'
-import OracleDB from 'oracledb'
+
+
 
 const MainDepth = ({name,url}) => {
 
@@ -8,111 +10,107 @@ const MainDepth = ({name,url}) => {
 
     
 
-    const changeCard = async () => {
-        try {
-          switch (name) {
-            case '면역':
-              setProductName('면역')
-              const images1 = await getSelect()
-              setProduct(images1)
-              break;
-            case '다이어트':
-              setProductName('다이어트')
-              const images2 = await getSelect()
-              setProduct(images2)
-              break;
-            case '피부':
-              setProductName('피부')
-              const images3 = await getSelect()
-              setProduct(images3)
-              break;
-            case '스트레스':
-              setProductName('스트레스')
-              const images4 = await getSelect()
-              setProduct(images4)
-              break;
-            case '피로':
-              setProductName('피로')
-              const images5 = await getSelect()
-              setProduct(images5)
-              break;
-            case '간 건강':
-              setProductName('간 건강')
-              const images6 = await getSelect()
-              setProduct(images6)
-              break;
-            case '눈 건강':
-              setProductName('눈 건강')
-              const images7 = await getSelect()
-              setProduct(images7)
-              break;
-            case '장 건강':
-              setProductName('장 건강')
-              const images8 = await getSelect()
-              setProduct(images8)
-              break;
-            case '수면':
-              setProductName('수면')
-              const images9 = await getSelect()
-              setProduct(images9)
-              break;
-            default:
-              break;
-          }
-        } catch (error) {
-          console.error('이미지 가져오기 중 오류가 발생했습니다.', error)
-        }
-      }
-    
-      return (
-        <>
-          <button onClick={changeCard}>
-            <img src={url} alt="준비중" />
-            <p>{name}</p>
-          </button>
-        </>
-      )
-    }
-    
-    export default MainDepth
-    
-    const dbConfig = {
-        user: "campus_h_230627_2",
-        password: "smhrd2",
-        connectString: 'project-db-stu2.smhrd.com:1524/'
-    }
-    
-    // select 제품 이미지
-    async function getSelect() {
-      let sql = 'select prod_img from t_product'
-    
-      console.log('이미지')
-    
-      return new Promise((resolve, reject) => {
-        OracleDB.getConnection(dbConfig, (err, conn) => {
-          if (err) {
-            reject(err)
-            return
-          }
-          conn.execute(sql, [], (err1, result) => {
-            if (err1) {
-              reject(err1)
-              return
+    const changeCard = ()=>{
+            switch (name) {
+                case '면역':
+                    setProductName('면역')                    
+                    setProduct([{url : 'https://www.nhis.or.kr/magazin/152/html/style/images/sub2_img1.jpg',text : 'ㅇ'},
+                    {url : 'https://www.nhis.or.kr/magazin/152/html/style/images/sub2_img1.jpg',text : 'ㅇ'},
+                    {url : 'https://www.nhis.or.kr/magazin/152/html/style/images/sub2_img1.jpg',text : 'ㅇ'},
+                    {url : 'https://www.nhis.or.kr/magazin/152/html/style/images/sub2_img1.jpg',text : 'ㅇ'},
+                    {url : 'https://www.nhis.or.kr/magazin/152/html/style/images/sub2_img1.jpg',text : 'ㅇ'},
+                    {url : 'https://www.nhis.or.kr/magazin/152/html/style/images/sub2_img1.jpg',text : 'ㅇ'},
+                    {url : 'https://www.nhis.or.kr/magazin/152/html/style/images/sub2_img1.jpg',text : 'ㅇ'}])
+                    break;
+                case '다이어트':
+                    setProductName('다이어트')
+                    setProduct([{url : 'https://m.young.hyundai.com:444/upload/CMS_NEWS_IMAGE/2019/12/12/CMS_NEWS_IMAGE_2QGznGb3yizOrw9cg2A7.jpg',text : 'ㅋ'},
+                    {url : 'https://m.young.hyundai.com:444/upload/CMS_NEWS_IMAGE/2019/12/12/CMS_NEWS_IMAGE_2QGznGb3yizOrw9cg2A7.jpg',text : 'ㅋ'},
+                    {url : 'https://m.young.hyundai.com:444/upload/CMS_NEWS_IMAGE/2019/12/12/CMS_NEWS_IMAGE_2QGznGb3yizOrw9cg2A7.jpg',text : 'ㅋ'},
+                    {url : 'https://m.young.hyundai.com:444/upload/CMS_NEWS_IMAGE/2019/12/12/CMS_NEWS_IMAGE_2QGznGb3yizOrw9cg2A7.jpg',text : 'ㅋ'},
+                    {url : 'https://m.young.hyundai.com:444/upload/CMS_NEWS_IMAGE/2019/12/12/CMS_NEWS_IMAGE_2QGznGb3yizOrw9cg2A7.jpg',text : 'ㅋ'},
+                    {url : 'https://m.young.hyundai.com:444/upload/CMS_NEWS_IMAGE/2019/12/12/CMS_NEWS_IMAGE_2QGznGb3yizOrw9cg2A7.jpg',text : 'ㅋ'},
+                    {url : 'https://m.young.hyundai.com:444/upload/CMS_NEWS_IMAGE/2019/12/12/CMS_NEWS_IMAGE_2QGznGb3yizOrw9cg2A7.jpg',text : 'ㅋ'},])
+                    break;
+                case '피부':
+                    setProductName('피부')
+                    setProduct([{url : 'https://cdn.thedailypost.kr/news/photo/202204/86944_83260_2446.png',text : 'ㅎ'},
+                    {url : 'https://cdn.thedailypost.kr/news/photo/202204/86944_83260_2446.png',text : 'ㅎ'},
+                    {url : 'https://cdn.thedailypost.kr/news/photo/202204/86944_83260_2446.png',text : 'ㅎ'},
+                    {url : 'https://cdn.thedailypost.kr/news/photo/202204/86944_83260_2446.png',text : 'ㅎ'},
+                    {url : 'https://cdn.thedailypost.kr/news/photo/202204/86944_83260_2446.png',text : 'ㅎ'},
+                    {url : 'https://cdn.thedailypost.kr/news/photo/202204/86944_83260_2446.png',text : 'ㅎ'},
+                    {url : 'https://cdn.thedailypost.kr/news/photo/202204/86944_83260_2446.png',text : 'ㅎ'},])
+                    break;
+                case '스트레스':
+                    setProductName('스트레스')
+                    setProduct([{url : 'https://cdn.imweb.me/upload/S201905095cd394c038ba5/1601def38d6e6.jpg',text : 'ㅎ'},
+                    {url : 'https://cdn.imweb.me/upload/S201905095cd394c038ba5/1601def38d6e6.jpg',text : 'ㅎ'},
+                    {url : 'https://cdn.imweb.me/upload/S201905095cd394c038ba5/1601def38d6e6.jpg',text : 'ㅎ'},
+                    {url : 'https://cdn.imweb.me/upload/S201905095cd394c038ba5/1601def38d6e6.jpg',text : 'ㅎ'},
+                    {url : 'https://cdn.imweb.me/upload/S201905095cd394c038ba5/1601def38d6e6.jpg',text : 'ㅎ'},
+                    {url : 'https://cdn.imweb.me/upload/S201905095cd394c038ba5/1601def38d6e6.jpg',text : 'ㅎ'},
+                    {url : 'https://cdn.imweb.me/upload/S201905095cd394c038ba5/1601def38d6e6.jpg',text : 'ㅎ'},])
+                    break;
+                case '피로':
+                    setProductName('피로')
+                    setProduct([{url : 'https://www.dentin.kr/data/photos/20131044/art_1382928943.jpg',text : 'ㅗ'},
+                    {url : 'https://www.dentin.kr/data/photos/20131044/art_1382928943.jpg',text : 'ㅗ'},
+                    {url : 'https://www.dentin.kr/data/photos/20131044/art_1382928943.jpg',text : 'ㅗ'},
+                    {url : 'https://www.dentin.kr/data/photos/20131044/art_1382928943.jpg',text : 'ㅗ'},
+                    {url : 'https://www.dentin.kr/data/photos/20131044/art_1382928943.jpg',text : 'ㅗ'},
+                    {url : 'https://www.dentin.kr/data/photos/20131044/art_1382928943.jpg',text : 'ㅗ'},
+                    {url : 'https://www.dentin.kr/data/photos/20131044/art_1382928943.jpg',text : 'ㅗ'}])
+                    break;
+                case '간 건강':
+                    setProductName('간 건강')
+                    setProduct([{url : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsZPqz97fr_wh7y4MXupCxhyOLo20ylz-QfQ&usqp=CAU',text : 'ㅂ'},
+                    {url : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsZPqz97fr_wh7y4MXupCxhyOLo20ylz-QfQ&usqp=CAU',text : 'ㅂ'},
+                    {url : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsZPqz97fr_wh7y4MXupCxhyOLo20ylz-QfQ&usqp=CAU',text : 'ㅂ'},
+                    {url : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsZPqz97fr_wh7y4MXupCxhyOLo20ylz-QfQ&usqp=CAU',text : 'ㅂ'},
+                    {url : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsZPqz97fr_wh7y4MXupCxhyOLo20ylz-QfQ&usqp=CAU',text : 'ㅂ'},
+                    {url : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsZPqz97fr_wh7y4MXupCxhyOLo20ylz-QfQ&usqp=CAU',text : 'ㅂ'},
+                    {url : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsZPqz97fr_wh7y4MXupCxhyOLo20ylz-QfQ&usqp=CAU',text : 'ㅂ'},])
+                    break;
+                case '눈 건강':
+                    setProductName('눈 건강')
+                    setProduct([{url : 'https://www.econovill.com/news/photo/201704/312463_149532_2517.png',text : ''},
+                    {url : 'https://www.econovill.com/news/photo/201704/312463_149532_2517.png',text : ''},
+                    {url : 'https://www.econovill.com/news/photo/201704/312463_149532_2517.png',text : ''},
+                    {url : 'https://www.econovill.com/news/photo/201704/312463_149532_2517.png',text : ''},
+                    {url : 'https://www.econovill.com/news/photo/201704/312463_149532_2517.png',text : ''},
+                    {url : 'https://www.econovill.com/news/photo/201704/312463_149532_2517.png',text : ''},
+                    {url : 'https://www.econovill.com/news/photo/201704/312463_149532_2517.png',text : ''},])
+                    break;
+                case '장 건강':
+                    setProductName('장 건강')
+                    setProduct([{url : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIEcAOhGqQJkVpMVFrMZLE7ZMGvK95Je0qxQ&usqp=CAU',text : ''},
+                    {url : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIEcAOhGqQJkVpMVFrMZLE7ZMGvK95Je0qxQ&usqp=CAU',text : ''},
+                    {url : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIEcAOhGqQJkVpMVFrMZLE7ZMGvK95Je0qxQ&usqp=CAU',text : ''},
+                    {url : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIEcAOhGqQJkVpMVFrMZLE7ZMGvK95Je0qxQ&usqp=CAU',text : ''},
+                    {url : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIEcAOhGqQJkVpMVFrMZLE7ZMGvK95Je0qxQ&usqp=CAU',text : ''},])
+                    break;
+                case '수면':
+                    setProductName('수면')
+                    setProduct([{url : 'https://src.hidoc.co.kr/image/lib/2017/5/30/20170530141011772_0.jpg',text : ''},
+                    {url : 'https://src.hidoc.co.kr/image/lib/2017/5/30/20170530141011772_0.jpg',text : ''},
+                    {url : 'https://src.hidoc.co.kr/image/lib/2017/5/30/20170530141011772_0.jpg',text : ''},
+                    {url : 'https://src.hidoc.co.kr/image/lib/2017/5/30/20170530141011772_0.jpg',text : ''},
+                    {url : 'https://src.hidoc.co.kr/image/lib/2017/5/30/20170530141011772_0.jpg',text : ''}])
+                    break;
+                default:
+                
+                    break;
             }
-            console.log(result.rows)
-    
-            conn.release((err2) => {
-              if (err2) {
-                reject(err2)
-                return
-              }
-              console.log('db 연결해제')
-    
-              // 이미지 결과를 JSON 형태로 변환
-              const images = result.rows.map((row) => ({ url: row.PROD_IMG }))
-              resolve(images)
-            })
-          })
-        })
-      })
-    }
+
+        }
+
+
+    return (
+        <>
+            <button onClick={changeCard}><img src={url} alt="준비중" /><p>{name}</p></button>
+        </>
+    )
+}
+
+export default MainDepth
