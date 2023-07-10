@@ -31,11 +31,11 @@ const dbConfig = {
     connectString: 'project-db-stu2.smhrd.com:1524/'
 }
 
-// select 제품 이미지
+// select 제품
 async function getSelect(request, response) {
-    let sql = 'select prod_img from t_product';
+    let sql = 'select * from t_product';
   
-    console.log('이미지');
+    console.log('제품');
   
     return new Promise((resolve, reject) => {
       oracledb.getConnection(dbConfig, (err, conn) => {
@@ -57,7 +57,7 @@ async function getSelect(request, response) {
             }
             console.log('db 연결해제');
   
-            // 이미지 결과를 JSON 형태로 변환
+            // 제품 검색 결과를 JSON 형태로 변환
             const images = result.rows.map((row) => ({ url: row.PROD_IMG }));
             resolve(images);
           });
@@ -87,7 +87,7 @@ async function getSelect(request, response) {
 //     })
 // }
 
-// 제품 이름 가져오기
+// // 제품 이름 가져오기
 // async function getSelect(request, response) {
 //     let sql = 'select prod_name from t_product'
 
