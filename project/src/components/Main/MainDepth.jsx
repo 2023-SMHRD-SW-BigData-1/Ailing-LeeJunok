@@ -9,11 +9,10 @@ const MainDepth = ({name,url}) => {
 
     
 
-        const changeCard = ()=>{
-
+    const changeCard = ()=>{
             switch (name) {
                 case '면역':
-                    setProductName('면역')
+                    setProductName('면역')                    
                     setProduct([{url : 'https://www.nhis.or.kr/magazin/152/html/style/images/sub2_img1.jpg',text : 'ㅇ'},
                     {url : 'https://www.nhis.or.kr/magazin/152/html/style/images/sub2_img1.jpg',text : 'ㅇ'},
                     {url : 'https://www.nhis.or.kr/magazin/152/html/style/images/sub2_img1.jpg',text : 'ㅇ'},
