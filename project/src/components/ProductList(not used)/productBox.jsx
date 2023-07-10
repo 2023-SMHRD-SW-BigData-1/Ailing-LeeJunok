@@ -1,3 +1,6 @@
+// 이전 productBox 혹시 써먹을 수 있으니 일단은 주석 처리
+
+
 import React, { useState } from 'react';
 
 function ProductBox({ imageUrl, productName, productDescription }) {
