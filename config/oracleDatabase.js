@@ -31,6 +31,7 @@ const dbConfig = {
     connectString: 'project-db-stu2.smhrd.com:1524/'
 }
 
+// select 제품 이미지 
 async function getSelect(request, response) {
     let sql = 'select prod_img from t_product'
 
@@ -49,5 +50,45 @@ async function getSelect(request, response) {
         })
     })
 }
+// 제품 가격 가져오기
+async function getSelect(request, response) {
+    let sql = 'select prod_price from t_product'
+
+    console.log('테스트');
+
+    oracledb.getConnection(dbConfig,(err,conn)=>{
+        if(err) throw err;
+        conn.execute(sql,[],(err1,result)=>{
+            if(err1) throw err1;
+            console.log(result.rows);
+
+            conn.release((err2)=>{
+                if(err2) throw err2;
+                console.log('db 연결해제');
+            })
+        })
+    })
+}
+
+// 제품 이름 가져오기
+async function getSelect(request, response) {
+    let sql = 'select prod_name from t_product'
+
+    console.log('테스트');
+
+    oracledb.getConnection(dbConfig,(err,conn)=>{
+        if(err) throw err;
+        conn.execute(sql,[],(err1,result)=>{
+            if(err1) throw err1;
+            console.log(result.rows);
+
+            conn.release((err2)=>{
+                if(err2) throw err2;
+                console.log('db 연결해제');
+            })
+        })
+    })
+}
+
 
 module.exports = router;
