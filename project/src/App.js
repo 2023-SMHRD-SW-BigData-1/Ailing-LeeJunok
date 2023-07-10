@@ -12,11 +12,13 @@ function App() {
     <div id='wrap'>
       <Header/>
 
+      <div id='body-warpper'>
       <Routes>
         <Route path='/' element={<Main/>}/>
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/login' element={<LogInUI/>}/>
       </Routes>
+      </div>
 
 
       <Footer/>

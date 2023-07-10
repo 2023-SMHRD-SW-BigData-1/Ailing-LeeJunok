@@ -2,19 +2,30 @@
 /* 전체 */
 
 *{
-  margin: 0 auto;
+  margin: 0 ;
   padding: 0;
   font-family: 'GmarketSansMedium';
 }
+html,body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+#body-wrapper {
+  min-height: 100%;
+  position: relative;
+}
 
 #wrap{
-  width: 1920px;
+  width: 192vh;
+  min-height: 100%;
   margin: 0 auto;
 }
 
 #mainContentWrapper{
   width: 100%;
   margin: 0 auto;
+  padding-bottom: 100px;
 }
 
 h2,h3,h4,h5{
@@ -23,6 +34,10 @@ h2,h3,h4,h5{
   font-size: 50px;
 }
 
+a{
+  text-decoration: none;
+  color: black;
+}
 
 
 ul{
@@ -37,9 +52,10 @@ ul{
 }
 
 .mainSec{
-  width: 1600px;
-  height: 200px;
+  width: 160vh;
+  height: 23vh;
   margin: 0 auto;
+  justify-items: center;
   text-align: center;
 }
 

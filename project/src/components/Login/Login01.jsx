@@ -49,7 +49,7 @@ return (
     <Container component="main" maxWidth="xs" style={{height : '500px'}}>
       <Box
           sx={{
-              marginTop: 20,
+              marginTop: 13,
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
@@ -65,6 +65,7 @@ return (
       <LockOutlinedIcon />
       </Avatar>
           로그인 
+
 
 
           <TextField
@@ -90,13 +91,14 @@ return (
           
                 <Button type="submit" fullWidth
                         variant="contained" sx={{ mt: 2, mb: 0 }}> 로그인 </Button>
-<Box>
+
       <Button onClick={handleLogin}
       size ="large" fullWidth
         variant="contained" sx={{mt:5, mb:1, color : "#191919",  backgroundColor:"#FEE500",
         ":hover":{backgroundColor :"#FEE500" }}}>
       카카오 로그인</Button>
-      </Box>
+
+
 
 <Grid container>
   <Grid item xs><Link>아이디 찾기</Link></Grid>
@@ -105,4 +107,8 @@ return (
 </Grid>
 
 
-      
+      </Box>
+      </Container>
+      </div >
+    </div >
+)};
