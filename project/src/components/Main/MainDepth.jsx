@@ -1,9 +1,9 @@
 
 
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { productContext } from '../../context/ProductContext'
 
-const MainDepth = ({name}) => {
+const MainDepth = ({name,url}) => {
 
     const {setProduct,setProductName} = useContext(productContext)
 
@@ -104,11 +104,10 @@ const MainDepth = ({name}) => {
 
         }
 
-    
 
     return (
         <>
-            <button onClick={changeCard}>{name}</button>
+            <button onClick={changeCard}><img src={url} alt="준비중" /><p>{name}</p></button>
         </>
     )
 }
