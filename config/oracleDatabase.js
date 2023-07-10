@@ -16,7 +16,7 @@ const dbConfig = {
     connectString: 'project-db-stu2.smhrd.com'
 }
 
-router.get('/select', async (req, res) => {
+router.get('/product', async (req, res) => {
     let connection;
 
     try {
