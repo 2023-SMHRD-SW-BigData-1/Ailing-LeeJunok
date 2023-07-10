@@ -21,7 +21,7 @@ router.get('/select', async (req, res) => {
 
     try {
         connection = await oracledb.getConnection(dbConfig);
-        const result = await connection.execute('select prod_img from T_PRODUCT');
+        const result = await connection.execute('select * from T_user');
         console.log(result.rows);
 
         const products = result.rows.map(row => ({ prod_img: row[0] }));
@@ -42,7 +42,7 @@ router.get('/select', async (req, res) => {
             }
         }
     }
-});
+})
 
 
 // router.post('/insert', (req, res) => {
