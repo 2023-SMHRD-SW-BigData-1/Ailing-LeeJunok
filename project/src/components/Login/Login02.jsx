@@ -2,7 +2,7 @@ import React, {Component} from "react";
 
 class KakaoLogin extends Component{
   componentDidMount(){
-    const kakaoScript = document.createElement('script');
+    const kakaoScript = document.createElement('script1');
     kakaoScript.src = 'https://developers.kakao.com/sdk/js/kakao.min.js';
     document.head.appendChild(kakaoScript);
 

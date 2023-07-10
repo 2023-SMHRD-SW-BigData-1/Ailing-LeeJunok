@@ -9,6 +9,11 @@ import Container from '@mui/material/Container';
 import {useNavigate} from 'react-router-dom';
 import NaverLogin from './Login04';
 import KakaoLogin from './Login02';
+import TextField from '@mui/material/TextField';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import Link from '@mui/material/Link';
+
 
 // Login[nn]
 // 01 : 메인
@@ -64,20 +69,19 @@ return (
 
       <Button onClick={handleLogin}
       size ="large" fullWidth
-        variant="contained" sx={{mt:7, mb:1, color : "#191919",  backgroundColor:"#FEE500",
+        variant="contained" sx={{mt:5, mb:1, color : "#191919",  backgroundColor:"#FEE500",
         ":hover":{backgroundColor :"#FEE500" }}}
-        style={{height:"75px",border:"1px solid lightgray"}}
       >카카오로 로그인하기</Button>
 
 
       {/* <Button onClick={()=>{NaverLogin()}}
-      size ="large" fullWidth
+       size ="large" fullWidth
         variant="contained" sx={{m:1, color : "white",  backgroundColor:"#03C75A",
         ":hover":{backgroundColor :"#03C75A" }}}
       >네이버로 로그인하기</Button> */}
       
       {/* <KakaoLogin/> */}
-      <NaverLogin/>
+       <NaverLogin/>
 
 
         <Button onClick={()=>{navigate('/Login04');}}
@@ -131,19 +135,14 @@ return (
             {/* <Button type="submit" fullWidth
               variant="contained" sx={{ mt: 2, mb: 2 }}> 로그인 </Button> */}
 
-                      {/* <Grid item xs><Link>비밀번호 찾기</Link></Grid>
-        <Grid item ><Link>회원가입</Link></Grid> */}
+<Grid container>
+  <Grid item xs><Link>아이디 찾기</Link></Grid>
+  <Grid item xs><Link>비밀번호 찾기</Link></Grid>
+  <Grid item><Link>회원가입하기</Link></Grid>
+</Grid>
 
 
-  //       <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-  //       <LockOutlinedIcon />
-  // </Avatar>
-
-  // import CssBaseline from '@mui/material/CssBaseline';
-// import TextField from '@mui/material/TextField';
-// import FormControlLabel from '@mui/material/FormControlLabel';
-// import Checkbox from '@mui/material/Checkbox';
-// import Link from '@mui/material/Link';
-// import { createTheme, ThemeProvider } from '@mui/material/styles';
-
-
+      </Box>
+      </Container>
+      
+      </div></div>)};

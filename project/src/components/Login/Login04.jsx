@@ -17,7 +17,10 @@ class NaverLogin extends Component{
         loginButton:{
           color : "green",
           type : 3,
-          height : 85,
+          height : 90,
+          
+          innerWidth : 30,
+          outerWidth : 30
         },
       });
       naverLogin.init();
