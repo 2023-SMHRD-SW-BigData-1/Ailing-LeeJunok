@@ -16,8 +16,8 @@ class NaverLogin extends Component{
         isPopup : false,
         loginButton:{
           color : "green",
-          type : 3,
-          height : 90,
+          type : 1,
+          height : 30,
           
           innerWidth : 30,
           outerWidth : 30
