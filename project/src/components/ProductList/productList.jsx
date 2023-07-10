@@ -4,19 +4,19 @@ import React from "react";
 function productList() {
     return (
       <div className="App">
-        <ProductBox
+        <productBox
           imageUrl="https://health.chosun.com/site/data/img_dir/2019/12/20/2019122002250_0.jpg"
           productName="상품 이름"
           productDescription="설명"
         />
   
-        <ProductBox
+        <productBox
           imageUrl="https://health.chosun.com/site/data/img_dir/2019/12/20/2019122002250_0.jpg"
           productName="상품 이름"
           productDescription="설명"
         />
   
-        <ProductBox
+        <productBox
           imageUrl="d"
           productName="상품 이름"
           productDescription="어?"

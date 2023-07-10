@@ -1,59 +1,54 @@
-const bodyparser = require('body-parser')
 const express = require('express')
+const app = express()
+
+const server = app.listen(3000, () => {
+    console.log('server start, port 3000')
+})
+
 const oracledb = require('oracledb')
 oracledb.outFormat = oracledb.OUT_FORMAT_OBJECT
-const path = require('path')
+
 const router = express.Router()
 router.use(express.json())
 router.use(express.urlencoded({extended:false}))
-const app = express()
-const yaml = require('js-yaml')
 oracledb.initOracleClient({libDir:'C:/Users/smhrd/Desktop/oracleClient'})
 
+app.get('/product', async function(request, response) {
+    const result = await getSelect(request, response)
+    response.send(result)
+})
 const dbConfig = {
     user: "campus_h_230627_2",
     password: "smhrd2",
     connectString: 'project-db-stu2.smhrd.com'
 }
 
-router.get('/product', async (req, res) => {
-    let connection;
-
+async function getSelect(request, response) {
+    let connection
     try {
-        connection = await oracledb.getConnection(dbConfig);
-        const result = await connection.execute('select * from T_user');
-        console.log(result.rows);
+        connection = await oracledb.getConnection({dbConfig})
 
-        const products = result.rows.map(row => ({ prod_img: row[0] }));
+        const result = await connection.execute(
+            `SELECT * 
+            FROM t_user`,
+            [1], // num의 값 전달
+        )
 
-        const yamlData = yaml.dump({ products });
-
-        res.header("Content-Type", "text/yaml");
-        res.send(yamlData); 
+        console.log(result)
+        return result
     } catch (error) {
-        console.log(error);
-        res.status(500).send("Server error");
+        console.log(error)
     } finally {
         if (connection) {
             try {
-                await connection.close();
+                await connection.close()
             } catch (error) {
-                console.log(error);
+                console.log(error)
             }
         }
     }
-})
+}
 
 
-// router.post('/insert', (req, res) => {
-//     let { id, pw, nick } = req.body
-
-//     let sql = 'insert into t_user values (?,?,?)'
-//     conn.query(sql, [id, pw, nick], function (err, rows, fields) {
-//         console.log(rows);
-//         res.redirect('/select')
-//     })
-
-// })
 
 module.exports = router;
