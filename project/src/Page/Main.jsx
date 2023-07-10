@@ -49,6 +49,15 @@ const Main = () => {
             <div className='hanpo top'><BenText/></div>
             <div className='hanpo bottom'></div>
             </div>
+            <div className='mainSec ingredient'>
+                <h3><strong>- 하루 한 팩, 입에 톡톡 내게 꼭 맞춘 한 팩 영양제 -</strong></h3>
+            </div>
+            <div className='contentBox'>
+                <div className='maingridWarpper'>
+
+                </div>
+            </div>
+
         </div>
 
     

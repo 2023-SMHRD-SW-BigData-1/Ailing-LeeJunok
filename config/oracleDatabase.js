@@ -7,7 +7,7 @@ const router = express.Router()
 router.use(express.json())
 router.use(express.urlencoded({extended:false}))
 const app = express()
-oracledb.initOracleClient({libDir:'C:/Users/smhrd/Desktop/oracleClient'})
+oracledb.initOracleClient({libDir:'Ailing-LeeJunok\oracleClient'})
 
 router.get('/home', async(req, res)=>{
     let connection;

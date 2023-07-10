@@ -13,7 +13,7 @@ class NaverLogin extends Component{
         clientId:"x1JgF_YVet3WiGsR1lUU",
         callbackUrl : "http://localhost:3000",
         callbackHandle : true,
-        isPopup : false,
+        isPopup : true,
         loginButton:{
           color : "green",
           type : 3,
