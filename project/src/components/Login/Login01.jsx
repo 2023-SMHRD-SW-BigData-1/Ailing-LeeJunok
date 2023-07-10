@@ -67,73 +67,36 @@ return (
           로그인 
 
 
+          <TextField
+            margin = 'normal'
+            label="이메일 주소" 
+            required
+            fullWidth
+            name="email"
+            autoComplete="email"
+            // autoFocus
+          />
+          <TextField
+           label="비밀번호"
+           type="password"
+           required fullWidth
+           name = "password"
+           autoComplete='current-password'
+           />
+        <FormControlLabel control ={       
+          <Checkbox value="remember" color="primary" />}
+          label="아이디 저장"
+          />
+          
+                <Button type="submit" fullWidth
+                        variant="contained" sx={{ mt: 2, mb: 0 }}> 로그인 </Button>
+<Box>
       <Button onClick={handleLogin}
       size ="large" fullWidth
         variant="contained" sx={{mt:5, mb:1, color : "#191919",  backgroundColor:"#FEE500",
-        ":hover":{backgroundColor :"#FEE500" }}}
-      >카카오로 로그인하기</Button>
-
-
-      {/* <Button onClick={()=>{NaverLogin()}}
-       size ="large" fullWidth
-        variant="contained" sx={{m:1, color : "white",  backgroundColor:"#03C75A",
-        ":hover":{backgroundColor :"#03C75A" }}}
-      >네이버로 로그인하기</Button> */}
-      
-      {/* <KakaoLogin/> */}
-       <NaverLogin/>
-
-
-        <Button onClick={()=>{navigate('/Login04');}}
-            size ="large" fullWidth
-            variant="contained" sx={{m:1, color : "rgba(52, 113, 220, 0.70)",  backgroundColor:"#F3F8FE" ,
-            ":hover":{backgroundColor :"#F3F8FE" }}}>
-            이메일로 로그인하기</Button>
-          
-      <Grid container>
-        <Grid item xs ><Button onClick={()=>{navigate('/Login05');}}
-        >회원가입</Button></Grid>
-        <Grid item ><Button onClick={()=>{navigate('/Login06');}}
-        >아이디/패스워드 찾기</Button></Grid>
-        {/* <Grid item xs><Button>비밀번호 찾기</Button></Grid> */}
-      </Grid>
+        ":hover":{backgroundColor :"#FEE500" }}}>
+      카카오 로그인</Button>
       </Box>
-        
-
-    </Container>
-
-    </div>
-    </div>
-  );
-}
-  
-  
-  
-  {/* <TextField
-        margin = 'normal'
-        label="이메일 주소" 
-        required
-        fullWidth
-        name="email"
-        autoComplete="email"
-        // autoFocus
-      />
-      <TextField
-       label="비밀번호"
-       type="password"
-       required fullWidth
-       name = "password"
-       autoComplete='current-password'
-       
-
-       />
-       <FormControlLabel control ={       
-      <Checkbox value="remember" color="primary" />}
-      label="기억하기"
-      /> */}
-
-            {/* <Button type="submit" fullWidth
-              variant="contained" sx={{ mt: 2, mb: 2 }}> 로그인 </Button> */}
 
 <Grid container>
   <Grid item xs><Link>아이디 찾기</Link></Grid>
