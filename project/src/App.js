@@ -6,7 +6,7 @@ import Cart from './Page/Cart';
 import Header from './Page/Header';
 import Footer from './Page/Footer';
 import LogInUI from './components/Login/Login01';
-import Product from './Page/product';
+
 
 
 function App() {
