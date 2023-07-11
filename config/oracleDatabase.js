@@ -102,16 +102,17 @@ async function getSelect(request, response) {
 //       });
 //     });
 //   }
-  app.get('/user', async function (request, response) {
-    try {
-        const result = await getSelect(request, response)
-        response.send(result)
-    } catch (error) {
-        console.log(error)
-        response.sendStatus(500)
-    }
-})
+//   app.get('/user', async function (request, response) {
+//     try {
+//         const result = await getSelect(request, response)
+//         response.send(result)
+//     } catch (error) {
+//         console.log(error)
+//         response.sendStatus(500)
+//     }
+// })
 
+// 회원가입
 router.post('/user/join', (req, res) => {
     console.log('join 접근!', req.body);
     let sql2 = 'select id from t_user where id=?'
@@ -138,9 +139,11 @@ router.post('/user/join', (req, res) => {
         })
 })
 
+
+// 로그인
 router.post('/user/login', (req,res)=>{
     console.log('로그인 라우터');
-    let sql = 'SELECT * FROM member2 WHERE id=? and pw=?'
+    let sql = 'SELECT * FROM t_user WHERE id=? and pw=?'
 
     conn.query(sql, 
         [req.body.userData.id, req.body.userData.pw], 
@@ -153,6 +156,40 @@ router.post('/user/login', (req,res)=>{
             }
         })
 })
+
+// 아이디 찾기(이메일로)
+router.post('/user/login', (req, res) => {
+    console.log('login router');
+    let sql = 'SELECT id FROM t_user WHERE email=?';
+
+    conn.query(sql,
+        [req.body.userData.email],
+        (err, rows) => {
+            console.log(rows);
+            if (rows.length > 0) {
+                res.json({ result: 'Success!!', id: rows[0].id });
+            } else {
+                res.json({ result: 'Failed' });
+            }
+        });
+});
+
+//  아이디로 비밀번호 찾기
+router.post('/user/findPassword', (req, res) => {
+    console.log('findPassword router');
+    let sql = 'SELECT pw FROM t_user WHERE id=?';
+
+    conn.query(sql,
+        [req.body.userData.id],
+        (err, rows) => {
+            console.log(rows);
+            if (rows.length > 0) {
+                res.json({ result: 'Success!!', password: rows[0].pw });
+            } else {
+                res.json({ result: 'Failed' });
+            }
+        });
+});
 
 
 
