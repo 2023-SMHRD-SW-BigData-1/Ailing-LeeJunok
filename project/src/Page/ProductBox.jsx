@@ -21,7 +21,9 @@ const ProductBox = () => {
 
   const showMoreButton =
     productCount < products.length ? (
-      <button onClick={handleShowMore} className='watch'>더 보기</button>
+      <div className='watch'>
+      <button onClick={handleShowMore}>더 보기</button>
+      </div>
       ) : null;
 
   const productRows = [];
