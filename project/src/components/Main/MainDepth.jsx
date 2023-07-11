@@ -1,7 +1,8 @@
 
-
 import React, { useContext, useEffect, useState } from 'react'
 import { productContext } from '../../context/ProductContext'
+import json from '../../Json/Product.json'
+
 
 const MainDepth = ({name,url}) => {
 
@@ -13,7 +14,7 @@ const MainDepth = ({name,url}) => {
             switch (name) {
                 case '면역':
                     setProductName('면역')                    
-                    setProduct([{url : 'https://www.nhis.or.kr/magazin/152/html/style/images/sub2_img1.jpg',text : 'ㅇ'},
+                    setProduct([{ url : 'https://www.nhis.or.kr/magazin/152/html/style/images/sub2_img1.jpg' ,text : 'ㅇ'},
                     {url : 'https://www.nhis.or.kr/magazin/152/html/style/images/sub2_img1.jpg',text : 'ㅇ'},
                     {url : 'https://www.nhis.or.kr/magazin/152/html/style/images/sub2_img1.jpg',text : 'ㅇ'},
                     {url : 'https://www.nhis.or.kr/magazin/152/html/style/images/sub2_img1.jpg',text : 'ㅇ'},

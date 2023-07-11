@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ProductInfo from './Productinfo';
 
+
 const ProductBox = () => {
   const initialProductCount = 9; // 초기에 노출할 상품 개수
   const [productCount, setProductCount] = useState(initialProductCount);
@@ -9,7 +10,7 @@ const ProductBox = () => {
     {
       imageSrc: 'https://tgzzmmgvheix1905536.cdn.ntruss.com/2020/02/73d71a9a19234194bed8f823657dbe2b' , //이미지 
       subtitle: '목감기에는 역시', // 부제
-      title: '프로바이오텍스지', //상품명
+      title: setProductCount[1], //상품명
       price: '금액' // 금액 이 이후 똑같은 방식으로 이어 붙이면 됨
     },
     {
