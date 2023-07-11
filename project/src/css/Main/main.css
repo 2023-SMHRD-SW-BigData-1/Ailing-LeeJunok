@@ -90,7 +90,7 @@
 .innercard {
   justify-items: center;
   border-radius: 15px;
-  border: 1px solid #e5e8eb;
+  border: 2px solid #e5e8eb;
 }
 .innercard img {
   float: left;
@@ -98,8 +98,8 @@
   height: 200px;
 }
 .innercard .name {
-  margin-top: 38px;
-  font-size: 20px;
+  margin-top: 40px;
+  font-size: 19px;
   color: black;
 }
 .innercard .maker {
@@ -198,6 +198,7 @@
   height: 600px;
   border-radius: 15px;
   margin-top: 120px;
+  justify-content: center;
 }
 .hanpo p {
   position: relative;
@@ -208,7 +209,7 @@
 
 .top::before {
   content: "";
-  background-image: url("https://ifh.cc/g/owONZ6.jpg");
+  background-image: url("https://ifh.cc/g/dOHKTH.jpg");
   background-size: cover;
   border-radius: 15px;
   opacity: 0.9;
@@ -255,15 +256,15 @@
   opacity: 1;
   right: 27px;
 }
-.maingridWarpper .gridBox h4 {
-  position: static;
-  font-size: 25px;
+.maingridWarpper .gridBox .gridTitle {
+  position: relative;
+  font-size: 30px;
   line-height: 1.4;
   letter-spacing: -0.5px;
 }
-.maingridWarpper .gridBox p {
+.maingridWarpper .gridBox .gridText {
+  position: relative;
   font-size: 14px;
-  padding-top: 10px;
 }
 .maingridWarpper .gridBox .arrow {
   position: absolute;
@@ -283,7 +284,7 @@
 }
 .maingridWarpper .Box1::before {
   content: "";
-  background-image: url("https://ifh.cc/g/YoZTwt.jpg");
+  background-image: url("https://ifh.cc/g/PkZd06.jpg");
   background-size: cover;
   border-radius: 15px;
   opacity: 0.6;
@@ -298,7 +299,7 @@
 }
 .maingridWarpper .Box2::before {
   content: "";
-  background-image: url("https://ifh.cc/g/zXa7C1.jpg");
+  background-image: url("https://ifh.cc/g/LMPZfz.jpg");
   background-size: cover;
   border-radius: 15px;
   opacity: 0.6;
@@ -313,7 +314,7 @@
 }
 .maingridWarpper .Box3::before {
   content: "";
-  background-image: url("https://ifh.cc/g/Jpo3Vh.jpg");
+  background-image: url("https://ifh.cc/g/Hs1Sbg.jpg");
   background-size: cover;
   border-radius: 15px;
   opacity: 0.6;
@@ -328,7 +329,7 @@
 }
 .maingridWarpper .Box4::before {
   content: "";
-  background-image: url("https://ifh.cc/g/bP1W5Q.jpg");
+  background-image: url("https://ifh.cc/g/tWOGm4.jpg");
   background-size: cover;
   border-radius: 15px;
   opacity: 0.6;
@@ -343,7 +344,7 @@
 }
 .maingridWarpper .Box5::before {
   content: "";
-  background-image: url("https://ifh.cc/g/mAXlJg.jpg");
+  background-image: url("https://ifh.cc/g/dDpJj4.jpg");
   background-size: cover;
   border-radius: 15px;
   opacity: 0.6;
@@ -364,7 +365,6 @@
 }
 .slider {
   background: white;
-  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
   height: 300px;
   margin: auto;
   overflow: hidden;
