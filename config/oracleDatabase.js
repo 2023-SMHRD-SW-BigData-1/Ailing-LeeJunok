@@ -158,7 +158,7 @@ router.post('/user/login', (req,res)=>{
 })
 
 // 아이디 찾기(이메일로)
-router.post('/user/login', (req, res) => {
+router.post('/user/findId', (req, res) => {
     console.log('login router');
     let sql = 'SELECT id FROM t_user WHERE email=?';
 
