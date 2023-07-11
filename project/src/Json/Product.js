@@ -199,6 +199,54 @@ var productjs =
         "PROD_PRICE": 55000,
         "PROD_IMG": "https://www.nightoclock.co.kr/data/goods/85/2023/01/_temp_16732450725259view.JPG",
         "PROD_CATEGORY": "스트레스, 피로"
+    },
+    {
+        "PROD_SEQ": 26,
+        "PROD_NAME": "바나바",
+        "PROD_MAKER": "코스맥스엔비티",
+        "PROD_PRICE": 11600,
+        "PROD_IMG": "https://www.mypuzzle.co.kr/upload/item/308/308_FML_20230407_88352.png",
+        "PROD_CATEGORY": "혈당,다이어트"
+    },
+    {
+      "PROD_SEQ": 27,
+      "PROD_NAME": "피에스",
+      "PROD_MAKER": "서흥",
+      "PROD_PRICE": 40000,
+      "PROD_IMG": "https://www.mypuzzle.co.kr/upload/item/314/314_FML_20230407_40134.png",
+      "PROD_CATEGORY": "두뇌, 피부"
+    },
+    {
+      "PROD_SEQ": 28,
+      "PROD_NAME": '보스웰리아',
+      "PROD_MAKER": '서흥',
+      "PROD_PRICE": 59000,
+      "PROD_IMG": 'https://www.mypuzzle.co.kr/upload/item/319/319_FML_20230407_47484.png',
+      "PROD_CATEGORY": '관절'
+    },
+    {
+      "PROD_SEQ": 29,
+      "PROD_NAME": '그린세라',
+      "PROD_MAKER": '노바렉스',
+      "PROD_PRICE": 36400,
+      "PROD_IMG": 'https://www.mypuzzle.co.kr/upload/item/304/304_FML_20230407_40699.png',
+      "PROD_CATEGORY": '위'
+    },
+    {
+      "PROD_SEQ": 30,
+      "PROD_NAME": '트리플엑스 멀티 비타민',
+      "PROD_MAKER": '서흥',
+      "PROD_PRICE": 25600,
+      "PROD_IMG": 'https://www.mypuzzle.co.kr/upload/item/321/321_FML_20230407_81375.png',
+      "PROD_CATEGORY": '피로, 면역'
+    },
+    {
+      "PROD_SEQ": 31,
+      "PROD_NAME": '비오틴 블랙',
+      "PROD_MAKER": '코스맥스엔비티',
+      "PROD_PRICE": 16000,
+      "PROD_IMG": 'https://www.mypuzzle.co.kr/upload/item/323/323_FML_20230407_36276.png',
+      "PROD_CATEGORY": '다이어트, 피로'
     }
 ]
 
