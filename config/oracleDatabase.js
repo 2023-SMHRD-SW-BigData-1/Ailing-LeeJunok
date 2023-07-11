@@ -68,40 +68,40 @@ async function getSelect(request, response) {
 })
   
   // select 유저
-async function getSelect(request, response) {
-    let sql = 'select * from t_user';
+// async function getSelect(request, response) {
+//     let sql = 'select * from t_user';
   
-    console.log('유저');
+//     console.log('유저');
   
-    return new Promise((resolve, reject) => {
-      oracledb.getConnection(dbConfig, (err, conn) => {
-        if (err) {
-          reject(err);
-          return;
-        }
-        conn.execute(sql, [], (err1, result) => {
-          if (err1) {
-            reject(err1);
-            return;
-          }
-          console.log(result.rows);
+//     return new Promise((resolve, reject) => {
+//       oracledb.getConnection(dbConfig, (err, conn) => {
+//         if (err) {
+//           reject(err);
+//           return;
+//         }
+//         conn.execute(sql, [], (err1, result) => {
+//           if (err1) {
+//             reject(err1);
+//             return;
+//           }
+//           console.log(result.rows);
   
-          conn.release((err2) => {
-            if (err2) {
-              reject(err2);
-              return;
-            }
-            console.log('db 연결해제');
+//           conn.release((err2) => {
+//             if (err2) {
+//               reject(err2);
+//               return;
+//             }
+//             console.log('db 연결해제');
   
 
             // 유저 ID 검색 결과를 JSON 형태로 변환
-            const images = result.rows.map();
-            resolve(images);
-          });
-        });
-      });
-    });
-  }
+//             const images = result.rows.map();
+//             resolve(images);
+//           });
+//         });
+//       });
+//     });
+//   }
   app.get('/user', async function (request, response) {
     try {
         const result = await getSelect(request, response)
