@@ -16,7 +16,7 @@ const services = () => {
                         <a href="/services/question">자주하는 질문</a>
                     </div>
                     <div>
-                        <a href="">1:1 문의</a>
+                        <a href="/services/oneone">1:1 문의</a>
                     </div>
                 </div>
             </div>
