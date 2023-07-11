@@ -68,40 +68,40 @@ async function getSelect(request, response) {
 })
   
   // select 유저
-async function getSelect(request, response) {
-    let sql = 'select * from t_user';
+// async function getSelect(request, response) {
+//     let sql = 'select * from t_user';
   
-    console.log('유저');
+//     console.log('유저');
   
-    return new Promise((resolve, reject) => {
-      oracledb.getConnection(dbConfig, (err, conn) => {
-        if (err) {
-          reject(err);
-          return;
-        }
-        conn.execute(sql, [], (err1, result) => {
-          if (err1) {
-            reject(err1);
-            return;
-          }
-          console.log(result.rows);
+//     return new Promise((resolve, reject) => {
+//       oracledb.getConnection(dbConfig, (err, conn) => {
+//         if (err) {
+//           reject(err);
+//           return;
+//         }
+//         conn.execute(sql, [], (err1, result) => {
+//           if (err1) {
+//             reject(err1);
+//             return;
+//           }
+//           console.log(result.rows);
   
-          conn.release((err2) => {
-            if (err2) {
-              reject(err2);
-              return;
-            }
-            console.log('db 연결해제');
+//           conn.release((err2) => {
+//             if (err2) {
+//               reject(err2);
+//               return;
+//             }
+//             console.log('db 연결해제');
   
-            
+
             // 유저 ID 검색 결과를 JSON 형태로 변환
-            const images = result.rows.map(() => ());
-            resolve(images);
-          });
-        });
-      });
-    });
-  }
+//             const images = result.rows.map();
+//             resolve(images);
+//           });
+//         });
+//       });
+//     });
+//   }
   app.get('/user', async function (request, response) {
     try {
         const result = await getSelect(request, response)
@@ -110,6 +110,32 @@ async function getSelect(request, response) {
         console.log(error)
         response.sendStatus(500)
     }
+})
+
+router.post('/user/join', (req, res) => {
+    console.log('join 접근!', req.body);
+    let sql2 = 'select id from t_user where id=?'
+
+    conn.query(sql2
+        , [req.body.userData.id]
+        , (err, rows) => {
+            console.log(rows);
+            if (rows.length > 0) {
+                res.json({ result: '중복이다!' });
+            } else {
+                let sql = 'insert into member2 values (?,?,?)'
+                conn.query(sql
+                    , [req.body.userData.id, req.body.userData.pw, req.body.userData.add]
+                    , (err, rows) => {
+                        if (rows) {
+                            console.log('성공했다!');
+                            res.json({ result: '성공!' })
+                        } else {
+                            console.log('실패했다....', err);
+                        }
+                    })
+            }
+        })
 })
 
 router.post('/user/login', (req,res)=>{
