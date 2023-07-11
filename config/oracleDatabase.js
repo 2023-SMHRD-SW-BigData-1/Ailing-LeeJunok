@@ -93,6 +93,7 @@ async function getSelect(request, response) {
             }
             console.log('db 연결해제');
   
+            
             // 유저 ID 검색 결과를 JSON 형태로 변환
             const images = result.rows.map(() => ());
             resolve(images);
