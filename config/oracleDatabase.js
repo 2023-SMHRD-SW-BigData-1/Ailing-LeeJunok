@@ -114,7 +114,7 @@ async function getSelect(request, response) {
 
 router.post('/user/join', (req, res) => {
     console.log('join 접근!', req.body);
-    let sql2 = 'select id from member2 where id=?'
+    let sql2 = 'select id from t_user where id=?'
 
     conn.query(sql2
         , [req.body.userData.id]
