@@ -1,8 +1,8 @@
 const express = require('express')
 const app = express()
 
-const server = app.listen(3000, () => {
-    console.log('server start, port 3000')
+const server = app.listen(3001, () => {
+    console.log('server start, port 3001')
 })
 
 const oracledb = require('oracledb')
@@ -15,15 +15,7 @@ oracledb.initOracleClient({libDir:'C:/Users/smhrd/Desktop/oracleClient'})
 
 app.use('/', router)
 
-app.get('/product', async function (request, response) {
-    try {
-        const result = await getSelect(request, response)
-        response.send(result)
-    } catch (error) {
-        console.log(error)
-        response.sendStatus(500)
-    }
-})
+
 
 const dbConfig = {
     user: "campus_h_230627_2",
@@ -65,47 +57,104 @@ async function getSelect(request, response) {
       });
     });
   }
+  app.get('/product', async function (request, response) {
+    try {
+        const result = await getSelect(request, response)
+        response.send(result)
+    } catch (error) {
+        console.log(error)
+        response.sendStatus(500)
+    }
+})
+  
+  // select 유저
+// async function getSelect(request, response) {
+//     let sql = 'select * from t_user';
+  
+//     console.log('유저');
+  
+//     return new Promise((resolve, reject) => {
+//       oracledb.getConnection(dbConfig, (err, conn) => {
+//         if (err) {
+//           reject(err);
+//           return;
+//         }
+//         conn.execute(sql, [], (err1, result) => {
+//           if (err1) {
+//             reject(err1);
+//             return;
+//           }
+//           console.log(result.rows);
+  
+//           conn.release((err2) => {
+//             if (err2) {
+//               reject(err2);
+//               return;
+//             }
+//             console.log('db 연결해제');
   
 
-// 제품 가격 가져오기
-// async function getSelect(request, response) {
-//     let sql = 'select prod_price from t_product'
+            // 유저 ID 검색 결과를 JSON 형태로 변환
+//             const images = result.rows.map();
+//             resolve(images);
+//           });
+//         });
+//       });
+//     });
+//   }
+  app.get('/user', async function (request, response) {
+    try {
+        const result = await getSelect(request, response)
+        response.send(result)
+    } catch (error) {
+        console.log(error)
+        response.sendStatus(500)
+    }
+})
 
-//     console.log('가격');
+router.post('/user/join', (req, res) => {
+    console.log('join 접근!', req.body);
+    let sql2 = 'select id from t_user where id=?'
 
-//     oracledb.getConnection(dbConfig,(err,conn)=>{
-//         if(err) throw err;
-//         conn.execute(sql,[],(err1,result)=>{
-//             if(err1) throw err1;
-//             console.log(result.rows);
+    conn.query(sql2
+        , [req.body.userData.id]
+        , (err, rows) => {
+            console.log(rows);
+            if (rows.length > 0) {
+                res.json({ result: '중복이다!' });
+            } else {
+                let sql = 'insert into member2 values (?,?,?)'
+                conn.query(sql
+                    , [req.body.userData.id, req.body.userData.pw, req.body.userData.add]
+                    , (err, rows) => {
+                        if (rows) {
+                            console.log('성공했다!');
+                            res.json({ result: '성공!' })
+                        } else {
+                            console.log('실패했다....', err);
+                        }
+                    })
+            }
+        })
+})
 
-//             conn.release((err2)=>{
-//                 if(err2) throw err2;
-//                 console.log('db 연결해제');
-//             })
-//         })
-//     })
-// }
+router.post('/user/login', (req,res)=>{
+    console.log('로그인 라우터');
+    let sql = 'SELECT * FROM member2 WHERE id=? and pw=?'
 
-// // 제품 이름 가져오기
-// async function getSelect(request, response) {
-//     let sql = 'select prod_name from t_product'
+    conn.query(sql, 
+        [req.body.userData.id, req.body.userData.pw], 
+        (err, rows)=>{
+            console.log(rows);
+            if(rows.length>0){
+                res.json({result : '성공!!', id : req.body.userData.id})
+            } else {
+                res.json({result : "실패"})
+            }
+        })
+})
 
-//     console.log('이름');
 
-//     oracledb.getConnection(dbConfig,(err,conn)=>{
-//         if(err) throw err;
-//         conn.execute(sql,[],(err1,result)=>{
-//             if(err1) throw err1;
-//             console.log(result.rows);
-
-//             conn.release((err2)=>{
-//                 if(err2) throw err2;
-//                 console.log('db 연결해제');
-//             })
-//         })
-//     })
-// }
 
 
 module.exports = router;

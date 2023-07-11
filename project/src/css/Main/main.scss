@@ -107,26 +107,44 @@
                 
             }
             .innercard{
-                display: flex;
-                flex-direction: column;
-                height: 250px;
-                width: 300px;
-                margin-top: 50px;
-                border-radius:15px ;
-                background: rgba(136, 132, 132, 0.09);
+                justify-items: center;
+                border-radius: 15px;
+                border: 2px solid #e5e8eb;
+                
                 img{
-                    
-                    width: 100%;
-                    height: 60%;
-                    border-top-left-radius: 15px;
-                    border-top-right-radius: 15px;
+                    float: left;
+                    width: 200px;
+                    height: 200px;
                 }
+                .name{
+                    margin-top: 40px;
+                    font-size: 19px;
+                    color: black;
+                }
+                .maker{
+                    position: relative;
+                    font-size: 12px;
+                    color: black;
+                    bottom: 20px;
+                }
+                .categorytext{
+                    position: relative;
+                    font-size: 11px;
+                    bottom: 35px;
+                }
+                .price{
+                    position: relative;
+                    font-size: 25px;
+                    color: black;
+                    bottom: 20px;
+                }
+            
+                
             }
 
-            
             .box {
                 width: 100%;
-                height: 370px;
+                height: 300px;
                 top: 30px;
                 border-radius: 15px;
                 // background: lighten(#f0f4c3, 10%);
@@ -134,7 +152,6 @@
                 overflow: hidden;
                 transform: translate3d(0, 0, 0);
             }
-            
             .wave {
                 opacity: .4;
                 position: absolute;
@@ -149,17 +166,14 @@
                 border-radius: 43%;
                 animation: drift 3000ms infinite linear;
             }
-            
             .wave.-three {
                 animation: drift 5000ms infinite linear;
             }
-            
             .wave.-two {
                 animation: drift 7000ms infinite linear;
                 opacity: .1;
                 // background: yellow;
             }
-            
             .box:after {
                 content: '';
                 display: block;
@@ -201,20 +215,20 @@
                 height: 600px;
                 border-radius: 15px;
                 margin-top: 120px; 
+                justify-content: center;
                 p{
                     position: relative;
                     margin-top: 160px;
                     text-align: center;
                     font-size: 50px;
-                    
                 }
             }
             .top::before{
                 content: "";
-                background-image: url('https://ifh.cc/g/8XVv84.jpg');
+                background-image: url('https://ifh.cc/g/dOHKTH.jpg');
                 background-size: cover;
                 border-radius: 15px;
-                opacity: 0.6;
+                opacity: 0.9;
                 position: absolute;
                 top: 0px;
                 left: 0px;
@@ -254,6 +268,7 @@
                     transition-timing-function: ease-out;
                     text-decoration: none;
                     color: black;
+                    
                     &:hover{
                         -webkit-transform: translateY(-13px);
                         transform: translateY(-13px);
@@ -262,15 +277,15 @@
                             right: 27px;
                         }
                     }
-                    h4{
-                        position: static;
-                        font-size: 25px;
+                    .gridTitle{
+                        position: relative;
+                        font-size: 30px;
                         line-height: 1.4;
                         letter-spacing: -.5px;
                     }
-                    p{
+                    .gridText{
+                        position: relative;
                         font-size: 14px;
-                        padding-top: 10px;
                     }
                     .arrow{
                         position: absolute;
@@ -287,51 +302,100 @@
                 }
                 .Box1{
                     grid-area: 1/1/3/2;
-                    
                     padding: 80px 60px;
-                    border: 1px solid black;
+                    &::before{
+                        content: "";
+                        background-image: url('https://ifh.cc/g/PkZd06.jpg');
+                        background-size: cover;
+                        border-radius: 15px;
+                        opacity: 0.6;
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                        right: 0px;
+                        bottom: 0px;
+                    }
                 }
                 .Box2{
-                    border: 1px solid black;
+                    background-size: cover;
+                    &::before{
+                        content: "";
+                        background-image: url('https://ifh.cc/g/LMPZfz.jpg');
+                        background-size: cover;
+                        border-radius: 15px;
+                        opacity: 0.6;
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                        right: 0px;
+                        bottom: 0px;
+                    }
                 }
                 .Box3{
-                    border: 1px solid black;
+                    background-size: cover;
+                    &::before{
+                        content: "";
+                        background-image: url('https://ifh.cc/g/Hs1Sbg.jpg');
+                        background-size: cover;
+                        border-radius: 15px;
+                        opacity: 0.6;
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                        right: 0px;
+                        bottom: 0px;
+                    }
                 }
                 .Box4{
-                    border: 1px solid black;
+                    background-size: cover;
+                    &::before{
+                        content: "";
+                        background-image: url('https://ifh.cc/g/tWOGm4.jpg');
+                        background-size: cover;
+                        border-radius: 15px;
+                        opacity: 0.6;
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                        right: 0px;
+                        bottom: 0px;
+                    
+                    }
                 }
                 .Box5{
-                    border: 1px solid black;
+                    background-size: cover;
+                    &::before{
+                        content: "";
+                        background-image: url('https://ifh.cc/g/dDpJj4.jpg');
+                        background-size: cover;
+                        border-radius: 15px;
+                        opacity: 0.6;
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                        right: 0px;
+                        bottom: 0px;
+                    
+                    }
                 }
             }
-
-
-
-            
-            
+    
             @mixin white-gradient {
                 background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
             }
-            
             $animationSpeed: 40s;
-            
             // Animation
             @keyframes scroll {
                 0% { transform: translateX(0); }
                 100% { transform: translateX(calc(-250px * 7))}
             }
-            
-            
-            // Styling
             .slider {
                 background: white;
-                box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
                 height: 300px;
                 margin: auto;
                 overflow:hidden;
                 position: relative;
                 width: 100%;
-                
                 &::before,
                 &::after {
                     @include white-gradient;
@@ -341,24 +405,20 @@
                     width: 200px;
                     z-index: 2;
                 }
-                
                 &::after {
                     right: 0;
                     top: 0;
                     transform: rotateZ(180deg);
                 }
-            
                 &::before {
                     left: 0;
                     top: 0;
                 }
-                
                 .slide-track {
                     animation: scroll $animationSpeed linear infinite;
                     display: flex;
                     width: calc(250px * 14);
                 }
-                
                 .slide {
                     height: 300px;
                     width: 250px;
@@ -367,4 +427,5 @@
                     border: 1px solid black;
                 }
             }
+        
         

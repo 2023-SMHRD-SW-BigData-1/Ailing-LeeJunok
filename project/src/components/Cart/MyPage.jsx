@@ -59,40 +59,7 @@ const MyPage = () => {
                             </tbody>
                         </table>
                     </div>
-                    {/* 최근 등록 게시글 */}
-                    <div className='hd'>
-                        <h2>최근 등록 게시글</h2>
-                    </div>
-                    <div className='tbl'>
-                        <table summary='등록일자, 제목, 게시판'>
-    
-                            <colgroup>
-                            <col width='150'/>
-                            <col width='300'/>
-                            <col width='200'/>
-                            </colgroup>
-                            <thead>
-                                <tr>
-                                    <th>
-                                    <div classNames="tb-center">DATE</div>
-                                    </th>
-                                    <th>
-                                    <div classNames="tb-center">SUBJECT</div>
-                                    </th>
-                                    <th>
-                                    <div classNames="tb-center">BOARD</div>
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td colSpan='3'>
-                                        <div className='tb-center'>등록한 게시글이 없습니다.</div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                  
                     {/* 관심 상품 정보 */}
                     <div className='hd'>
                         <h2>관심 상품 정보</h2>

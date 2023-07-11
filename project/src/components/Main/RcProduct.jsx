@@ -14,21 +14,21 @@ const RcProduct = () => {
 
 
 return (
-    <div className='nvbg'>
+    
     <Swiper
     modules={[Navigation,A11y]}
     spaceBetween={50}
-    slidesPerView={5}
+    slidesPerView={4}
     navigation
     onSwiper={(swiper) => console.log(swiper)}
     onSlideChange={() => console.log('slide change')}
-    style={{height:'340px',marginTop:'30px'}}
+    style={{height:'200px',marginTop:'100px'}}
     
     >
-    {product.map(item=><SwiperSlide><ProductCard key={item.url} url={item.url} text={item.text}/></SwiperSlide>)}
+    {product.map(item=><SwiperSlide className='innercard' style={{height:"200px",width:"400px"}} ><ProductCard key={item.ROD_SEQ} url={item.PROD_IMG} name={item.PROD_NAME} price={item.PROD_PRICE} category={item.PROD_CATEGORY} maker={item.PROD_MAKER}/></SwiperSlide>)}
 
     </Swiper>
-    </div>
+    
 )
 }
 
