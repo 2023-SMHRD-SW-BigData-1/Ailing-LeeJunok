@@ -25,7 +25,7 @@ return (
     style={{height:'340px',marginTop:'30px'}}
     
     >
-    {product.map(item=><SwiperSlide><ProductCard key={item.ROD_SEQ} url={item.PROD_IMG} text={item.text}/></SwiperSlide>)}
+    {product.map(item=><SwiperSlide><ProductCard key={item.ROD_SEQ} url={item.PROD_IMG} name={item.PROD_NAME}/></SwiperSlide>)}
 
     </Swiper>
     </div>
