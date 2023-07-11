@@ -1,1 +1,326 @@
-.mainBanner{overflow:hidden;width:95%;margin:0 auto;border-radius:15px}.innerDepth{display:grid;width:100%;margin:0 auto;grid-template-rows:repeat(1, 1fr);grid-template-columns:repeat(9, 1fr);justify-items:center}.innerDepth button{display:flex;text-align:center;align-items:center;justify-content:center;width:150px;height:40px;text-transform:uppercase !important;letter-spacing:2px;cursor:hand;background:#fff;text-transform:capitalize;border:1px solid rgba(211,211,211,.323);border-radius:50px;position:relative;overflow:hidden !important;transition:all .3s ease-in-out;box-shadow:0 0 2px rgba(0,0,0,.08),4px 12px 36px rgba(0,0,0,.09);border-radius:16px;padding:26px 0 28px;background:rgba(0,0,0,0) !important;z-index:10}.innerDepth button img{margin-right:10px;width:40px;height:40px}.innerDepth button p{margin-top:20px}.innerDepth button:hover{border:1px solid #78c1f3;color:#fff !important}.innerDepth button::before{content:"";width:0%;height:100%;display:block;background:#78c1f3;position:absolute;transform:skewX(-20deg);left:-10%;opacity:1;top:0;z-index:-12;transition:all .7s cubic-bezier(0.77, 0, 0.175, 1);box-shadow:2px 0px 14px rgba(0,0,0,.6)}.innerDepth button::after{content:"";width:0%;height:100%;display:block;background:#80ffd3;position:absolute;transform:skewX(-20deg);left:-10%;opacity:0;top:0;z-index:-15;transition:all .4s cubic-bezier(0.2, 0.95, 0.57, 0.99);box-shadow:2px 0px 14px rgba(0,0,0,.6)}.innerDepth button:hover::before,.innerDepth .btn1O:hover::before{opacity:1;width:116%}.innerDepth button:hover::after,.innerDepth .btn1O:hover::after{opacity:1;width:120%}.innercard{display:flex;flex-direction:column;height:250px;width:300px;margin-top:50px;border-radius:15px;background:rgba(136,132,132,.09)}.innercard img{width:100%;height:60%;border-top-left-radius:15px;border-top-right-radius:15px}.box{width:100%;height:370px;top:30px;border-radius:15px;position:relative;overflow:hidden;transform:translate3d(0, 0, 0)}.wave{opacity:.4;position:absolute;top:3%;left:50%;background:#0af;width:500px;height:500px;margin-left:-250px;margin-top:-250px;transform-origin:50% 48%;border-radius:43%;animation:drift 3000ms infinite linear}.wave.-three{animation:drift 5000ms infinite linear}.wave.-two{animation:drift 7000ms infinite linear;opacity:.1}.box:after{content:"";display:block;left:0;top:0;width:100%;height:100%;z-index:11;transform:translate3d(0, 0, 0)}.title{position:absolute;left:0;top:0;width:100%;z-index:1;line-height:300px;text-align:center;transform:translate3d(0, 0, 0);color:#fff;text-transform:uppercase;font-family:"Playfair Display",serif;letter-spacing:.4em;font-size:24px;text-shadow:0 1px 0 rgba(0,0,0,.1);text-indent:.3em}@keyframes drift{from{transform:rotate(0deg)}from{transform:rotate(360deg)}}.hanpo{display:flex;position:relative;width:100%;height:600px;border-radius:15px;margin-top:120px}.hanpo p{position:relative;margin-top:160px;text-align:center;font-size:50px}.top::before{content:"";background-image:url("https://ifh.cc/g/8XVv84.jpg");background-size:cover;border-radius:15px;opacity:.6;position:absolute;top:0px;left:0px;right:0px;bottom:0px}.maingridWarpper{display:grid;grid-template-columns:repeat(3, 1fr);grid-template-rows:repeat(2, 1fr);grid-gap:28px;gap:28px}.maingridWarpper .gridBox{will-change:transform;position:relative;min-height:360px;overflow:hidden;text-align:left;background-position:100% 100%;background-size:cover;background-repeat:no-repeat;border-radius:28px;padding:36px;width:100%;display:inline-block;vertical-align:middle;transform:perspective(1px) translateZ(0);box-shadow:0 0 1px rgba(0,0,0,0);transition-duration:.3s;transition-property:transform;transition-timing-function:ease-out;text-decoration:none;color:#000}.maingridWarpper .gridBox:hover{transform:translateY(-13px)}.maingridWarpper .gridBox:hover .arrow{opacity:1;right:27px}.maingridWarpper .gridBox h4{position:static;font-size:25px;line-height:1.4;letter-spacing:-0.5px}.maingridWarpper .gridBox p{font-size:14px;padding-top:10px}.maingridWarpper .gridBox .arrow{position:absolute;background:url("https://ifh.cc/g/n2AK0k.png") 0 0/100% auto no-repeat;top:36px;right:36px;width:33px;height:33px;will-change:transform;transition:.2s ease 0s;display:block;opacity:.7}.maingridWarpper .Box1{grid-area:1/1/3/2;padding:80px 60px;border:1px solid #000}.maingridWarpper .Box2{border:1px solid #000}.maingridWarpper .Box3{border:1px solid #000}.maingridWarpper .Box4{border:1px solid #000}.maingridWarpper .Box5{border:1px solid #000}@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-1750px)}}.slider{background:#fff;box-shadow:0 10px 20px -5px rgba(0,0,0,.125);height:300px;margin:auto;overflow:hidden;position:relative;width:100%}.slider::before,.slider::after{background:linear-gradient(to right, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);content:"";height:300px;position:absolute;width:200px;z-index:2}.slider::after{right:0;top:0;transform:rotateZ(180deg)}.slider::before{left:0;top:0}.slider .slide-track{animation:scroll 40s linear infinite;display:flex;width:3500px}.slider .slide{height:300px;width:250px;margin-left:10px;border-radius:15px;border:1px solid #000}
+.mainBanner {
+  overflow: hidden;
+  width: 95%;
+  margin: 0 auto;
+  border-radius: 15px;
+}
+
+.innerDepth {
+  display: grid;
+  width: 100%;
+  margin: 0 auto;
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-columns: repeat(9, 1fr);
+  justify-items: center;
+}
+.innerDepth button {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 40px;
+  text-transform: uppercase !important;
+  letter-spacing: 2px;
+  cursor: hand;
+  background: #fff;
+  text-transform: capitalize;
+  border: 1px solid rgba(211, 211, 211, 0.323);
+  border-radius: 50px;
+  position: relative;
+  overflow: hidden !important;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.08), 4px 12px 36px rgba(0, 0, 0, 0.09);
+  border-radius: 16px;
+  padding: 26px 0 28px;
+  background: transparent !important;
+  z-index: 10;
+}
+.innerDepth button img {
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+}
+.innerDepth button p {
+  margin-top: 20px;
+}
+.innerDepth button:hover {
+  border: 1px solid #78C1F3;
+  color: white !important;
+}
+.innerDepth button::before {
+  content: "";
+  width: 0%;
+  height: 100%;
+  display: block;
+  background: #78C1F3;
+  position: absolute;
+  transform: skewX(-20deg);
+  left: -10%;
+  opacity: 1;
+  top: 0;
+  z-index: -12;
+  transition: all 0.7s cubic-bezier(0.77, 0, 0.175, 1);
+  box-shadow: 2px 0px 14px rgba(0, 0, 0, 0.6);
+}
+.innerDepth button::after {
+  content: "";
+  width: 0%;
+  height: 100%;
+  display: block;
+  background: #80ffd3;
+  position: absolute;
+  transform: skewX(-20deg);
+  left: -10%;
+  opacity: 0;
+  top: 0;
+  z-index: -15;
+  transition: all 0.4s cubic-bezier(0.2, 0.95, 0.57, 0.99);
+  box-shadow: 2px 0px 14px rgba(0, 0, 0, 0.6);
+}
+.innerDepth button:hover::before, .innerDepth .btn1O:hover::before {
+  opacity: 1;
+  width: 116%;
+}
+.innerDepth button:hover::after, .innerDepth .btn1O:hover::after {
+  opacity: 1;
+  width: 120%;
+}
+
+.innercard {
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+  width: 300px;
+  margin-top: 50px;
+  border-radius: 15px;
+  background: rgba(136, 132, 132, 0.09);
+}
+.innercard img {
+  width: 100%;
+  height: 60%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.box {
+  width: 100%;
+  height: 370px;
+  top: 30px;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+.wave {
+  opacity: 0.4;
+  position: absolute;
+  top: 3%;
+  left: 50%;
+  background: #0af;
+  width: 500px;
+  height: 500px;
+  margin-left: -250px;
+  margin-top: -250px;
+  transform-origin: 50% 48%;
+  border-radius: 43%;
+  animation: drift 3000ms infinite linear;
+}
+
+.wave.-three {
+  animation: drift 5000ms infinite linear;
+}
+
+.wave.-two {
+  animation: drift 7000ms infinite linear;
+  opacity: 0.1;
+}
+
+.box:after {
+  content: "";
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+  transform: translate3d(0, 0, 0);
+}
+
+.title {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  line-height: 300px;
+  text-align: center;
+  transform: translate3d(0, 0, 0);
+  color: white;
+  text-transform: uppercase;
+  font-family: "Playfair Display", serif;
+  letter-spacing: 0.4em;
+  font-size: 24px;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  text-indent: 0.3em;
+}
+
+@keyframes drift {
+  from {
+    transform: rotate(0deg);
+  }
+  from {
+    transform: rotate(360deg);
+  }
+}
+.hanpo {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 600px;
+  border-radius: 15px;
+  margin-top: 120px;
+}
+.hanpo p {
+  position: relative;
+  margin-top: 160px;
+  text-align: center;
+  font-size: 50px;
+}
+
+.top::before {
+  content: "";
+  background-image: url("https://ifh.cc/g/8XVv84.jpg");
+  background-size: cover;
+  border-radius: 15px;
+  opacity: 0.6;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+.maingridWarpper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 28px;
+  gap: 28px;
+}
+.maingridWarpper .gridBox {
+  will-change: transform;
+  position: relative;
+  min-height: 360px;
+  overflow: hidden;
+  text-align: left;
+  background-position: 100% 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 28px;
+  padding: 36px;
+  width: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  transition-duration: 0.3s;
+  transition-property: transform;
+  transition-timing-function: ease-out;
+  text-decoration: none;
+  color: black;
+}
+.maingridWarpper .gridBox:hover {
+  transform: translateY(-13px);
+}
+.maingridWarpper .gridBox:hover .arrow {
+  opacity: 1;
+  right: 27px;
+}
+.maingridWarpper .gridBox h4 {
+  position: static;
+  font-size: 25px;
+  line-height: 1.4;
+  letter-spacing: -0.5px;
+}
+.maingridWarpper .gridBox p {
+  font-size: 14px;
+  padding-top: 10px;
+}
+.maingridWarpper .gridBox .arrow {
+  position: absolute;
+  background: url("https://ifh.cc/g/n2AK0k.png") 0 0/100% auto no-repeat;
+  top: 36px;
+  right: 36px;
+  width: 33px;
+  height: 33px;
+  will-change: transform;
+  transition: 0.2s ease 0s;
+  display: block;
+  opacity: 0.7;
+}
+.maingridWarpper .Box1 {
+  grid-area: 1/1/3/2;
+  padding: 80px 60px;
+  border: 1px solid black;
+}
+.maingridWarpper .Box2 {
+  border: 1px solid black;
+}
+.maingridWarpper .Box3 {
+  border: 1px solid black;
+}
+.maingridWarpper .Box4 {
+  border: 1px solid black;
+}
+.maingridWarpper .Box5 {
+  border: 1px solid black;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-1750px);
+  }
+}
+.slider {
+  background: white;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+  height: 300px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.slider::before, .slider::after {
+  background: linear-gradient(to right, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
+  content: "";
+  height: 300px;
+  position: absolute;
+  width: 200px;
+  z-index: 2;
+}
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+.slider::before {
+  left: 0;
+  top: 0;
+}
+.slider .slide-track {
+  animation: scroll 40s linear infinite;
+  display: flex;
+  width: 3500px;
+}
+.slider .slide {
+  height: 300px;
+  width: 250px;
+  margin-left: 10px;
+  border-radius: 15px;
+  border: 1px solid black;
+}/*# sourceMappingURL=main.css.map */

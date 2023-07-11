@@ -6,7 +6,7 @@ const Join = () => {
     <div>
         <form
             onSubmit={(e)=>{
-             e.preventDefault();
+            e.preventDefault();
              // alert('실행')
             }}
             className='flex flex-col w-60 items-start p-4'
@@ -21,7 +21,7 @@ const Join = () => {
             <div>ID 입력(*)</div>
             <input type ="email" className="w-full border-10 border-black"
             placeholder="이메일 입력"/>
-     
+            
             <div>PW 입력(*)</div>
             <input type ="password" className="w-full border-2 border-black"
             placeholder="PW 입력"/>
