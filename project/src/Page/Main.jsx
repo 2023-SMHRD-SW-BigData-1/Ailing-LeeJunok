@@ -4,11 +4,12 @@ import MainDepth from '../components/Main/MainDepth'
 import { Link } from 'react-router-dom'
 import RcProduct from '../components/Main/RcProduct'
 import { productContext } from '../context/ProductContext'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Atom from '../components/Main/Atom'
 import BenText from '../components/Main/BenText'
 import GrideBox from '../components/Main/GrideBox'
 import Review from '../components/Main/Review'
+import productjs from '../Json/Product'
 
 
 
@@ -28,6 +29,37 @@ const Main = () => {
     
     const [product,setProduct] = useState([]);
     const [productName,setProductName] = useState('');
+
+    useEffect(()=>{  
+        let triger = []
+        switch (productName) {
+            case '면역': productjs.map(item=>{ if (item.PROD_CATEGORY.indexOf('면역') !=-1) {triger.push(item) }})
+            setProduct(triger);break;
+            case '다이어트': productjs.map(item=>{ if (item.PROD_CATEGORY.indexOf('다이어트') !=-1) {triger.push(item) }})
+            setProduct(triger);break;
+            case '피부': productjs.map(item=>{ if (item.PROD_CATEGORY.indexOf('피부') !=-1) {triger.push(item) }})
+            setProduct(triger);break;
+            case '스트레스': productjs.map(item=>{ if (item.PROD_CATEGORY.indexOf('스트레스') !=-1) {triger.push(item) }})
+            setProduct(triger);break;
+            case '피로': productjs.map(item=>{ if (item.PROD_CATEGORY.indexOf('피로') !=-1) {triger.push(item) }})
+            setProduct(triger);break;
+            case '간 건강': productjs.map(item=>{ if (item.PROD_CATEGORY.indexOf('간') !=-1) {triger.push(item) }})
+            setProduct(triger);break;
+            case '눈 건강': productjs.map(item=>{ if (item.PROD_CATEGORY.indexOf('눈') !=-1) {triger.push(item) }})
+            setProduct(triger);break;
+            case '장 건강': productjs.map(item=>{ if (item.PROD_CATEGORY.indexOf('장') !=-1) {triger.push(item) }})
+            setProduct(triger);break;
+            case '수면': productjs.map(item=>{ if (item.PROD_CATEGORY.indexOf('수면') !=-1) {triger.push(item) }})
+            setProduct(triger);break;
+            default:
+            break;
+        }
+    },[productName])         
+
+    
+    
+
+
 
     
     return (
