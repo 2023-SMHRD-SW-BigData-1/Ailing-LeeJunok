@@ -149,7 +149,7 @@ var productjs =
         "PROD_NAME": "감마리놀렌산",
         "PROD_MAKER": "노바렉스",
         "PROD_PRICE": 32600,
-        "PROD_IMG": "https://cdn.clayful.io/stores/SDTSPBE344H5.2QCZ4SCL2GQ8/images/KH4RFUTNYSVE/v1/poduct11-울트라제2의봄.png",
+        "PROD_IMG": "https://cdn.clayful.io/stores/SDTSPBE344H5.2QCZ4SCL2GQ8/images/KH4RFUTNYSVE/v1/product11-%E1%84%8B%E1%85%AE%E1%86%AF%E1%84%90%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8C%E1%85%A62%E1%84%8B%E1%85%B4%E1%84%87%E1%85%A9%E1%86%B7.png",
         "PROD_CATEGORY": "피부, 면역, 혈액"
     },
     {
@@ -197,7 +197,7 @@ var productjs =
         "PROD_NAME": "로사빈",
         "PROD_MAKER": "유바생명과학",
         "PROD_PRICE": 55000,
-        "PROD_IMG": "_16732450725259view.JPG",
+        "PROD_IMG": "https://www.nightoclock.co.kr/data/goods/85/2023/01/_temp_16732450725259view.JPG",
         "PROD_CATEGORY": "스트레스, 피로"
     }
 ]
