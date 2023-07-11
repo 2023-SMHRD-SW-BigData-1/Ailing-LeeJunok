@@ -18,7 +18,8 @@ const MainDepth = ({name,url}) => {
                     {url : productjs[1].PROD_IMG, text : productjs[1].PROD_NAME},
                     {url : productjs[2].PROD_IMG, text : productjs[2].PROD_NAME},
                     {url : productjs[6].PROD_IMG, text : productjs[6].PROD_NAME},
-                    {url : productjs[23].PROD_IMG, text : productjs[23].PROD_NAME}])
+                    {url : productjs[23].PROD_IMG, text : productjs[23].PROD_NAME},
+                    {url : productjs[18].PROD_IMG, text : productjs[18].PROD_NAME}])
                     break;
                 case '다이어트':
                     setProductName('다이어트')
@@ -36,7 +37,7 @@ const MainDepth = ({name,url}) => {
                     {url : productjs[14].PROD_IMG, text : productjs[14].PROD_NAME},
                     {url : productjs[17].PROD_IMG, text : productjs[17].PROD_NAME},
                     {url : productjs[19].PROD_IMG, text : productjs[19].PROD_NAME},
-                    {url : 'https://cdn.thedailypost.kr/news/photo/202204/86944_83260_2446.png',text : 'ㅎ'},
+                    {url : productjs[18].PROD_IMG, text : productjs[18].PROD_NAME},
                     {url : 'https://cdn.thedailypost.kr/news/photo/202204/86944_83260_2446.png',text : 'ㅎ'},
                     {url : 'https://cdn.thedailypost.kr/news/photo/202204/86944_83260_2446.png',text : 'ㅎ'},])
                     break;

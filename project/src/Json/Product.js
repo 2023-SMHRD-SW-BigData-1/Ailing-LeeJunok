@@ -150,7 +150,7 @@ var productjs =
         "PROD_MAKER": "노바렉스",
         "PROD_PRICE": 32600,
         "PROD_IMG": "https://cdn.monolabs.io/products/FM2209270000/main_01.png",
-        "PROD_CATEGORY": "여성건강"
+        "PROD_CATEGORY": "피부, 면역, 혈액"
     },
     {
         "PROD_SEQ": 21,
