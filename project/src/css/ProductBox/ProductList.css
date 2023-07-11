@@ -1,19 +1,30 @@
 .grid-container {
   display: grid;
-  width: 70%;
-  margin: 0 auto;
-  grid-template-rows: repeat(5, 1fr);
-  grid-template-columns: repeat(2, 1fr);
+  width: auto;
+  margin-left: 100px;
+  grid-template-columns:500px 500px 500px;
+  grid-template-rows:repeat(100px);
+
+  /* grid-template-columns: repeat(3, 1fr); 
+  grid-template-rows: repeat(1, 1fr); */
   justify-items: center;
 }
 .grid-container .product {
   width: 400px;
   height: 200px;
-  border-radius: 15px;
+  border-radius: 100px;
   border: 1px solid black;
+  margin: 30px 0px 30px 0px;
 }
 .grid-container .product img {
   float: left;
-  border-radius: 15px;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
   width: 200px;
+  height: 198px;
 }/*# sourceMappingURL=ProductList.css.map */
+
+.watch {
+  width: 150px;
+  height: 50px;
+}

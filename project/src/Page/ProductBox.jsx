@@ -113,14 +113,16 @@ const ProductBox = () => {
     setProductCount((prevCount) => prevCount + 9); // 이전에 노출된 상품 개수에서 9개씩 추가
   };
 
+
+
   const showMoreButton =
     productCount < products.length ? (
-      <button onClick={handleShowMore}>▼</button>
-    ) : null;
+      <button onClick={handleShowMore} className='watch'>더 보기</button>
+      ) : null;
 
   const productRows = [];
-  for (let i = 0; i < productCount; i += 3) {
-    const rowProducts = products.slice(i, i + 3);
+  for (let i = 0; i < productCount; i ++) {
+    const rowProducts = products.slice(i, i + 1);
     productRows.push(
       <div className="grid-row" key={i}>
         {rowProducts.map((product, index) => (
