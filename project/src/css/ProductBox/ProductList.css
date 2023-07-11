@@ -19,6 +19,7 @@
   text-align: center;
   align-items: center;
   /* overflow: hidden; */
+  background-color:  #f8f8f8;
 }
 .grid-container .product img {
   float: left;
@@ -60,4 +61,7 @@
   border: 1px solid skyblue;
   color: skyblue;
   background: none;
+}
+.watch button, .title-font, .price, .subtitle, .product button{
+  margin-right: 15px;
 }
