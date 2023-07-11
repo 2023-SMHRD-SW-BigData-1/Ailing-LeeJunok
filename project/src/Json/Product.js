@@ -1,3 +1,4 @@
+var productjs = 
 [
     {
         "ROD_SEQ": 3,
@@ -192,3 +193,5 @@
         "PROD_CATEGORY": "여성건강"
     }
 ]
+
+export default productjs;
