@@ -1,0 +1,19 @@
+.grid-container {
+  display: grid;
+  width: 70%;
+  margin: 0 auto;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+}
+.grid-container .product {
+  width: 400px;
+  height: 200px;
+  border-radius: 15px;
+  border: 1px solid black;
+}
+.grid-container .product img {
+  float: left;
+  border-radius: 15px;
+  width: 200px;
+}/*# sourceMappingURL=ProductList.css.map */

@@ -3,9 +3,6 @@ import ReactDOM from 'react-dom/client';
 
 import App from './App';
 // import App from './components/Login/Login01';
-
-
-
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from 'react-router-dom'
 

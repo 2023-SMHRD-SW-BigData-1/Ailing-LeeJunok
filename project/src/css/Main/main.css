@@ -192,7 +192,7 @@
 
 .top::before {
   content: "";
-  background-image: url("https://ifh.cc/g/8XVv84.jpg");
+  background-image: url("https://ifh.cc/g/owONZ6.jpg");
   background-size: cover;
   border-radius: 15px;
   opacity: 0.6;
@@ -239,15 +239,15 @@
   opacity: 1;
   right: 27px;
 }
-.maingridWarpper .gridBox h4 {
-  position: static;
-  font-size: 25px;
+.maingridWarpper .gridBox .gridTitle {
+  position: relative;
+  font-size: 30px;
   line-height: 1.4;
   letter-spacing: -0.5px;
 }
-.maingridWarpper .gridBox p {
+.maingridWarpper .gridBox .gridText {
+  position: relative;
   font-size: 14px;
-  padding-top: 10px;
 }
 .maingridWarpper .gridBox .arrow {
   position: absolute;
@@ -264,19 +264,78 @@
 .maingridWarpper .Box1 {
   grid-area: 1/1/3/2;
   padding: 80px 60px;
-  border: 1px solid black;
+}
+.maingridWarpper .Box1::before {
+  content: "";
+  background-image: url("https://ifh.cc/g/YoZTwt.jpg");
+  background-size: cover;
+  border-radius: 15px;
+  opacity: 0.6;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
 }
 .maingridWarpper .Box2 {
-  border: 1px solid black;
+  background-size: cover;
+}
+.maingridWarpper .Box2::before {
+  content: "";
+  background-image: url("https://ifh.cc/g/zXa7C1.jpg");
+  background-size: cover;
+  border-radius: 15px;
+  opacity: 0.6;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
 }
 .maingridWarpper .Box3 {
-  border: 1px solid black;
+  background-size: cover;
+}
+.maingridWarpper .Box3::before {
+  content: "";
+  background-image: url("https://ifh.cc/g/Jpo3Vh.jpg");
+  background-size: cover;
+  border-radius: 15px;
+  opacity: 0.6;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
 }
 .maingridWarpper .Box4 {
-  border: 1px solid black;
+  background-size: cover;
+}
+.maingridWarpper .Box4::before {
+  content: "";
+  background-image: url("https://ifh.cc/g/bP1W5Q.jpg");
+  background-size: cover;
+  border-radius: 15px;
+  opacity: 0.6;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
 }
 .maingridWarpper .Box5 {
-  border: 1px solid black;
+  background-size: cover;
+}
+.maingridWarpper .Box5::before {
+  content: "";
+  background-image: url("https://ifh.cc/g/mAXlJg.jpg");
+  background-size: cover;
+  border-radius: 15px;
+  opacity: 0.6;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
 }
 
 @keyframes scroll {

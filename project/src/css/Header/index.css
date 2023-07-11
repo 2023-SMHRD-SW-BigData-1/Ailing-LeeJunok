@@ -157,18 +157,18 @@ header .headerMenuList .innerLnb {
   flex-direction: row;
   width: 900px;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
 }
 header .headerMenuList .innerLnb ul {
   flex-grow: 1;
   width: 25%;
 }
 header .headerMenuList .innerLnb ul li {
-  padding: 8px 0;
+  padding: 10px 0;
 }
 header .headerMenuList .innerLnb ul li a {
   display: block;
-  padding-right: 50px;
+  padding-left: 45px;
   font-size: 14px;
   color: #fff;
   line-height: 20px;
