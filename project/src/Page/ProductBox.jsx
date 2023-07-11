@@ -1,5 +1,6 @@
+import '../css/ProductBox/ProductList.css'
 import React, { useState } from 'react';
-import ProductInfo from './Productinfo';
+import ProductInfo from '../components/ProductList/Productinfo';
 
 
 const ProductBox = () => {
@@ -10,7 +11,7 @@ const ProductBox = () => {
     {
       imageSrc: 'https://tgzzmmgvheix1905536.cdn.ntruss.com/2020/02/73d71a9a19234194bed8f823657dbe2b' , //이미지 
       subtitle: '목감기에는 역시', // 부제
-      title: setProductCount[1], //상품명
+      title: '프로바이오텍스지', //상품명
       price: '금액' // 금액 이 이후 똑같은 방식으로 이어 붙이면 됨
     },
     {
@@ -137,8 +138,7 @@ const ProductBox = () => {
   }
 
   return (
-    <div>
-      <div className="header"></div>
+    <div className='contentBox'>
       <div className="grid-container">{productRows}</div>
       {showMoreButton}
     </div>

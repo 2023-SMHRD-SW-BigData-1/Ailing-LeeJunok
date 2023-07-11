@@ -1,3 +1,4 @@
+import '../../css/Login/Login.css'
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -6,13 +7,11 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import {useNavigate} from 'react-router-dom';
-import NaverLogin from './Login04';
-import KakaoLogin from './Login02';
+import {useNavigate,Link} from 'react-router-dom';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
+// import Link from '@mui/material/Link';
 
 
 // Login[nn]
@@ -39,8 +38,19 @@ export default function LogInUI() {
       window.location.href = kakaoURL
     }
 
+    // document.querySelector('.img__btn').addEventListener('click',()=>{
+    //   document.querySelector('.cont').classList.toggle('s--signup');
+    // });
 
+    window.onload = function(){
+      document.querySelector('.img__btn').addEventListener('click',()=>{
+        document.querySelector('.cont').classList.toggle('s--signup')
+      });
+    }
+      
+      
 
+    
 
 return (
   <div id='mainContentWrapper'>
@@ -78,13 +88,13 @@ return (
             // autoFocus
           />
           <TextField
-           label="비밀번호"
-           type="password"
-           required fullWidth
-           name = "password"
-           autoComplete='current-password'
-           />
-        <FormControlLabel control ={       
+            label="비밀번호"
+            type="password"
+            required fullWidth
+            name = "password"
+            autoComplete='current-password'
+          />
+        <FormControlLabel className='id-m' control ={       
           <Checkbox value="remember" color="primary" />}
           label="아이디 저장"
           />
@@ -94,21 +104,42 @@ return (
 
       <Button onClick={handleLogin}
       size ="large" fullWidth
-        variant="contained" sx={{mt:5, mb:1, color : "#191919",  backgroundColor:"#FEE500",
+        variant="contained" sx={{ mt:1 , mb:2, color : "#191919",  backgroundColor:"#FEE500",
         ":hover":{backgroundColor :"#FEE500" }}}>
       카카오 로그인</Button>
 
 
 
 <Grid container>
-  <Grid item xs><Link>아이디 찾기</Link></Grid>
-  <Grid item xs><Link>비밀번호 찾기</Link></Grid>
-  <Grid item><Link>회원가입하기</Link></Grid>
+  <Grid item xs><Link to='join'>회원가입하기</Link></Grid>
+  <Grid item ><Link>아이디/비밀번호 찾기</Link></Grid>
 </Grid>
 
 
       </Box>
-      </Container>
+      </Container> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
       </div >
     </div >
 )};
