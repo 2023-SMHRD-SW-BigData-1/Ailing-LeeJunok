@@ -4,7 +4,7 @@ const app = express()
 const indexRouter = require('./routes/index')
 const userRouter = require('./config/oracleDatabase')
 
-app.set('port', process.env.PORT||3000)
+app.set('port', process.env.PORT||3001)
 
 app.use(express.static(path.join(__dirname,'project/public')))
 app.use('/', indexRouter)
