@@ -6,7 +6,7 @@ var productjs =
         "PROD_MAKER": "콜마비앤에이치",
         "PROD_PRICE": 10400,
         "PROD_IMG": "https://cdn.monolabs.io/products/FM2010300003/main_01.png",
-        "PROD_CATEGORY": "'피로, 피부'"
+        "PROD_CATEGORY": "피로, 피부"
     },
     {
         "PROD_SEQ": 2,
@@ -14,7 +14,7 @@ var productjs =
         "PROD_MAKER": "콜마비앤에이치",
         "PROD_PRICE": 15100,
         "PROD_IMG": "https://cdn.monolabs.io/products/FM2010300001/main_01.png",
-        "PROD_CATEGORY": "남성건강"
+        "PROD_CATEGORY": "면역, 남성건강"
     },
     {
         "PROD_SEQ": 4,
