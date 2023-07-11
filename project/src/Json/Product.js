@@ -10,7 +10,7 @@ var productjs =
     },
     {
         "PROD_SEQ": 2,
-        "PROD_NAME": "비지맨",
+        "PROD_NAME": "남성 복합 비타민",
         "PROD_MAKER": "콜마비앤에이치",
         "PROD_PRICE": 15100,
         "PROD_IMG": "https://cdn.monolabs.io/products/FM2010300001/main_01.png",
@@ -50,7 +50,7 @@ var productjs =
     },
     {
         "PROD_SEQ": 8,
-        "PROD_NAME": "멀티비타민&미네랄\t",
+        "PROD_NAME": "멀티비타민&미네랄",
         "PROD_MAKER": "콜마비앤에이치",
         "PROD_PRICE": 19300,
         "PROD_IMG": "https://cdn.monolabs.io/products/FM2010300008/main_01.png",
@@ -98,7 +98,7 @@ var productjs =
     },
     {
         "PROD_SEQ": 14,
-        "PROD_NAME": "잔티젠\t",
+        "PROD_NAME": "잔티젠",
         "PROD_MAKER": "노바렉스",
         "PROD_PRICE": 29800,
         "PROD_IMG": "https://cdn.monolabs.io/products/FM2107080000/main_01.png",
@@ -186,11 +186,19 @@ var productjs =
     },
     {
         "PROD_SEQ": 1,
-        "PROD_NAME": "비지우먼",
+        "PROD_NAME": "여성 복합 비타민",
         "PROD_MAKER": "콜마비앤에이치",
         "PROD_PRICE": 14500,
         "PROD_IMG": "https://cdn.monolabs.io/products/FM2010300000/main_01.png",
-        "PROD_CATEGORY": "여성건강"
+        "PROD_CATEGORY": "면역, 여성건강"
+    },
+    {
+        "PROD_SEQ": 25,
+        "PROD_NAME": "로사빈",
+        "PROD_MAKER": "유바생명과학",
+        "PROD_PRICE": 55000,
+        "PROD_IMG": "https://www.nightoclock.co.kr/data/goods/85/2023/01/_temp_16732450725259view.JPG",
+        "PROD_CATEGORY": "스트레스, 피로"
     }
 ]
 
