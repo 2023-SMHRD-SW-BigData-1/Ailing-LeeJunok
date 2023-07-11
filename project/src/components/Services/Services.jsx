@@ -10,10 +10,10 @@ const services = () => {
                         <a href="/services">공지사항</a>
                     </div>
                     <div>
-                        <a href="">보도자료</a>
+                        <a href="/services/news">보도자료</a>
                     </div>
                     <div>
-                        <a href="">자주하는 질문</a>
+                        <a href="/services/question">자주하는 질문</a>
                     </div>
                     <div>
                         <a href="">1:1 문의</a>
