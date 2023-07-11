@@ -1,8 +1,8 @@
 const express = require('express')
 const app = express()
 
-const server = app.listen(3001, () => {
-    console.log('server start, port 3001')
+const server = app.listen(3000, () => {
+    console.log('server start, port 3000')
 })
 
 const oracledb = require('oracledb')
