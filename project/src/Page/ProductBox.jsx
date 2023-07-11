@@ -1,116 +1,20 @@
-import '../css/ProductBox/ProductList.css'
+import '../css/ProductBox/ProductList.css';
 import React, { useState } from 'react';
 import ProductInfo from '../components/ProductList/Productinfo';
-
+import productjs from '../Json/Product';
 
 const ProductBox = () => {
-  const initialProductCount = 9; // 초기에 노출할 상품 개수
+  const initialProductCount = 9; // number of products to be initially exposed
   const [productCount, setProductCount] = useState(initialProductCount);
-
-  const products = [
-    {
-      imageSrc: 'https://tgzzmmgvheix1905536.cdn.ntruss.com/2020/02/73d71a9a19234194bed8f823657dbe2b' , //이미지 
-      subtitle: '목감기에는 역시', // 부제
-      title: '프로바이오텍스지', //상품명
-      price: '금액' // 금액 이 이후 똑같은 방식으로 이어 붙이면 됨
-    },
-    {
-        imageSrc: 'https://tgzzmmgvheix1905536.cdn.ntruss.com/2020/02/73d71a9a19234194bed8f823657dbe2b' , //이미지 
-        subtitle: '목감기에는 역시', // 부제
-        title: '프로바이오텍스지', //상품명
-        price: '금액' // 금액 이 이후 똑같은 방식으로 이어 붙이면 됨
-      },
-      {
-        imageSrc: 'https://tgzzmmgvheix1905536.cdn.ntruss.com/2020/02/73d71a9a19234194bed8f823657dbe2b' , //이미지 
-        subtitle: '목감기에는 역시', // 부제
-        title: '프로바이오텍스지', //상품명
-        price: '금액' // 금액 이 이후 똑같은 방식으로 이어 붙이면 됨
-      },
-      {
-        imageSrc: 'https://tgzzmmgvheix1905536.cdn.ntruss.com/2020/02/73d71a9a19234194bed8f823657dbe2b' , //이미지 
-        subtitle: '목감기에는 역시', // 부제
-        title: '프로바이오텍스지', //상품명
-        price: '금액' // 금액 이 이후 똑같은 방식으로 이어 붙이면 됨
-      },
-      {
-        imageSrc: 'https://tgzzmmgvheix1905536.cdn.ntruss.com/2020/02/73d71a9a19234194bed8f823657dbe2b' , //이미지 
-        subtitle: '목감기에는 역시', // 부제
-        title: '프로바이오텍스지', //상품명
-        price: '금액' // 금액 이 이후 똑같은 방식으로 이어 붙이면 됨
-      },
-      {
-        imageSrc: 'https://tgzzmmgvheix1905536.cdn.ntruss.com/2020/02/73d71a9a19234194bed8f823657dbe2b' , //이미지 
-        subtitle: '목감기에는 역시', // 부제
-        title: '프로바이오텍스지', //상품명
-        price: '금액' // 금액 이 이후 똑같은 방식으로 이어 붙이면 됨
-      },
-      {
-        imageSrc: 'https://tgzzmmgvheix1905536.cdn.ntruss.com/2020/02/73d71a9a19234194bed8f823657dbe2b' , //이미지 
-        subtitle: '목감기에는 역시', // 부제
-        title: '프로바이오텍스지', //상품명
-        price: '금액' // 금액 이 이후 똑같은 방식으로 이어 붙이면 됨
-      },
-      {
-        imageSrc: 'https://tgzzmmgvheix1905536.cdn.ntruss.com/2020/02/73d71a9a19234194bed8f823657dbe2b' , //이미지 
-        subtitle: '목감기에는 역시', // 부제
-        title: '프로바이오텍스지', //상품명
-        price: '금액' // 금액 이 이후 똑같은 방식으로 이어 붙이면 됨
-      },
-      {
-        imageSrc: 'https://tgzzmmgvheix1905536.cdn.ntruss.com/2020/02/73d71a9a19234194bed8f823657dbe2b' , //이미지 
-        subtitle: '목감기에는 역시', // 부제
-        title: '프로바이오텍스지', //상품명
-        price: '금액' // 금액 이 이후 똑같은 방식으로 이어 붙이면 됨
-      },
-      {
-        imageSrc: 'https://tgzzmmgvheix1905536.cdn.ntruss.com/2020/02/73d71a9a19234194bed8f823657dbe2b' , //이미지 
-        subtitle: '목감기에는 역시', // 부제
-        title: '프로바이오텍스지', //상품명
-        price: '금액' // 금액 이 이후 똑같은 방식으로 이어 붙이면 됨
-      },
-      {
-        imageSrc: 'https://tgzzmmgvheix1905536.cdn.ntruss.com/2020/02/73d71a9a19234194bed8f823657dbe2b' , //이미지 
-        subtitle: '목감기에는 역시', // 부제
-        title: '프로바이오텍스지', //상품명
-        price: '금액' // 금액 이 이후 똑같은 방식으로 이어 붙이면 됨
-      },
-      {
-        imageSrc: 'https://tgzzmmgvheix1905536.cdn.ntruss.com/2020/02/73d71a9a19234194bed8f823657dbe2b' , //이미지 
-        subtitle: '목감기에는 역시', // 부제
-        title: '프로바이오텍스지', //상품명
-        price: '금액' // 금액 이 이후 똑같은 방식으로 이어 붙이면 됨
-      },
-      {
-        imageSrc: 'https://tgzzmmgvheix1905536.cdn.ntruss.com/2020/02/73d71a9a19234194bed8f823657dbe2b' , //이미지 
-        subtitle: '목감기에는 역시', // 부제
-        title: '프로바이오텍스지', //상품명
-        price: '금액' // 금액 이 이후 똑같은 방식으로 이어 붙이면 됨
-      },
-      {
-        imageSrc: 'https://tgzzmmgvheix1905536.cdn.ntruss.com/2020/02/73d71a9a19234194bed8f823657dbe2b' , //이미지 
-        subtitle: '목감기에는 역시', // 부제
-        title: '프로바이오텍스지', //상품명
-        price: '금액' // 금액 이 이후 똑같은 방식으로 이어 붙이면 됨
-      },
-      {
-        imageSrc: 'https://tgzzmmgvheix1905536.cdn.ntruss.com/2020/02/73d71a9a19234194bed8f823657dbe2b' , //이미지 
-        subtitle: '목감기에는 역시', // 부제
-        title: '프로바이오텍스지', //상품명
-        price: '금액' // 금액 이 이후 똑같은 방식으로 이어 붙이면 됨
-      },
-      {
-        imageSrc: 'https://tgzzmmgvheix1905536.cdn.ntruss.com/2020/02/73d71a9a19234194bed8f823657dbe2b' , //이미지 
-        subtitle: '목감기에는 역시', // 부제
-        title: '프로바이오텍스지', //상품명
-        price: '금액' // 금액 이 이후 똑같은 방식으로 이어 붙이면 됨
-      },
-      
-    
-    // 나머지 상품 데이터 추가
-  ];
+  const products = productjs.map((product) => ({
+    imageSrc: product.PROD_IMG,
+    subtitle: product.PROD_CATEGORY,
+    title: product.PROD_NAME,
+    price: product.PROD_PRICE
+  }));
 
   const handleShowMore = () => {
-    setProductCount((prevCount) => prevCount + 9); // 이전에 노출된 상품 개수에서 9개씩 추가
+    setProductCount((prevCount) => prevCount + 9); // Add 9 items from the number of previously exposed products
   };
 
 
