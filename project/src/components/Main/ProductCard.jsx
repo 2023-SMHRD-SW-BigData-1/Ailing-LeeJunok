@@ -1,13 +1,12 @@
 
-
+import { Link } from 'react-router-dom'
 import React from 'react'
 
-const ProductCard = ({url,text}) => {
+const ProductCard = ({url}) => {
     return (
-    <div className='innercard'>
-        <img src={url} alt="준비중"/>
-        <p>{text}</p>
-    </div>
+    
+    <Link className='innercard'><img src={url} alt="준비중"/></Link>
+    
     )
 }
 

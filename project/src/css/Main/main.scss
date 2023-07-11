@@ -113,14 +113,12 @@
                 width: 300px;
                 margin-top: 50px;
                 border-radius:15px ;
-                background: rgba(136, 132, 132, 0.09);
-                img{
-                    
+                
+                    img{
                     width: 100%;
-                    height: 60%;
-                    border-top-left-radius: 15px;
-                    border-top-right-radius: 15px;
-                }
+                    height: 100%;
+                    border-radius: 15px;
+                    }
             }
             .box {
                 width: 100%;
@@ -205,10 +203,10 @@
             }
             .top::before{
                 content: "";
-                background-image: url('https://ifh.cc/g/owONZ6.jpg');
+                background-image: url('https://ifh.cc/g/dOHKTH.jpg');
                 background-size: cover;
                 border-radius: 15px;
-                opacity: 0.6;
+                opacity: 0.9;
                 position: absolute;
                 top: 0px;
                 left: 0px;
@@ -284,7 +282,7 @@
                     padding: 80px 60px;
                     &::before{
                         content: "";
-                        background-image: url('https://ifh.cc/g/YoZTwt.jpg');
+                        background-image: url('https://ifh.cc/g/PkZd06.jpg');
                         background-size: cover;
                         border-radius: 15px;
                         opacity: 0.6;
@@ -299,7 +297,7 @@
                     background-size: cover;
                     &::before{
                         content: "";
-                        background-image: url('https://ifh.cc/g/zXa7C1.jpg');
+                        background-image: url('https://ifh.cc/g/LMPZfz.jpg');
                         background-size: cover;
                         border-radius: 15px;
                         opacity: 0.6;
@@ -314,7 +312,7 @@
                     background-size: cover;
                     &::before{
                         content: "";
-                        background-image: url('https://ifh.cc/g/Jpo3Vh.jpg');
+                        background-image: url('https://ifh.cc/g/Hs1Sbg.jpg');
                         background-size: cover;
                         border-radius: 15px;
                         opacity: 0.6;
@@ -329,7 +327,7 @@
                     background-size: cover;
                     &::before{
                         content: "";
-                        background-image: url('https://ifh.cc/g/bP1W5Q.jpg');
+                        background-image: url('https://ifh.cc/g/tWOGm4.jpg');
                         background-size: cover;
                         border-radius: 15px;
                         opacity: 0.6;
@@ -345,7 +343,7 @@
                     background-size: cover;
                     &::before{
                         content: "";
-                        background-image: url('https://ifh.cc/g/mAXlJg.jpg');
+                        background-image: url('https://ifh.cc/g/dDpJj4.jpg');
                         background-size: cover;
                         border-radius: 15px;
                         opacity: 0.6;
