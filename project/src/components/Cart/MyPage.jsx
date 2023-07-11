@@ -28,7 +28,7 @@ const MyPage = () => {
                             <col width='100' />
                             </colgroup>
                             {/* <table> */}
-                            <thead>
+                            <thead className='orderhead'>
                                 <tr>
                                     <th>
                                     <div className="tb-center">NUMBER</div>
