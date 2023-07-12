@@ -99,7 +99,7 @@ const Join = () => {
         <input name="loginPwConfirm" type="password" className="pw" placeholder="비밀번호 확인"/>
       </div>
       <div className="textForm">
-        <input name="name" type="password" className="name" placeholder="이름"/>
+        <input name="name" type="text" className="name" placeholder="이름"/>
       </div>
        <div className="textForm">
         <input name="email" type="text" className="email" placeholder="이메일"/>
