@@ -57,11 +57,6 @@ const Main = () => {
     },[productName])         
 
     
-    
-
-
-
-    
     return (
 
     
