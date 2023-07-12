@@ -5,7 +5,12 @@ const Footer = () => {
     return (
     <footer>
         <div className='contentBox'>
-            <p>Footer</p>
+    <p>COMPANY : Pill.Yo</p>
+    <a>ADDRESS : H조</a>
+    <div>TEL : 010-1234-1234</div>
+    <div>PERSONAL INFO MANAGER : 이수호</div>
+    <div>E-MAIL : </div>
+    <div>COPYRIGHT 2023 © Pill.Yo.CO. KR.INC ALL RIGHT RESERVED</div>
         </div>
 
     </footer>
