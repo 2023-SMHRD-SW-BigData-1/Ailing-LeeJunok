@@ -43,20 +43,10 @@ display: block;
 
 
 
-h1 {
-font-size: 2em;
-margin: 0.67em 0;
-}
 
 
 
-hr {
--webkit-box-sizing: content-box;
--moz-box-sizing: content-box;
-  box-sizing: content-box; 
-height: 0; 
-overflow: visible; 
-}
+
 
 
 pre {
@@ -80,10 +70,7 @@ text-decoration: underline dotted;
 
 
 
-b,
-strong {
-font-weight: bolder;
-}
+
 
 
 
@@ -228,21 +215,7 @@ display: none;
 
 
 
-blockquote,
-dl,
-dd,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-hr,
-figure,
-p,
-pre {
-margin: 0;
-}
+
 
 
 
@@ -280,10 +253,6 @@ border-style: solid;
 border-color: #e2e8f0; 
 }
 
-
-hr {
-border-top-width: 1px;
-}
 
 
 img {
@@ -366,11 +335,6 @@ vertical-align: middle;
 
 
 
-img,
-video {
-max-width: 100%;
-height: auto;
-}
 
 .container {
 width: 100%;
@@ -722,21 +686,7 @@ height: 12rem;
 height: 100vh;
 }
 
-.text-lg {
-font-size: 1.125rem;
-}
 
-.text-xl {
-font-size: 1.25rem;
-}
-
-.text-3xl {
-font-size: 1.875rem;
-}
-
-.text-4xl {
-font-size: 2.25rem;
-}
 
 .leading-tight {
 line-height: 1.25;
@@ -867,29 +817,6 @@ bottom: 0;
 left: 0;
 }
 
-.shadow-xs {
--webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
--moz-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
-}
-
-.shadow {
--webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
--moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-}
-
-.shadow-md {
--webkit-box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
--moz-box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
-
-.shadow-lg {
--webkit-box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
--moz-box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
 
 .text-center {
 text-align: center;
@@ -969,14 +896,7 @@ width: 100%;
 z-index: 10;
 }
 
-.transition {
--webkit-transition-property: background-color, border-color, color, fill, stroke, opacity, -webkit-box-shadow, -webkit-transform;
-transition-property: background-color, border-color, color, fill, stroke, opacity, -webkit-box-shadow, -webkit-transform;
--o-transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, -o-transform;
--moz-transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, -moz-box-shadow, -moz-transform;
-transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
-transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, -webkit-box-shadow, -moz-box-shadow, -webkit-transform, -moz-transform, -o-transform;
-}
+
 
 .ease-linear {
 -webkit-transition-timing-function: linear;
