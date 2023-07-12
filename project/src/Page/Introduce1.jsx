@@ -40,7 +40,7 @@ const Introduce = () => (
       >
         <div className="mx-2 text-center">
           <h1 className="text-gray-100 font-extrabold text-4xl xs:text-5xl md:text-6xl">
-            <span className="text-white">Pill</span> Yo
+            <span className="text-white">Pill.Yo</span> 
           </h1>
           <h2 className="text-gray-200 font-extrabold text-3xl xs:text-4xl md:text-5xl leading-tight">
             더 나은 <span className="text-white">내일을 위한</span> 소비와 <span className="text-white">투자</span>
@@ -54,11 +54,12 @@ const Introduce = () => (
             src="https://ifh.cc/g/W0lOP8.jpg" // 대문 이미지(가장 큰 이미지)는 css 파일 1줄 주석 참고
             className="h-48 md:w-1/2 md:h-screen"
             loading="lazy"
-          />
-          <div className="mt-1 md:mt-4 m-4 flex self-center flex-col">
+          /> <div className='logotext'>
             <h1 className="font-extrabold text-4xl mt-1 mb-2 mm:my-4 border-b-4 border-indigo-600 self-start leading-tight">
               Pill.YO
             </h1>
+            </div>
+          <div className="mt-1 md:mt-4 m-4 flex self-center flex-col">
             <p className="text-lg">
               필요 사이트 소개란 입니다
               <br />
