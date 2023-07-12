@@ -4,8 +4,10 @@ import React from 'react'
 
 const MainBan = () => {
 
-    const ban =[{name:'1',url : 'https://ifh.cc/g/8NOYJw.jpg',text:'눈'},
-                {name:'2',url : 'https://ifh.cc/g/d8dVx3.jpg',text:'사람'}]
+    const ban =[{name:'1',url : 'https://ifh.cc/g/8NOYJw.jpg',text:''},
+                {name:'2',url : 'https://ifh.cc/g/Wg2A9j.jpg',text:''},
+                {name:'3',url : 'https://ifh.cc/g/xLJJ7x.jpg',text:''},
+                {name:'4',url : 'https://ifh.cc/g/VRjT4R.jpg',text:''},]
 
 
     return (
