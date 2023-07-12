@@ -10,7 +10,7 @@ const Join = () => {
   const navigate = useNavigate();
   const [joinResult, setJoinResult] = useState('');
 
-  const handleJoinSubmit = (e) => {
+  const handleJoinSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const userData = {
@@ -25,21 +25,18 @@ const Join = () => {
       gender: formData.get('gender'),
     };
 
-    // 서버로 데이터 전송
-    axios
-      .post('/login/join', { userData })
-      .then((response) => {
-        const result = response.data.result;
-        setJoinResult(result);
-        if (result === '가입에 성공했습니다!') {
-          // 가입에 성공한 경우 로그인 페이지로 이동
-          navigate('/login');
-        }
-      })
-      .catch((error) => {
-        console.log('에러 발생: ', error);
-        setJoinResult('가입에 실패했습니다....');
-      });
+    try {
+      const response = await axios.post('/login/join', { userData });
+      const result = response.data.result;
+      setJoinResult(result);
+      if (result === '가입에 성공했습니다!') {
+        // 가입에 성공한 경우 로그인 페이지로 이동
+        navigate('/login');
+      }
+    } catch (error) {
+      console.log('에러 발생: ', error);
+      setJoinResult('가입에 실패했습니다....');
+    }
   };
 
   return (
@@ -49,49 +46,66 @@ const Join = () => {
       </div>
       <div className='joinContainer'>
         <form className='joinForm' onSubmit={handleJoinSubmit}>
-          {/* 폼 입력 필드 */}
-          <input name='loginId' type='text' className='id' placeholder='아이디' required />
-          <input name='loginPw' type='password' className='pw' placeholder='비밀번호' required />
-          <input
-            name='loginPwConfirm'
-            type='password'
-            className='pw'
-            placeholder='비밀번호 확인'
-            required
-          />
-          <input name='name' type='text' className='name' placeholder='이름' required />
-          <input name='email' type='text' className='email' placeholder='이메일' required />
-          <input
-            name='cellphoneNo'
-            type='number'
-            className='cellphoneNo'
-            placeholder='전화번호'
-            required
-          />
-          <input name='address' type='address' className='address' placeholder='주소' required />
-          <input name='birth' type='date' className='birth' placeholder='생년월일' required />
-          <label className='joinLabel'>
-            <span className='joinSpan'>남</span>
+          <div className='textForm'>
+            <input name='loginId' type='text' className='id' placeholder='아이디' required />
+          </div>
+          <div className='textForm'>
+            <input name='loginPw' type='password' className='pw' placeholder='비밀번호' required />
+          </div>
+          <div className='textForm'>
             <input
-              name='gender'
-              type='radio'
-              className='gender'
-              placeholder='성별'
-              value='male'
+              name='loginPwConfirm'
+              type='password'
+              className='pw'
+              placeholder='비밀번호 확인'
               required
             />
-          </label>
-          <label className='joinLabel'>
-            <span className='joinSpan'>여</span>
+          </div>
+          <div className='textForm'>
+            <input name='name' type='text' className='name' placeholder='이름' required />
+          </div>
+          <div className='textForm'>
+            <input name='email' type='text' className='email' placeholder='이메일' required />
+          </div>
+          <div className='textForm'>
             <input
-              name='gender'
-              type='radio'
-              className='gender'
-              placeholder='성별'
-              value='female'
+              name='cellphoneNo'
+              type='number'
+              className='cellphoneNo'
+              placeholder='전화번호'
               required
             />
-          </label>
+          </div>
+          <div className='textForm'>
+            <input name='address' type='address' className='address' placeholder='주소' required />
+          </div>
+          <div className='textForm'>
+            <input name='birth' type='date' className='birth' placeholder='생년월일' required />
+          </div>
+          <div className='textForm'>
+            <label className='joinLabel'>
+              <span className='joinSpan'>남</span>
+              <input
+                name='gender'
+                type='radio'
+                className='gender'
+                placeholder='성별'
+                value='male'
+                required
+              />
+            </label>
+            <label className='joinLabel'>
+              <span className='joinSpan'>여</span>
+              <input
+                name='gender'
+                type='radio'
+                className='gender'
+                placeholder='성별'
+                value='female'
+                required
+              />
+            </label>
+          </div>
           <input type='submit' className='joinBtn' value='SIGN IN' />
         </form>
         {joinResult && <div>{joinResult}</div>}
@@ -101,10 +115,6 @@ const Join = () => {
 };
 
 export default Join;
-
-
-
-
 
     //------------------------------------------------
     {/* <div>
