@@ -132,31 +132,52 @@ async function getSelect(request, response) {
 // })
 
 // 회원가입
-router.post('/user/join', (req, res) => {
+router.post('/login/join', async (req, res) => {
     console.log('join 접근!', req.body);
-    let sql2 = 'select id from t_user where id=?'
+    try {
+      const connection = await oracledb.getConnection(dbConfig);
+      const result = await connection.execute(
+        'SELECT user_id FROM campus_h_230627_2.t_user WHERE user_id = :id',
+        [req.body.userData.user_id]
+      );
+  
+      if (result.rows.length > 0) {
+        res.json({ result: '중복되는 아이디입니다!' });
+      } else {
+        // 비밀번호 확인
+        if (req.body.userData.user_pw !== req.body.userData.pwConfirmation) {
+          res.json({ result: '비밀번호 확인이 일치하지 않습니다!' });
+        } else {
+          await connection.execute(
+            `INSERT INTO campus_h_230627_2.t_user 
+            (user_id, user_pw, user_name, user_email, user_phone, user_addr, user_ssn, user_gender, joined_at) 
+            VALUES 
+            (:id, :pw, :name, :email, :phone, :addr, :ssn, :gender, SYSDATE)`,
+            [
+              req.body.userData.user_id,
+              req.body.userData.user_pw,
+              req.body.userData.user_name,
+              req.body.userData.user_email,
+              req.body.userData.user_phone,
+              req.body.userData.user_addr,
+              req.body.userData.user_ssn,
+              req.body.userData.user_gender,
+            ]
+          );
+  
+          console.log('가입에 성공했습니다!');
+          res.json({ result: '가입에 성공했습니다!' });
+        }
+      }
+  
+      await connection.close();
+    } catch (error) {
+      console.log('에러 발생: ', error);
+      res.json({ result: '가입에 실패했습니다....' });
+    }
+  });
+  
 
-    conn.query(sql2
-        , [req.body.userData.id]
-        , (err, rows) => {
-            console.log(rows);
-            if (rows.length > 0) {
-                res.json({ result: '중복이다!' });
-            } else {
-                let sql = 'insert into t_user values (?,?,?)'
-                conn.query(sql
-                    , [req.body.userData.id, req.body.userData.pw, req.body.userData.add]
-                    , (err, rows) => {
-                        if (rows) {
-                            console.log('성공했다!');
-                            res.json({ result: '성공!' })
-                        } else {
-                            console.log('실패했다....', err);
-                        }
-                    })
-            }
-        })
-})
 
 
 // 로그인
