@@ -8,6 +8,7 @@ import LogInUI from './Page/Login/Login01';
 import Join from './Page/Login/Login05';
 import ProductBox from './Page/ProductBox';
 import Review from './Page/Review';
+import Introduce from './Page/Introduce1';
 
 
 
@@ -28,6 +29,9 @@ function App() {
         {/* ProductList */}
         <Route path='/productList' element={<ProductBox/>}/>
         <Route path='/review' element={<Review/>}/>
+
+        {/* Introduce */}
+        <Route path='/introduce' element={<Introduce/>}/>
       </Routes>
       </div>
 
