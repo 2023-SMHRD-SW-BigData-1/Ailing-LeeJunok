@@ -54,20 +54,20 @@ async function getSelect(request, response) {
             return {
               // 각 row의 필드를 적절히 선택하여 객체에 할당
               // { imageUrl: row.image_url } 형식으로 할당
-              prodSeq: row.PROD_SEQ,
-              prodName: row.PROD_NAME,
-              prodMaker: row.PROD_MAKER,
-              prodPrice: row.PROD_PRICE,
-              prodImg: row.PROD_IMG,
-              prodCategory: row.PROD_CATEGORY,
-              prodSobi: row.PROD_SOBI,
-              prodDose: row.PROD_DOSE,
-              prodMate: row.PROD_MATE,
-              prodFunction: row.PROD_FUNTION,
-              prodIntake: row.PROD_INTAKE,
-              prodCaution: row.PROD_CAUTION,
-              prodKeep: row.PROD_KEEP,
-              prodNutrition: row.PROD_NUTRITION
+              PROD_SEQ: row.PROD_SEQ,
+              PROD_NAME: row.PROD_NAME,
+              PROD_MAKER: row.PROD_MAKER,
+              PROD_PRICE: row.PROD_PRICE,
+              PROD_IMG: row.PROD_IMG,
+              PROD_CATEGORY: row.PROD_CATEGORY,
+              PROD_SOBI: row.PROD_SOBI,
+              PROD_DOSE: row.PROD_DOSE,
+              PROD_MATE: row.PROD_MATE,
+              PROD_FUNTION: row.PROD_FUNTION,
+              PROD_INTAKE: row.PROD_INTAKE,
+              PROD_CAUTION: row.PROD_CAUTION,
+              PROD_KEEP: row.PROD_KEEP,
+              PROD_NUTRITION: row.PROD_NUTRITION
             };
           });
           resolve(productJson);
