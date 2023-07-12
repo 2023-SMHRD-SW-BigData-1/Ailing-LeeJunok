@@ -13,18 +13,17 @@
 .grid-container .product {
   width: 400px;
   height: 180px;
-  border-radius: 100px;
+  border-radius: 15px;
   /* border: 1px solid black; */
   margin: 30px 0px 30px 0px;
-  text-align: center;
   align-items: center;
   /* overflow: hidden; */
   background-color:  #f8f8f8;
 }
 .grid-container .product img {
   float: left;
-  border-top-left-radius: 100px;
-  border-bottom-left-radius: 100px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
   width: 200px;
   height: 178px;
 }/*# sourceMappingURL=ProductList.css.map */
@@ -45,15 +44,18 @@
 
 .title-font{
   font-weight: bolder;
-  font-size: large;
+  font-size: 19px;
 }
 
 .price{
-  font-size: large;
+  font-size: 25px;
 }
 
 .subtitle{
   font-size: 11px;
+  color: #007aff;
+  position: relative;
+  bottom: 20px;
 }
 .product button{
   width: 100px;
