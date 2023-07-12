@@ -1,7 +1,6 @@
 import '../css/Main/main.css'
 import MainBan from '../components/Main/MainBan'
 import MainDepth from '../components/Main/MainDepth'
-import { Link } from 'react-router-dom'
 import RcProduct from '../components/Main/RcProduct'
 import { productContext } from '../context/ProductContext'
 import { useEffect, useState } from 'react'

@@ -1,24 +1,30 @@
 
 
 import Pagination from "react-js-pagination";
-import React, { useState } from 'react'
+import React from 'react'
+import { useNavigate } from "react-router";
 
-const Paging = ({count}) => {
-    const [page, setPage] = useState(1);
-
+const Paging = ({count,setpage,page}) => {
+    const navi = useNavigate();
+    
     const handlePageChange = (page) => {
-        setPage(page);
+        setpage(page);
+        window.scrollTo({ top: 0, behavior: "smooth" });
     };
+
     return (
+        <div className="reviewBottom">
         <Pagination
         activePage={page}
-        itemsCountPerPage={10}
+        itemsCountPerPage={5}
         totalItemsCount={count}
         pageRangeDisplayed={5}
         prevPageText={"‹"}
         nextPageText={"›"}
+        limit={5}
         onChange={handlePageChange}
         />
+        </div>
     )
 }
 
