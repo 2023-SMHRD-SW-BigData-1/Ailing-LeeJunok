@@ -8,7 +8,6 @@
   }
 
   .joinForm{
-    position: relative;
     text-align:center;
     
   }
@@ -90,8 +89,8 @@
     height:25px;
     background: none;
   }
-
-  .address {
+  
+  .faddress {
     width: 100%;
     border:none;
     outline:none;
@@ -101,10 +100,40 @@
     background: none;
   }
   
+  .address {
+    width: 100%;
+    border:none;
+    outline:none;
+    color: #636e72;
+    font-size:16px;
+    height:25px;
+    background: none;
+  }
+
+  .detailAddress {
+    width: 100%;
+    border:none;
+    outline:none;
+    color: #636e72;
+    font-size:16px;
+    height:25px;
+    background: none;
+  }
+
+
+  .mailNumber {
+    width: 100px;
+    /* border:none; */
+    /* outline:none; */
+    color: #636e72;
+    font-size:16px;
+    height:25px;
+    /* background: none; */
+  }
+  
   .joinBtn {
     position:relative;
-    left:40%;
-    transform: translateX(-50%);
+    /* transform: translateX(-50%); */
     margin-bottom: 40px;
     width:80%;
     height:40px;
@@ -117,6 +146,7 @@
     cursor:pointer;
     transition: 0.4s;
     display:inline;
+
   }
   
   .joinBtn:hover {
@@ -126,10 +156,17 @@
   .joinLabel{
     display: inline-flex;
     margin: 0 25px 0 25px;
+    
   }
 
   .joinSpan{
     margin: 0 5px;
   }
 
-  
+  .postCode_btn{
+  width: 100px;
+  height: 40px;
+  border: 1px solid skyblue;
+  color: skyblue;
+  background: none;
+  }
