@@ -2,17 +2,12 @@ import React from 'react'
 
 const MyPage = () => {
   return (
-    <div>
- <div id='contentWrapper'>
-     <div id='contentWrap'>
-        <div id='content'>
-            <div id='mypage'>
                 <div className='page-body'>
                     {/* 최근 주문 정보 */}
                     <div className='hd'>
                         <h2>최근 주문 정보</h2>
-                        <p className='dsc'>
-                        <span className='fc-blue'>[이준]</span>
+                        <p>
+                        <span>[이준]</span>
                         님께서 주문하신 내역입니다.
                         </p>
                     </div>
@@ -24,12 +19,10 @@ const MyPage = () => {
                             <col width='150'/>
                             <col width='200' />
                             <col width='140' />
-                            <col width='140'/>
-                            <col width='100' />
                             </colgroup>
                             {/* <table> */}
-                            <thead className='orderhead'>
-                                <tr>
+                            <thead>
+                                <tr className='orderhead'>
                                     <th>
                                     <div className="tb-center">NUMBER</div>
                                     </th>
@@ -41,12 +34,6 @@ const MyPage = () => {
                                     </th>
                                     <th>
                                     <div className="tb-center">COST</div>
-                                    </th>
-                                    <th>
-                                    <div className="tb-center">DETAIL</div>
-                                    </th>
-                                    <th>
-                                    <div className="tb-center">Delivery</div>
                                     </th>
                                 </tr>
                             </thead>
@@ -67,17 +54,11 @@ const MyPage = () => {
                     <div className='tbl'>
                     <th>
                     <table>
-                        
                         <div>등록한 관심상품이 없습니다.</div>
                     </table>
                     </th>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
   )
 }
 

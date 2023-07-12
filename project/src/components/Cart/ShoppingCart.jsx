@@ -3,11 +3,6 @@ import React from 'react'
 const ShoppingCart = () => {
   return (
     <div>
-
-    <div id='contentWrapper'>
-        <div id='contentWrap'>
-            <div id='content'>
-                <div id='mypage'>
                     <div className='page-body'>
                     <div className='hd'>
                         <h2>장바구니</h2>
@@ -102,10 +97,6 @@ const ShoppingCart = () => {
                         </div>
                      </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        </div>
   )
 }
 
