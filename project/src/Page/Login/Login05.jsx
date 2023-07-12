@@ -1,6 +1,9 @@
 
 // ===============================================
 // import { Checkbox } from '@mui/material';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import '../../css/Join/Join.css';
 import React, { useRef, useState } from 'react'
 import '../../css/Join/Join.css'
 import ReactDom from 'react-dom';
@@ -59,20 +62,17 @@ const PopupPostCode = React.forwardRef((props) => {
             <button type='button' onClick={() => {props.onClose()}} className='postCode_btn'>닫기</button>
         </div>
     )
-})
-
-
-// =============================================================================
-const Join = () => {
-	// 팝업창 상태 관리
+  })
+  const Join = () => {
+  // 팝업창 상태 관리
   const [isPopupOpen, setIsPopupOpen] = useState(false)
- 
-	// 팝업창 열기
+  
+  // 팝업창 열기
     const openPostCode = () => {
         setIsPopupOpen(true)
     }
- 
-	// 팝업창 닫기
+  
+  // 팝업창 닫기
     const closePostCode = () => {
         setIsPopupOpen(false)
     }

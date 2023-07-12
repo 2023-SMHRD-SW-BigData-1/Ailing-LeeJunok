@@ -11,7 +11,6 @@ import Review from './Page/Review';
 import Introduce from './Page/Introduce1';
 
 
-
 function App() {
   return (
     <div id='wrap'>
