@@ -4,7 +4,7 @@ import React from 'react'
 
 const MainBan = () => {
 
-    const ban =[{name:'1',url : 'https://ifh.cc/g/WwxxCa.jpg',text:'눈'},
+    const ban =[{name:'1',url : 'https://ifh.cc/g/8NOYJw.jpg',text:'눈'},
                 {name:'2',url : 'https://ifh.cc/g/d8dVx3.jpg',text:'사람'}]
 
 

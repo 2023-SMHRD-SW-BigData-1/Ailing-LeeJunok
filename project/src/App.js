@@ -8,7 +8,9 @@ import LogInUI from './Page/Login/Login01';
 import Join from './Page/Login/Login05';
 import ProductBox from './Page/ProductBox';
 import Review from './Page/Review';
-
+import { BrowserRouter, Route } from 'react-router-dom';
+import PostMain from './page/post/PostMain';
+import PostView from './page/post/PostView';
 
 
 function App() {
@@ -28,6 +30,9 @@ function App() {
         {/* ProductList */}
         <Route path='/productList' element={<ProductBox/>}/>
         <Route path='/review' element={<Review/>}/>
+
+        {/* Introduce */}
+        <Route path='/introduce' element={<Introduce/>}/>
       </Routes>
       </div>
 
