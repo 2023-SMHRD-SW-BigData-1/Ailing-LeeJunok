@@ -143,7 +143,7 @@ router.post('/user/join', (req, res) => {
             if (rows.length > 0) {
                 res.json({ result: '중복이다!' });
             } else {
-                let sql = 'insert into member2 values (?,?,?)'
+                let sql = 'insert into t_user values (?,?,?)'
                 conn.query(sql
                     , [req.body.userData.id, req.body.userData.pw, req.body.userData.add]
                     , (err, rows) => {
@@ -213,4 +213,4 @@ router.post('/user/findPassword', (req, res) => {
 
 
 
-module.exports = router, productJson;
+module.exports = router;
