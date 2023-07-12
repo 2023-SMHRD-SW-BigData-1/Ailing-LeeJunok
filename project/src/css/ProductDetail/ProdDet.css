@@ -1,0 +1,176 @@
+body {
+    font-family: "SpoqaNeo", "맑은 고딕", "Malgun Gothic", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #797979;
+    letter-spacing: -0.5px;
+    height: 100%;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    line-height: 1;
+    -webkit-overflow-scrolling: touch;
+}
+
+.product_area {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #eee;
+    padding: 40px 0;
+    margin-top: 80px;
+    width: 1080px;
+    height: 627px;
+}
+
+.left_area {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.thumb {
+    width: 100%;
+    max-width: 520px;
+    overflow: hidden;
+}
+
+.thumb img {
+    width: 100%;
+    height: auto;
+}
+
+.thumb_tab {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.thumb_tab a {
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin: 0 10px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.thumb_tab a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.right_area {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info_div {
+    padding: 0 20px;
+}
+
+.name {
+    margin-bottom: 20px;
+}
+
+.name .desc {
+    font-size: 14px;
+    color: #797979;
+}
+
+.name .tit {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.price_div {
+    margin-bottom: 20px;
+}
+
+.price {
+    margin-bottom: 10px;
+}
+
+.price .won {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.price .join_coupon {
+    font-size: 14px;
+    color: #797979;
+}
+
+.price_desc {
+    font-size: 14px;
+    color: #797979;
+    margin-top: 10px;
+}
+
+.price_desc .desc {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.price_desc .day {
+    font-size: 14px;
+    color: #797979;
+}
+
+.ingest_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.ingest_div .info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.ingest_div .info .ico {
+    width: 20px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.ingest_div .info .tit {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.ingest_div .info .desc {
+    font-size: 14px;
+    color: #797979;
+    margin: 0;
+}
+
+.btn_form {
+    text-align: center;
+    gap: 10px;
+}
+
+.btn_form a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
