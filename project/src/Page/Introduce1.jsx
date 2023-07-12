@@ -1,7 +1,6 @@
 
 import '../css/Introduce/introduceDesign.css'
-import Header from '../Page/Header';
-import Footer from '../Page/Footer';
+
 import React from 'react'
 
 
@@ -52,7 +51,7 @@ const Introduce = () => (
       <section id="about" className="flex flex-col items-center justify-center bg-white">
         <div className="flex flex-col md:flex-row rounded overflow-hidden">
           <img
-            src="https://www.enago.com/academy/kr/wp-content/uploads/sites/10/2016/02/science-changes-1.jpg" // 대문 이미지(가장 큰 이미지)는 css 파일 1줄 주석 참고
+            src="https://ifh.cc/g/W0lOP8.jpg" // 대문 이미지(가장 큰 이미지)는 css 파일 1줄 주석 참고
             className="h-48 md:w-1/2 md:h-screen"
             loading="lazy"
           />
