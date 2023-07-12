@@ -6,10 +6,10 @@ const userRouter = require('./config/oracleDatabase')
 
 app.set('port', process.env.PORT||3001)
 
-app.use(express.static(path.join(__dirname,'project/public')))
+app.use(express.static(path.join(__dirname,'project/build')))
 app.use('/', indexRouter)
 app.use('/user', userRouter)
 
-// app.listen(app.get('port'),()=>{
-//     console.log(app.get('port'),'제발');
-// })
+app.listen(app.get('port'),()=>{
+    console.log(app.get('port'),'제발');
+})
