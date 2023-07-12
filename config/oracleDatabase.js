@@ -49,14 +49,33 @@ async function getSelect(request, response) {
             }
             console.log('db 연결해제');
   
-            // 제품 검색 결과를 JSON 형태로 변환
-            const images = result.rows.map((row) => ({ url: row.PROD_IMG }));
-            resolve(images);
+           // 제품 검색 결과를 JSON 형태로 변환
+          const productJson = result.rows.map((row) => {
+            return {
+              // 각 row의 필드를 적절히 선택하여 객체에 할당
+              // { imageUrl: row.image_url } 형식으로 할당
+              prodSeq: row.PROD_SEQ,
+              prodName: row.PROD_NAME,
+              prodMaker: row.PROD_MAKER,
+              prodPrice: row.PROD_PRICE,
+              prodImg: row.PROD_IMG,
+              prodCategory: row.PROD_CATEGORY,
+              prodSobi: row.PROD_SOBI,
+              prodDose: row.PROD_DOSE,
+              prodMate: row.PROD_MATE,
+              prodFunction: row.PROD_FUNTION,
+              prodIntake: row.PROD_INTAKE,
+              prodCaution: row.PROD_CAUTION,
+              prodKeep: row.PROD_KEEP,
+              prodNutrition: row.PROD_NUTRITION
+            };
           });
+          resolve(productJson);
         });
       });
     });
-  }
+  });
+}
   app.get('/product', async function (request, response) {
     try {
         const result = await getSelect(request, response)
@@ -194,4 +213,4 @@ router.post('/user/findPassword', (req, res) => {
 
 
 
-module.exports = router;
+module.exports = router, productJson;
