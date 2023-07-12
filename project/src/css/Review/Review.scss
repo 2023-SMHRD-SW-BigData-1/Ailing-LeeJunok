@@ -1,0 +1,37 @@
+
+
+.reviewHead{
+    margin: 0 auto;
+    width: 80%;
+    span{
+        font-size: 25px;
+        .countNum{
+            color: #275efe;
+            font-size: 30px;
+        }
+    }
+    ul{
+        float: right;
+        margin-top: 10px;
+        list-style: none;
+        
+        li{
+            float: left;
+            margin-right: 10px;
+            button{
+                border: 0;
+                outline: 0;
+                background-color: white;
+            }
+        }
+        .end::before{
+            content: '|';
+            margin-right: 10px;
+            color: #e5e8eb;
+        }
+    }
+    hr{
+        width: 100%;
+    }
+}
+

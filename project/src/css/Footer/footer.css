@@ -9,4 +9,15 @@ footer {
 footer .contentBox {
   display: grid;
   grid-row: 2;
+}
+footer p {
+  position: relative;
+  color: rgba(0, 0, 0, 0.359);
+  font-size: 14px;
+}
+footer .comp {
+  font-size: 20px;
+}
+footer .comp-info {
+  bottom: 0px;
 }/*# sourceMappingURL=footer.css.map */
