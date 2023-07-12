@@ -83,7 +83,6 @@ const Join = () => {
 
 
   return (
-    
     <>
         <div className='mainSec'><h2>회원가입</h2></div>
         <div className="joinContainer">
