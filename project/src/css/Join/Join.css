@@ -122,3 +122,14 @@
   .joinBtn:hover {
     background-position: right;
   }
+
+  .joinLabel{
+    display: inline-flex;
+    margin: 0 25px 0 25px;
+  }
+
+  .joinSpan{
+    margin: 0 5px;
+  }
+
+  

@@ -36,11 +36,11 @@ const Join = () => {
         <input name="birth" type="date" className="birth" placeholder="생년월일"/>
       </div>
       <div className="textForm">
-        <label>
-      남<input name="gender" type="radio" className="gender" placeholder="성별" value='male'/>
+        <label className='joinLabel'>
+      <span className='joinSpan'>남</span><input name="gender" type="radio" className="gender" placeholder="성별" value='male'/>
       </label>
-      <label>
-      여<input name="gender" type="radio" className="gender" placeholder="성별" value='female'/>
+      <label className='joinLabel'>
+      <span className='joinSpan'>여</span><input name="gender" type="radio" className="gender" placeholder="성별" value='female'/>
       </label>
       </div>
       <input type="submit" className="joinBtn" value="SIGN IN"/>
