@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../css/Cart/cartdesign.scss'
 import $ from 'jquery';
+import Payment from '../components/Payment/Payment01';
 window.$ = $;
 
 const Cart = () => {
@@ -137,7 +138,7 @@ const Cart = () => {
           </div>
         </div>
 
-        <button className="checkout">구매하기</button>
+        <Payment/>
       </div>
     </div>
   );

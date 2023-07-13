@@ -11,6 +11,7 @@ import Introduce1 from './Page/Introduce1'
 import React, { useEffect, useState } from 'react';
 import { productContext } from './context/ProductContext'
 import productjs from './Json/Product'
+import Cart from './Page/Cart';
 
 function App() {
   
@@ -26,6 +27,7 @@ function App() {
 
           {/* ProductList */}
           <Route path='/productList' element={<ProductBox/>}/>
+          <Route path='/cart' element={<Cart/>}/>
           <Route path='/review' element={<Review/>}/>
           
 
