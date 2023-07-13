@@ -2,33 +2,34 @@ import React, { useState, useEffect } from 'react';
 import '../css/Cart/cartdesign.scss'
 import $ from 'jquery';
 import Payment from '../components/Payment/Payment01';
+import { useLocation } from 'react-router-dom';
 window.$ = $;
 
-const Cart = () => {
+const Cart = ({}) => {
+
+  const location = useLocation();
+
+  const Prod_id = location.state.Prod_id;
+  const imageURL = location.state.imageURL;
+  const titleName = location.state.titleName
+  const descriptionS = location.state.descriptionS;
+  const prices = location.state.prices;
   const [products, setProducts] = useState([
     {
-      id: 1,
-      image: 'https://s.cdpn.io/3/dingo-dog-bones.jpg',
-      title: '요것도 품목 이름이에오',
-      description: '언제 끝날까 이거',
-      price: 1000,
+      id: Prod_id,
+      image: imageURL,
+      title: titleName,
+      description: descriptionS,
+      price: prices,
       quantity: 1,
-      linePrice: 1000,
-    }, // 첫번째 물품의 정보들 id 임의로 로직을 따로 짜야할 것 같고 title image price(lineprice와 동일한 값 사용)은 DB의 정보 description은 임의 작성 혹은 가벼운 정보를 띄우는 것이 괜찮아 보입니다.
-    {
-      id: 2,
-      image: 'https://s.cdpn.io/3/large-NutroNaturalChoiceAdultLambMealandRiceDryDogFood.png',
-      title: '이거는 품목 이름이에오',
-      description: '으악',
-      price: 3000,
-      quantity: 1,
-      linePrice: 3000,
-    },
+      linePrice: prices,
+    }
   ]);
 
+  
+
   /* Set rates + misc */
-  const taxRate = 0.1;
-  const shippingRate = 0.198;
+ 
   const fadeTime = 300;
 
   /* Remove item from cart */
@@ -39,19 +40,17 @@ const Cart = () => {
 
   /* Recalculate cart */
   const recalculateCart = () => {
-    const subtotal = products.reduce((total, product) => total + parseFloat(product.linePrice), 0);
+    const subtotal = products.reduce((total, product) => total + product.linePrice, 0);
 
     /* Calculate totals */
-    const tax = subtotal * taxRate;
-    const shipping = subtotal > 0 ? shippingRate : 0;
-    const total = subtotal + tax + shipping;
+    
+   
+    const total = subtotal 
 
     /* Update totals display */
     $('.totals-value').fadeOut(fadeTime, function () {
-      $('#cart-subtotal').html(subtotal.toFixed(2));
-      $('#cart-tax').html(tax.toFixed(2));
-      $('#cart-shipping').html(shipping.toFixed(2));
-      $('#cart-total').html(total.toFixed(2));
+      $('#cart-subtotal').html(subtotal.toFixed(0));
+     
       if (total === 0) {
         $('.checkout').fadeOut(fadeTime);
       } else {
@@ -66,7 +65,7 @@ const Cart = () => {
     setProducts((prevProducts) =>
       prevProducts.map((product) => {
         if (product.id === id) {
-          const linePrice = parseFloat(product.price) * quantity;
+          const linePrice = product.price * quantity;
           return { ...product, quantity, linePrice };
         }
         return product;
@@ -107,7 +106,7 @@ const Cart = () => {
                 type="number"
                 value={product.quantity}
                 min="1"
-                onChange={(e) => updateQuantity(product.id, parseInt(e.target.value))}
+                onChange={(e) => updateQuantity(product.id, (e.target.value))}
               />
             </div>
             <div className="product-removal">
@@ -124,18 +123,7 @@ const Cart = () => {
             <label>Subtotal(물품 총합값)</label>
             <div className="totals-value" id="cart-subtotal"></div>
           </div>
-          <div className="totals-item">
-            <label>부가가치세(10%)</label>
-            <div className="totals-value" id="cart-tax"></div>
-          </div>
-          <div className="totals-item">
-            <label>카드 수수료예요~</label>
-            <div className="totals-value" id="cart-shipping"></div>
-          </div>
-          <div className="totals-item totals-item-total">
-            <label>위에 있는 요소 전부 합친 값</label>
-            <div className="totals-value" id="cart-total"></div>
-          </div>
+        
         </div>
 
         <Payment/>

@@ -2,10 +2,25 @@
 import '../../css/Modals/Modal.css'
 
 import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
+import Cart from '../../Page/Cart';
 
 const Modal = ({info,open,close}) => {
-
-
+    const navigate = useNavigate();
+        
+    const infoOut = () =>{
+        navigate('/cart', {
+            state: {
+                Prod_id : info.PROD_SEQ, 
+                imageURL : info.PROD_IMG, 
+                titleName : info.PROS_NAME, 
+                descriptionS : info.PROD_CATEGORY, 
+                prices : info.PROD_PRICE
+            }
+          });
+    }
+    
+    
     return (
     <div className={open ? 'openModal modal' : 'modal'}>
         {open ? (
@@ -56,7 +71,7 @@ const Modal = ({info,open,close}) => {
                         </div>
                     </div>
                     <div className="purchase">
-                        <a href='/cart'><button className='purchaseBtn'>장바구니 추가</button></a> 
+                       <button className='purchaseBtn' onClick={infoOut}>장바구니 추가</button>
                     </div>
                     <div className='explanation'>
                     <p>{info.PROD_SOBI}</p>
