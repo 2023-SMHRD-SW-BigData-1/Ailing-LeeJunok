@@ -1,16 +1,3 @@
-body {
-    font-family: "SpoqaNeo", "맑은 고딕", "Malgun Gothic", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    color: #797979;
-    letter-spacing: -0.5px;
-    height: 100%;
-    -webkit-text-size-adjust: 100%;
-    -moz-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    line-height: 1;
-    -webkit-overflow-scrolling: touch;
-}
 
 .product_area {
     display: flex;
