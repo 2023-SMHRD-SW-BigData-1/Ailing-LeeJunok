@@ -16,7 +16,7 @@ const HeaderLnb = () => {
             <li><Link to='/review'>구매후기</Link></li>
         </ul>
         <ul>
-            <li><Link>공지사항</Link></li>
+            <li><Link to= '/NoticeList'>공지사항</Link></li>
             <li><Link>보도자료</Link></li>
             <li><Link>1:1 문의</Link></li>
             <li><Link>자주찾는질문</Link></li>
