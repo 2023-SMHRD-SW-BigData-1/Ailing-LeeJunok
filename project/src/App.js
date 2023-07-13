@@ -9,29 +9,36 @@ import Join from './Page/Login/Login05';
 import ProductBox from './Page/ProductBox';
 import Review from './Page/Review';
 import Introduce1 from './Page/Introduce1'
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { productContext } from './context/ProductContext'
+import productjs from './Json/Product'
 
 function App() {
+  
   return (
     <div id='wrap'>
       <Header/>
-
+      
       <div id='body-warpper'>
-      <Routes>
-        <Route path='/' element={<Main/>}/>
-        <Route path='/cart' element={<Cart/>}/>
+      <productContext.Provider value={{productjs}}>
+        <Routes>
+          <Route path='/' element={<Main/>}/>
+          <Route path='/cart' element={<Cart/>}/>
 
-        {/* Login */}
-        <Route path='/login' element={<LogInUI/>}/>
-        <Route path='/login/join' element={<Join/>}/>
+          {/* ProductList */}
+          <Route path='/productList' element={<ProductBox/>}/>
+          <Route path='/review' element={<Review/>}/>
+          
 
-        {/* ProductList */}
-        <Route path='/productList' element={<ProductBox/>}/>
-        <Route path='/review' element={<Review/>}/>
+          {/* Login */}
+          <Route path='/login' element={<LogInUI/>}/>
+          <Route path='/login/join' element={<Join/>}/>
 
-        {/* Introduce */}
-        <Route path='/introduce' element={<Introduce1/>}/>
-      </Routes>
+
+          {/* Introduce */}
+          <Route path='/introduce' element={<Introduce1/>}/>
+        </Routes>
+      </productContext.Provider>
       </div>
 
 

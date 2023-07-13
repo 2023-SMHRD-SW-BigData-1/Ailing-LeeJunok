@@ -1,18 +1,13 @@
 import '../css/ProductBox/ProductList.css';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import ProductInfo from '../components/ProductList/Productinfo';
-import productjs from '../Json/Product';
+import { productContext } from '../context/ProductContext';
 
 const ProductBox = () => {
+  const {productjs}= useContext(productContext);  
   const initialProductCount = 9; 
   const [productCount, setProductCount] = useState(initialProductCount);
-  const products = productjs.map((product) => ({
-    imageSrc: product.PROD_IMG,
-    subtitle: product.PROD_CATEGORY,
-    title: product.PROS_NAME,
-    price: product.PROD_PRICE
-  }));
-
+  
   const handleShowMore = () => {
     setProductCount((prevCount) => prevCount + 9); 
   };
@@ -20,7 +15,7 @@ const ProductBox = () => {
 
 
   const showMoreButton =
-    productCount < products.length ? (
+    productCount < productjs.length ? (
       <div className='watch'>
       <button onClick={handleShowMore}>더 보기</button>
       </div>
@@ -28,16 +23,13 @@ const ProductBox = () => {
 
   const productRows = [];
   for (let i = 0; i < productCount; i ++) {
-    const rowProducts = products.slice(i, i + 1);
+    const rowProducts = productjs.slice(i, i + 1);
     productRows.push(
       <div className="grid-row" key={i}>
         {rowProducts.map((product, index) => (
           <div className="grid-item" key={index}>
             <ProductInfo
-              imageSrc={product.imageSrc}
-              subtitle={product.subtitle}
-              title={product.title}
-              price={product.price}
+              productInfo={product}
             />
           </div>
         ))}

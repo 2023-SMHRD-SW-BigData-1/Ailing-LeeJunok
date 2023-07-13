@@ -70,7 +70,7 @@ var productjs =
             "PROD_MAKER": "콜마비앤에이치",
             "PROD_PRICE": 12200,
             "PROD_IMG": "https://cdn.clayful.io/stores/SDTSPBE344H5.2QCZ4SCL2GQ8/images/6YSP9NH9Q454/v3/product04-아이엠마그네슘.png",
-            "PROD_CATEGORY": "간건강, ",
+            "PROD_CATEGORY": "간건강",
             "PROD_SOBI": "소비기한 1/2이내 제조",
             "PROD_DOSE": "1000 mg",
             "PROD_MATE": "수산화마그네슘, 결정셀룰로스, 유당혼합분말, 히그록시프로필메틸셀룰로스, 해조분말, 나트륨 마그네슘가복시메틸셀룰로스칼슘, 스테아린산마그네슘, 이수산화규소, 이수 산화티타늄(착색료), 글리세린지방산레스테르 *우유 함유*",

@@ -1,28 +1,77 @@
 
 import '../../css/Modals/Modal.css'
 
-import React from 'react'
+import React, { useEffect } from 'react'
 
-const Modal = (props) => {
+const Modal = ({info,open,close}) => {
 
-    const { open, close, header } = props;
 
     return (
     <div className={open ? 'openModal modal' : 'modal'}>
         {open ? (
             <section>
             <div className='modalHead'>
-                {header}
+                <div className='headText'>상세정보</div>
                 <button className="close" onClick={close}>
                 &times;
                 </button>
             </div>
-            <div className='modalMain'>{props.children}</div>
-            <div className='modalFooter'>
-                <button className="close" onClick={close}>
-                close
-                </button>
+            <div className='modalMain'>
+                <div className="product_area">
+                    <div className="imgArea">
+                        <img src={info.PROD_IMG} alt="준비중.." />
+                    </div>
+                    <div className="infoArea"> 
+                    <div className="infoTop">
+                        <p className='infoName'>{info.PROS_NAME}</p>
+                        <p className='infoMaker'>{'('+info.PROD_MAKER+')'}</p>
+                        <hr/>
+                    </div>
+                    <div className="infoPrice">
+                        <span className='priceNumber'>{info.PROD_PRICE}</span><span className="priceText"> 원</span>
+                        <p className='dayPrice'>하루 <span className='dayNumber'>453원</span> 30일분</p>
+                    </div>
+                    <div className='infoCategory'>
+                        <div className='taking'>
+                            <div className='categoryImg'>
+                                <div className='categoryBgc'>
+                                    <img src='https://www.mypuzzle.co.kr/resources/images/icon/product/icn_ingest_info_cap_01.svg'></img>
+                                </div>
+                            </div>
+                            <div className='textSuck' >
+                            <p>섭취</p>
+                            <p className='textFuck'>{info.PROD_INTAKE}</p>
+                            </div>
+                        </div>
+                        <div className='func'>
+                            <div className='categoryImg'>
+                                <div className='categoryBgc'>
+                                    <img src='https://www.mypuzzle.co.kr/resources/images/icon/health/icn_nutritional.svg'></img>
+                                </div>
+                            </div>
+                            <div className='textSuck'>
+                            <p>기능</p>
+                            <p className='textFuck'>{info.PROD_CATEGORY}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="purchase">
+                        <button className='purchaseBtn'>장바구니 추가</button>
+                    </div>
+                    <div className='explanation'>
+                    <p>{info.PROD_SOBI}</p>
+                    <p>{info.PROD_DOSE}</p>
+                    <p>{info.PROD_MATE}</p>
+                    <p>{info.PROD_FUNTION}</p>
+                    <p>{info.PROD_CAUTION}</p>
+                    <p>{info.PROD_KEEP}</p>
+                    <p>{info.PROD_NUTRITION}</p>
+                    </div>
+
+                    </div>
+                </div>
             </div>
+
             </section>
         ) : null}
         </div>

@@ -7,6 +7,7 @@
         left: 0;
         z-index: 9999;
         background-color: rgba(0, 0, 0, 0.29);
+        backdrop-filter: blur(2.5px); 
             button {
             outline: none;
             cursor: pointer;
@@ -14,27 +15,33 @@
             }
             section {
                 width: 90%;
-                max-width: 450px;
+                max-width: 1000px;
                 margin: 0 auto;
-                border-radius: 0.3rem;
+                border-radius: 15px;
                 background-color: #fff;
                 /* 팝업이 열릴때 스르륵 열리는 효과 */
                 animation: modal-show 0.3s;
                 overflow: hidden;
                 .modalHead {
                     position: relative;
-                    padding: 16px 64px 16px 16px;
+                    padding: 8px 8px 8px 8px;
                     background-color: #f1f1f1;
-                    font-weight: 700;
+                    font-weight: 300;
+                    .headText{
+                        position: relative;
+                        left: 10px;
+                        top: 5px;
+                        font-size: 20px;
+                    }
                     .close {
                     position: absolute;
-                    bottom: 13px;
+                    bottom: 8px;
                     right: 15px;
                     width: 30px;
                     font-size: 40px;
                     font-weight: 700;
                     text-align: center;
-                    color: #999;
+                    color: #78C1F3;
                     border: none;
                     }
                 }
@@ -42,18 +49,144 @@
                     padding: 16px;
                     border-bottom: 1px solid #dee2e6;
                     border-top: 1px solid #dee2e6;
-                }
-                .modalFooter{
-                    padding: 12px 16px;
-                    text-align: right;
-                    button {
-                    padding: 6px 12px;
-                    color: #fff;
-                    background-color: #6c757d;
-                    border-radius: 5px;
-                    font-size: 13px;
+                    .product_area{
+                        display: flex;
+                        width: 100%;
+                        margin: 0 auto;
+                        .imgArea{
+                            float: left;
+                            width: 40%;
+                            background-color: #f1f1f1;
+                            border-radius: 15px;
+                            img{
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+                        .infoArea{
+                            margin-left: 20px;
+                            width: 60%;
+                            max-height: 400px;
+                            overflow-y: scroll;
+                            -ms-overflow-style: none; /* 인터넷 익스플로러 */
+                            scrollbar-width: none; /* 파이어폭스 */
+                            &::-webkit-scrollbar{
+                                display: none;
+                            }
+                            .infoTop{
+                                width: 100%;
+                                .infoName{
+                                    font-size: 25px;
+                                    font-weight: 700;
+                                }
+                                .infoMaker{
+                                    position: relative;
+                                    float: right;
+                                    bottom: 45px;
+                                    font-size: 12px;
+                                }
+                                hr{
+                                    position: relative;
+                                    width: 100%;
+                                    bottom: 40px;
+                                }
+                            }
+                            .infoPrice{
+                                position: relative;
+                                bottom: 40px;
+                                width: 100%;
+                                .priceNumber{
+                                    font-size: 30px;
+                                }
+                                .priceText{
+                                    font-size: 20px;
+                                }
+                                .dayPrice{
+                                    font-size: 15px;
+                                    .dayNumber{
+                                        color: #007aff;
+                                        font-size: 20px;
+                                    }
+                                }
+                            }
+                            .infoCategory{
+                                display: flex;
+                                position: relative;
+                                width: 100%;
+                                justify-content: center;
+                                bottom: 45px;
+                                .categoryImg{
+                                    display: flex;
+                                    justify-content: center;
+                                    width: 100%;
+                                    height: 120px;
+                                }
+                                .textSuck{
+                                    width: 100%;
+                                    justify-content: center;
+                                    height: 50px;
+                                }
+                                .categoryBgc{
+                                    display: flex;
+                                    border-radius: 100%;
+                                    background-color: #007bff39;
+                                    width: 100px;
+                                    height: 100px;
+                                    justify-content: center;
+                                }
+                                .textFuck{
+                                    font-size: 11px;
+                                }
+                                .textFuck{
+                                    position: relative;
+                                    bottom: 10px;
+                                }
+                                .taking{
+                                    display: flex;
+                                    flex-direction: column;
+                                    text-align: center;
+                                    width: 300px;
+                                    img{
+                                        width: 100px;
+                                        height: 100px;
+                                    }
+                                }
+                                .func{
+                                    display: flex;
+                                    flex-direction: column;
+                                    text-align: center;
+                                    width: 300px;
+                                    margin-left: 50px;
+                                    img{
+                                        position: relative;
+                                        top: 3px;
+                                        width: 90px;
+                                        height: 90px;
+                                    }
+                                }
+                            }
+                            .purchase{
+                                position: relative;
+                                bottom: 20px;
+                                width: 100%;
+                                text-align: center;
+                                .purchaseBtn{
+                                    color: white;
+                                    width: 100%;
+                                    height: 50px;
+                                    background-color: #007aff;
+                                    border-radius:10px ;
+                                    border-style:none ;
+                                    font-size: 25px;
+                                }
+                            }
+                            .explanation{
+                                font-size: 14px;
+                            }
+                        }
                     }
                 }
+
             }
         }
 
@@ -81,3 +214,4 @@
         opacity: 1;
     }
     }
+
