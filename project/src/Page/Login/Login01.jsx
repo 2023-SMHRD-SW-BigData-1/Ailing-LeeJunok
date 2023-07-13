@@ -112,7 +112,6 @@ return (
 
 <Grid container>
   <Grid item xs><Link to='join'>회원가입하기</Link></Grid>
-  <Grid item ><Link>아이디/비밀번호 찾기</Link></Grid>
 </Grid>
 
 
