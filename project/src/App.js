@@ -9,6 +9,9 @@ import ProductBox from './Page/ProductBox';
 import Review from './Page/Review';
 import Introduce1 from './Page/Introduce1'
 import React from 'react';
+import Cart from './Page/Cart'
+import productjs from './Json/Product';
+import { productContext } from './context/ProductContext';
 
 function App() {
   
@@ -36,6 +39,7 @@ function App() {
         {/* Introduce */}
         <Route path='/introduce' element={<Introduce1/>}/>
       </Routes>
+      </productContext.Provider>
       </div>
 
 

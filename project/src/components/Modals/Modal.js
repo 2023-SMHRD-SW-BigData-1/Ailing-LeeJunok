@@ -3,7 +3,7 @@ import '../../css/Modals/Modal.css'
 
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
-import Cart from '../../Page/Cart';
+
 
 const Modal = ({info,open,close}) => {
     const navigate = useNavigate();
