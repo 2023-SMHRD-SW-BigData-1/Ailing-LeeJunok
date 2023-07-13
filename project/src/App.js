@@ -8,10 +8,7 @@ import Join from './Page/Login/Login05';
 import ProductBox from './Page/ProductBox';
 import Review from './Page/Review';
 import Introduce1 from './Page/Introduce1'
-import React, { useEffect, useState } from 'react';
-import { productContext } from './context/ProductContext'
-import productjs from './Json/Product'
-import Cart from './Page/Cart';
+import React from 'react';
 
 function App() {
   
@@ -36,10 +33,9 @@ function App() {
           <Route path='/login/join' element={<Join/>}/>
 
 
-          {/* Introduce */}
-          <Route path='/introduce' element={<Introduce1/>}/>
-        </Routes>
-      </productContext.Provider>
+        {/* Introduce */}
+        <Route path='/introduce' element={<Introduce1/>}/>
+      </Routes>
       </div>
 
 
