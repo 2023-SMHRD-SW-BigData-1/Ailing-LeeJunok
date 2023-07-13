@@ -74,7 +74,7 @@ return (
       <Avatar sx={{ m: 1, bgcolor: 'black' }}>
       <LockOutlinedIcon />
       </Avatar>
-          로그인 
+          LOGIN 
 
 
 
