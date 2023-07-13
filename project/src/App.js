@@ -1,7 +1,6 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom'
 import Main from './Page/Main';
-import Cart from './Page/Cart';
 import Header from './Page/Header';
 import Footer from './Page/Footer';
 import LogInUI from './Page/Login/Login01';
@@ -23,7 +22,7 @@ function App() {
       <productContext.Provider value={{productjs}}>
         <Routes>
           <Route path='/' element={<Main/>}/>
-          <Route path='/cart' element={<Cart/>}/>
+          
 
           {/* ProductList */}
           <Route path='/productList' element={<ProductBox/>}/>
