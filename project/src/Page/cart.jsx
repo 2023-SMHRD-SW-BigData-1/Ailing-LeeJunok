@@ -1,35 +1,40 @@
 import React, { useState, useEffect } from 'react';
-import '../css/Cart/cartdesign.scss'
+import '../css/Cart/cartdesign.scss';
 import $ from 'jquery';
 import Payment from '../components/Payment/Payment01';
 import { useLocation } from 'react-router-dom';
 window.$ = $;
 
-const Cart = ({}) => {
-
+const Cart = () => {
   const location = useLocation();
 
-  const Prod_id = location.state.Prod_id;
-  const imageURL = location.state.imageURL;
-  const titleName = location.state.titleName
-  const descriptionS = location.state.descriptionS;
-  const prices = location.state.prices;
-  const [products, setProducts] = useState([
-    {
-      id: Prod_id,
-      image: imageURL,
-      title: titleName,
-      description: descriptionS,
-      price: prices,
-      quantity: 1,
-      linePrice: prices,
-    }
-  ]);
+  const Prod_id = location.state ? location.state.Prod_id : null;
+  const imageURL = location.state ? location.state.imageURL : null;
+  const titleName = location.state ? location.state.titleName : null;
+  const descriptionS = location.state ? location.state.descriptionS : null;
+  const prices = location.state ? location.state.prices : null;
 
-  
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    if (Prod_id && imageURL && titleName && descriptionS && prices) {
+      setProducts([
+        {
+          id: Prod_id,
+          image: imageURL,
+          title: titleName,
+          description: descriptionS,
+          price: prices,
+          quantity: 1,
+          linePrice: prices,
+        },
+      ]);
+    } else {
+      setProducts([]);
+    }
+  }, [Prod_id, imageURL, titleName, descriptionS, prices]);
 
   /* Set rates + misc */
- 
   const fadeTime = 300;
 
   /* Remove item from cart */
@@ -43,14 +48,12 @@ const Cart = ({}) => {
     const subtotal = products.reduce((total, product) => total + product.linePrice, 0);
 
     /* Calculate totals */
-    
-   
-    const total = subtotal 
+    const total = subtotal;
 
     /* Update totals display */
     $('.totals-value').fadeOut(fadeTime, function () {
       $('#cart-subtotal').html(subtotal.toFixed(0));
-     
+
       if (total === 0) {
         $('.checkout').fadeOut(fadeTime);
       } else {
@@ -106,7 +109,7 @@ const Cart = ({}) => {
                 type="number"
                 value={product.quantity}
                 min="1"
-                onChange={(e) => updateQuantity(product.id, (e.target.value))}
+                onChange={(e) => updateQuantity(product.id, parseInt(e.target.value))}
               />
             </div>
             <div className="product-removal">
@@ -123,10 +126,9 @@ const Cart = ({}) => {
             <label>Subtotal(물품 총합값)</label>
             <div className="totals-value" id="cart-subtotal"></div>
           </div>
-        
         </div>
 
-        <Payment/>
+        <Payment />
       </div>
     </div>
   );
