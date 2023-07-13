@@ -224,7 +224,7 @@
 }
 .reviewBottom ul.pagination li a:hover,
 .reviewBottom ul.pagination li a.active {
-  color: blue;
+  color: black;
 }
 .reviewBottom .page-selection {
   width: 48px;

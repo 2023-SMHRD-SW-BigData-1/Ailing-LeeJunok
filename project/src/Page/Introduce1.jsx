@@ -1,5 +1,5 @@
 
-import '../css/Introduce/introduceDesign.css'
+// import '../css/Introduce/introduceDesign.css'
 
 import React from 'react'
 
@@ -32,7 +32,7 @@ const Introduce = () => (
       </div>
     </nav>
 
-    <header id="up" className="headers">
+    <div id="up" className="headers">
       {/* Overlay Background + Center Control */}
       <div
         className="h-screen bg-opacity-50 bg-black flex items-center justify-center"
@@ -50,11 +50,12 @@ const Introduce = () => (
       <main>
       <section id="about" className="flex flex-col items-center justify-center bg-white">
         <div className="flex flex-col md:flex-row rounded overflow-hidden">
-          <img
+           <img
             src="https://ifh.cc/g/W0lOP8.jpg" // 대문 이미지(가장 큰 이미지)는 css 파일 1줄 주석 참고
             className="h-48 md:w-1/2 md:h-screen"
             loading="lazy"
-          /> <div className='logotext'>
+          />  
+          <div className='logotext'>
             <h1 className="font-extrabold text-4xl mt-1 mb-2 mm:my-4 border-b-4 border-indigo-600 self-start leading-tight">
               Pill.YO
             </h1>
@@ -181,11 +182,11 @@ const Introduce = () => (
         </div>
       </section>
     </main>
-    </header>
+    </div>
 
     
 
-   
+
   </div>
 
   </div>

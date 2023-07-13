@@ -87,7 +87,7 @@ const Review = () => {
                     member : '이수호12',
                     text : '안녕하세요 병든 이수호입니다.',
                     url : "https://www.mypuzzle.co.kr/upload/review/202302/rv_20230210_9627_56057.png",
-                    },
+                    }
                 ]
             
             const [startNum,setStartNum] = useState(0);

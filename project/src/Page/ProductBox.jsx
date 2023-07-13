@@ -45,6 +45,7 @@ const ProductBox = () => {
     );
   }
 
+  
   return (
     <>
     <div className='mainSec'><h2>제품 리스트</h2></div>
