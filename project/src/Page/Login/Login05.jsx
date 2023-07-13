@@ -38,14 +38,12 @@ const PopupPostCode = React.forwardRef((props, ref) => {
   const postCodeStyle = {
     display: 'block',
     top: '10%',
-    width: '600px',
-    height: '600px',
-    padding: '7px'
+    height: '600px'
   };
 
   return (
     <div>
-      <DaumPostcode style={postCodeStyle} onComplete={handlePostCode} />
+      <DaumPostcode style={postCodeStyle} onComplete={handlePostCode} className='postCode'/>
       <button type="button" onClick={() => props.onClose()} className="postCode_btn">
         닫기
       </button>
