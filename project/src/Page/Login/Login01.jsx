@@ -80,7 +80,7 @@ return (
 
           <TextField
             margin = 'normal'
-            label="이메일 주소" 
+            label="ID 입력" 
             required
             fullWidth
             name="email"
@@ -88,7 +88,7 @@ return (
             // autoFocus
           />
           <TextField
-            label="비밀번호"
+            label="비밀번호 입력"
             type="password"
             required fullWidth
             name = "password"
@@ -112,7 +112,6 @@ return (
 
 <Grid container>
   <Grid item xs><Link to='join'>회원가입하기</Link></Grid>
-  <Grid item ><Link>아이디/비밀번호 찾기</Link></Grid>
 </Grid>
 
 

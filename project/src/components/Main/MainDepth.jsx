@@ -1,12 +1,12 @@
 
-import React, { useContext, useEffect, useState } from 'react'
-import { productContext } from '../../context/ProductContext'
+import React from 'react'
 
 
 
-const MainDepth = ({name,url}) => {
 
-    const {product,setProduct,setProductName} = useContext(productContext)
+const MainDepth = ({name,url,setproductname}) => {
+
+    
     
     // for (let i = 0; i < productjs.length; i++) {
     //     if (productjs[i].PROD_CATEGORY.indexOf('스트레스') !=-1) {
@@ -19,23 +19,23 @@ const MainDepth = ({name,url}) => {
     const changeCard = ()=>{
 
             switch (name) {
-                case '면역':setProductName('면역') 
+                case '면역':setproductname('면역') 
                 break;
-                case '다이어트':setProductName('다이어트') 
+                case '다이어트':setproductname('다이어트') 
                 break;
-                case '피부':setProductName('피부') 
+                case '피부':setproductname('피부') 
                 break;
-                case '스트레스':setProductName('스트레스') 
+                case '스트레스':setproductname('스트레스') 
                 break;
-                case '피로':setProductName('피로') 
+                case '피로':setproductname('피로') 
                 break;
-                case '간 건강':setProductName('간 건강') 
+                case '간 건강':setproductname('간 건강') 
                 break;
-                case '눈 건강':setProductName('눈 건강') 
+                case '눈 건강':setproductname('눈 건강') 
                 break;
-                case '장 건강':setProductName('장 건강') 
+                case '장 건강':setproductname('장 건강') 
                 break;
-                case '수면':setProductName('수면') 
+                case '수면':setproductname('수면') 
                 break;
                 default:
                 

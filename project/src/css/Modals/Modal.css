@@ -8,6 +8,8 @@
   left: 0;
   z-index: 9999;
   background-color: rgba(0, 0, 0, 0.29);
+  -webkit-backdrop-filter: blur(2.5px);
+          backdrop-filter: blur(2.5px);
 }
 .modal button {
   outline: none;
@@ -16,9 +18,9 @@
 }
 .modal section {
   width: 90%;
-  max-width: 450px;
+  max-width: 1000px;
   margin: 0 auto;
-  border-radius: 0.3rem;
+  border-radius: 15px;
   background-color: #fff;
   /* 팝업이 열릴때 스르륵 열리는 효과 */
   animation: modal-show 0.3s;
@@ -26,19 +28,25 @@
 }
 .modal section .modalHead {
   position: relative;
-  padding: 16px 64px 16px 16px;
+  padding: 8px 8px 8px 8px;
   background-color: #f1f1f1;
-  font-weight: 700;
+  font-weight: 300;
+}
+.modal section .modalHead .headText {
+  position: relative;
+  left: 10px;
+  top: 5px;
+  font-size: 20px;
 }
 .modal section .modalHead .close {
   position: absolute;
-  bottom: 13px;
+  bottom: 8px;
   right: 15px;
   width: 30px;
   font-size: 40px;
   font-weight: 700;
   text-align: center;
-  color: #999;
+  color: #78C1F3;
   border: none;
 }
 .modal section .modalMain {
@@ -46,16 +54,141 @@
   border-bottom: 1px solid #dee2e6;
   border-top: 1px solid #dee2e6;
 }
-.modal section .modalFooter {
-  padding: 12px 16px;
-  text-align: right;
+.modal section .modalMain .product_area {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
 }
-.modal section .modalFooter button {
-  padding: 6px 12px;
-  color: #fff;
-  background-color: #6c757d;
-  border-radius: 5px;
-  font-size: 13px;
+.modal section .modalMain .product_area .imgArea {
+  float: left;
+  width: 40%;
+  background-color: #f1f1f1;
+  border-radius: 15px;
+}
+.modal section .modalMain .product_area .imgArea img {
+  width: 100%;
+  height: 100%;
+}
+.modal section .modalMain .product_area .infoArea {
+  margin-left: 20px;
+  width: 60%;
+  max-height: 400px;
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* 인터넷 익스플로러 */
+  scrollbar-width: none; /* 파이어폭스 */
+}
+.modal section .modalMain .product_area .infoArea::-webkit-scrollbar {
+  display: none;
+}
+.modal section .modalMain .product_area .infoArea .infoTop {
+  width: 100%;
+}
+.modal section .modalMain .product_area .infoArea .infoTop .infoName {
+  font-size: 25px;
+  font-weight: 700;
+}
+.modal section .modalMain .product_area .infoArea .infoTop .infoMaker {
+  position: relative;
+  float: right;
+  bottom: 45px;
+  font-size: 12px;
+}
+.modal section .modalMain .product_area .infoArea .infoTop hr {
+  position: relative;
+  width: 100%;
+  bottom: 40px;
+}
+.modal section .modalMain .product_area .infoArea .infoPrice {
+  position: relative;
+  bottom: 40px;
+  width: 100%;
+}
+.modal section .modalMain .product_area .infoArea .infoPrice .priceNumber {
+  font-size: 30px;
+}
+.modal section .modalMain .product_area .infoArea .infoPrice .priceText {
+  font-size: 20px;
+}
+.modal section .modalMain .product_area .infoArea .infoPrice .dayPrice {
+  font-size: 15px;
+}
+.modal section .modalMain .product_area .infoArea .infoPrice .dayPrice .dayNumber {
+  color: #007aff;
+  font-size: 20px;
+}
+.modal section .modalMain .product_area .infoArea .infoCategory {
+  display: flex;
+  position: relative;
+  width: 100%;
+  justify-content: center;
+  bottom: 45px;
+}
+.modal section .modalMain .product_area .infoArea .infoCategory .categoryImg {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 120px;
+}
+.modal section .modalMain .product_area .infoArea .infoCategory .textSuck {
+  width: 100%;
+  justify-content: center;
+  height: 50px;
+}
+.modal section .modalMain .product_area .infoArea .infoCategory .categoryBgc {
+  display: flex;
+  border-radius: 100%;
+  background-color: rgba(0, 123, 255, 0.2235294118);
+  width: 100px;
+  height: 100px;
+  justify-content: center;
+}
+.modal section .modalMain .product_area .infoArea .infoCategory .textFuck {
+  font-size: 11px;
+}
+.modal section .modalMain .product_area .infoArea .infoCategory .textFuck {
+  position: relative;
+  bottom: 10px;
+}
+.modal section .modalMain .product_area .infoArea .infoCategory .taking {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 300px;
+}
+.modal section .modalMain .product_area .infoArea .infoCategory .taking img {
+  width: 100px;
+  height: 100px;
+}
+.modal section .modalMain .product_area .infoArea .infoCategory .func {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 300px;
+  margin-left: 50px;
+}
+.modal section .modalMain .product_area .infoArea .infoCategory .func img {
+  position: relative;
+  top: 3px;
+  width: 90px;
+  height: 90px;
+}
+.modal section .modalMain .product_area .infoArea .purchase {
+  position: relative;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+.modal section .modalMain .product_area .infoArea .purchase .purchaseBtn {
+  color: white;
+  width: 100%;
+  height: 50px;
+  background-color: #007aff;
+  border-radius: 10px;
+  border-style: none;
+  font-size: 25px;
+}
+.modal section .modalMain .product_area .infoArea .explanation {
+  font-size: 14px;
 }
 
 .modal.openModal {

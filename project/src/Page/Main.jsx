@@ -2,18 +2,21 @@ import '../css/Main/main.css'
 import MainBan from '../components/Main/MainBan'
 import MainDepth from '../components/Main/MainDepth'
 import RcProduct from '../components/Main/RcProduct'
-import { productContext } from '../context/ProductContext'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import Atom from '../components/Main/Atom'
 import BenText from '../components/Main/BenText'
 import GrideBox from '../components/Main/GrideBox'
 import Review from '../components/Main/Review'
-import productjs from '../Json/Product'
+import { productContext } from '../context/ProductContext'
+
 
 
 
 
 const Main = () => {
+
+    const {productjs}= useContext(productContext);
+    console.log(productjs);
 
     const mainDepth = [{depthName : '면역',url : 'https://ifh.cc/g/WY6MCG.png'},
     {depthName : '다이어트',url : 'https://ifh.cc/g/p53C74.png'},
@@ -63,17 +66,15 @@ const Main = () => {
             <div className='mainBanner'>
             <MainBan/>
             </div>
-            <productContext.Provider value={{product,setProduct,setProductName}}>
             <div className='mainSec ingredient'>
                 <h2><strong>{productName == ""? '어떤 고민이 있으신가요?' : productName+'에 대한 고민이 있으신가요?'}</strong></h2>
             </div>
             <div className='contentBox'>
                 <div className='innerDepth'>
-                    {mainDepth.map((item)=><MainDepth key={item.depthName} name={item.depthName} url={item.url}/>)}
+                    {mainDepth.map((item)=><MainDepth key={item.depthName} name={item.depthName} url={item.url} setproductname={setProductName}/>)}
                 </div>
-                {productName == ""? <Atom/> : <RcProduct/>}
+                {productName == ""? <Atom/> : <RcProduct product={product} />}
             </div>
-            </productContext.Provider>
             <div className='contentBox'>
             <div className='hanpo'><BenText/></div>
             </div>

@@ -7,13 +7,13 @@ const HeaderLnb = () => {
     return (
     <div className='innerLnb'>
         <ul>
-            <li><Link to={'/introduce'}>Pill.Yo 란?</Link></li>
+            <li><a href="'/introduce'">Pill.Yo 란?</a></li>
             <li><Link>원료이야기</Link></li>
             <li><Link>100%환불제도</Link></li>
         </ul>
         <ul>
-            <li><Link to='/productList'>제품리스트</Link></li>
-            <li><Link to='/review'>구매후기</Link></li>
+            <li><a href="/productList">제품리스트</a></li>
+            <li><a href="/review">구매후기</a></li>
         </ul>
         <ul>
             <li><Link to= '/NoticeList'>공지사항</Link></li>
@@ -23,7 +23,7 @@ const HeaderLnb = () => {
 
         </ul>
         <ul>
-            <li><Link>장바구니</Link></li>
+            <li><a href="/cart">장바구니</a></li>
             <li><Link>주문내역</Link></li>
             <li><Link>관심상품</Link></li>
             <li><Link>회원정보 수정</Link></li>
