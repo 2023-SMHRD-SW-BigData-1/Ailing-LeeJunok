@@ -48,7 +48,7 @@ const Payment01 = () =>{
 
     return(
     <>
-    <button onClick={Payment01}> 제발 결제좀 </button>
+    <button onClick={Payment01} className="checkout" > 구매하기 </button>
     </>
 
     )

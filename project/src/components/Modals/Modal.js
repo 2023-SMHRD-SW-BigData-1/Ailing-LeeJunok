@@ -56,7 +56,7 @@ const Modal = ({info,open,close}) => {
                         </div>
                     </div>
                     <div className="purchase">
-                        <button className='purchaseBtn'>장바구니 추가</button>
+                        <a href='/cart'><button className='purchaseBtn'>장바구니 추가</button></a> 
                     </div>
                     <div className='explanation'>
                     <p>{info.PROD_SOBI}</p>
