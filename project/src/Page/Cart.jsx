@@ -5,7 +5,6 @@ import ShoppingCart from '../components/Cart/ShoppingCart'
 const Cart = () => {
     return (
     <div id='mainContentWrapper'>
-        <ShoppingCart/>
     </div>
     )
 }

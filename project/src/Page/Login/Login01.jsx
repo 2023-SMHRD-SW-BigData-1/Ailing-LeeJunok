@@ -80,7 +80,7 @@ return (
 
           <TextField
             margin = 'normal'
-            label="이메일 주소" 
+            label="ID 입력" 
             required
             fullWidth
             name="email"
@@ -88,7 +88,7 @@ return (
             // autoFocus
           />
           <TextField
-            label="비밀번호"
+            label="비밀번호 입력"
             type="password"
             required fullWidth
             name = "password"

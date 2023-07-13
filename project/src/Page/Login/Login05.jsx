@@ -8,7 +8,6 @@ import React, { useRef, useState } from 'react';
 import ReactDom from 'react-dom';
 import DaumPostcode from 'react-daum-postcode';
 
-
 const PopupDom = ({ children }) => {
   const el = document.getElementById('popupDom');
   return ReactDom.createPortal(children, el);
@@ -176,49 +175,47 @@ const Join = () => {
 
   //===================================================
   return (
-    
     <>
-        <div className='mainSec'><h2>회원가입</h2></div>
-        <div className="joinContainer">
-        <form action="doJoin" method="POST" className="joinForm" onSubmit={handleJoinSubmit}>
-      <div className="textForm">
-        <input name="loginId" type="text" className="id" placeholder="아이디" onChange={idHandler}>
-        </input>
-      </div>
-      <div className="textForm">
-        <input name="loginPw" type="password" className="pw" placeholder="비밀번호" onChange={pwHandler}/>
-      </div>
-      <div className="textForm">
-        <input name="name" type="text" className="name" placeholder="이름" onChange={nameHandler}/>
-      </div>
-       <div className="textForm">
-        <input name="email" type="text" className="email" placeholder="이메일" onChange={emailHandler}/>
-      </div>
-      <div className="textForm">
-        <input name="cellphoneNo" type="tel" value={num} ref={phoneRef} onChange={handlePhone} className="cellphoneNo" placeholder="전화번호"/>
-      </div>
-        <input value='우편번호 찾기' name="mailNumber" type="button" className="mailNumber" placeholder="우편번호 찾기" onClick={openPostCode}/>
-        <div id='popupDom'>
-                {isPopupOpen && (
-                    <PopupDom>
-                        <PopupPostCode onClose={closePostCode} postRef={postRef} addRef={addRef} />
-                    </PopupDom>
-                )}
-        </div>
-      <div className="textForm">
-        <input name="faddress" type="text" className="faddress" placeholder="우편번호" ref={postRef} readOnly/>
-      </div>
-      <div className="textForm">
-        <input name="address" type="text" className="address" placeholder="주소" ref={addRef} readOnly onChange={addressHandler}/>
-      </div>
-      <div className="textForm">
-        <input name="detailAddress" type="text" className="detailAddress" placeholder="상세주소"/>
-      </div>
-      <input type="submit" className="joinBtn" value="SIGN IN"/>
-    </form>
+    <div className='mainSec'><h2>회원가입</h2></div>
+    <div className="joinContainer">
+    <form action="doJoin" method="POST" className="joinForm" onSubmit={handleJoinSubmit}>
+  <div className="textForm">
+    <input name="loginId" type="text" className="id" placeholder="아이디" onChange={idHandler}>
+    </input>
+  </div>
+  <div className="textForm">
+    <input name="loginPw" type="password" className="pw" placeholder="비밀번호" onChange={pwHandler}/>
+  </div>
+  <div className="textForm">
+    <input name="name" type="text" className="name" placeholder="이름" onChange={nameHandler}/>
+  </div>
+   <div className="textForm">
+    <input name="email" type="text" className="email" placeholder="이메일" onChange={emailHandler}/>
+  </div>
+  <div className="textForm">
+    <input name="cellphoneNo" type="tel" value={num} ref={phoneRef} onChange={handlePhone} className="cellphoneNo" placeholder="전화번호"/>
+  </div>
+    <input value='우편번호 찾기' name="mailNumber" type="button" className="mailNumber" placeholder="우편번호 찾기" onClick={openPostCode}/>
+    <div id='popupDom'>
+            {isPopupOpen && (
+                <PopupDom>
+                    <PopupPostCode onClose={closePostCode} postRef={postRef} addRef={addRef} />
+                </PopupDom>
+            )}
     </div>
-    </>
-
+  <div className="textForm">
+    <input name="faddress" type="text" className="faddress" placeholder="우편번호" ref={postRef} readOnly/>
+  </div>
+  <div className="textForm">
+    <input name="address" type="text" className="address" placeholder="주소" ref={addRef} readOnly onChange={addressHandler}/>
+  </div>
+  <div className="textForm">
+    <input name="detailAddress" type="text" className="detailAddress" placeholder="상세주소"/>
+  </div>
+  <input type="submit" className="joinBtn" value="SIGN IN"/>
+</form>
+</div>
+</>
      )
     }
     
