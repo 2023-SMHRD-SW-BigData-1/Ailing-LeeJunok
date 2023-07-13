@@ -29,7 +29,7 @@ const Modal = ({info,open,close}) => {
                     </div>
                     <div className="infoPrice">
                         <span className='priceNumber'>{info.PROD_PRICE}</span><span className="priceText"> 원</span>
-                        <p className='dayPrice'>하루 <span className='dayNumber'>453원</span> 30일분</p>
+                        <p className='dayPrice'>하루 <span className='dayNumber'>{info.PROD_DAYPRICE+'원'}</span> 30일분</p>
                     </div>
                     <div className='infoCategory'>
                         <div className='taking'>
