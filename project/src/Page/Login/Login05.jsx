@@ -1,11 +1,12 @@
 
 // ===============================================
 // import { Checkbox } from '@mui/material';
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState} from 'react'
 import '../../css/Join/Join.css'
 import ReactDom from 'react-dom';
 import DaumPostcode from "react-daum-postcode";
-
+import axios from 'axios'
+import {useNavigate} from 'react-router-dom'
 
 
 
@@ -46,7 +47,6 @@ const PopupPostCode = React.forwardRef((props) => {
  
     const postCodeStyle = {
         display: "block",
-        
         top: "10%",
         width: "600px",
         height: "600px",
@@ -78,15 +78,33 @@ const Join = () => {
     }
     const postRef = useRef()
     const addRef = useRef()
+// ============================================================================
+    const [joinResult, setJoinResult] = useState('');
+    const navigate = useNavigate();
+    const handleJoin = async (event) => {
+      event.preventDefault();
+  
+      const form = event.target;
+      const formData = new FormData(form);
+  
+      try {
+        const response = await axios.post('/login/join', formData);
+        console.log(response.data);
+        navigate('/login');
+        // 응답에 대한 처리를 수행합니다 (성공 메시지 표시, 리다이렉트 등)
+      } catch (error) {
+        console.error(error);
+        // 에러에 대한 처리를 수행합니다 (에러 메시지 표시 등)
+      }
+    };
 
 
-
-
+//========================================================
   return (
     <>
         <div className='mainSec'><h2>회원가입</h2></div>
         <div className="joinContainer">
-    <form action="doJoin" method="POST" className='joinForm' >
+    <form onSubmit={handleJoin} className='joinForm' >
       <div className="textForm">
         <input name="loginId" type="text" className="id" placeholder="아이디">
         </input>
@@ -104,7 +122,7 @@ const Join = () => {
         <input name="email" type="text" className="email" placeholder="이메일"/>
       </div>
       <div className="textForm">
-        <input name="cellphoneNo" type="number" className="cellphoneNo" placeholder="전화번호"/>
+        <input name="cellphoneNo" type="number" maxlength="11"className="cellphoneNo" placeholder="전화번호"/>
       </div>
         <input value='우편번호 찾기' name="mailNumber" type="button" className="mailNumber" placeholder="우편번호 찾기" onClick={openPostCode}/>
         <div id='popupDom'>

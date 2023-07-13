@@ -1,8 +1,8 @@
 const express = require('express')
 const app = express()
 
-const server = app.listen(3001, () => {
-    console.log('server start, port 3001')
+const server = app.listen(3000, () => {
+    console.log('server start, port 3000')
 })
 
 const oracledb = require('oracledb')
@@ -112,31 +112,50 @@ async function getSelect(request, response) {
     }
 })
 
-router.post('/user/join', (req, res) => {
-    console.log('join 접근!', req.body);
-    let sql2 = 'select id from t_user where id=?'
+router.post('/login/join', async (req, res) => {
+  console.log('join 접근!', req.body);
+  try {
+    const connection = await oracledb.getConnection(dbConfig);
+    const result = await connection.execute(
+      'SELECT user_id FROM t_user WHERE user_id = :id',
+      [req.body.userData.user_id]
+    );
 
-    conn.query(sql2
-        , [req.body.userData.id]
-        , (err, rows) => {
-            console.log(rows);
-            if (rows.length > 0) {
-                res.json({ result: '중복이다!' });
-            } else {
-                let sql = 'insert into member2 values (?,?,?)'
-                conn.query(sql
-                    , [req.body.userData.id, req.body.userData.pw, req.body.userData.add]
-                    , (err, rows) => {
-                        if (rows) {
-                            console.log('성공했다!');
-                            res.json({ result: '성공!' })
-                        } else {
-                            console.log('실패했다....', err);
-                        }
-                    })
-            }
-        })
-})
+    if (result.rows.length > 0) {
+      res.json({ result: '중복되는 아이디입니다!' });
+    } else {
+      // 비밀번호 확인
+      if (req.body.userData.user_pw !== req.body.userData.pwConfirmation) {
+        res.json({ result: '비밀번호 확인이 일치하지 않습니다!' });
+      } else {
+        await connection.execute(
+          `INSERT INTO t_user 
+          (user_id, user_pw, user_name, user_email, user_phone, user_addr, user_ssn, user_gender, joined_at) 
+          VALUES 
+          (:id, :pw, :name, :email, :phone, :addr, :ssn, :gender, SYSDATE)`,
+          [
+            req.body.userData.user_id,
+            req.body.userData.user_pw,
+            req.body.userData.user_name,
+            req.body.userData.user_email,
+            req.body.userData.user_phone,
+            req.body.userData.user_addr,
+            req.body.userData.user_ssn,
+            req.body.userData.user_gender,
+          ]
+        );
+
+        console.log('가입에 성공했습니다!');
+        res.json({ result: '가입에 성공했습니다!' });
+      }
+    }
+
+    await connection.close();
+  } catch (error) {
+    console.log('에러 발생: ', error);
+    res.json({ result: '가입에 실패했습니다....' });
+  }
+});
 
 router.post('/user/login', (req,res)=>{
     console.log('로그인 라우터');
