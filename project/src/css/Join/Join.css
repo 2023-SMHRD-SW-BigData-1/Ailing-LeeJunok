@@ -60,16 +60,7 @@
     background: none;
   }
   
-  .gender {
-    width: 100%;
-    border:none;
-    outline:none;
-    color: #636e72;
-    font-size:16px;
-    height:20px;
-    background: none;
-  }
-  
+ 
   .cellphoneNo {
     width: 100%;
     border:none;
@@ -80,15 +71,6 @@
     background: none;
   }
 
-  .birth {
-    width: 100%;
-    border:none;
-    outline:none;
-    color: #636e72;
-    font-size:16px;
-    height:25px;
-    background: none;
-  }
   
   .faddress {
     width: 100%;

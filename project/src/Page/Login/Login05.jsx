@@ -30,11 +30,6 @@ const PopupPostCode = React.forwardRef((props, ref) => {
       fullAddress += extraAddress !== '' ? ` (${extraAddress})` : '';
     }
 
-    // 실제 데이터 부분
-    console.log(data);
-    console.log(fullAddress); // 실제주소 : fullAddress = data.address
-    console.log(data.zonecode); // 우편번호
-
     props.postRef.current.value = data.zonecode;
     props.addRef.current.value = fullAddress;
 
@@ -77,17 +72,62 @@ const Join = () => {
     setIsPopupOpen(false);
   };
 
+  //=======================================================
+  //body 데이터 작업
+
   const navigate = useNavigate();
+
+
+  const [id, SetId] = useState("");
+  const [pw, SetPw] = useState("");
+  const [name, SetName] = useState("");
+  const [email, SetEmail] = useState("");
+  const [cellphoneNo, SetCellphoneNo] = useState("");
+  const [address, SetAddress] = useState("");
+
+  const idHandler = (e) => {
+    e.preventDefault();
+
+    SetId(e.target.value);
+  };
+
+  const pwHandler = (e) => {
+    e.preventDefault();
+    SetPw(e.target.value);
+  };
+
+  const nameHandler = (e) => {
+    e.preventDefault();
+    SetName(e.target.value);
+  };
+
+  const emailHandler = (e) => {
+    e.preventDefault();
+    SetEmail(e.target.value);
+  };
+
+  const addressHandler = (e) => {
+    e.preventDefault();
+    SetAddress(e.target.value);
+  };
+
 
   const handleJoinSubmit = async (event) => {
     event.preventDefault();
 
-    const form = event.target;
-    const formData = new FormData(form);
+    let body = {
+      user_id: id,
+      user_pw: pw,
+      user_name: name,
+      user_email: email,
+      user_phone: cellphoneNo,
+      user_addr: address
+    };
+
 
     try {
-      const response = await axios.post('/login/join', formData);
-      console.log(response.data);
+      const response = await axios.post('http://localhost:8888/login/join', body);
+      console.log(response);
       navigate('/login');
       // 응답에 대한 처리를 수행합니다 (성공 메시지 표시, 리다이렉트 등)
     } catch (error) {
@@ -105,6 +145,8 @@ const Join = () => {
 
   // 휴대폰 번호 입력 함수
   const handlePhone = (e) => {
+    e.preventDefault();
+    SetCellphoneNo(e.target.value);
     const value = phoneRef.current.value.replace(/\D+/g, "");
     const numberLength = 11;
 
@@ -140,20 +182,17 @@ const Join = () => {
         <div className="joinContainer">
         <form action="doJoin" method="POST" className="joinForm" onSubmit={handleJoinSubmit}>
       <div className="textForm">
-        <input name="loginId" type="text" className="id" placeholder="아이디">
+        <input name="loginId" type="text" className="id" placeholder="아이디" onChange={idHandler}>
         </input>
       </div>
       <div className="textForm">
-        <input name="loginPw" type="password" className="pw" placeholder="비밀번호"/>
-      </div>
-       <div className="textForm">
-        <input name="loginPwConfirm" type="password" className="pw" placeholder="비밀번호 확인"/>
+        <input name="loginPw" type="password" className="pw" placeholder="비밀번호" onChange={pwHandler}/>
       </div>
       <div className="textForm">
-        <input name="name" type="text" className="name" placeholder="이름"/>
+        <input name="name" type="text" className="name" placeholder="이름" onChange={nameHandler}/>
       </div>
        <div className="textForm">
-        <input name="email" type="text" className="email" placeholder="이메일"/>
+        <input name="email" type="text" className="email" placeholder="이메일" onChange={emailHandler}/>
       </div>
       <div className="textForm">
         <input name="cellphoneNo" type="tel" value={num} ref={phoneRef} onChange={handlePhone} className="cellphoneNo" placeholder="전화번호"/>
@@ -170,21 +209,10 @@ const Join = () => {
         <input name="faddress" type="text" className="faddress" placeholder="우편번호" ref={postRef} readOnly/>
       </div>
       <div className="textForm">
-        <input name="address" type="text" className="address" placeholder="주소" ref={addRef} readOnly/>
+        <input name="address" type="text" className="address" placeholder="주소" ref={addRef} readOnly onChange={addressHandler}/>
       </div>
       <div className="textForm">
         <input name="detailAddress" type="text" className="detailAddress" placeholder="상세주소"/>
-      </div>
-      <div className="textForm">
-        <input name="birth" type="date" className="birth" placeholder="생년월일"/>
-      </div>
-      <div className="textForm">
-        <label className='joinLabel'>
-      <span className='joinSpan'>남</span><input name="gender" type="radio" className="gender" placeholder="성별" value='male'/>
-      </label>
-      <label className='joinLabel'>
-      <span className='joinSpan'>여</span><input name="gender" type="radio" className="gender" placeholder="성별" value='female'/>
-      </label>
       </div>
       <input type="submit" className="joinBtn" value="SIGN IN"/>
     </form>

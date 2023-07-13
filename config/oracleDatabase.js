@@ -1,11 +1,15 @@
 const express = require('express')
 const app = express()
+const cors = require('cors')
 
-const server = app.listen(3000, () => {
-    console.log('server start, port 3000')
+app.use(cors())
+
+const server = app.listen(8888, () => {
+    console.log('server start, port 8888')
 })
 
 const oracledb = require('oracledb')
+oracledb.autoCommit = true
 oracledb.outFormat = oracledb.OUT_FORMAT_OBJECT
 
 const router = express.Router()
@@ -93,36 +97,32 @@ router.post('/login/join', async (req, res) => {
     const connection = await oracledb.getConnection(dbConfig);
     const result = await connection.execute(
       'SELECT user_id FROM t_user WHERE user_id = :id',
-      [req.body.userData.user_id]
+      [req.body.user_id]
     );
 
     if (result.rows.length > 0) {
       res.json({ result: '중복되는 아이디입니다!' });
-    } else {
-      // 비밀번호 확인
-      if (req.body.userData.user_pw !== req.body.userData.pwConfirmation) {
-        res.json({ result: '비밀번호 확인이 일치하지 않습니다!' });
-      } else {
+    } else {  
         await connection.execute(
           `INSERT INTO t_user 
-          (user_id, user_pw, user_name, user_email, user_phone, user_addr, user_ssn, user_gender, joined_at) 
+          (user_id, user_pw, user_name, user_email, user_phone, user_addr) 
           VALUES 
-          (:id, :pw, :name, :email, :phone, :addr, :ssn, :gender, SYSDATE)`,
+          (:id, :pw, :name, :email, :phone, :addr)`,
           [
-            req.body.userData.user_id,
-            req.body.userData.user_pw,
-            req.body.userData.user_name,
-            req.body.userData.user_email,
-            req.body.userData.user_phone,
-            req.body.userData.user_addr,
-            req.body.userData.user_ssn,
-            req.body.userData.user_gender,
+            req.body.user_id,
+            req.body.user_pw,
+            req.body.user_name,
+            req.body.user_email,
+            req.body.user_phone,
+            req.body.user_addr
           ]
-        );
+        ,(err,result)=>{
+          if(err) throw err
+          console.log(result.rowsAffected);
+        });
 
         console.log('가입에 성공했습니다!');
         res.json({ result: '가입에 성공했습니다!' });
-      }
     }
 
     await connection.close();
@@ -139,7 +139,7 @@ router.post('/login/join', async (req, res) => {
 router.post('/user/login', (req,res)=>{
     console.log('로그인 라우터');
     let sql = 'SELECT * FROM t_user WHERE id=? and pw=?'
-
+    
     conn.query(sql, 
         [req.body.userData.id, req.body.userData.pw], 
         (err, rows)=>{
