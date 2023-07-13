@@ -5,12 +5,12 @@ const Footer = () => {
     return (
     <footer>
         <div className='contentBox'>
-    <p>COMPANY : Pill.Yo</p>
-    <a>ADDRESS : H조</a>
-    <div>TEL : 010-1234-1234</div>
-    <div>PERSONAL INFO MANAGER : 이수호</div>
-    <div>E-MAIL : </div>
-    <div>COPYRIGHT 2023 © Pill.Yo.CO. KR.INC ALL RIGHT RESERVED</div>
+    <p className='comp'>COMPANY : Pill.Yo</p>
+    <p className='add'>ADDRESS : H조</p>
+    <p>TEL : 010-1234-1234</p>
+    <p>PERSONAL INFO MANAGER : 이수호</p>
+    <p>E-MAIL : Ailing_Junok@gmail.com </p>
+    <p>COPYRIGHT 2023 © Pill.Yo.CO. KR.INC ALL RIGHT RESERVED</p>
         </div>
 
     </footer>

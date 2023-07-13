@@ -8,8 +8,8 @@ import LogInUI from './Page/Login/Login01';
 import Join from './Page/Login/Login05';
 import ProductBox from './Page/ProductBox';
 import Review from './Page/Review';
-import Introduce from './Page/Introduce1';
-
+import Introduce1 from './Page/Introduce1'
+import React from 'react';
 
 function App() {
   return (
@@ -30,7 +30,7 @@ function App() {
         <Route path='/review' element={<Review/>}/>
 
         {/* Introduce */}
-        <Route path='/introduce' element={<Introduce/>}/>
+        <Route path='/introduce' element={<Introduce1/>}/>
       </Routes>
       </div>
 

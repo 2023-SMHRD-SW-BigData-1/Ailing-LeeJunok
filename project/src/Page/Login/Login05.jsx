@@ -1,7 +1,7 @@
 
 // ===============================================
 // import { Checkbox } from '@mui/material';
-import React, { useRef, useState} from 'react'
+import React, { useRef, useState } from 'react'
 import '../../css/Join/Join.css'
 import ReactDom from 'react-dom';
 import DaumPostcode from "react-daum-postcode";
@@ -44,7 +44,7 @@ const PopupPostCode = React.forwardRef((props) => {
 
         props.onClose()
     }
- 
+
     const postCodeStyle = {
         display: "block",
         top: "10%",
@@ -52,27 +52,24 @@ const PopupPostCode = React.forwardRef((props) => {
         height: "600px",
         padding: "7px"
       };
- 
+
     return(
         <div>
             <DaumPostcode style={postCodeStyle} onComplete={handlePostCode} />
             <button type='button' onClick={() => {props.onClose()}} className='postCode_btn'>닫기</button>
         </div>
     )
-})
-
-
-// =============================================================================
-const Join = () => {
-	// 팝업창 상태 관리
+  })
+  const Join = () => {
+  // 팝업창 상태 관리
   const [isPopupOpen, setIsPopupOpen] = useState(false)
- 
-	// 팝업창 열기
+  
+  // 팝업창 열기
     const openPostCode = () => {
         setIsPopupOpen(true)
     }
- 
-	// 팝업창 닫기
+  
+  // 팝업창 닫기
     const closePostCode = () => {
         setIsPopupOpen(false)
     }
@@ -101,6 +98,7 @@ const Join = () => {
 
 //========================================================
   return (
+    
     <>
         <div className='mainSec'><h2>회원가입</h2></div>
         <div className="joinContainer">

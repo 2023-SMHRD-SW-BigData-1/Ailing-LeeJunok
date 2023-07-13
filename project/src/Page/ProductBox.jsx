@@ -4,17 +4,17 @@ import ProductInfo from '../components/ProductList/Productinfo';
 import productjs from '../Json/Product';
 
 const ProductBox = () => {
-  const initialProductCount = 9; // number of products to be initially exposed
+  const initialProductCount = 9; 
   const [productCount, setProductCount] = useState(initialProductCount);
   const products = productjs.map((product) => ({
     imageSrc: product.PROD_IMG,
     subtitle: product.PROD_CATEGORY,
-    title: product.PROD_NAME,
+    title: product.PROS_NAME,
     price: product.PROD_PRICE
   }));
 
   const handleShowMore = () => {
-    setProductCount((prevCount) => prevCount + 9); // Add 9 items from the number of previously exposed products
+    setProductCount((prevCount) => prevCount + 9); 
   };
 
 
@@ -45,6 +45,7 @@ const ProductBox = () => {
     );
   }
 
+  
   return (
     <>
     <div className='mainSec'><h2>제품 리스트</h2></div>
