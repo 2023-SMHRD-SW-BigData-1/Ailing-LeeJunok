@@ -6,7 +6,7 @@ import "../Postcss/css.css"
 const NoticeList = () => {
   return (
     <div class ="notice_css">
-    <div class="board_wrap">
+    <div class="contentBox">
         <div class="board_title">
             <strong>공지사항</strong>
             <p> Pill. Yo 의 공지사항 입니다. </p>
