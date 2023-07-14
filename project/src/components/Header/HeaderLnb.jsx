@@ -7,7 +7,7 @@ const HeaderLnb = () => {
     return (
     <div className='innerLnb'>
         <ul>
-            <li><a href="'/introduce'">Pill.Yo 란?</a></li>
+            <li><a href="/introduce">Pill.Yo 란?</a></li>
             <li><Link>원료이야기</Link></li>
             <li><Link>100%환불제도</Link></li>
         </ul>

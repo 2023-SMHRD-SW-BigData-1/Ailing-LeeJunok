@@ -8,7 +8,6 @@ import Join from './Page/Login/Login05';
 import ProductBox from './Page/ProductBox';
 import Review from './Page/Review';
 import Introduce1 from './Page/Introduce1'
-import React, { useEffect, useState } from 'react';
 import { productContext } from './context/ProductContext'
 import productjs from './Json/Product'
 import Cart from './Page/Cart';
