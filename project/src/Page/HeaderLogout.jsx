@@ -29,7 +29,7 @@ const HeaderLogout = () => {
             
             // sessionStorage.removeItem('user_id')
             // App 으로 이동(새로고침)
-            // document.location.href = '/'
+            document.location.href = '/'
         }
 
     return (
