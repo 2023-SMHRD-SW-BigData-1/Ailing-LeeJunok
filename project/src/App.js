@@ -18,7 +18,6 @@ import { useCookies } from 'react-cookie';
 
 import NoticeEdit from './components/Post/NoticePost/NoticeEdit';
 import NoticeList from './components/Post/NoticePost/NoticeList';
-import NoticeView from './components/Post/NoticePost/NoticeView';
 import NoticeWrite from './components/Post/NoticePost/NoticeWrite';
 import EventEdit from './components/Post/EventPost/EventEdit';
 import EventList from './components/Post/EventPost/EventList';
@@ -26,6 +25,11 @@ import EventView01 from './components/Post/EventPost/EventView01';
 import EventView02 from './components/Post/EventPost/EventView02';
 import EventView03 from './components/Post/EventPost/EventView03';
 import EventWrite from './components/Post/EventPost/EventWrite';
+import NoticeView01 from './components/Post/NoticePost/NoticeView01';
+import NoticeView02 from './components/Post/NoticePost/NoticeView02';
+import NoticeView03 from './components/Post/NoticePost/NoticeView03';
+import NoticeView04 from './components/Post/NoticePost/NoticeView04';
+import NoticeView05 from './components/Post/NoticePost/NoticeView05';
 
 function App() {
   const [cookies] = useCookies(['user_id']);
@@ -96,7 +100,11 @@ function App() {
 
               <Route path='/NoticeEdit' element={<NoticeEdit />} />
               <Route path='/NoticeList' element={<NoticeList />} />
-              <Route path='/NoticeView' element={<NoticeView />} />
+              <Route path='/NoticeView01' element={<NoticeView01 />} />
+              <Route path='/NoticeView02' element={<NoticeView02 />} />
+              <Route path='/NoticeView03' element={<NoticeView03 />} />
+              <Route path='/NoticeView04' element={<NoticeView04 />} />
+              <Route path='/NoticeView05' element={<NoticeView05 />} />
               <Route path='/NoticeWrite' element={<NoticeWrite />} />
 
               <Route path='/EventEdit' element={<EventEdit />} />

@@ -31,7 +31,7 @@ const EventView02 = () => {
                     </dl>
                     <dl>
                         <dt>조회</dt>
-                        <dd>33</dd>
+                        <dd>172</dd>
                     </dl>
                 </div>
 
