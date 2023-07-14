@@ -8,9 +8,25 @@ import Join from './Page/Login/Login05';
 import ProductBox from './Page/ProductBox';
 import Review from './Page/Review';
 import Introduce1 from './Page/Introduce1'
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Cart from './Page/Cart'
+import productjs from './Json/Product';
 import { productContext } from './context/ProductContext';
+import HeaderLogout from './Page/HeaderLogout';
+import { LoginContext } from './context/LoginContext';
+
+import NoticeEdit from './components/Post/NoticePost/NoticeEdit';
+import NoticeList from './components/Post/NoticePost/NoticeList';
+import NoticeView from './components/Post/NoticePost/NoticeView';
+import NoticeWrite from './components/Post/NoticePost/NoticeWrite';
+import EventEdit from './components/Post/EventPost/EventEdit';
+import EventList from './components/Post/EventPost/EventList';
+import EventView01 from './components/Post/EventPost/EventView01';
+import EventView02 from './components/Post/EventPost/EventView02';
+import EventView03 from './components/Post/EventPost/EventView03';
+import EventWrite from './components/Post/EventPost/EventWrite';
+
+
 
 function App() {
   
@@ -68,7 +84,19 @@ function App() {
 
 
         {/* Introduce */}
-        <Route path='/introduce' element={<Introduce1/>}/>
+        <Route path='/introduce1' element={<Introduce1/>}/>
+        
+        <Route path='/NoticeEdit' element={<NoticeEdit/>}/>
+        <Route path='/NoticeList' element={<NoticeList/>}/>
+        <Route path='/NoticeView' element={<NoticeView/>}/>
+        <Route path='/NoticeWrite' element={<NoticeWrite/>}/>
+
+        <Route path='/EventEdit' element={<EventEdit/>}/>
+        <Route path='/EventList' element={<EventList/>}/>
+        <Route path='/EventView01' element={<EventView01/>}/>
+        <Route path='/EventView02' element={<EventView02/>}/>
+        <Route path='/EventView03' element={<EventView03/>}/>
+        <Route path='/EventWrite' element={<EventWrite/>}/>
       </Routes>
       </productContext.Provider>
       </div>
