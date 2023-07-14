@@ -24,10 +24,10 @@ const NoticeList = () => {
 
                 <div>
                     <div class="num">5</div>
-                    <div class="title_name"><Link to='/NoticeView05'>정준옥</Link></div>
-                    <div class="writer"><Link to='/NoticeView05'>정준옥</Link></div>
-                    <div class="date"><Link to='/NoticeView05'>2023.07.19</Link></div>
-                    <div class="count"><Link to='/NoticeView05'>271</Link></div>
+                    <div class="title_name"><Link to='/NoticeView'>제목</Link></div>
+                    <div class="writer"><Link to='/NoticeView'>이름</Link></div>
+                    <div class="date"><Link to='/NoticeView'>YYYY.MM.DD</Link></div>
+                    <div class="count"><Link to='/NoticeView'>12</Link></div>
                 </div>
                 <div>
                     <div class="num">4</div>
@@ -52,10 +52,10 @@ const NoticeList = () => {
                 </div>
                 <div>
                     <div class="num">1</div>
-                    <div class="title_name"><Link to='/NoticeView01'>이준</Link></div>
-                    <div class="writer"><Link to='/NoticeView01'>이준</Link></div>
-                    <div class="date"><Link to='/NoticeView01'>2023.07.13</Link></div>
-                    <div class="count"><Link to='/NoticeView01'>345</Link></div>
+                    <div class="title_name"><Link to='/NoticeView'>제목</Link></div>
+                    <div class="writer"><Link to='/NoticeView'>이름</Link></div>
+                    <div class="date"><Link to='/NoticeView'>YYYY.MM.DD</Link></div>
+                    <div class="count"><Link to='/NoticeView'>12</Link></div>
                 </div>
 
 
