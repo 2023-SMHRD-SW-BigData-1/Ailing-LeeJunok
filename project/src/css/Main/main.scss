@@ -222,18 +222,18 @@
                     text-align: center;
                     font-size: 50px;
                 }
-            }
-            .top::before{
-                content: "";
-                background-image: url('https://ifh.cc/g/dOHKTH.jpg');
-                background-size: cover;
-                border-radius: 15px;
-                opacity: 0.9;
-                position: absolute;
-                top: 0px;
-                left: 0px;
-                right: 0px;
-                bottom: 0px;
+                &::before{
+                    content: "";
+                    background-image: url('https://ifh.cc/g/dOHKTH.jpg');
+                    background-size: cover;
+                    border-radius: 15px;
+                    opacity: 0.9;
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    right: 0px;
+                    bottom: 0px;
+                }
             }
 
 
