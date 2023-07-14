@@ -157,15 +157,16 @@ const Cart = () => {
             </div>
           ))}
 
+           
           <div className="totals">
             <div className="totals-item">
               <label>Subtotal(물품 총합값)</label>
               <div className="totals-value" id="cart-subtotal"></div>
             </div>
-              <Payment />
           </div>
 
-          </div>
+          </div>  
+           <Payment />
       </div>
       </>
   );

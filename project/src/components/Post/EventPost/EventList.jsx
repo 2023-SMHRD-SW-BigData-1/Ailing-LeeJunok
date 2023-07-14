@@ -24,24 +24,24 @@ const EventList = () => {
 
                 <div>
                     <div class="num">3</div>
-                    <div class="title_name"><Link to='/EventView03'>제목</Link></div>
-                    <div class="writer"><Link to='/EventView03'>이름</Link></div>
-                    <div class="date"><Link to='/EventView03'>YYYY.MM.DD</Link></div>
-                    <div class="count"><Link to='/EventView03'>12</Link></div>
+                    <div class="title_name"><Link to='/EventView03'>내맘대로 하루한포!</Link></div>
+                    <div class="writer"><Link to='/EventView03'>정준옥</Link></div>
+                    <div class="date"><Link to='/EventView03'>2023.07.19</Link></div>
+                    <div class="count"><Link to='/EventView03'>121</Link></div>
                 </div>
                 <div>
                     <div class="num">2</div>
-                    <div class="title_name"><Link to='/EventView02'>제목</Link></div>
-                    <div class="writer"><Link to='/EventView02'>이름</Link></div>
-                    <div class="date"><Link to='/EventView02'>YYYY.MM.DD</Link></div>
-                    <div class="count"><Link to='/EventView02'>12</Link></div>
+                    <div class="title_name"><Link to='/EventView02'>Personal Management</Link></div>
+                    <div class="writer"><Link to='/EventView02'>정준옥</Link></div>
+                    <div class="date"><Link to='/EventView02'>2023.07.15</Link></div>
+                    <div class="count"><Link to='/EventView02'>172</Link></div>
                 </div>
                 <div>
                     <div class="num">1</div>
-                    <div class="title_name"><Link to='/EventView01'>제목</Link></div>
-                    <div class="writer"><Link to='/EventView01'>이름</Link></div>
-                    <div class="date"><Link to='/EventView01'>YYYY.MM.DD</Link></div>
-                    <div class="count"><Link to='/EventView01'>12</Link></div>
+                    <div class="title_name"><Link to='/EventView01'>리뷰쓰고 포인트받자! #내돈내산</Link></div>
+                    <div class="writer"><Link to='/EventView01'>정준옥</Link></div>
+                    <div class="date"><Link to='/EventView01'>2023.07.10</Link></div>
+                    <div class="count"><Link to='/EventView01'>312</Link></div>
                 </div>
 
 
