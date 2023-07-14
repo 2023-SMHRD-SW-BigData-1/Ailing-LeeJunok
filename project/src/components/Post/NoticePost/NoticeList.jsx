@@ -6,7 +6,7 @@ import "../Postcss/css.css"
 const NoticeList = () => {
   return (
     <div class ="notice_css">
-    <div class="board_wrap">
+    <div class="contentBox">
         <div class="board_title">
             <strong>공지사항</strong>
             <p> Pill. Yo 의 공지사항 입니다. </p>
@@ -18,7 +18,7 @@ const NoticeList = () => {
                     <div className="title_name">제목</div>
                     <div class="writer">글쓴이</div>
                     <div class="date">작성일</div>
-                    <div class="count">조회</div>
+                    <div class="count">조회수</div>
                 </div>
 
 
@@ -66,14 +66,12 @@ const NoticeList = () => {
                 <a href="#" class="num on">1</a>
                 <a href="#" class="num">2</a>
                 <a href="#" class="num">3</a>
-                <a href="#" class="num">4</a>
-                <a href="#" class="num">5</a>
                 <a href="#" class="bt next"></a>
                 <a href="#" class="bt last"></a>
             </div>
             <div class="bt_wrap">
                 <Link to='/NoticeWrite' class="on">등록</Link>
-                <Link to='/NoticeEdit'>수정</Link>
+                {/* <Link to='/NoticeEdit'>수정</Link> */}
             </div>
         </div>
     </div>

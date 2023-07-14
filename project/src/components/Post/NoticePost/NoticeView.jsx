@@ -23,7 +23,7 @@ const NoticeView = () => {
                     </dl>
                     <dl>
                         <dt>글쓴이</dt>
-                        <dd>정준옥</dd>
+                        <dd>관리자</dd>
                     </dl>
                     <dl>
                         <dt>작성일</dt>

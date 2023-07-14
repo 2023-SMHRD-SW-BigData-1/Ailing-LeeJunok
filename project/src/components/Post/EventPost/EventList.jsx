@@ -6,7 +6,7 @@ import "../Postcss/css.css"
 const EventList = () => {
   return (
     <div class ="notice_css">
-    <div class="board_wrap">
+    <div class="contentBox">
         <div class="board_title">
             <strong>이벤트 게시판</strong>
             <p> Pill. Yo 의 이벤트 게시판 입니다. </p>
@@ -21,29 +21,28 @@ const EventList = () => {
                     <div class="count">조회</div>
                 </div>
 
-
-                <div>
+            
+                <div className='write_list'>
                     <div class="num">3</div>
                     <div class="title_name"><Link to='/EventView03'>내맘대로 하루한포!</Link></div>
                     <div class="writer"><Link to='/EventView03'>정준옥</Link></div>
                     <div class="date"><Link to='/EventView03'>2023.07.19</Link></div>
                     <div class="count"><Link to='/EventView03'>121</Link></div>
                 </div>
-                <div>
+                <div className='write_list'>
                     <div class="num">2</div>
                     <div class="title_name"><Link to='/EventView02'>Personal Management</Link></div>
                     <div class="writer"><Link to='/EventView02'>정준옥</Link></div>
                     <div class="date"><Link to='/EventView02'>2023.07.15</Link></div>
                     <div class="count"><Link to='/EventView02'>172</Link></div>
                 </div>
-                <div>
+                <div className='write_list'>
                     <div class="num">1</div>
                     <div class="title_name"><Link to='/EventView01'>리뷰쓰고 포인트받자! #내돈내산</Link></div>
                     <div class="writer"><Link to='/EventView01'>정준옥</Link></div>
                     <div class="date"><Link to='/EventView01'>2023.07.10</Link></div>
                     <div class="count"><Link to='/EventView01'>312</Link></div>
                 </div>
-
 
             </div>
             <div class="board_page">
@@ -52,8 +51,6 @@ const EventList = () => {
                 <a href="#" class="num on">1</a>
                 <a href="#" class="num">2</a>
                 <a href="#" class="num">3</a>
-                <a href="#" class="num">4</a>
-                <a href="#" class="num">5</a>
                 <a href="#" class="bt next"></a>
                 <a href="#" class="bt last"></a>
             </div>
