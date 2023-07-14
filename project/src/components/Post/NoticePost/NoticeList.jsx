@@ -24,38 +24,38 @@ const NoticeList = () => {
 
                 <div>
                     <div class="num">5</div>
-                    <div class="title_name"><Link to='/NoticeView'>제목</Link></div>
-                    <div class="writer"><Link to='/NoticeView'>이름</Link></div>
-                    <div class="date"><Link to='/NoticeView'>YYYY.MM.DD</Link></div>
-                    <div class="count"><Link to='/NoticeView'>12</Link></div>
+                    <div class="title_name"><Link to='/NoticeView05'>정준옥</Link></div>
+                    <div class="writer"><Link to='/NoticeView'>정준옥</Link></div>
+                    <div class="date"><Link to='/NoticeView'>2023.07.19</Link></div>
+                    <div class="count"><Link to='/NoticeView'>271</Link></div>
                 </div>
                 <div>
                     <div class="num">4</div>
-                    <div class="title_name"><Link to='/NoticeView'>제목</Link></div>
-                    <div class="writer"><Link to='/NoticeView'>이름</Link></div>
-                    <div class="date"><Link to='/NoticeView'>YYYY.MM.DD</Link></div>
-                    <div class="count"><Link to='/NoticeView'>12</Link></div>
+                    <div class="title_name"><Link to='/NoticeView04'>정병인</Link></div>
+                    <div class="writer"><Link to='/NoticeView'>정병인</Link></div>
+                    <div class="date"><Link to='/NoticeView'>2023.07.18</Link></div>
+                    <div class="count"><Link to='/NoticeView'>162</Link></div>
                 </div>
                 <div>
                     <div class="num">3</div>
-                    <div class="title_name"><Link to='/NoticeView'>제목</Link></div>
-                    <div class="writer"><Link to='/NoticeView'>이름</Link></div>
-                    <div class="date"><Link to='/NoticeView'>YYYY.MM.DD</Link></div>
-                    <div class="count"><Link to='/NoticeView'>12</Link></div>
+                    <div class="title_name"><Link to='/NoticeView03'>이수호</Link></div>
+                    <div class="writer"><Link to='/NoticeView'>이수호</Link></div>
+                    <div class="date"><Link to='/NoticeView'>2023.07.17</Link></div>
+                    <div class="count"><Link to='/NoticeView'>112</Link></div>
                 </div>
                 <div>
                     <div class="num">2</div>
-                    <div class="title_name"><Link to='/NoticeView'>제목</Link></div>
-                    <div class="writer"><Link to='/NoticeView'>이름</Link></div>
-                    <div class="date"><Link to='/NoticeView'>YYYY.MM.DD</Link></div>
-                    <div class="count"><Link to='/NoticeView'>12</Link></div>
+                    <div class="title_name"><Link to='/NoticeView02'>김민준</Link></div>
+                    <div class="writer"><Link to='/NoticeView'>김민준</Link></div>
+                    <div class="date"><Link to='/NoticeView'>2023.07.14</Link></div>
+                    <div class="count"><Link to='/NoticeView'>214</Link></div>
                 </div>
                 <div>
                     <div class="num">1</div>
-                    <div class="title_name"><Link to='/NoticeView'>제목</Link></div>
-                    <div class="writer"><Link to='/NoticeView'>이름</Link></div>
-                    <div class="date"><Link to='/NoticeView'>YYYY.MM.DD</Link></div>
-                    <div class="count"><Link to='/NoticeView'>12</Link></div>
+                    <div class="title_name"><Link to='/NoticeView01'>이    준</Link></div>
+                    <div class="writer"><Link to='/NoticeView'>이    준</Link></div>
+                    <div class="date"><Link to='/NoticeView'>2023.07.13</Link></div>
+                    <div class="count"><Link to='/NoticeView'>345</Link></div>
                 </div>
 
 
@@ -66,8 +66,6 @@ const NoticeList = () => {
                 <a href="#" class="num on">1</a>
                 <a href="#" class="num">2</a>
                 <a href="#" class="num">3</a>
-                <a href="#" class="num">4</a>
-                <a href="#" class="num">5</a>
                 <a href="#" class="bt next"></a>
                 <a href="#" class="bt last"></a>
             </div>

@@ -1,54 +1,46 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
-// import "../../Post/Postcss/css.css"
+// import "../../Postcss/css.css"
 import "../Postcss/css.css"
 
-const EventView01 = () => {
+const NoticeView03 = () => {
   return (
     <div class ="Notice_css">
     <div class="board_wrap">
         <div class="board_title">
-        <strong>이벤트 게시판</strong>
-            <p> Pill. Yo 의 이벤트 게시판 입니다. </p>
+        <strong>공지사항</strong>
+            <p> Pill. Yo 의 공지사항 입니다. </p>
         </div>
         <div class="board_view_wrap">
             <div class="board_view">
                 <div class="title_name">
-                    리뷰쓰고 포인트받자! #내돈내산
+                    이수호
                 </div>
                 <div class="info">
                     <dl>
                         <td>번호</td>
-                        <dd>1</dd>
+                        <dd>3</dd>
                     </dl>
                     <dl>
                         <dt>글쓴이</dt>
-                        <dd>정준옥</dd>
+                        <dd>이수호</dd>
                     </dl>
                     <dl>
                         <dt>작성일</dt>
-                        <dd>2023.07.10</dd>
+                        <dd>2023.07.17</dd>
                     </dl>
                     <dl>
                         <dt>조회</dt>
-                        <dd>312</dd>
+                        <dd>112</dd>
                     </dl>
                 </div>
-
-
                 <div class="cont">
-
-                    <img src='https://ifh.cc/g/Wg2A9j.jpg'
-                    width={972}
-                    height={250} >
-                     
-                    </img>
-
+                    내용
                 </div>
             </div>
             <div class="bt_wrap">
-                <Link to='/EventList' class="on">목록</Link>
-                <Link to='/EventEdit'>수정</Link>
+                <Link to='/NoticeList' class="on">목록</Link>
+                <Link to='/NoticeEdit'>수정</Link>
             </div>
         </div>
     </div>
@@ -60,4 +52,4 @@ const EventView01 = () => {
   )
 }
 
-export default EventView01
+export default NoticeView03
