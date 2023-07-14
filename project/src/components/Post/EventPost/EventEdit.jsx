@@ -5,8 +5,8 @@ import "../Postcss/css.css"
 
 const EventEdit = () => {
   return (
-<div class ="Notice_css">
-    <div class="board_wrap">
+<div class ="notice_css">
+    <div class="contentBox">
         <div class="board_title">
         <strong>이벤트 게시판</strong>
             <p> Pill. Yo 의 이벤트 게시판 입니다. </p>
@@ -26,7 +26,7 @@ const EventEdit = () => {
                     </dl>
                     <dl>
                         <dt>비밀번호</dt>
-                        <dd><input type="password" placeholder="비밀번호 입력" value="1234"/></dd>
+                        <dd><input type="password" placeholder="비밀번호 입력" value=""/></dd>
                     </dl>
                 </div>
                 <div class="cont">

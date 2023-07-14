@@ -56,7 +56,7 @@ const EventList = () => {
             </div>
             <div class="bt_wrap">
                 <Link to='/EventWrite' class="on">등록</Link>
-                <Link to='/EventEdit'>수정</Link>
+                {/* <Link to='/EventEdit'>수정</Link> */}
             </div>
         </div>
     </div>

@@ -5,8 +5,8 @@ import "../Postcss/css.css"
 
 const NoticeView03 = () => {
   return (
-    <div class ="Notice_css">
-    <div class="board_wrap">
+    <div class ="notice_css">
+    <div class="contentBox">
         <div class="board_title">
         <strong>공지사항</strong>
             <p> Pill. Yo 의 공지사항 입니다. </p>
@@ -35,12 +35,12 @@ const NoticeView03 = () => {
                     </dl>
                 </div>
                 <div class="cont">
-                    내용
+                안녕하세요 이수호입니다.
                 </div>
             </div>
             <div class="bt_wrap">
                 <Link to='/NoticeList' class="on">목록</Link>
-                <Link to='/NoticeEdit'>수정</Link>
+                {/* <Link to='/NoticeEdit'>수정</Link> */}
             </div>
         </div>
     </div>

@@ -6,8 +6,8 @@ import "../Postcss/css.css"
 const EventWrite = () => {
   return (
 
-    <div class ="Notice_css">
-    <div class="board_wrap">
+    <div class ="notice_css">
+    <div class="contentBox">
     <div class="board_title">
     <strong>이벤트 게시판</strong>
             <p> Pill. Yo 의 이벤트 게시판 입니다. </p>
