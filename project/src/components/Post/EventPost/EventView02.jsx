@@ -19,7 +19,7 @@ const EventView02 = () => {
                 <div class="info">
                     <dl>
                         <td>번호</td>
-                        <dd>1</dd>
+                        <dd>2</dd>
                     </dl>
                     <dl>
                         <dt>글쓴이</dt>
