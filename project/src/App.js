@@ -7,8 +7,16 @@ import LogInUI from './Page/Login/Login01';
 import Join from './Page/Login/Login05';
 import ProductBox from './Page/ProductBox';
 import Review from './Page/Review';
-import Introduce1 from './Page/Introduce1'
+import Introduce1 from '../src/Page/Introduce1'
+import NoticeEdit from '../src/components/NoticePost/NoticeEdit'
+import NoticeList from '../src/components/NoticePost/NoticeList'
+import NoticeView from '../src/components/NoticePost/NoticeView'
+import NoticeWrite from '../src/components/NoticePost/NoticeWrite'
 import React from 'react';
+import { productContext } from './context/ProductContext'
+import productjs from './Json/Product'
+import Cart from '../src/Page/cart'
+
 
 function App() {
   
@@ -34,14 +42,25 @@ function App() {
 
 
         {/* Introduce */}
-        <Route path='/introduce' element={<Introduce1/>}/>
+        <Route path='/introduce1' element={<Introduce1/>}/>
+
+        {/* Notice */}
+        <Route path='/NoticeEdit' element={<NoticeEdit/>}/>
+        <Route path='/NoticeList' element={<NoticeList/>}/>
+        <Route path='/NoticeView' element={<NoticeView/>}/>
+        <Route path='/NoticeWrite' element={<NoticeWrite/>}/>
+
+
+
       </Routes>
+      </productContext.Provider>
       </div>
 
 
       <Footer/>
     </div>
   );
+  
 }
 
 export default App;
