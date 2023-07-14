@@ -1,8 +1,9 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
-import "../../Postcss/css.css"
+// import "../../Postcss/css.css"
+import "../Postcss/css.css"
 
-const NoticeEdit = () => {
+const EventEdit = () => {
   return (
 <div class ="Notice_css">
     <div class="board_wrap">
@@ -35,8 +36,8 @@ const NoticeEdit = () => {
                 </div>
             </div>
             <div class="bt_wrap">
-                <Link to='/NoticeList' class="on">수정</Link>
-                <Link to='/NoticeList'>취소</Link>
+                <Link to='/EventList' class="on">수정</Link>
+                <Link to='/EventList'>취소</Link>
             </div>
         </div>
     </div>
@@ -48,4 +49,4 @@ const NoticeEdit = () => {
   )
 }
 
-export default NoticeEdit
+export default EventEdit

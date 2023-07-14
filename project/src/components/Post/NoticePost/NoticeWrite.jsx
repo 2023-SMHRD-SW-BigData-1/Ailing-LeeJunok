@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
-import "../../Postcss/css.css"
+// import "../../Postcss/css.css"
+import "../Postcss/css.css"
 
 const NoticeWrite = () => {
   return (

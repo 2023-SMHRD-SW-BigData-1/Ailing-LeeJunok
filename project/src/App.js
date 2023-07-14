@@ -7,12 +7,26 @@ import LogInUI from './Page/Login/Login01';
 import Join from './Page/Login/Login05';
 import ProductBox from './Page/ProductBox';
 import Review from './Page/Review';
-import Introduce1 from '../src/Page/Introduce1'
-import NoticeEdit from '../src/components/NoticePost/NoticeEdit'
-import NoticeList from '../src/components/NoticePost/NoticeList'
-import NoticeView from '../src/components/NoticePost/NoticeView'
-import NoticeWrite from '../src/components/NoticePost/NoticeWrite'
+import Introduce1 from '../src/Page/Introduce1';
+import NoticeEdit from './components/Post/NoticePost/NoticeEdit';
+import NoticeList from './components/Post/NoticePost/NoticeList';
+import NoticeView from './components/Post/NoticePost/NoticeView';
+import NoticeWrite from './components/Post/NoticePost/NoticeWrite';
+import EventEdit from './components/Post/EventPost/EventEdit';
+import EventList from './components/Post/EventPost/EventList';
+import EventView01 from './components/Post/EventPost/EventView01';
+import EventView02 from './components/Post/EventPost/EventView02';
+import EventView03 from './components/Post/EventPost/EventView03';
+import EventWrite from './components/Post/EventPost/EventWrite';
+import Cart from './Page/Cart'
+import { productContext } from './context/ProductContext';
+import productjs from './Json/Product';
+
+
+
+
 import React from 'react';
+
 
 function App() {
   
@@ -28,7 +42,7 @@ function App() {
 
           {/* ProductList */}
           <Route path='/productList' element={<ProductBox/>}/>
-          <Route path='/cart' element={<Cart/>}/>
+          <Route path='/Cart' element={<Cart/>}/>
           <Route path='/review' element={<Review/>}/>
           
 
@@ -40,11 +54,18 @@ function App() {
         {/* Introduce */}
         <Route path='/introduce1' element={<Introduce1/>}/>
 
-        {/* Notice */}
+        {/* Post */}
         <Route path='/NoticeEdit' element={<NoticeEdit/>}/>
         <Route path='/NoticeList' element={<NoticeList/>}/>
         <Route path='/NoticeView' element={<NoticeView/>}/>
         <Route path='/NoticeWrite' element={<NoticeWrite/>}/>
+
+        <Route path='/EventEdit' element={<EventEdit/>}/>
+        <Route path='/EventList' element={<EventList/>}/>
+        <Route path='/EventView01' element={<EventView01/>}/>
+        <Route path='/EventView02' element={<EventView02/>}/>
+        <Route path='/EventView03' element={<EventView03/>}/>
+        <Route path='/EventWrite' element={<EventWrite/>}/>
 
 
 
