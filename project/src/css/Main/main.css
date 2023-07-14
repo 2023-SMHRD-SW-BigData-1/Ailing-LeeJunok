@@ -364,7 +364,7 @@
 }
 .slider {
   background: white;
-  height: 300px;
+  height: 400px;
   margin: auto;
   overflow: hidden;
   position: relative;
@@ -373,7 +373,7 @@
 .slider::before, .slider::after {
   background: linear-gradient(to right, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
   content: "";
-  height: 300px;
+  height: 400px;
   position: absolute;
   width: 200px;
   z-index: 2;
@@ -390,12 +390,77 @@
 .slider .slide-track {
   animation: scroll 40s linear infinite;
   display: flex;
-  width: 3500px;
+  width: 5600px;
 }
 .slider .slide {
-  height: 300px;
-  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+  height: 400px;
+  width: 400px;
   margin-left: 10px;
   border-radius: 15px;
-  border: 1px solid black;
+  border: 2px solid #e5e8eb;
+}
+.slider .slide .reviewInnerCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+}
+.slider .slide .reviewInnerCard .cardTop_sec {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.slider .slide .reviewInnerCard .cardTop_sec .topImg_sec {
+  display: flex;
+  align-items: center;
+}
+.slider .slide .reviewInnerCard .cardTop_sec .topImg_sec img {
+  width: 50px;
+  height: 50px;
+}
+.slider .slide .reviewInnerCard .cardTop_sec .topImg_sec span {
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 18px;
+}
+.slider .slide .reviewInnerCard .cardTop_sec .memberName_sec {
+  white-space: pre;
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: right;
+}
+.slider .slide .reviewInnerCard .reviewImg_sec {
+  width: 100%;
+  height: 200px;
+  border-radius: 15px;
+  margin-top: 20px;
+}
+.slider .slide .reviewInnerCard .reviewImg_sec img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.slider .slide .reviewInnerCard .reviewText_sec {
+  height: 82px;
+  margin-top: 20px;
+  font-size: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  line-height: 2.5;
+  /*        height: 4.8em;*/
+  text-align: left;
+  word-wrap: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }/*# sourceMappingURL=main.css.map */
