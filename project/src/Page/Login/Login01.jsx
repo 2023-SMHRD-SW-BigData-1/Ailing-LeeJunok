@@ -13,6 +13,8 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import { useState } from 'react';
 import axios from 'axios';
+import { useCookies } from 'react-cookie';
+
 
 
 // Login[nn]
@@ -27,7 +29,7 @@ import axios from 'axios';
 
 export default function LogInUI() {
   const navigate = useNavigate();
-  
+  const [cookies, setCookie] = useCookies(['user_id']);
     // 카카오 로그인 api
     const Rest_api_key='de36d8fe1967fbd98d21cd3b2961d8f9' //REST API KEY
     const redirect_uri = 'http://localhost:3000' //Redirect URI
@@ -49,6 +51,8 @@ export default function LogInUI() {
     const [id, SetId] = useState("");
     const [pw, SetPw] = useState("");
   
+ 
+
   
     const idHandler = (e) => {
       e.preventDefault();
@@ -80,6 +84,10 @@ export default function LogInUI() {
         console.log(response);
         // 응답에 대한 처리를 수행합니다 (성공 메시지 표시, 리다이렉트 등)
         if (response.data.result === 'Success!!') {
+         
+              // 로그인 성공 시 쿠키에 user_id 값을 저장합니다.
+        setCookie('user_id', id, { path: '/' });
+          
           // 로그인 성공 시, 원하는 페이지로 이동합니다.
           navigate('/');
         } else {
