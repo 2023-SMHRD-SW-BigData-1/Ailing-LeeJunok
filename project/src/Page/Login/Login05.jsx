@@ -36,9 +36,11 @@ const PopupPostCode = React.forwardRef((props, ref) => {
   };
 
   const postCodeStyle = {
-    display: 'block',
+    // display: 'block',
     top: '10%',
-    height: '600px'
+    height: '600px',
+    width: '600px'
+    
   };
 
   return (
@@ -125,10 +127,13 @@ const Join = () => {
     try {
       const response = await axios.post('http://localhost:8888/login/join', body);
       console.log(response);
+      alert('회원가입에 성공하셨습니다.')
       navigate('/login');
       // 응답에 대한 처리를 수행합니다 (성공 메시지 표시, 리다이렉트 등)
     } catch (error) {
       console.error(error);
+      navigate('/login/join')
+      alert('회원가입에 실패하셨습니다.')
       // 에러에 대한 처리를 수행합니다 (에러 메시지 표시 등)
     }
   };

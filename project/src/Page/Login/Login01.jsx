@@ -11,7 +11,8 @@ import {useNavigate,Link} from 'react-router-dom';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-// import Link from '@mui/material/Link';
+import { useState } from 'react';
+import axios from 'axios';
 
 
 // Login[nn]
@@ -21,8 +22,6 @@ import Checkbox from '@mui/material/Checkbox';
 // 04 : 네이버
 // 05 : 회원가입
 // 06 : 아이디/패스워드 찾기
-
-
 
 
 
@@ -47,8 +46,54 @@ export default function LogInUI() {
         document.querySelector('.cont').classList.toggle('s--signup')
       });
     }
+    const [id, SetId] = useState("");
+    const [pw, SetPw] = useState("");
+  
+  
+    const idHandler = (e) => {
+      e.preventDefault();
+  
+      SetId(e.target.value);
+    };
+  
+    const pwHandler = (e) => {
+      e.preventDefault();
+      SetPw(e.target.value);
+    };
+  
+    
+  
+    const handleloginSubmit = async (event) => {
+      event.preventDefault();
+  
+      let body = {
+        user_id: id,
+        user_pw: pw
+      };
+  
+      console.log(body);
       
-      
+
+
+      try {
+        const response = await axios.post('http://localhost:8888/login', body);
+        console.log(response);
+        // 응답에 대한 처리를 수행합니다 (성공 메시지 표시, 리다이렉트 등)
+        if (response.data.result === 'Success!!') {
+          // 로그인 성공 시, 원하는 페이지로 이동합니다.
+          navigate('/');
+        } else {
+          // 로그인 실패 시, 에러 메시지를 표시하거나 다른 작업을 수행합니다.
+        alert('로그인에 실패하셨습니다.')
+        navigate('/login')
+        }
+      } catch (error) {
+        console.error(error);
+        // 에러에 대한 처리를 수행합니다 (에러 메시지 표시 등)
+        alert('로그인에 실패하셨습니다.')
+        navigate('/login')
+      }
+    };
 
     
 
@@ -84,7 +129,8 @@ return (
             required
             fullWidth
             name="email"
-            autoComplete="email"
+            autoComplete="id"
+            onChange={idHandler}
             // autoFocus
           />
           <TextField
@@ -93,6 +139,7 @@ return (
             required fullWidth
             name = "password"
             autoComplete='current-password'
+            onChange={pwHandler}
           />
         <FormControlLabel className='id-m' control ={       
           <Checkbox value="remember" color="primary" />}
@@ -100,7 +147,8 @@ return (
           />
           
                 <Button type="submit" fullWidth
-                        variant="contained" sx={{ mt: 2, mb: 0 }}> 로그인 </Button>
+                        variant="contained" sx={{ mt: 2, mb: 0 }}
+                        onClick={handleloginSubmit}> 로그인 </Button>
 
       <Button onClick={handleLogin}
       size ="large" fullWidth
@@ -112,33 +160,10 @@ return (
 
 <Grid container>
   <Grid item xs><Link to='join'>회원가입하기</Link></Grid>
+  <Grid item ><Link>아이디/비밀번호 찾기</Link></Grid>
 </Grid>
-
-
       </Box>
-      </Container> 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          
+      </Container>      
       </div >
     </div >
-)};
+)}
