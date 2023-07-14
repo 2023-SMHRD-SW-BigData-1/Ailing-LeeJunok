@@ -206,8 +206,7 @@
   text-align: center;
   font-size: 50px;
 }
-
-.top::before {
+.hanpo::before {
   content: "";
   background-image: url("https://ifh.cc/g/dOHKTH.jpg");
   background-size: cover;
