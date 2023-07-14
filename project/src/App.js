@@ -14,6 +14,7 @@ import productjs from './Json/Product';
 import { productContext } from './context/ProductContext';
 import HeaderLogout from './Page/HeaderLogout';
 import { LoginContext } from './context/LoginContext';
+import { useCookies } from 'react-cookie';
 
 import NoticeEdit from './components/Post/NoticePost/NoticeEdit';
 import NoticeList from './components/Post/NoticePost/NoticeList';
@@ -29,11 +30,22 @@ import EventWrite from './components/Post/EventPost/EventWrite';
 
 
 function App() {
-  
+  const [cookies] = useCookies(['user_id']);
+
     const [isLogin, setIsLogin] = useState(false)
     const [distinction,setDistinction] = useState();
+ 
     useEffect(() => {
-        if(sessionStorage.getItem('user_id') === null){
+      if (cookies.user_id === undefined) {
+        setIsLogin(false);
+      } else {
+        setIsLogin(true);
+      }
+    }, [cookies]);
+
+    useEffect(() => {
+        if(isLogin === false){
+          
         // sessionStorage 에 user_id 라는 key 값으로 저장된 값이 없다면
           console.log('isLogin ?? :: ', isLogin)
           
