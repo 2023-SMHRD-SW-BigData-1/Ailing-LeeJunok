@@ -1,9 +1,24 @@
 
 
-import React from 'react'
-import {Link} from 'react-router-dom';
+import React, { useContext } from 'react'
+import {Link, useNavigate} from 'react-router-dom';
+import swal from 'sweetalert';
+import { LoginContext } from '../../context/LoginContext';
 
 const HeaderLnb = () => {
+
+    const nav = useNavigate();
+    const {isLogin} = useContext(LoginContext);
+
+    const loginD=()=>{
+        if (isLogin===false) {
+            swal ( "죄송합니다" ,  "로그인이 필요한 서비스입니다." ,  "error" )
+        }else{
+            nav('/cart');
+        }
+    }
+
+
     return (
     <div className='innerLnb'>
         <ul>
@@ -23,11 +38,10 @@ const HeaderLnb = () => {
 
         </ul>
         <ul>
-            <li><a href="/cart">장바구니</a></li>
+            <li><a onClick={loginD}>장바구니</a></li>
             <li><Link>주문내역</Link></li>
             <li><Link>관심상품</Link></li>
-            <li><Link>회원정보 수정</Link></li>
-            
+            <li><Link>회원정보 수정</Link></li>    
         </ul>
     </div>
     )
