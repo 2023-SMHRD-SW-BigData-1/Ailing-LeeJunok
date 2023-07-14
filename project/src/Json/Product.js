@@ -413,7 +413,7 @@ var productjs =
             "PROS_NAME": "로사빈",
             "PROD_MAKER": "유바생명과학",
             "PROD_PRICE": 55000,
-            "PROD_IMG": "https://www.nightoclock.co.kr/data/goods/85/2023/01/_temp_16732450725259view.JPG",
+            "PROD_IMG": "https://www.mypuzzle.co.kr/upload/item/317/317_FML_20230407_24948.png",
             "PROD_CATEGORY": "스트레스, 피로",
             "PROD_SOBI": "소비기한 1/2이내 제조",
             "PROD_DOSE": "400 mg",

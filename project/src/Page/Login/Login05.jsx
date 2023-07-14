@@ -135,7 +135,7 @@ const Join = () => {
     console.log(body);
 
     try {
-      const response = await axios.post('http://localhost:8888/login/joi', body);
+      const response = await axios.post('http://localhost:8888/login/join', body);
       console.log(response);
       alert('회원가입에 성공하셨습니다.')
       navigate('/login');
