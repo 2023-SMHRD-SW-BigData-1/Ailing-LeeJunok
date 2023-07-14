@@ -9,8 +9,8 @@ const EventWrite = () => {
     <div class ="Notice_css">
     <div class="board_wrap">
     <div class="board_title">
-        <strong>게시판 이름</strong>
-        <p>게시판 설명</p>
+    <strong>이벤트 게시판</strong>
+            <p> Pill. Yo 의 이벤트 게시판 입니다. </p>
     </div>
     <div class="board_write_wrap">
         <div class="board_write">
