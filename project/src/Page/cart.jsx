@@ -3,10 +3,12 @@ import '../css/Cart/cartdesign.scss';
 import $ from 'jquery';
 import Payment from '../components/Payment/Payment01';
 import { useLocation } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
 window.$ = $;
 
 const Cart = () => {
   const location = useLocation();
+  const [cookies, setCookie] = useCookies(['cart']);
 
   const Prod_id = location.state ? location.state.Prod_id : null;
   const imageURL = location.state ? location.state.imageURL : null;
@@ -17,29 +19,58 @@ const Cart = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
+    const cartItems = cookies.cart || [];
+    setProducts(cartItems);
+  }, [cookies]);
+
+  useEffect(() => {
     if (Prod_id && imageURL && titleName && descriptionS && prices) {
-      setProducts([
-        {
-          id: Prod_id,
-          image: imageURL,
-          title: titleName,
-          description: descriptionS,
-          price: prices,
-          quantity: 1,
-          linePrice: prices,
-        },
-      ]);
-    } else {
-      setProducts([]);
+      const newProduct = {
+        id: Prod_id,
+        image: imageURL,
+        title: titleName,
+        description: descriptionS,
+        price: prices,
+        quantity: 1,
+        linePrice: prices,
+      };
+
+      setProducts((prevProducts) => {
+        const existingProduct = prevProducts.find((product) => product.id === newProduct.id);
+
+        if (existingProduct) {
+          const updatedProduct = {
+            ...existingProduct,
+            quantity: existingProduct.quantity + 1,
+            linePrice: existingProduct.linePrice + newProduct.price,
+          };
+
+          const updatedProducts = prevProducts.map((product) =>
+            product.id === existingProduct.id ? updatedProduct : product
+          );
+
+          setCookie('cart', updatedProducts, { path: '/' });
+          return updatedProducts;
+        } else {
+          const updatedProducts = [...prevProducts, newProduct];
+          setCookie('cart', updatedProducts, { path: '/' });
+          return updatedProducts;
+        }
+      });
     }
-  }, [Prod_id, imageURL, titleName, descriptionS, prices]);
+  }, [Prod_id, imageURL, titleName, descriptionS, prices, setCookie]);
 
   /* Set rates + misc */
   const fadeTime = 300;
 
   /* Remove item from cart */
   const removeItem = (id) => {
-    setProducts((prevProducts) => prevProducts.filter((product) => product.id !== id));
+    setProducts((prevProducts) => {
+      const updatedProducts = prevProducts.filter((product) => product.id !== id);
+      setCookie('cart', updatedProducts, { path: '/' });
+      return updatedProducts;
+    });
+
     recalculateCart();
   };
 
