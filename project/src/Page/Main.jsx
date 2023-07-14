@@ -35,23 +35,23 @@ const Main = () => {
     useEffect(()=>{  
         let triger = []
         switch (productName) {
-            case '면역': productjs.map(item=>{ if (item.PROD_CATEGORY.indexOf('면역') !=-1) {triger.push(item) }})
+            case '면역': productjs.map(item=>{ if (item.PROD_CATEGORY.indexOf('면역') !==-1) {triger.push(item) }})
             setProduct(triger);break;
-            case '다이어트': productjs.map(item=>{ if (item.PROD_CATEGORY.indexOf('다이어트') !=-1) {triger.push(item) }})
+            case '다이어트': productjs.map(item=>{ if (item.PROD_CATEGORY.indexOf('다이어트') !==-1) {triger.push(item) }})
             setProduct(triger);break;
-            case '피부': productjs.map(item=>{ if (item.PROD_CATEGORY.indexOf('피부') !=-1) {triger.push(item) }})
+            case '피부': productjs.map(item=>{ if (item.PROD_CATEGORY.indexOf('피부') !==-1) {triger.push(item) }})
             setProduct(triger);break;
-            case '스트레스': productjs.map(item=>{ if (item.PROD_CATEGORY.indexOf('스트레스') !=-1) {triger.push(item) }})
+            case '스트레스': productjs.map(item=>{ if (item.PROD_CATEGORY.indexOf('스트레스') !==-1) {triger.push(item) }})
             setProduct(triger);break;
-            case '피로': productjs.map(item=>{ if (item.PROD_CATEGORY.indexOf('피로') !=-1) {triger.push(item) }})
+            case '피로': productjs.map(item=>{ if (item.PROD_CATEGORY.indexOf('피로') !==-1) {triger.push(item) }})
             setProduct(triger);break;
-            case '간 건강': productjs.map(item=>{ if (item.PROD_CATEGORY.indexOf('간') !=-1) {triger.push(item) }})
+            case '간 건강': productjs.map(item=>{ if (item.PROD_CATEGORY.indexOf('간') !==-1) {triger.push(item) }})
             setProduct(triger);break;
-            case '눈 건강': productjs.map(item=>{ if (item.PROD_CATEGORY.indexOf('눈') !=-1) {triger.push(item) }})
+            case '눈 건강': productjs.map(item=>{ if (item.PROD_CATEGORY.indexOf('눈') !==-1) {triger.push(item) }})
             setProduct(triger);break;
-            case '장 건강': productjs.map(item=>{ if (item.PROD_CATEGORY.indexOf('장') !=-1) {triger.push(item) }})
+            case '장 건강': productjs.map(item=>{ if (item.PROD_CATEGORY.indexOf('장') !==-1) {triger.push(item) }})
             setProduct(triger);break;
-            case '수면': productjs.map(item=>{ if (item.PROD_CATEGORY.indexOf('수면') !=-1) {triger.push(item) }})
+            case '수면': productjs.map(item=>{ if (item.PROD_CATEGORY.indexOf('수면') !==-1) {triger.push(item) }})
             setProduct(triger);break;
             default:
             break;
@@ -76,7 +76,7 @@ const Main = () => {
                 {productName == ""? <Atom/> : <RcProduct product={product} />}
             </div>
             <div className='contentBox'>
-            <div className='hanpo top'><BenText/></div>
+            <div className='hanpo'><BenText/></div>
             </div>
             <div className='mainSec ingredient'>
                 <h3><strong>하루 한 팩, 입에 톡톡 내게 꼭 맞춘 한 팩 영양제</strong></h3>

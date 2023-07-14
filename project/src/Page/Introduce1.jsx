@@ -4,10 +4,14 @@
 import React from 'react'
 
 
-const Introduce = () => (
-  <div>
+const Introduce1 = () => (
+  <div className='contentBox' >
   
-  <div className="bg-gray-200">
+  <div className="bg-gray-200" style={{
+    display:'inline-block',
+    alignItems: 'center',
+
+  }}>
 
     <nav id="nav" className="fixed inset-x-0 top-0 flex flex-row justify-between z-10 text-white bg-transparent">
       {/* Nav Items Working on Tablet & Bigger Sceen */}
@@ -34,28 +38,48 @@ const Introduce = () => (
 
     <div id="up" className="headers">
       {/* Overlay Background + Center Control */}
-      <div
+      {/* <div
         className="h-screen bg-opacity-50 bg-black flex items-center justify-center"
         style={{ background: 'rgba(0,0,0,0.5)' }}
-      >
-        <div className="mx-2 text-center">
-          <h1 className="text-gray-100 font-extrabold text-4xl xs:text-5xl md:text-6xl">
+      > */}
+        {/* <div className="mx-2 text-center"> */}
+          {/* <h1 className="text-gray-100 font-extrabold text-4xl xs:text-5xl md:text-6xl">
             <span className="text-white">Pill.Yo</span> 
           </h1>
           <h2 className="text-gray-200 font-extrabold text-3xl xs:text-4xl md:text-5xl leading-tight">
             더 나은 <span className="text-white">내일을 위한</span> 소비와 <span className="text-white">투자</span>
-          </h2>
-        </div>
-      </div>
-      <main>
-      <section id="about" className="flex flex-col items-center justify-center bg-white">
-        <div className="flex flex-col md:flex-row rounded overflow-hidden">
+          </h2> */}
+        {/* </div> */}
+      {/* </div> */}
+      {/* <main>
+      <section id="about" className="flex flex-col items-center justify-center bg-white"> */}
+
+        <div className="flex flex-col md:flex-row rounded overflow-hidden"
+        style={{
+          display:'flex',
+          flexDirection:'column',
+          alignItems:'center',
+          marginLeft:'400px'
+        }}>
+           
            <img
-            src="https://ifh.cc/g/W0lOP8.jpg" // 대문 이미지(가장 큰 이미지)는 css 파일 1줄 주석 참고
+            src="https://ifh.cc/g/YpXmYv.png" // 대문 이미지(가장 큰 이미지)는 css 파일 1줄 주석 참고
             className="h-48 md:w-1/2 md:h-screen"
             loading="lazy"
+            style={{
+              maxWidth:'1000px',
+            }}
+            
           />  
-          <div className='logotext'>
+           <img
+            src="https://ifh.cc/g/lmy1kM.png" // 대문 이미지2(가장 큰 이미지)는 css 파일 1줄 주석 참고
+            className="h-48 md:w-1/2 md:h-screen"
+            loading="lazy"
+            style={{
+              maxWidth:'1000px',
+            }}
+          />  
+          {/* <div className='logotext'>
             <h1 className="font-extrabold text-4xl mt-1 mb-2 mm:my-4 border-b-4 border-indigo-600 self-start leading-tight">
               Pill.YO
             </h1>
@@ -75,11 +99,11 @@ const Introduce = () => (
               </li>
             </p>
             <div className="flex"></div>
-          </div>
+          </div> */}
         </div>
-      </section>
+      {/* </section> */}
 
-      <section id="whyus" className="flex flex-col sm:flex-row flex-wrap justify-between">
+      {/* <section id="whyus" className="flex flex-col sm:flex-row flex-wrap justify-between">
         <div className="flex flex-col items-center w-full sm:w-1/2 bg-white p-4">
           <div className="bg-indigo-100 rounded-full p-4">
             <svg
@@ -180,8 +204,8 @@ const Introduce = () => (
             적용된 대표 기능 소개
           </h1>
         </div>
-      </section>
-    </main>
+      </section> */}
+    {/* </main> */}
     </div>
 
     
@@ -192,4 +216,4 @@ const Introduce = () => (
   </div>
 );
 
-export default Introduce;
+export default Introduce1;
