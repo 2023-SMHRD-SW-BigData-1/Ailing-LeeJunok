@@ -58,7 +58,9 @@ const Main = () => {
         }
     },[productName])         
 
-    
+    const changepage = ()=>{
+        document.location.href = '/productList'
+    }
     return (
 
     
@@ -76,7 +78,12 @@ const Main = () => {
                 {productName == ""? <Atom/> : <RcProduct product={product} />}
             </div>
             <div className='contentBox'>
-            <div className='hanpo'><BenText/></div>
+
+            <div className='hanpo' onClick={changepage} style={{cursor:"pointer"}}>
+            
+            
+            </div>
+
             </div>
             <div className='mainSec ingredient'>
                 <h3><strong>하루 한 팩, 입에 톡톡 내게 꼭 맞춘 한 팩 영양제</strong></h3>
