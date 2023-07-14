@@ -13,10 +13,6 @@ import NoticeList from '../src/components/NoticePost/NoticeList'
 import NoticeView from '../src/components/NoticePost/NoticeView'
 import NoticeWrite from '../src/components/NoticePost/NoticeWrite'
 import React from 'react';
-import { productContext } from './context/ProductContext'
-import productjs from './Json/Product'
-import Cart from '../src/Page/cart'
-
 
 function App() {
   
