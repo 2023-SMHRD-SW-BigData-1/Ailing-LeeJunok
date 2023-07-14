@@ -8,6 +8,13 @@ $prefix: "mo-";
 // Then import Bootstrap
 
 
+.innercart{
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 90%;
+  height: 500px;
+}
+
 .product-image {
   float: left;
   width: 20%;
@@ -39,10 +46,14 @@ $prefix: "mo-";
   text-align: right;
 }
 
+.totals{
+  position: relative;
+  top: 150px;
+}
 
-.group:before, .shopping-cart:before, .column-labels:before, .product:before, .totals-item:before,
+.group:before, .contentBox:before, .column-labels:before, .product:before, .totals-item:before,
 .group:after,
-.shopping-cart:after,
+.contentBox:after,
 .column-labels:after,
 .product:after,
 .totals-item:after {
@@ -50,11 +61,11 @@ $prefix: "mo-";
   display: table;
 }
 
-.group:after, .shopping-cart:after, .column-labels:after, .product:after, .totals-item:after {
+.group:after, .contentBox:after, .column-labels:after, .product:after, .totals-item:after {
   clear: both;
 }
 
-.group, .shopping-cart, .column-labels, .product, .totals-item {
+.group, .contentBox, .column-labels, .product, .totals-item {
   zoom: 1;
 }
 
@@ -67,9 +78,7 @@ label {
   color: #aaa;
 }
 
-.shopping-cart {
-  margin-top: -45px;
-}
+
 
 .column-labels label {
   padding-bottom: 15px;
@@ -151,80 +160,6 @@ label {
 }
 
 
-@media screen and (max-width: 650px) {
-  .shopping-cart {
-    margin: 0;
-    padding-top: 20px;
-    border-top: 1px solid #eee;
-  }
-
-  .column-labels {
-    display: none;
-  }
-
-  .product-image {
-    float: right;
-    width: auto;
-  }
-  .product-image img {
-    margin: 0 0 10px 10px;
-  }
-
-  .product-details {
-    float: none;
-    margin-bottom: 10px;
-    width: auto;
-  }
-
-  .product-price {
-    clear: both;
-    width: 70px;
-  }
-
-  .product-quantity {
-    width: 100px;
-  }
-  .product-quantity input {
-    margin-left: 20px;
-  }
-
-  .product-quantity:before {
-    content: "x";
-  }
-
-  .product-removal {
-    width: auto;
-  }
-
-  .product-line-price {
-    float: right;
-    width: 70px;
-  }
-}
-
-@media screen and (max-width: 350px) {
-  .product-removal {
-    float: right;
-  }
-
-  .product-line-price {
-    float: right;
-    clear: left;
-    width: auto;
-    margin-top: 10px;
-  }
-
-  .product .product-line-price:before {
-    content: "Item Total: $";
-  }
-
-  .totals .totals-item label {
-    width: 60%;
-  }
-  .totals .totals-item .totals-value {
-    width: 40%;
-  }
-}
 
 
 

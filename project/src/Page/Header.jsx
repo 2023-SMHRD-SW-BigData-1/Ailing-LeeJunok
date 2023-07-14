@@ -29,7 +29,7 @@ return (
             </Link>
         </div>
         <div className='login'>
-            <Link to='/login' className='button'>Login</Link>
+            <Link to='/login' className='button'>LOGIN</Link>
         </div>
 
         <div className='headerGnb'>

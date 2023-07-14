@@ -6,9 +6,9 @@ import {Link} from 'react-router-dom';
 const MainBan = () => {
 
     const ban =[
-                {name:'2',imgUrl : 'https://ifh.cc/g/Wg2A9j.jpg',serverUrl:''},
-                {name:'3',imgUrl : 'https://ifh.cc/g/xLJJ7x.jpg',serverUrl:''},
-                {name:'4',imgUrl : 'https://ifh.cc/g/VRjT4R.jpg',serverUrl:''},]
+                {name:'2',imgUrl : 'https://ifh.cc/g/Wg2A9j.jpg',serverUrl:'/EventView01'},
+                {name:'3',imgUrl : 'https://ifh.cc/g/xLJJ7x.jpg',serverUrl:'/EventView02'},
+                {name:'4',imgUrl : 'https://ifh.cc/g/VRjT4R.jpg',serverUrl:'/EventView03'},]
 
 
 

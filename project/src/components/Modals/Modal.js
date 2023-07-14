@@ -1,25 +1,35 @@
 
 import '../../css/Modals/Modal.css'
 
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { LoginContext } from '../../context/LoginContext';
+import swal from 'sweetalert'
 
 
 const Modal = ({info,open,close}) => {
     const navigate = useNavigate();
-        
-    const infoOut = () =>{
-        navigate('/cart', {
-            state: {
-                Prod_id : info.PROD_SEQ, 
-                imageURL : info.PROD_IMG, 
-                titleName : info.PROS_NAME, 
-                descriptionS : info.PROD_CATEGORY, 
-                prices : info.PROD_PRICE
-            }
-          });
-    }
     
+    const {isLogin} = useContext(LoginContext);
+
+    const infoOut = () =>{
+        if (isLogin===false) {
+            swal ( "죄송합니다" ,  "로그인이 필요한 서비스입니다." ,  "error" )
+        }else{
+            navigate('/cart', {
+                state: {
+                    Prod_id : info.PROD_SEQ, 
+                    imageURL : info.PROD_IMG, 
+                    titleName : info.PROS_NAME, 
+                    descriptionS : info.PROD_CATEGORY, 
+                    prices : info.PROD_PRICE
+                }
+            });
+            const scrollY = document.body.style.top;
+            document.body.style.cssText = '';
+            window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
+        }
+    }
     
     return (
     <div className={open ? 'openModal modal' : 'modal'}>
@@ -71,7 +81,7 @@ const Modal = ({info,open,close}) => {
                         </div>
                     </div>
                     <div className="purchase">
-                       <button className='purchaseBtn' onClick={infoOut}>장바구니 추가</button>
+                        <button className='purchaseBtn' onClick={infoOut}>장바구니 추가</button>
                     </div>
                     <div className='explanation'>
                     <p>{info.PROD_SOBI}</p>

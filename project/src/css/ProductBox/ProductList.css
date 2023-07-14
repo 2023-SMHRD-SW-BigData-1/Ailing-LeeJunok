@@ -50,7 +50,7 @@
 .title-font {
   font-weight: bolder;
   font-size: 19px;
-  
+  margin-top: 9px;
 }
 
 .price {
@@ -62,5 +62,4 @@
   color: #007aff;
   position: relative;
   bottom: 20px;
-
 }/*# sourceMappingURL=ProductList.css.map */
