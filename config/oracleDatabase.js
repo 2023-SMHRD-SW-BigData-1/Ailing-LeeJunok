@@ -1,10 +1,11 @@
 const express = require('express')
+const path = require('path')
 const app = express()
 const cors = require('cors')
 
 app.use(cors())
 
-const server = app.listen(8888, () => {
+app.listen(8888, () => {
     console.log('server start, port 8888')
 })
 
@@ -17,8 +18,11 @@ router.use(express.json())
 router.use(express.urlencoded({extended:false}))
 oracledb.initOracleClient({libDir:'C:/Users/smhrd/Desktop/oracleClient'})
 
-app.use('/', router)
+app.set('port', process.env.PORT||3000)
 
+app.use(express.static(path.join(__dirname,'project/build')))
+app.use('/', router)
+app.use('/user', userRouter)
 
 
 const dbConfig = {
