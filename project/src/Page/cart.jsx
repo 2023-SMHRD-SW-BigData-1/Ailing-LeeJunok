@@ -76,7 +76,7 @@ const Cart = () => {
 
   /* Recalculate cart */
   const recalculateCart = () => {
-    const subtotal = products.reduce((total, product) => total + product.linePrice, 0);
+    const subtotal = products.reduce((total, product) => total +  product.linePrice, 0);
 
     /* Calculate totals */
     const total = subtotal;
@@ -139,7 +139,7 @@ const Cart = () => {
                 <div className="product-title">{product.title}</div>
                 <p className="product-description">{product.description}</p>
               </div>
-              <div className="product-price">{product.price}</div>
+              <div className="product-price">⠀{product.price}</div>
               <div className="product-quantity">
                 <input
                   type="number"
@@ -153,20 +153,23 @@ const Cart = () => {
                   Remove
                 </button>
               </div>
-              <div className="product-line-price">{product.linePrice}</div>
+              <div className="product-line-price">⠀{product.linePrice}</div>
             </div>
           ))}
 
-           
-          <div className="totals">
-            <div className="totals-item">
-              <label>Subtotal(물품 총합값)</label>
+<div className="totals-item" style={{
+                                    marginLeft:1350,
+                                     fontSize:30}}>
+              <label>Subtotal</label>
               <div className="totals-value" id="cart-subtotal"></div>
+              <Payment />
             </div>
+          <div className="totals">
+            
           </div>
 
           </div>  
-           <Payment />
+          
       </div>
       </>
   );
