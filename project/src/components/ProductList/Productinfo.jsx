@@ -28,12 +28,16 @@ const ProductInfo = ({productInfo}) => {
   return (
     
     <div className="product">
+      <div className='porInnerImg'>
         <img src={productInfo.PROD_IMG} alt="Product Image" />
+      </div>
+      <div className='porTextarea'>
         <p className='title-font'>{productInfo.PROS_NAME}</p>
         <span className="subtitle">{productInfo.PROD_CATEGORY}</span>
-        <p className='price'>{productInfo.PROD_PRICE}원</p>
-        <button onClick={ openModal }>구매하기</button>
+        <p className='price'>{productInfo.PROD_PRICE.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}<span> 원</span></p>
+        <button className='porBtn' onClick={ openModal }>자세히보기</button>
         <Modal open={modalOpen} close={closeModal} info={productInfo} />
+      </div>
     </div>
   );
 };
