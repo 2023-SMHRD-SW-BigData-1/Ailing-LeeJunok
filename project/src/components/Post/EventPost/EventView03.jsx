@@ -23,15 +23,15 @@ const EventView03 = () => {
                     </dl>
                     <dl>
                         <dt>글쓴이</dt>
-                        <dd>정준옥</dd>
+                        <dd>필요</dd>
                     </dl>
                     <dl>
                         <dt>작성일</dt>
-                        <dd>YYYY.MM.DD</dd>
+                        <dd>2023.07.14</dd>
                     </dl>
                     <dl>
                         <dt>조회</dt>
-                        <dd>33</dd>
+                        <dd>110</dd>
                     </dl>
                 </div>
                 <div class="cont">

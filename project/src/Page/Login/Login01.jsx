@@ -11,7 +11,6 @@ import Container from '@mui/material/Container';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-<<<<<<< HEAD
 
 export default function LogInUI() {
   const navigate = useNavigate();
@@ -49,7 +48,6 @@ export default function LogInUI() {
     try {
       const response = await axios.post('/user/login', body);
       console.log(response.data);
-=======
 import { useState } from 'react';
 import axios from 'axios';
 import { useCookies } from 'react-cookie';
@@ -147,7 +145,6 @@ export default function LogInUI() {
 return (
   <div id='mainContentWrapper'>
     <div className='contentBox'>
->>>>>>> 60acca049226a47e2aafbbde8429a451c4562960
   
       if (response.data.result === 'Success!!') {
         // 로그인 성공 시, 원하는 페이지로 이동합니다.
@@ -213,7 +210,6 @@ return (
                 '&:hover': { backgroundColor: '#FEE500' },
               }}
             >
-<<<<<<< HEAD
               사진 버튼
             </Button>
             <Grid container>
@@ -227,7 +223,6 @@ return (
     </div>
   );
 }
-=======
 
 
       <Typography component="h1" variant="h5">
@@ -284,4 +279,3 @@ return (
       </div >
     </div >
 )}
->>>>>>> 60acca049226a47e2aafbbde8429a451c4562960

@@ -23,25 +23,25 @@ const EventList = () => {
 
 
                 <div>
-                    <div class="num">3</div>
-                    <div class="title_name"><Link to='/EventView03'>제목</Link></div>
-                    <div class="writer"><Link to='/EventView03'>이름</Link></div>
-                    <div class="date"><Link to='/EventView03'>YYYY.MM.DD</Link></div>
-                    <div class="count"><Link to='/EventView03'>12</Link></div>
+                    <div class="num">1</div>
+                    <div class="title_name"><Link to='/EventView03'>정준옥</Link></div>
+                    <div class="writer">필요</div>
+                    <div class="date">2023.07.14</div>
+                    <div class="count">41</div>
                 </div>
                 <div>
                     <div class="num">2</div>
-                    <div class="title_name"><Link to='/EventView02'>제목</Link></div>
-                    <div class="writer"><Link to='/EventView02'>이름</Link></div>
-                    <div class="date"><Link to='/EventView02'>YYYY.MM.DD</Link></div>
-                    <div class="count"><Link to='/EventView02'>12</Link></div>
+                    <div class="title_name"><Link to='/EventView02'>이 준</Link></div>
+                    <div class="writer">필요</div>
+                    <div class="date">2023.07.14</div>
+                    <div class="count">52</div>
                 </div>
                 <div>
-                    <div class="num">1</div>
-                    <div class="title_name"><Link to='/EventView01'>제목</Link></div>
-                    <div class="writer"><Link to='/EventView01'>이름</Link></div>
-                    <div class="date"><Link to='/EventView01'>YYYY.MM.DD</Link></div>
-                    <div class="count"><Link to='/EventView01'>12</Link></div>
+                    <div class="num">3</div>
+                    <div class="title_name"><Link to='/EventView01'>이수호</Link></div>
+                    <div class="writer">필요</div>
+                    <div class="date">2023.07.14</div>
+                    <div class="count">110</div>
                 </div>
 
 
