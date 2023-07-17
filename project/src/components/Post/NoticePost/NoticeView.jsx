@@ -8,8 +8,8 @@ const NoticeView = () => {
     <div class ="Notice_css">
     <div class="board_wrap">
         <div class="board_title">
-            <strong>게시판 이름</strong>
-            <p>게시판 설명</p>
+        <strong>공지사항</strong>
+            <p> Pill. Yo 의 공지사항 입니다. </p>
         </div>
         <div class="board_view_wrap">
             <div class="board_view">
@@ -23,7 +23,7 @@ const NoticeView = () => {
                     </dl>
                     <dl>
                         <dt>글쓴이</dt>
-                        <dd>정준옥</dd>
+                        <dd>관리자</dd>
                     </dl>
                     <dl>
                         <dt>작성일</dt>

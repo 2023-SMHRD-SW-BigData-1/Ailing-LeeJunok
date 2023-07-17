@@ -72,7 +72,15 @@ const Introduce1 = () => (
             
           />  
            <img
-            src="https://ifh.cc/g/lmy1kM.png" // 대문 이미지2(가장 큰 이미지)는 css 파일 1줄 주석 참고
+            src="https://ifh.cc/g/CJk5r2.png" // 대문 이미지2(가장 큰 이미지)는 css 파일 1줄 주석 참고
+            className="h-48 md:w-1/2 md:h-screen"
+            loading="lazy"
+            style={{
+              maxWidth:'1000px',
+            }}
+          />  
+           <img
+            src="https://ifh.cc/g/aJdpld.png" // 대문 이미지2(가장 큰 이미지)는 css 파일 1줄 주석 참고
             className="h-48 md:w-1/2 md:h-screen"
             loading="lazy"
             style={{

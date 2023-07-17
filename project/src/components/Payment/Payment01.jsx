@@ -48,7 +48,12 @@ const Payment01 = () =>{
 
     return(
     <>
-    <button onClick={Payment01} className="checkout" > 구매하기 </button>
+    <button onClick={Payment01} className="checkout" style={{
+        width:250,
+        marginLeft:500,
+        backgroundColor:'#78C1F3'
+        
+    }}>구매하기</button>
     </>
 
     )

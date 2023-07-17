@@ -5,16 +5,16 @@ import "../Postcss/css.css"
 
 const EventView01 = () => {
   return (
-    <div class ="Notice_css">
-    <div class="board_wrap">
+    <div class ="notice_css">
+    <div class="contentBox">
         <div class="board_title">
-            <strong>게시판 이름</strong>
-            <p>게시판 설명</p>
+        <strong>이벤트 게시판</strong>
+            <p> Pill. Yo 의 이벤트 게시판 입니다. </p>
         </div>
         <div class="board_view_wrap">
             <div class="board_view">
                 <div class="title_name">
-                    글 제목
+                    리뷰쓰고 포인트받자! #내돈내산
                 </div>
                 <div class="info">
                     <dl>
@@ -27,20 +27,28 @@ const EventView01 = () => {
                     </dl>
                     <dl>
                         <dt>작성일</dt>
-                        <dd>2023.07.14</dd>
+                        <dd>YYYY.MM.DD</dd>
                     </dl>
                     <dl>
                         <dt>조회</dt>
-                        <dd>41</dd>
+                        <dd>33</dd>
                     </dl>
                 </div>
+
+
                 <div class="cont">
-                    내용
+
+                    <img src='https://ifh.cc/g/Wg2A9j.jpg'
+                    width={972}
+                    height={250} >
+                     
+                    </img>
+
                 </div>
             </div>
             <div class="bt_wrap">
                 <Link to='/EventList' class="on">목록</Link>
-                <Link to='/EventEdit'>수정</Link>
+                {/* <Link to='/EventEdit'>수정</Link> */}
             </div>
         </div>
     </div>

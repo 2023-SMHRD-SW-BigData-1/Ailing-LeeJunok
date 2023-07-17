@@ -13,9 +13,12 @@ const PopupDom = ({ children }) => {
   return ReactDom.createPortal(children, el);
 };
 
+
 const PopupPostCode = React.forwardRef((props, ref) => {
+  
   // 우편번호 검색 후 주소 클릭 시 실행될 함수, data callback 용
   const handlePostCode = (data) => {
+    
     let fullAddress = data.address;
     let extraAddress = '';
 
@@ -31,6 +34,10 @@ const PopupPostCode = React.forwardRef((props, ref) => {
 
     props.postRef.current.value = data.zonecode;
     props.addRef.current.value = fullAddress;
+
+
+
+
 
     props.onClose();
   };
@@ -55,6 +62,7 @@ const PopupPostCode = React.forwardRef((props, ref) => {
 
 const Join = () => {
 
+//==============================================================
   const postRef = useRef();
   const addRef = useRef();
 
@@ -107,7 +115,8 @@ const Join = () => {
 
   const addressHandler = (e) => {
     e.preventDefault();
-    SetAddress(e.target.value);
+    const value = e.target.value;
+    SetAddress(value);
   };
 
 
@@ -120,9 +129,10 @@ const Join = () => {
       user_name: name,
       user_email: email,
       user_phone: cellphoneNo,
-      user_addr: address
+      user_addr: address,
     };
 
+    console.log(body);
 
     try {
       const response = await axios.post('http://localhost:8888/login/join', body);
@@ -202,7 +212,7 @@ const Join = () => {
     <div id='popupDom'>
             {isPopupOpen && (
                 <PopupDom>
-                    <PopupPostCode onClose={closePostCode} postRef={postRef} addRef={addRef} />
+                    <PopupPostCode onClose={closePostCode} postRef={postRef} addRef={addRef} onChange={addressHandler}/>
                 </PopupDom>
             )}
     </div>
@@ -210,7 +220,7 @@ const Join = () => {
     <input name="faddress" type="text" className="faddress" placeholder="우편번호" ref={postRef} readOnly/>
   </div>
   <div className="textForm">
-    <input name="address" type="text" className="address" placeholder="주소" ref={addRef} readOnly onChange={addressHandler}/>
+    <input name="address" type="text" className="address" placeholder="주소" ref={addRef} readOnly/>
   </div>
   <div className="textForm">
     <input name="detailAddress" type="text" className="detailAddress" placeholder="상세주소"/>
