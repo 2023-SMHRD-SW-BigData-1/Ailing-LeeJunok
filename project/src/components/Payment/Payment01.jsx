@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 
-const Payment = (effect, deps) =>{
+const Payment = ({Total}) =>{
     useEffect (()=>{
         const jquery= document.createElement('script');
         jquery.src= "https://code.jquery.com/jquery-1.12.4.min.js";
@@ -14,17 +14,18 @@ const Payment = (effect, deps) =>{
         }
     }, []);
 
+    
+
 const Payment01 = () =>{
     const {IMP} = window;
     IMP.init("imp56415161");
-
     const data = {
 
 
         pg: 'html5_inicis.INIpayTest',                           // PG사
         pay_method: 'card',                                     // 결제수단
         merchant_uid: 'wnsdhr7221',                           // 주문번호
-        amount: 1000,                                         // 결제금액
+        amount: Total.total,                                         // 결제금액
         name: '옥픽맛집',                                     // 주문명
         buyer_name: '정준옥',                                 // 구매자 이름
         buyer_tel: '01072417221',                             // 구매자 전화번호
