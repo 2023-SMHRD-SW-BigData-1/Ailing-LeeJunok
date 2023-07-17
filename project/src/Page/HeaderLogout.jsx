@@ -1,7 +1,7 @@
 
 
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import HeaderMenuList from '../components/Header/HeaderMenuList'
 import HeaderLnb from '../components/Header/HeaderLnb'
 import { useCookies } from 'react-cookie';
