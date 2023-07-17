@@ -1,15 +1,15 @@
 
 import '../../css/Modals/Modal.css'
 
-import React, { useContext, useEffect } from 'react'
+import React, { useContext} from 'react'
 import { useNavigate } from 'react-router-dom';
 import { LoginContext } from '../../context/LoginContext';
 import swal from 'sweetalert'
+import { BiChevronsDown, IconName } from "react-icons/bi";
 
 
 const Modal = ({info,open,close}) => {
     const navigate = useNavigate();
-    
     const {isLogin} = useContext(LoginContext);
 
     const infoOut = () =>{
@@ -30,7 +30,8 @@ const Modal = ({info,open,close}) => {
             window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
         }
     }
-    
+
+
     return (
     <div className={open ? 'openModal modal' : 'modal'}>
         {open ? (
@@ -46,7 +47,7 @@ const Modal = ({info,open,close}) => {
                     <div className="imgArea">
                         <img src={info.PROD_IMG} alt="준비중.." />
                     </div>
-                    <div className="infoArea"> 
+                    <div id="infoArea" > 
                     <div className="infoTop">
                         <p className='infoName'>{info.PROS_NAME}</p>
                         <p className='infoMaker'>{'('+info.PROD_MAKER+')'}</p>
@@ -80,6 +81,7 @@ const Modal = ({info,open,close}) => {
                             </div>
                         </div>
                     </div>
+                    <BiChevronsDown/>
                     <div className="purchase">
                         <button className='purchaseBtn' onClick={infoOut}>장바구니 추가</button>
                     </div>

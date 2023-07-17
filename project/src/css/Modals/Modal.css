@@ -11,11 +11,6 @@
   -webkit-backdrop-filter: blur(2.5px);
           backdrop-filter: blur(2.5px);
 }
-.modal button {
-  outline: none;
-  cursor: pointer;
-  border: none;
-}
 .modal section {
   width: 90%;
   max-width: 1000px;
@@ -69,7 +64,7 @@
   width: 100%;
   height: 100%;
 }
-.modal section .modalMain .product_area .infoArea {
+.modal section .modalMain .product_area #infoArea {
   margin-left: 20px;
   width: 60%;
   max-height: 400px;
@@ -77,64 +72,64 @@
   -ms-overflow-style: none; /* 인터넷 익스플로러 */
   scrollbar-width: none; /* 파이어폭스 */
 }
-.modal section .modalMain .product_area .infoArea::-webkit-scrollbar {
+.modal section .modalMain .product_area #infoArea::-webkit-scrollbar {
   display: none;
 }
-.modal section .modalMain .product_area .infoArea .infoTop {
+.modal section .modalMain .product_area #infoArea .infoTop {
   width: 100%;
 }
-.modal section .modalMain .product_area .infoArea .infoTop .infoName {
+.modal section .modalMain .product_area #infoArea .infoTop .infoName {
   font-size: 25px;
   font-weight: 700;
 }
-.modal section .modalMain .product_area .infoArea .infoTop .infoMaker {
+.modal section .modalMain .product_area #infoArea .infoTop .infoMaker {
   position: relative;
   float: right;
   bottom: 45px;
   font-size: 12px;
 }
-.modal section .modalMain .product_area .infoArea .infoTop hr {
+.modal section .modalMain .product_area #infoArea .infoTop hr {
   position: relative;
   width: 100%;
   bottom: 40px;
 }
-.modal section .modalMain .product_area .infoArea .infoPrice {
+.modal section .modalMain .product_area #infoArea .infoPrice {
   position: relative;
   bottom: 40px;
   width: 100%;
 }
-.modal section .modalMain .product_area .infoArea .infoPrice .priceNumber {
+.modal section .modalMain .product_area #infoArea .infoPrice .priceNumber {
   font-size: 30px;
 }
-.modal section .modalMain .product_area .infoArea .infoPrice .priceText {
+.modal section .modalMain .product_area #infoArea .infoPrice .priceText {
   font-size: 20px;
 }
-.modal section .modalMain .product_area .infoArea .infoPrice .dayPrice {
+.modal section .modalMain .product_area #infoArea .infoPrice .dayPrice {
   font-size: 15px;
 }
-.modal section .modalMain .product_area .infoArea .infoPrice .dayPrice .dayNumber {
+.modal section .modalMain .product_area #infoArea .infoPrice .dayPrice .dayNumber {
   color: #007aff;
   font-size: 20px;
 }
-.modal section .modalMain .product_area .infoArea .infoCategory {
+.modal section .modalMain .product_area #infoArea .infoCategory {
   display: flex;
   position: relative;
   width: 100%;
   justify-content: center;
   bottom: 45px;
 }
-.modal section .modalMain .product_area .infoArea .infoCategory .categoryImg {
+.modal section .modalMain .product_area #infoArea .infoCategory .categoryImg {
   display: flex;
   justify-content: center;
   width: 100%;
   height: 120px;
 }
-.modal section .modalMain .product_area .infoArea .infoCategory .textSuck {
+.modal section .modalMain .product_area #infoArea .infoCategory .textSuck {
   width: 100%;
   justify-content: center;
   height: 50px;
 }
-.modal section .modalMain .product_area .infoArea .infoCategory .categoryBgc {
+.modal section .modalMain .product_area #infoArea .infoCategory .categoryBgc {
   display: flex;
   border-radius: 100%;
   background-color: rgba(0, 123, 255, 0.2235294118);
@@ -142,43 +137,61 @@
   height: 100px;
   justify-content: center;
 }
-.modal section .modalMain .product_area .infoArea .infoCategory .textFuck {
+.modal section .modalMain .product_area #infoArea .infoCategory .textFuck {
   font-size: 11px;
 }
-.modal section .modalMain .product_area .infoArea .infoCategory .textFuck {
+.modal section .modalMain .product_area #infoArea .infoCategory .textFuck {
   position: relative;
   bottom: 10px;
 }
-.modal section .modalMain .product_area .infoArea .infoCategory .taking {
+.modal section .modalMain .product_area #infoArea .infoCategory .taking {
   display: flex;
   flex-direction: column;
   text-align: center;
   width: 300px;
 }
-.modal section .modalMain .product_area .infoArea .infoCategory .taking img {
+.modal section .modalMain .product_area #infoArea .infoCategory .taking img {
   width: 100px;
   height: 100px;
 }
-.modal section .modalMain .product_area .infoArea .infoCategory .func {
+.modal section .modalMain .product_area #infoArea .infoCategory .func {
   display: flex;
   flex-direction: column;
   text-align: center;
   width: 300px;
   margin-left: 50px;
 }
-.modal section .modalMain .product_area .infoArea .infoCategory .func img {
+.modal section .modalMain .product_area #infoArea .infoCategory .func img {
   position: relative;
   top: 3px;
   width: 90px;
   height: 90px;
 }
-.modal section .modalMain .product_area .infoArea .purchase {
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.modal section .modalMain .product_area #infoArea svg {
   position: relative;
-  bottom: 20px;
+  bottom: 50px;
+  float: right;
+  height: 30px;
+  width: 30px;
+  animation: blink-effect 1s step-end infinite;
+  animation: blink 0.5s ease-in-out infinite alternate;
+}
+.modal section .modalMain .product_area #infoArea .purchase {
+  position: relative;
+  bottom: 50px;
   width: 100%;
   text-align: center;
 }
-.modal section .modalMain .product_area .infoArea .purchase .purchaseBtn {
+.modal section .modalMain .product_area #infoArea .purchase .purchaseBtn {
+  position: relative;
   color: white;
   width: 100%;
   height: 50px;
@@ -187,7 +200,7 @@
   border-style: none;
   font-size: 25px;
 }
-.modal section .modalMain .product_area .infoArea .explanation {
+.modal section .modalMain .product_area #infoArea .explanation {
   font-size: 14px;
 }
 

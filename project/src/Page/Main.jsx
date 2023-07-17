@@ -75,7 +75,7 @@ const Main = () => {
                 <div className='innerDepth'>
                     {mainDepth.map((item)=><MainDepth key={item.depthName} name={item.depthName} url={item.url} setproductname={setProductName}/>)}
                 </div>
-                {productName == ""? <Atom/> : <RcProduct product={product} />}
+                {productName == ""? <Atom/> : <RcProduct productInfo={product} />}
             </div>
             <div className='contentBox'>
 

@@ -17,7 +17,7 @@ const Cart = () => {
   const prices = location.state ? location.state.prices : null;
 
   const [products, setProducts] = useState([]);
-
+  const [total, setTotal] = useState(0);
   useEffect(() => {
     const cartItems = cookies.cart || [];
     setProducts(cartItems);
@@ -79,7 +79,7 @@ const Cart = () => {
     const subtotal = products.reduce((total, product) => total +  product.linePrice, 0);
 
     /* Calculate totals */
-    const total = subtotal;
+    setTotal(subtotal);
 
     /* Update totals display */
     $('.totals-value').fadeOut(fadeTime, function () {
@@ -159,10 +159,10 @@ const Cart = () => {
 
 <div className="totals-item" style={{
                                     marginLeft:1350,
-                                     fontSize:30}}>
+                                    fontSize:30}}>
               <label>Subtotal</label>
               <div className="totals-value" id="cart-subtotal"></div>
-              <Payment />
+              <Payment Total={{total}} />
             </div>
           <div className="totals">
             
