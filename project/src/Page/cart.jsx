@@ -139,7 +139,7 @@ const Cart = () => {
                 <div className="product-title">{product.title}</div>
                 <p className="product-description">{product.description}</p>
               </div>
-              <div className="product-price">⠀{product.price}</div>
+              <div className="product-price">⠀{product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</div>
               <div className="product-quantity">
                 <input
                   type="number"
@@ -153,7 +153,7 @@ const Cart = () => {
                   Remove
                 </button>
               </div>
-              <div className="product-line-price">⠀{product.linePrice}</div>
+              <div className="product-line-price">⠀{product.linePrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</div>
             </div>
           ))}
 
@@ -163,7 +163,7 @@ const Cart = () => {
               <label>Subtotal</label>
               <div className="totals-value" id="cart-subtotal"></div>
               <Payment Total={{total}} />
-            </div>
+              </div>
           <div className="totals">
             
           </div>
