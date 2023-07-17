@@ -9,6 +9,7 @@ import { useCookies } from 'react-cookie';
 const HeaderLogout = () => {
     const [cookies, setCookie, removeCookie] = useCookies(['user_id']);
     const [scrollPosition, setScrollPosition] = useState(0);
+    const navigate = useNavigate();
 
     document.querySelectorAll('.button').forEach(button => button.innerHTML = '<div><span>' + button.textContent.trim().split('').join('</span><span>'));
 
@@ -21,11 +22,14 @@ const HeaderLogout = () => {
         }, []);
 
         const onLogout = () => {
-            // sessionStorage 에 user_id 로 저장되어있는 아이템을 삭제한다.
+            // 세션 데이터를 제거합니다.
             removeCookie('user_id');
-            // App 으로 이동(새로고침)
-            document.location.href = '/'
-        }
+            delete sessionStorage.userId;
+            delete sessionStorage.userName;
+        
+            // 로그인 페이지로 리다이렉트합니다.
+            navigate('/login');
+          };
 
     return (
     <header className={scrollPosition > 100 ? "scroll-bag" : "scrolled-bag"}>
