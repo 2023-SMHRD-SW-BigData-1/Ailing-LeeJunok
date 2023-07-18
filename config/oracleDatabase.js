@@ -108,7 +108,7 @@ router.post('/NoticeWrite', async (req, res) => {
     );
     const maxSeq = result.rows[0].MAX_SEQ || 0;
 
-    // noti_seq를 1 증가시키고 noti_views를 0으로 설정합니다.
+    // noti_seq를 1 증가
     const notiSeq = maxSeq + 1;
 
     await connection.execute(
@@ -128,9 +128,9 @@ router.post('/NoticeWrite', async (req, res) => {
 });
 
 
-// 모든 공지사항 조회
+// 공지사항 목록 검색
 router.get('/NoticeList', async (req, res) => {
-  console.log('공지 리스트에 접근하였습니다!');
+  console.log('공지사항 목록에 접근했습니다!');
   try {
     const connection = await oracledb.getConnection(dbConfig);
     console.log('데이터베이스 연결 성공');
@@ -142,8 +142,8 @@ router.get('/NoticeList', async (req, res) => {
 
     await connection.close();
   } catch (error) {
-    console.log('에러가 발생하였습니다: ', error);
-    res.json({ result: '공지사항 조회에 실패했습니다.' });
+    console.log('오류가 발생했습니다: ', error);
+    res.json({ result: '공지사항을 검색하는 데 실패했습니다.' });
   }
 });
 

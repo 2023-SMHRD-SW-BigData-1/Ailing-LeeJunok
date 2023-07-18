@@ -1,24 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-// import "../../Postcss/css.css"
 import axios from 'axios';
-import "../Postcss/css.css";
+import '../Postcss/css.css';
 
 const NoticeList = () => {
   const [notices, setNotices] = useState([]);
 
   useEffect(() => {
+    console.log('공지사항을 가져오는 중...');
     fetchNotices();
   }, []);
 
   const fetchNotices = async () => {
     try {
       const response = await axios.get('/NoticeList');
+      console.log('공지사항:', response.data.notices);
       setNotices(response.data.notices);
     } catch (error) {
       console.log('에러가 발생했습니다:', error);
     }
   };
+
+  console.log('NoticeList 컴포넌트를 렌더링 중...');
 
   return (
     <div className="notice_css">
@@ -42,8 +45,8 @@ const NoticeList = () => {
                 <div className="title_name">
                   <Link to={`/NoticeView${notice.NOTI_SEQ}`}>{notice.NOTI_TITLE}</Link>
                 </div>
-                <div className="writer">{notice.body.NOTI_NAME}</div>
-                <div className="date">{notice.body.NOTI_DATE}</div>
+                <div className="writer">{notice.NOTI_NAME}</div>
+                <div className="date">{notice.NOTI_DATE}</div>
                 <div className="count">{notice.NOTI_VIEWS}</div>
               </div>
             ))}
