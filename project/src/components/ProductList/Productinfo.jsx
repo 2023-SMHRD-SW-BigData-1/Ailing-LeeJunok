@@ -33,6 +33,7 @@ const ProductInfo = ({productInfo}) => {
       </div>
       <div className='porTextarea'>
         <p className='title-font'>{productInfo.PROS_NAME}</p>
+        <p className='maker'>{'('+productInfo.PROD_MAKER+')'}</p>
         <span className="subtitle">{productInfo.PROD_CATEGORY}</span>
         <p className='price'>{productInfo.PROD_PRICE.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}<span> 원</span></p>
         <button className='porBtn' onClick={ openModal }>자세히보기</button>
