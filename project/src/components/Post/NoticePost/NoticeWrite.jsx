@@ -11,88 +11,86 @@ const NoticeWrite = () => {
     const [text, setText] = useState("");
   
     const handleRegister = async () => {
-
-       
-        let body ={
-        
+        let body = {
             title: title,
             name: name,
             text: text
-        }
-
-          const response = await axios.post('http://localhost:8888/NoticeWrite', body) 
-          const newNotice = response.data.notice;
-
-          if (newNotice) {
-            newNotice.noti_seq += 1;
-            newNotice.noti_views = 0;
-            // 수정된 값을 가진 공지를 서버에 업데이트합니다.
-        
-            // NoticeView 경로로 이동하거나 적절한 조치를 취합니다.
-            navigate('/NoticeView');
-          }
         };
 
-  const handleCancel = () => {
-    // 이동하기 전에 필요한 작업 수행
+        const response = await axios.post('http://localhost:8888/NoticeWrite', body);
+        const newNotice = response.data.notice;
 
-    // NoticeList로 이동
-    // navigate('/NoticeList');
-  };
+        if (newNotice) {
+            newNotice.body.noti_seq += 1;
+            newNotice.doby.noti_views = 0;
 
-  const titleHandler = (e) => {
-    setTitle(e.target.value);
-  };
+            // 서버에 수정된 값을 가진 공지 업데이트
+            
+            // NoticeView 경로로 이동하거나 적절한 조치를 취합니다.
+            navigate('/NoticeView');
+        }
+    };
 
-  const nameHandler = (e) => {
-    setName(e.target.value);
-  };
+    const handleCancel = () => {
+        // 이동하기 전에 필요한 작업 수행
 
-  const textHandler = (e) => {
-    setText(e.target.value);
-  };
+        // NoticeList로 이동합니다.
+        // navigate('/NoticeList');
+    };
 
-  return (
-    <div className="notice_css">
-      <div className="contentBox">
-        <div className="board_title">
-          <strong>공지사항</strong>
-          <p>Pill. Yo의 공지사항입니다.</p>
+    const titleHandler = (e) => {
+        setTitle(e.target.value);
+    };
+
+    const nameHandler = (e) => {
+        setName(e.target.value);
+    };
+
+    const textHandler = (e) => {
+        setText(e.target.value);
+    };
+
+    return (
+        <div className="notice_css">
+            <div className="contentBox">
+                <div className="board_title">
+                    <strong>공지사항</strong>
+                    <p>Pill.Yo의 공지사항</p>
+                </div>
+                <div className="board_write_wrap">
+                    <div className="board_write">
+                        <div className="title_name">
+                            <dl>
+                                <dt>Title</dt>
+                                <dd>
+                                    <input type="text" placeholder="Enter a title" onChange={titleHandler} />
+                                </dd>
+                            </dl>
+                        </div>
+                        <div className="info">
+                            <dl>
+                                <dt>Created by</dt>
+                                <dd>
+                                    <input type="text" placeholder="insert author" onChange={nameHandler} />
+                                </dd>
+                            </dl>
+                        </div>
+                        <div className="cont">
+                            <textarea placeholder="Enter your text" onChange={textHandler}></textarea>
+                        </div>
+                    </div>
+                    <div className="bt_wrap">
+                        <Link to={'/NoticeView'} onClick={handleRegister} className="on">
+                            registration
+                        </Link>
+                        <Link to={'/NoticeList'} onClick={handleCancel}>
+                            cancel
+                        </Link>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div className="board_write_wrap">
-          <div className="board_write">
-            <div className="title_name">
-              <dl>
-                <dt>제목</dt>
-                <dd>
-                  <input type="text" placeholder="제목을 입력하세요" onChange={titleHandler} />
-                </dd>
-              </dl>
-            </div>
-            <div className="info">
-              <dl>
-                <dt>작성자</dt>
-                <dd>
-                  <input type="text" placeholder="작성자를 입력하세요" onChange={nameHandler} />
-                </dd>
-              </dl>
-            </div>
-            <div className="cont">
-              <textarea placeholder="내용을 입력하세요" onChange={textHandler}></textarea>
-            </div>
-          </div>
-          <div className="bt_wrap">
-            <Link to={'/NoticeView'} onClick={handleRegister} className="on">
-              등록하기
-            </Link>
-            <Link to={'/NoticeList'} onClick={handleCancel}>
-              취소하기
-            </Link>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default NoticeWrite;

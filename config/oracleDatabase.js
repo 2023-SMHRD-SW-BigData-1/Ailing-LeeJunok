@@ -102,6 +102,15 @@ router.post('/NoticeWrite', async (req, res) => {
     console.log('db접속');
     console.log(req.body.title, req.body.name, req.body.text);
 
+    // 데이터베이스에서 현재 최대 noti_seq 값을 가져옵니다.
+    const result = await connection.execute(
+      `SELECT MAX(noti_seq) as max_seq FROM T_ANNOUN`
+    );
+    const maxSeq = result.rows[0].MAX_SEQ || 0;
+
+    // noti_seq를 1 증가시키고 noti_views를 0으로 설정합니다.
+    const notiSeq = maxSeq + 1;
+
     await connection.execute(
       `INSERT INTO T_ANNOUN (noti_title, noti_name, noti_text)
       VALUES (:title, :name, :text)`,
@@ -121,11 +130,11 @@ router.post('/NoticeWrite', async (req, res) => {
 
 // 모든 공지사항 조회
 router.get('/NoticeList', async (req, res) => {
-  console.log('공지 리스트 접근!');
+  console.log('공지 리스트에 접근하였습니다!');
   try {
     const connection = await oracledb.getConnection(dbConfig);
-    console.log('DB 속이어유');
-    const result = await connection.execute('SELECT * FROM T_ANNOUN ORDER BY NOTI_SEQ DESC');
+    console.log('데이터베이스 연결 성공');
+    const result = await connection.execute('SELECT NOTI_SEQ, NOTI_TITLE, NOTI_NAME, NOTI_DATE, NOTI_VIEWS FROM T_ANNOUN ORDER BY NOTI_SEQ DESC');
     const notices = result.rows;
     console.log(notices);
 
@@ -133,9 +142,10 @@ router.get('/NoticeList', async (req, res) => {
 
     await connection.close();
   } catch (error) {
-    console.log('에러 발생: ', error);
+    console.log('에러가 발생하였습니다: ', error);
     res.json({ result: '공지사항 조회에 실패했습니다.' });
   }
 });
+
 
 module.exports = router;
