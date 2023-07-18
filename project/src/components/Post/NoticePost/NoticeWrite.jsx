@@ -24,7 +24,7 @@ const NoticeWrite = () => {
               
               console.log(response.data);
         // NoticeView 경로로 이동하거나 적절한 조치를 취합니다.
-        navigate('/NoticeView');
+        // navigate('/NoticeView');
       }
   
 
@@ -32,7 +32,7 @@ const NoticeWrite = () => {
     // 이동하기 전에 필요한 작업 수행
 
     // NoticeList로 이동
-    navigate('/NoticeList');
+    // navigate('/NoticeList');
   };
 
   const titleHandler = (e) => {
@@ -77,12 +77,12 @@ const NoticeWrite = () => {
             </div>
           </div>
           <div className="bt_wrap">
-            <button onClick={handleRegister} className="on">
+            <Link to={'/NoticeView'} onClick={handleRegister} className="on">
               등록하기
-            </button>
-            <button onClick={handleCancel}>
+            </Link>
+            <Link to={'/NoticeList'} onClick={handleCancel}>
               취소하기
-            </button>
+            </Link>
           </div>
         </div>
       </div>
