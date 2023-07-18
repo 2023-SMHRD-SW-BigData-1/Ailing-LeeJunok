@@ -1,9 +1,9 @@
 
-
+import '../../css/Pagination/Pagination.css'
 import Pagination from "react-js-pagination";
 import React from 'react'
 import { useNavigate } from "react-router";
-import { BiChevronLeft, BiChevronRight, IconName } from "react-icons/bi";
+import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 
 const Paging = ({count,setpage,page}) => {
     const navi = useNavigate();
@@ -14,7 +14,7 @@ const Paging = ({count,setpage,page}) => {
     };
 
     return (
-        <div className="reviewBottom">
+        <div className="pagination">
         <Pagination
         activePage={page}
         itemsCountPerPage={5}
@@ -25,7 +25,6 @@ const Paging = ({count,setpage,page}) => {
         limit={5}
         onChange={handlePageChange}
         />
-        <a href=""><p>리뷰작성</p></a>
         </div>
     )
 }
