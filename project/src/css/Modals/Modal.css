@@ -204,6 +204,11 @@
 .modal section .modalMain .product_area #infoArea .explanation {
   font-size: 14px;
 }
+.modal section .modalMain .product_area #infoArea .explanation .terms {
+  position: relative;
+  margin-top: 20px;
+  font-size: 11px;
+}
 
 .modal.openModal {
   display: flex;
