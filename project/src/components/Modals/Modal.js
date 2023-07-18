@@ -88,6 +88,7 @@ const Modal = ({info,open,close}) => {
                     </div>
                     <div className='explanation'>
                     <p>{'- 용량 -\n'+info.PROD_DOSE}</p>
+                    <p>{'- 유통기한 -\n'+info.PROD_SOBI}</p>
                     <p>{'- 원료명 및 함량 -\n'+info.PROD_MATE}</p>
                     <p>{'- 기능정보 -\n'+info.PROD_FUNTION}</p>
                     <p>{'- 섭취량 -\n'+info.PROD_NUTRITION}</p>
