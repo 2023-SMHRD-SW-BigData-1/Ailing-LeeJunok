@@ -25,11 +25,12 @@ import EventView01 from './components/Post/EventPost/EventView01';
 import EventView02 from './components/Post/EventPost/EventView02';
 import EventView03 from './components/Post/EventPost/EventView03';
 import EventWrite from './components/Post/EventPost/EventWrite';
-import NoticeView01 from './components/Post/NoticePost/NoticeView01';
+import NoticeView from './components/Post/NoticePost/NoticeView';
 import NoticeView02 from './components/Post/NoticePost/NoticeView02';
 import NoticeView03 from './components/Post/NoticePost/NoticeView03';
 import NoticeView04 from './components/Post/NoticePost/NoticeView04';
 import NoticeView05 from './components/Post/NoticePost/NoticeView05';
+import { Switch } from '@mui/material';
 
 function App() {
   const [cookies] = useCookies(['user_id']);
@@ -99,8 +100,8 @@ function App() {
               <Route path='/introduce1' element={<Introduce1 />} />
 
               <Route path='/NoticeEdit' element={<NoticeEdit />} />
-              <Route path='/NoticeList' element={<NoticeList />} />
-              <Route path='/NoticeView01' element={<NoticeView01 />} />
+              <Route path='/NoticeList'  element={<NoticeList />} />
+              <Route path='/NoticeView/:noticeSeq' element={<NoticeView />} />
               <Route path='/NoticeView02' element={<NoticeView02 />} />
               <Route path='/NoticeView03' element={<NoticeView03 />} />
               <Route path='/NoticeView04' element={<NoticeView04 />} />
@@ -113,6 +114,7 @@ function App() {
               <Route path='/EventView02' element={<EventView02 />} />
               <Route path='/EventView03' element={<EventView03 />} />
               <Route path='/EventWrite' element={<EventWrite />} />
+
             </Routes>
           </productContext.Provider>
         </div>

@@ -76,7 +76,7 @@ const Cart = () => {
 
   /* Recalculate cart */
   const recalculateCart = () => {
-    const subtotal = products.reduce((total, product) => total +  product.linePrice, 0);
+    const subtotal = products.reduce((total, product) => total + product.linePrice, 0);
 
     /* Calculate totals */
     setTotal(subtotal);
@@ -159,7 +159,7 @@ const Cart = () => {
 
 <div className="totals-item" style={{
                                     marginLeft:1350,
-                                    fontSize:30}}>
+                                     fontSize:30}}>
               <label>Subtotal</label>
               <div className="totals-value" id="cart-subtotal"></div>
               <Payment Total={{total}} />
@@ -168,8 +168,7 @@ const Cart = () => {
             
           </div>
 
-          </div>  
-          
+          </div>
       </div>
       </>
   );
