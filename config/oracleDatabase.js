@@ -95,6 +95,29 @@ router.post('/login', async (req, res) => {
   }
   });
 
+// 공지사항 추가
+router.post('/NoticeWrite', async (req, res) => {
+  console.log('공지사항에 접근');
+  try {
+    const connection = await oracledb.getConnection(dbConfig);
+    console.log('db접속');
+    console.log(req.body.title, req.body.name, req.body.text);
+
+    await connection.execute(
+      `INSERT INTO T_ANNOUN (noti_title, noti_name, noti_text)
+      VALUES (:title, :name, :text)`,
+      [req.body.title, req.body.name, req.body.text]
+    );
+
+    console.log('공지사항이 추가되었습니다!');
+    res.json({result: '공지사항이 추가되었습니다!' });
+
+    await connection.close();
+  } catch (error) {
+    console.log('에러 발생: ', error);
+    res.json({result: '공지사항 추가에 실패했습니다.' });
+  }
+});
 
 
 
