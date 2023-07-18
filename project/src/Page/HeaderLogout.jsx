@@ -34,9 +34,7 @@ const HeaderLogout = () => {
         <div className='contentBox'>
             <div className='headerMenuList'>
             <div className='logo'>
-                <Link to='/'>
-                    <h1>Pill.Yo</h1>
-                </Link>
+            <a href="/"><h1>Pill.Yo</h1></a>
             </div>
             <div className='login'>
                 <Link onClick={onLogout} className='button'>Logout</Link>

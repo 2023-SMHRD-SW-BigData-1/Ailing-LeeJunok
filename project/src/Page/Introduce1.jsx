@@ -86,7 +86,14 @@ const Introduce1 = () => (
             style={{
               maxWidth:'1000px',
             }}
-          />  
+          />
+          <img src="https://ifh.cc/g/LqAgtz.jpg" className="h-48 md:w-1/2 md:h-screen"
+            loading="lazy"
+            style={{
+              float: 'left',
+              width:'1000px',
+              height:'1000px'
+            }} />  
           {/* <div className='logotext'>
             <h1 className="font-extrabold text-4xl mt-1 mb-2 mm:my-4 border-b-4 border-indigo-600 self-start leading-tight">
               Pill.YO
