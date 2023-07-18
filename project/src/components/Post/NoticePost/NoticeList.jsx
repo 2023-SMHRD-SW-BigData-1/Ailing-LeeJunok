@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import '../Postcss/css.css';
 
@@ -13,15 +13,15 @@ const NoticeList = () => {
 
   const fetchNotices = async () => {
     try {
-      const response = await axios.get('/NoticeList');
+      const response = await axios.get('http://localhost:8888/NoticeList');
       console.log('공지사항:', response.data.notices);
       setNotices(response.data.notices);
     } catch (error) {
-      console.log('에러가 발생했습니다:', error);
+      console.log('오류가 발생했습니다:', error);
     }
   };
 
-  console.log('NoticeList 컴포넌트를 렌더링 중...');
+  console.log('NoticeList 컴포넌트 렌더링 중...');
 
   return (
     <div className="notice_css">
@@ -43,10 +43,10 @@ const NoticeList = () => {
               <div key={notice.NOTI_SEQ}>
                 <div className="num">{notice.NOTI_SEQ}</div>
                 <div className="title_name">
-                  <Link to={`/NoticeView${notice.NOTI_SEQ}`}>{notice.NOTI_TITLE}</Link>
+                  <Link to={`/NoticeView/${notice.NOTI_SEQ}`}>{notice.NOTI_TITLE}</Link>
                 </div>
                 <div className="writer">{notice.NOTI_NAME}</div>
-                <div className="date">{notice.NOTI_DATE}</div>
+                <div className="date">{notice.NOTI_AT}</div>
                 <div className="count">{notice.NOTI_VIEWS}</div>
               </div>
             ))}
@@ -62,7 +62,6 @@ const NoticeList = () => {
           </div>
           <div className="bt_wrap">
             <Link to="/NoticeWrite" className="on">등록하기</Link>
-            {/* <Link to='/NoticeEdit'>수정하기</Link> */}
           </div>
         </div>
       </div>
