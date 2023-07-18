@@ -111,4 +111,76 @@ router.post('/login', async (req, res) => {
   }
 });
 
+
+// 공지사항 추가
+router.post('/NoticeWrite', async (req, res) => {
+  console.log('공지사항에 접근');
+  try {
+    const connection = await oracledb.getConnection(dbConfig);
+    console.log('db접속');
+
+    // 공지사항 추가 전에 비밀번호 확인
+    const password = req.body.password;
+    const result = await connection.execute(
+      `SELECT user_pw FROM t_user WHERE user_id = :id`,
+      [req.session.userId]
+    );
+
+    const storedPassword = result.rows[0].user_pw;
+    if (password !== storedPassword) {
+      res.status(401).json({ isValidPassword: false, result: '비밀번호가 일치하지 않습니다.' });
+      return;
+    }
+
+    // 비밀번호가 일치하면 공지사항을 데이터베이스에 추가
+    await connection.execute(
+      `INSERT INTO T_AUNNOUN (noti_title, noti_name, noti_pw, noti_text)
+      VALUES (:title, :name, :pw, :text)`,
+      [req.body.title, req.body.name, req.body.pw, req.body.text]
+    );
+
+    console.log('공지사항이 추가되었습니다!');
+    res.json({ isValidPassword: true, result: '공지사항이 추가되었습니다!' });
+
+    await connection.close();
+  } catch (error) {
+    console.log('에러 발생: ', error);
+    res.json({ isValidPassword: false, result: '공지사항 추가에 실패했습니다.' });
+  }
+});
+
+
+
+// 공지사항 삭제
+router.delete('/notices/:id', async (req, res) => {
+  try {
+    const connection = await oracledb.getConnection(dbConfig);
+    await connection.execute('DELETE FROM T_ANNOUN WHERE id = :id', [req.params.id]);
+
+    console.log('공지사항이 삭제되었습니다!');
+    res.json({ result: '공지사항이 삭제되었습니다!' });
+
+    await connection.close();
+  } catch (error) {
+    console.log('에러 발생: ', error);
+    res.json({ result: '공지사항 삭제에 실패했습니다.' });
+  }
+});
+
+// 모든 공지사항 조회
+router.get('/notices', async (req, res) => {
+  try {
+    const connection = await oracledb.getConnection(dbConfig);
+    const result = await connection.execute('SELECT * FROM T_ANNOUN ORDER BY NOTI_SEQ DESC');
+    const notices = result.rows;
+
+    res.json({ notices });
+
+    await connection.close();
+  } catch (error) {
+    console.log('에러 발생: ', error);
+    res.json({ result: '공지사항 조회에 실패했습니다.' });
+  }
+});
+
 module.exports = router;
