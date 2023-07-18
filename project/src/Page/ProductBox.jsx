@@ -40,7 +40,7 @@ const ProductBox = () => {
   
   return (
     <>
-    <div className='mainSec'><h2>제품 리스트</h2></div>
+    <div className='mainSec prl'><img src="https://ifh.cc/g/ClL1Az.jpg" alt="" /><h2>제품 리스트</h2></div>
     <div className='contentBox'>
       <div className="grid-container">{productRows}</div>
       {showMoreButton}

@@ -24,12 +24,10 @@ const HeaderLogout = () => {
         const onLogout = () => {
             // 세션 데이터를 제거합니다.
             removeCookie('user_id');
-            delete sessionStorage.userId;
-            delete sessionStorage.userName;
-        
-            // 로그인 페이지로 리다이렉트합니다.
-            navigate('/login');
-          };
+            removeCookie('cart');
+            // App 으로 이동(새로고침)
+            document.location.href = '/'
+        }
 
     return (
     <header className={scrollPosition > 100 ? "scroll-bag" : "scrolled-bag"}>

@@ -8,39 +8,24 @@ const NoticeWrite = () => {
   
     const [title, setTitle] = useState("");
     const [name, setName] = useState("");
-    const [pw, setPw] = useState("");
     const [text, setText] = useState("");
   
     const handleRegister = async () => {
-      try {
-        const response = await axios.post('/login', {
-          user_id: name,
-          user_pw: pw,
-        });
-  
-        const result = response.data.result;
-  
-        if (result === 'Success!!') {
-          // 비밀번호가 유효한 경우 등록 과정을 진행합니다.
-          console.log('비밀번호가 유효합니다.');
-          const response = await axios.post('/NoticeWrite', {
+
+       
+        let body ={
+        
             title: title,
             name: name,
-            pw: pw,
-            text: text,
-          });
-  
-          console.log(response.data);
+            text: text
+        }
+
+          const response = await axios.post('http://localhost:8888/NoticeWrite', body) 
+              
+              console.log(response.data);
         // NoticeView 경로로 이동하거나 적절한 조치를 취합니다.
         navigate('/NoticeView');
-      } else {
-        // 비밀번호가 유효하지 않은 경우 에러 메시지 표시 또는 적절한 조치를 취합니다.
-        console.log('유효하지 않은 비밀번호입니다.');
       }
-    } catch (error) {
-      console.log('에러:', error);
-    }
-  };
   
 
   const handleCancel = () => {
@@ -56,10 +41,6 @@ const NoticeWrite = () => {
 
   const nameHandler = (e) => {
     setName(e.target.value);
-  };
-
-  const pwHandler = (e) => {
-    setPw(e.target.value);
   };
 
   const textHandler = (e) => {
@@ -88,12 +69,6 @@ const NoticeWrite = () => {
                 <dt>작성자</dt>
                 <dd>
                   <input type="text" placeholder="작성자를 입력하세요" onChange={nameHandler} />
-                </dd>
-              </dl>
-              <dl>
-                <dt>비밀번호</dt>
-                <dd>
-                  <input type="password" placeholder="비밀번호를 입력하세요" onChange={pwHandler} />
                 </dd>
               </dl>
             </div>

@@ -54,7 +54,7 @@ const Modal = ({info,open,close}) => {
                         <hr/>
                     </div>
                     <div className="infoPrice">
-                        <span className='priceNumber'>{info.PROD_PRICE}</span><span className="priceText"> 원</span>
+                        <span className='priceNumber'>{info.PROD_PRICE.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</span><span className="priceText"> 원</span>
                         <p className='dayPrice'>하루 <span className='dayNumber'>{info.PROD_DAYPRICE+'원'}</span> 30일분</p>
                     </div>
                     <div className='infoCategory'>

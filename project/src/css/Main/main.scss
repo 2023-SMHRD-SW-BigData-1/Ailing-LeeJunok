@@ -135,8 +135,11 @@
                 .price{
                     position: relative;
                     font-size: 25px;
-                    color: black;
+                    color: #007aff;
                     bottom: 20px;
+                    span{
+                        font-size: 20px;
+                    }
                 }
             
                 
@@ -298,7 +301,7 @@
                         will-change: transform;
                         transition: .2s ease 0s;
                         display: block;
-                        opacity: .7;
+                        opacity: .5;
                     }
                 }
                 .Box1{
