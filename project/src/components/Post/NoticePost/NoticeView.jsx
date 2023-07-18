@@ -24,8 +24,8 @@ const NoticeView = () => {
   };
 
   return (
-    <div className="Notice_css">
-      <div className="board_wrap">
+    <div className="notice_css">
+      <div className="contentBox">
         <div className="board_title">
           <strong>공지사항</strong>
           <p>Pill.Yo의 공지사항</p>
