@@ -61,30 +61,30 @@ const NoticeWrite = () => {
                     <div className="board_write">
                         <div className="title_name">
                             <dl>
-                                <dt>Title</dt>
+                                <dt>제목</dt>
                                 <dd>
-                                    <input type="text" placeholder="Enter a title" onChange={titleHandler} />
+                                    <input type="text" placeholder="제목을 작성해주세요" onChange={titleHandler} />
                                 </dd>
                             </dl>
                         </div>
                         <div className="info">
                             <dl>
-                                <dt>Created by</dt>
+                                <dt>글쓴이</dt>
                                 <dd>
-                                    <input type="text" placeholder="insert author" onChange={nameHandler} />
+                                    <input type="text" placeholder="이름을 작성해주세요" onChange={nameHandler} />
                                 </dd>
                             </dl>
                         </div>
                         <div className="cont">
-                            <textarea placeholder="Enter your text" onChange={textHandler}></textarea>
+                            <textarea placeholder="들어갈 내용을 작성해주세요" onChange={textHandler}></textarea>
                         </div>
                     </div>
                     <div className="bt_wrap">
                         <Link to={'/NoticeView'} onClick={handleRegister} className="on">
-                            registration
+                            등록
                         </Link>
                         <Link to={'/NoticeList'} onClick={handleCancel}>
-                            cancel
+                            취소
                         </Link>
                     </div>
                 </div>
