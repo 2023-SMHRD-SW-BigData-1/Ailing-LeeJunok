@@ -24,7 +24,7 @@ const HeaderLnb = () => {
         <ul>
             <li><a href="/introduce1">Pill.Yo 란?</a></li>
             <li><Link>준비중...</Link></li>
-            <li><Link>준비중...</Link></li>
+        
         </ul>
         <ul>
             <li><a href="/productList">제품리스트</a></li>
@@ -34,14 +34,13 @@ const HeaderLnb = () => {
             <li><Link to= '/NoticeList'>공지사항</Link></li>
             <li><Link to= '/EventList'>이벤트</Link></li>
             <li><Link>준비중...</Link></li>
-            <li><Link>준비중...</Link></li>
+            
 
         </ul>
         <ul>
             <li><a onClick={loginD}>장바구니</a></li>
             <li><Link>준비중...</Link></li>
-            <li><Link>준비중...</Link></li>
-            <li><Link>준비중...</Link></li>    
+        
         </ul>
     </div>
     )
