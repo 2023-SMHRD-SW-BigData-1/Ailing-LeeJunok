@@ -27,7 +27,7 @@ const NoticeWrite = () => {
             // 서버에 수정된 값을 가진 공지 업데이트
             
             // NoticeView 경로로 이동하거나 적절한 조치를 취합니다.
-            navigate('/NoticeView');
+            navigate(`http://localhost:8888/NoticeView/${newNotice.body.noti_seq}`);
         }
     };
 
