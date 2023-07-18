@@ -21,12 +21,17 @@ const NoticeWrite = () => {
         }
 
           const response = await axios.post('http://localhost:8888/NoticeWrite', body) 
-              
-              console.log(response.data);
-        // NoticeView 경로로 이동하거나 적절한 조치를 취합니다.
-        navigate('/NoticeView');
-      }
-  
+          const newNotice = response.data.notice;
+
+          if (newNotice) {
+            newNotice.noti_seq += 1;
+            newNotice.noti_views = 0;
+            // 수정된 값을 가진 공지를 서버에 업데이트합니다.
+        
+            // NoticeView 경로로 이동하거나 적절한 조치를 취합니다.
+            navigate('/NoticeView');
+          }
+        };
 
   const handleCancel = () => {
     // 이동하기 전에 필요한 작업 수행
