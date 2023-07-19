@@ -42,7 +42,7 @@
     margin: 0 auto;
     margin-top: 20px;
     margin-bottom: 20px;
-    width: 90%;
+    width: 88%;
     padding: 100px;
     border-radius: 15px;
     display: flex;
@@ -93,13 +93,14 @@
             border-radius: 8px;
             overflow: hidden;
             .input-file__name {
+                position: relative;
                 width: 83%;
                 display: flex;
                 align-items: center;
                 font-size: 14px;
-                padding: 0 15px ;
+                padding: 0 15px 25px;
                 color: black;
-                margin-bottom: 15px;
+                
             }
             .input-file__button {
                 width: 17%;
@@ -150,7 +151,7 @@
 }
 .fa-upload{
     position: relative;
-    bottom: 15px;
+    bottom: 12px;
     font-size: 25px;
 }
 

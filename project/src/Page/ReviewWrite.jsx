@@ -73,7 +73,7 @@ const handleSubmit = async (event) => {
 
   return (
     <div id="form-div">
-      <div className='mainSec prl'><img src="https://ifh.cc/g/qmkJwR.jpg" alt="" /><h2 style={{marginLeft:'5px'}}>Review</h2></div>
+      <div className='mainSec prl'><img src="https://ifh.cc/g/qmkJwR.jpg" alt="" /><h2 style={{marginLeft:'40px'}}>Review</h2></div>
       <div className='contentBox'>
       <form className="form" id="form1" onSubmit={handleSubmit}>
           <div className="feedback">

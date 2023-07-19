@@ -68,7 +68,7 @@ const NoticeList = () => {
   return (
     <div className="notice_css">
       <div className="contentBox">
-      <div className='mainSec prl'><img src="https://ifh.cc/g/Sd6TGX.jpg" alt="" /><h2>공지사항</h2></div>
+      <div className='mainSec prl'><img src="https://ifh.cc/g/Sd6TGX.jpg" alt="" /><h2 style={{marginLeft:'30px'}}>공지사항</h2></div>
         <div className="board_list_wrap">
           <div className="board_list">
             <div className="top">

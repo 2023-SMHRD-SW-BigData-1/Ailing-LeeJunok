@@ -27,11 +27,8 @@ const EventList = () => {
 
   return (
     <div class ="notice_css">
+      <div className='mainSec prl'><img src="https://ifh.cc/g/Sd6TGX.jpg" alt="" /><h2 style={{marginLeft:'30px'}}>이벤트 게시판</h2></div>
     <div class="contentBox">
-        <div class="board_title">
-            <strong>이벤트 게시판</strong>
-            <p> Pill. Yo 의 이벤트 게시판 입니다. </p>
-        </div>
         <div class="board_list_wrap">
             <div class="board_list">
                 <div class="top">
@@ -75,10 +72,7 @@ const EventList = () => {
                 <a href="#" class="bt next"></a>
                 <a href="#" class="bt last"></a>
             </div>
-            <div class="bt_wrap">
-                <Link to='/EventWrite' class="on">등록</Link>
-                {/* <Link to='/EventEdit'>수정</Link> */}
-            </div>
+
         </div>
       </div>
     </div>

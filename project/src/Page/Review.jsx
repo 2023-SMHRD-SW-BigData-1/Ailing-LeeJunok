@@ -84,7 +84,7 @@ const Review = () => {
     
     return (
     <>
-    <div className='mainSec prl'><img src="https://ifh.cc/g/qmkJwR.jpg" alt="" /><h2 style={{marginLeft:'5px'}}>Review</h2></div>
+    <div className='mainSec prl'><img src="https://ifh.cc/g/qmkJwR.jpg" alt="" /><h2 style={{marginLeft:'40px'}}>Review</h2></div>
     <div className='contentBox'>
         <ReviewHead count={reviewCount}/>
         {bordList}
