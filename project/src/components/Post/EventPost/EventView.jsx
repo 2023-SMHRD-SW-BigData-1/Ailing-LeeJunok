@@ -9,19 +9,23 @@ const EventView = () => {
 
   useEffect(() => {
     console.log(`EVENT_SEQ ${eventSeq}에 해당하는 공지사항 상세정보를 가져오는 중...`);
-    fetchEventeDetails();
+    fetchEventDetails();
   }, [eventSeq]);
 
-  const fetchEventeDetails = async () => {
-    try {
-      const response = await axios.get(`http://localhost:8888/EventView/${eventSeq}`);
-      const eventData = response.data.event;
-      console.log('공지사항 상세정보:', eventData);
-      setEvent(eventData);
-    } catch (error) {
-      console.log('오류가 발생했습니다:', error);
-    }
-  };
+  
+    const fetchEventDetails = async () => {
+      try {
+        const response = await axios.get(`http://localhost:8888/EventView/${eventSeq}`);
+        const eventData = response.data.event;
+        console.log('공지사항 상세정보:', eventData);
+        setEvent(eventData);
+      } catch (error) {
+        console.log('오류가 발생했습니다:', error);
+      }
+    };
+
+
+      
 
   return (
     <div className="notice_css">
@@ -48,7 +52,9 @@ const EventView = () => {
                 <dd>{event?.EVENT_VIEWS}</dd>
               </dl>
             </div>
-            <div className="cont">{event?.EVENT_TEXT}</div>
+            <div className="cont">
+              {event?.EVENT_TEXT}
+            </div>
           </div>
           <div className="bt_wrap">
             <Link to="/EventList" className="on">

@@ -108,17 +108,17 @@ function App() {
               <Route path='/NoticeEdit' element={<NoticeEdit />} />
               <Route path='/NoticeList'  element={<NoticeList />} />
               <Route path='/NoticeView/:noticeSeq' element={<NoticeView />} />
-              <Route path='/NoticeView02' element={<NoticeView02 />} />
+              {/* <Route path='/NoticeView02' element={<NoticeView02 />} />
               <Route path='/NoticeView03' element={<NoticeView03 />} />
               <Route path='/NoticeView04' element={<NoticeView04 />} />
-              <Route path='/NoticeView05' element={<NoticeView05 />} />
+              <Route path='/NoticeView05' element={<NoticeView05 />} /> */}
               <Route path='/NoticeWrite' element={<NoticeWrite />} />
 
               <Route path='/EventEdit' element={<EventEdit />} />
               <Route path='/EventList' element={<EventList />} />
-              <Route path='`/EventView/:eventSeq' element={<EventView />} />
-              <Route path='/EventView02' element={<EventView02 />} />
-              <Route path='/EventView03' element={<EventView03 />} />
+              <Route path='/EventView/:eventSeq' element={<EventView />} />
+              {/* <Route path='/EventView02' element={<EventView02 />} />
+              <Route path='/EventView03' element={<EventView03 />} /> */}
               <Route path='/EventWrite' element={<EventWrite />} />
 
 =======

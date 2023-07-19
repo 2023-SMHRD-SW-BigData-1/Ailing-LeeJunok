@@ -224,12 +224,21 @@ router.get('/EventList', async (req, res) => {
 // 이벤트 뷰
 router.get('/EventView/:eventSeq', async (req, res) => {
   const eventSeq = req.params.eventSeq;
-  console.log(`EVENT_SEQ ${eventSeq}인 공지사항을 가져옵니다.`);
+  console.log(`NOTI_SEQ가 ${eventSeq}인 공지사항을 가져옵니다.`);
 
   try {
     const connection = await oracledb.getConnection(dbConfig);
     console.log('데이터베이스 연결 성공');
 
+    // Increment the view count for the notice
+    await connection.execute(
+        `UPDATE T_EVENT
+        SET  EVENT_VIEWS =  EVENT_VIEWS + 1
+        WHERE EVENT_SEQ = :eventSeq`,
+      [eventSeq]
+    );
+
+    // Fetch the notice details with the updated view count
     const result = await connection.execute(
       `SELECT EVENT_SEQ, EVENT_TITLE, EVENT_NAME, EVENT_AT, EVENT_VIEWS, EVENT_TEXT
       FROM T_EVENT
@@ -248,6 +257,43 @@ router.get('/EventView/:eventSeq', async (req, res) => {
     res.json({ result: '이벤트 세부 정보를 가져오는 데 실패했습니다.' });
   }
 });
+
+
+
+// // 이벤트 뷰
+// router.get('/EventView/:eventSeq', async (req, res) => {
+//   const eventSeq = req.params.eventSeq;
+//   console.log(`EVENT_SEQ ${eventSeq}인 공지사항을 가져옵니다.`);
+
+//   try {
+//     const connection = await oracledb.getConnection(dbConfig);
+//     console.log('데이터베이스 연결 성공');
+
+//     await connection.execute(
+//       `UPDATE T_ANNOUN
+//       SET EVENT_VIEWS = EVENT_VIEWS + 1
+//       WHERE EVENT_SEQ = :eventSeq`,
+//     [eventSeq]
+//   );
+
+//     const result = await connection.execute(
+//       `SELECT EVENT_SEQ, EVENT_TITLE, EVENT_NAME, EVENT_AT, EVENT_VIEWS, EVENT_TEXT
+//       FROM T_EVENT
+//       WHERE EVENT_SEQ = :eventSeq`,
+//       [eventSeq]
+//     );
+
+//     const event = result.rows[0];
+//     console.log('공지사항:', event);
+
+//     res.json({ event });
+
+//     await connection.close();
+//   } catch (error) {
+//     console.log('오류가 발생했습니다:', error);
+//     res.json({ result: '이벤트 세부 정보를 가져오는 데 실패했습니다.' });
+//   }
+// });
 
 
 
