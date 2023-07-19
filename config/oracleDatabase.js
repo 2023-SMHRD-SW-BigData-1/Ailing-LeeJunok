@@ -231,7 +231,7 @@ router.get('/EventView/:eventSeq', async (req, res) => {
     console.log('데이터베이스 연결 성공');
 
     const result = await connection.execute(
-      `SELECT EVENT_SEQ, EVENT_TITLE, EVENT_NAME, EVENT_AT, EVENT_VIEWS, EVENT_TEXT
+      `SELECT EVENT_SEQ, EVENT_TITLE, EVENT_NAME, EVENT_AT, EVENT_VIEWS, EVENT_TEXT, EVENT_IMG
       FROM T_EVENT
       WHERE EVENT_SEQ = :eventSeq`,
       [eventSeq]
