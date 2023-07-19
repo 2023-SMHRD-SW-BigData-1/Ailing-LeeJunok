@@ -30,11 +30,9 @@ import NoticeView02 from './components/Post/NoticePost/NoticeView02';
 import NoticeView03 from './components/Post/NoticePost/NoticeView03';
 import NoticeView04 from './components/Post/NoticePost/NoticeView04';
 import NoticeView05 from './components/Post/NoticePost/NoticeView05';
-<<<<<<< HEAD
+
 import ReviewWrite from './Page/ReviewWrite';
-=======
 import { Switch } from '@mui/material';
->>>>>>> 369c80a7be449a3dfc0af952cc62ca8856a1c990
 
 function App() {
   const [cookies] = useCookies(['user_id']);
@@ -119,10 +117,10 @@ function App() {
               <Route path='/EventView03' element={<EventView03 />} />
               <Route path='/EventWrite' element={<EventWrite />} />
 
-<<<<<<< HEAD
+
               <Route path='/review/edit' element={<ReviewWrite/>}/>
 =======
->>>>>>> 369c80a7be449a3dfc0af952cc62ca8856a1c990
+
             </Routes>
           </productContext.Provider>
         </div>
