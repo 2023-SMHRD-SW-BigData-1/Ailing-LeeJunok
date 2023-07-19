@@ -240,7 +240,7 @@ router.get('/EventView/:eventSeq', async (req, res) => {
 
     // Fetch the notice details with the updated view count
     const result = await connection.execute(
-      `SELECT EVENT_SEQ, EVENT_TITLE, EVENT_NAME, EVENT_AT, EVENT_VIEWS, EVENT_TEXT
+      `SELECT EVENT_SEQ, EVENT_TITLE, EVENT_NAME, EVENT_AT, EVENT_VIEWS, EVENT_TEXT,EVENT_IMG
       FROM T_EVENT
       WHERE EVENT_SEQ = :eventSeq`,
       [eventSeq]

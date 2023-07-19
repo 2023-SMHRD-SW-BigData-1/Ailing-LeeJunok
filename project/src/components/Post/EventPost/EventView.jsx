@@ -12,7 +12,7 @@ const EventView = () => {
     fetchEventDetails();
   }, [eventSeq]);
 
-  const fetchEventeDetails = async () => {
+  const fetchEventDetails = async () => {
     try {
       const response = await axios.get(`http://localhost:8888/EventView/${eventSeq}`);
       const eventData = response.data.event;
@@ -52,7 +52,8 @@ const EventView = () => {
               </dl>
             </div>
             <div className="cont">
-              {event?.EVENT_TEXT}
+              <img src={event?.EVENT_IMG} alt="준비중.." />
+              <p>{event?.EVENT_TEXT}</p>
             </div>
           </div>
           <div className="bt_wrap">

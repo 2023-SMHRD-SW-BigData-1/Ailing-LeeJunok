@@ -116,7 +116,7 @@ function App() {
 
               <Route path='/EventEdit' element={<EventEdit />} />
               <Route path='/EventList' element={<EventList />} />
-              <Route path='`/EventView/:eventSeq' element={<EventView />} />
+              <Route path='/EventView/:eventSeq' element={<EventView />} />
               <Route path='/EventView02' element={<EventView02 />} />
               <Route path='/EventView03' element={<EventView03 />} />
               <Route path='/EventWrite' element={<EventWrite />} />

@@ -41,7 +41,6 @@ const EventView01 = () => {
                     <img src='https://ifh.cc/g/Wg2A9j.jpg'
                     width={972}
                     height={250} >
-                     
                     </img>
 
                 </div>
