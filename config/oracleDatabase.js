@@ -3,6 +3,7 @@ const app = express()
 const cors = require('cors')
 const multer = require('multer')
 
+
 app.use(cors());
 
 const server = app.listen(8888, () => {
@@ -19,11 +20,11 @@ router.use(express.urlencoded({ extended: false }));
 oracledb.initOracleClient({ libDir: 'C:/Users/smhrd/Desktop/oracleClient' });
 
 const dbConfig = {
-    user: "campus_h_230627_2",
-    password: "smhrd2",
-    connectString: 'project-db-stu2.smhrd.com:1524/'
+  user: "campus_h_230627_2",
+  password: "smhrd2",
+  connectString: 'project-db-stu2.smhrd.com:1524/'
 }
-  
+
 
 router.post('/login/join', async (req, res) => {
   console.log('join 접근!', req.body);
@@ -265,7 +266,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 // 리뷰 데이터를 axios로 받아오고 데이터베이스에 값 등록
-router.post('/review/edit', upload.single('file') ,async (req, res) => {
+router.post('/review/edit', upload.single('file'), async (req, res) => {
   console.log('리뷰 작성에 접근');
 
   try {
@@ -277,7 +278,7 @@ router.post('/review/edit', upload.single('file') ,async (req, res) => {
     //   `INSERT INTO `,
     //   [req.body.title, req.body.name, req.body.text]
     // );
-    console.log(req.body.userid);
+    console.log(req.body);
     const reviewR = await connection.execute(`
     insert into T_REVIEW 
     (USER_ID, REVIEW_RATING, REVIEW_COMMENT, 
@@ -291,7 +292,29 @@ router.post('/review/edit', upload.single('file') ,async (req, res) => {
     await connection.close();
   } catch (error) {
     console.log('에러 발생: ', error);
-    res.json({result: '리뷰 추가 실패했습니다.' });
+    res.json({ result: '리뷰 추가 실패했습니다.' });
+  }
+});
+
+
+// 리뷰 불러오기
+router.get('/review', async (req, res)=>{
+  console.log('리뷰에 접근');
+  try{
+    const connection = await oracledb.getConnection(dbConfig);
+    console.log('DB 연결완료!');
+    const result = await connection.execute(
+      'select USER_ID, REVIEW_NAME, REVIEW_AT, REVIEW_RATING, REVIEW_COMMENT, REVIEW_IMG from T_REVIEW'
+      )
+      const reviews = result.rows;
+      console.log(reviews);
+
+      res.json({reviews});
+
+      await connection.close();
+  } catch (error) {
+    console.log('오류다! 오류야! :', error);
+    res.json({result: '검색하는데 실패'});
   }
 });
 
