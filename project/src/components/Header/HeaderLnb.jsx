@@ -31,8 +31,8 @@ const HeaderLnb = () => {
             <li><a href="/review">구매후기</a></li>
         </ul>
         <ul>
-            <li><Link to= '/NoticeList'>공지사항</Link></li>
-            <li><Link to= '/EventList'>이벤트</Link></li>
+            <li><a href="/NoticeList">공지사항</a></li>
+            <li><a href="/EventList">이벤트</a></li>
             <li><Link>준비중...</Link></li>
             
 

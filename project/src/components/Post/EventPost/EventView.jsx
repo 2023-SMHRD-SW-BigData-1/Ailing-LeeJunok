@@ -25,11 +25,8 @@ const EventView = () => {
 
   return (
     <div className="notice_css">
+      <div className='mainSec prl'><img src="https://ifh.cc/g/HfaqVS.jpg" alt="" /><h2 style={{marginLeft:'20px'}}>이벤트 게시판</h2></div>
       <div className="contentBox">
-        <div className="board_title">
-          <strong>이벤트 게시판</strong>
-          <p>Pill.Yo의 이벤트 게시판 입니다.</p>
-        </div>
         <div className="board_view_wrap">
           <div className="board_view">
             <div className="title_name">{event?.EVENT_TITLE}</div>
