@@ -1,55 +1,65 @@
-import React from 'react'
-import {Link} from 'react-router-dom';
-// import "../../Postcss/css.css"
-import "../Postcss/css.css"
+import React, { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import axios from 'axios';
+import '../Postcss/css.css';
 
 const NoticeView = () => {
+  const { noticeSeq } = useParams();
+  const [notice, setNotice] = useState(null);
+
+  useEffect(() => {
+    console.log(`NOTI_SEQ ${noticeSeq}에 해당하는 공지사항 상세정보를 가져오는 중...`);
+    fetchNoticeDetails();
+  }, [noticeSeq]);
+
+  const fetchNoticeDetails = async () => {
+    try {
+      const response = await axios.get(`http://localhost:8888/NoticeView/${noticeSeq}`);
+      const noticeData = response.data.notice;
+      console.log('공지사항 상세정보:', noticeData);
+      setNotice(noticeData);
+    } catch (error) {
+      console.log('오류가 발생했습니다:', error);
+    }
+  };
+
   return (
-    <div class ="Notice_css">
-    <div class="board_wrap">
-        <div class="board_title">
-        <strong>공지사항</strong>
-            <p> Pill. Yo 의 공지사항 입니다. </p>
-        </div>
-        <div class="board_view_wrap">
-            <div class="board_view">
-                <div class="title_name">
-                    글 제목
-                </div>
-                <div class="info">
-                    <dl>
-                        <td>번호</td>
-                        <dd>1</dd>
-                    </dl>
-                    <dl>
-                        <dt>글쓴이</dt>
-                        <dd>관리자</dd>
-                    </dl>
-                    <dl>
-                        <dt>작성일</dt>
-                        <dd>YYYY.MM.DD</dd>
-                    </dl>
-                    <dl>
-                        <dt>조회</dt>
-                        <dd>33</dd>
-                    </dl>
-                </div>
-                <div class="cont">
-                    내용
-                </div>
+    <div className="notice_css">
+      <div className="contentBox">
+      <div className='mainSec prl'><img src="https://ifh.cc/g/Sd6TGX.jpg" alt="" /><h2>공지사항</h2></div>
+        <div className="board_view_wrap">
+          <div className="board_view">
+            <div className="title_name">{'제목 : '+notice?.NOTI_TITLE}</div>
+            <div className="info">
+              <dl>
+                <dt>번호</dt>
+                <dd>{notice?.NOTI_SEQ}</dd>
+              </dl>
+              <dl>
+                <dt>작성자</dt>
+                <dd>{notice?.NOTI_NAME}</dd>
+              </dl>
+              <dl>
+                <dt>작성일</dt>
+                <dd>{notice?.NOTI_AT}</dd>
+              </dl>
+              <dl>
+                <dt>조회수</dt>
+                <dd>{notice?.NOTI_VIEWS}</dd>
+              </dl>
             </div>
-            <div class="bt_wrap">
-                <Link to='/NoticeList' class="on">목록</Link>
-                <Link to='/NoticeEdit'>수정</Link>
-            </div>
+            <div className="cont">{notice?.NOTI_TEXT}</div>
+          </div>
+          <div className="bt_wrap">
+            <Link to="/NoticeList" className="on">
+              목록
+            </Link>
+            {/* <Link to="/NoticeEdit">수정</Link> */}
+          </div>
         </div>
+      </div>
     </div>
-    </div>
+  );
+};
 
-
-
-
-  )
-}
-
-export default NoticeView
+export default NoticeView;

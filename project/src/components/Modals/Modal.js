@@ -1,15 +1,14 @@
-
 import '../../css/Modals/Modal.css'
-
-import React, { useContext} from 'react'
+import React, { useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { LoginContext } from '../../context/LoginContext';
+import { FiChevronsDown, IconName } from "react-icons/fi";
 import swal from 'sweetalert'
-import { BiChevronsDown, IconName } from "react-icons/bi";
 
 
 const Modal = ({info,open,close}) => {
     const navigate = useNavigate();
+    
     const {isLogin} = useContext(LoginContext);
     let terms = '* 본 제품은 공정거래위원회 고시 소비자분쟁해결기준에 의겨 교환 또는 보상 받을 수 있습니다.\n * 본 제품은 질병의 예방 및 치료를 위한 의약품이 아닙니다.\n * 이상 사례 신고는 1234-5678\n * 이 제품은 알레르기 발생 가능성이 있는 알류(가금류), 메밀, 땅콩, 밀, 고등어, 게, 새우, 돼지고기, 복숭아, 토마토,\n아황산류, 호두, 닭고기, 쇠고기, 오징어, 조개류(굴, 전복, 홍합 포함), 잣을 사용한 제품과 같은 제조 시설에서 제조하고 있습니다.'
 
@@ -31,8 +30,7 @@ const Modal = ({info,open,close}) => {
             window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
         }
     }
-
-
+    
     return (
     <div className={open ? 'openModal modal' : 'modal'}>
         {open ? (
@@ -46,9 +44,9 @@ const Modal = ({info,open,close}) => {
             <div className='modalMain'>
                 <div className="product_area">
                     <div className="imgArea">
-                        <img src={info.PROD_IMG} alt="준비중.." />
+                        <img src={info.PROD_IMG} alt="준비중.." className='infoImg' />
                     </div>
-                    <div id="infoArea" > 
+                    <div id="infoArea"> 
                     <div className="infoTop">
                         <p className='infoName'>{info.PROS_NAME}</p>
                         <p className='infoMaker'>{'('+info.PROD_MAKER+')'}</p>
@@ -82,7 +80,7 @@ const Modal = ({info,open,close}) => {
                             </div>
                         </div>
                     </div>
-                    <BiChevronsDown/>
+                    <FiChevronsDown/>
                     <div className="purchase">
                         <button className='purchaseBtn' onClick={infoOut}>장바구니 추가</button>
                     </div>

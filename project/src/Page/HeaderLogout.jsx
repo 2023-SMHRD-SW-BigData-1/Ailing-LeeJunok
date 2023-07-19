@@ -1,7 +1,6 @@
 
-
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import HeaderMenuList from '../components/Header/HeaderMenuList'
 import HeaderLnb from '../components/Header/HeaderLnb'
 import { useCookies } from 'react-cookie';
@@ -9,6 +8,7 @@ import { useCookies } from 'react-cookie';
 const HeaderLogout = () => {
     const [cookies, setCookie, removeCookie] = useCookies(['user_id']);
     const [scrollPosition, setScrollPosition] = useState(0);
+    const navigate = useNavigate();
 
     document.querySelectorAll('.button').forEach(button => button.innerHTML = '<div><span>' + button.textContent.trim().split('').join('</span><span>'));
 
@@ -21,7 +21,7 @@ const HeaderLogout = () => {
         }, []);
 
         const onLogout = () => {
-            // sessionStorage 에 user_id 로 저장되어있는 아이템을 삭제한다.
+            // 세션 데이터를 제거합니다.
             removeCookie('user_id');
             removeCookie('cart');
             // App 으로 이동(새로고침)
@@ -33,9 +33,7 @@ const HeaderLogout = () => {
         <div className='contentBox'>
             <div className='headerMenuList'>
             <div className='logo'>
-                <Link to='/'>
-                    <h1>Pill.Yo</h1>
-                </Link>
+            <a href="/"><h1>Pill.Yo</h1></a>
             </div>
             <div className='login'>
                 <Link onClick={onLogout} className='button'>Logout</Link>
