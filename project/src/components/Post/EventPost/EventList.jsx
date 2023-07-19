@@ -26,49 +26,57 @@ const EventList = () => {
   console.log('EventList 컴포넌트 렌더링 중...');
 
   return (
-    <div className="notice_css">
-      <div className="contentBox">
-        <div className="board_title">
-          <strong>이벤트 게시판</strong>
-          <p>Pill.Yo의 이벤트 게시판 입니다.</p>
-        </div>
-        <div className="board_list_wrap">
-          <div className="board_list">
-            <div className="top">
-              <div className="num">번호</div>
-              <div className="title_name">제목</div>
-              <div className="writer">작성자</div>
-              <div className="date">작성일</div>
-              <div className="count">조회수</div>
-            </div>
-            {events && events.map((event) => (
-              <div key={event.EVENT_SEQ}>
-                <div className="num">{event.EVENT_SEQ}</div>
-                <div className="title_name">
-                  <Link to={`/EventView/${event.EVENT_SEQ}`}>{event.EVENT_TITLE}</Link>
+    <div class ="notice_css">
+      <div className='mainSec prl'><img src="https://ifh.cc/g/Sd6TGX.jpg" alt="" /><h2 style={{marginLeft:'30px'}}>이벤트 게시판</h2></div>
+    <div class="contentBox">
+        <div class="board_list_wrap">
+            <div class="board_list">
+                <div class="top">
+                    <div class="num">번호</div>
+                    <div className="title_name">제목</div>
+                    <div class="writer">글쓴이</div>
+                    <div class="date">작성일</div>
+                    <div class="count">조회</div>
                 </div>
-                <div className="writer">{event.EVENT_NAME}</div>
-                <div className="date">{event.EVENT_AT}</div>
-                <div className="count">{event.EVENT_VIEWS}</div>
-              </div>
-            ))}
-          </div>
-          <div className="board_page">
-            <a href="#" className="bt first"></a>
-            <a href="#" className="bt prev"></a>
-            <a href="#" className="num on">1</a>
-            <a href="#" className="num">2</a>
-            <a href="#" className="num">3</a>
-            <a href="#" className="bt next"></a>
-            <a href="#" className="bt last"></a>
-          </div>
-          <div className="bt_wrap">
-            <Link to="/EventWrite" className="on">등록하기</Link>
-          </div>
+
+
+                <div>
+                    <div class="num">3</div>
+                    <div class="title_name"><Link to='/EventView03'>제목</Link></div>
+                    <div class="writer"><Link to='/EventView03'>이름</Link></div>
+                    <div class="date"><Link to='/EventView03'>YYYY.MM.DD</Link></div>
+                    <div class="count"><Link to='/EventView03'>12</Link></div>
+                </div>
+                <div className='write_list'>
+                    <div class="num">2</div>
+                    <div class="title_name"><Link to='/EventView02'>제목</Link></div>
+                    <div class="writer"><Link to='/EventView02'>이름</Link></div>
+                    <div class="date"><Link to='/EventView02'>YYYY.MM.DD</Link></div>
+                    <div class="count"><Link to='/EventView02'>12</Link></div>
+                </div>
+                <div>
+                    <div class="num">1</div>
+                    <div class="title_name"><Link to='/EventView01'>제목</Link></div>
+                    <div class="writer"><Link to='/EventView01'>이름</Link></div>
+                    <div class="date"><Link to='/EventView01'>YYYY.MM.DD</Link></div>
+                    <div class="count"><Link to='/EventView01'>12</Link></div>
+                </div>
+
+            </div>
+            <div class="board_page">
+                <a href="#" class="bt first"></a>
+                <a href="#" class="bt prev"></a>
+                <a href="#" class="num on">1</a>
+                <a href="#" class="num">2</a>
+                <a href="#" class="num">3</a>
+                <a href="#" class="bt next"></a>
+                <a href="#" class="bt last"></a>
+            </div>
+
         </div>
       </div>
     </div>
-  );
-};
+  )
+  }
 
 export default EventList;

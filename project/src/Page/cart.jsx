@@ -84,12 +84,6 @@ const Cart = () => {
     /* Update totals display */
     $('.totals-value').fadeOut(fadeTime, function () {
       $('#cart-subtotal').html(subtotal.toFixed(0));
-
-      if (total === 0) {
-        $('.checkout').fadeOut(fadeTime);
-      } else {
-        $('.checkout').fadeIn(fadeTime);
-      }
       $('.totals-value').fadeIn(fadeTime);
     });
   };
@@ -159,7 +153,7 @@ const Cart = () => {
 
 <div className="totals-item" style={{
                                     marginLeft:1350,
-                                     fontSize:30}}>
+                                    fontSize:30}}>
               <label>Subtotal</label>
               <div className="totals-value" id="cart-subtotal"></div>
               <Payment Total={{total}} />

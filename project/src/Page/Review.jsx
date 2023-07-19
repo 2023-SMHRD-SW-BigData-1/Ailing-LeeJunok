@@ -1,96 +1,63 @@
 import '../css/Review/Review.css';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react'
 import ReviewHead from '../components/Review/ReviewHead';
 import Paging from '../components/Review/Paging';
 import ReviewCard from '../components/Review/ReviewCard';
 import axios from 'axios';
+import swal from 'sweetalert';
+import { LoginContext } from '../context/LoginContext';
+import { useNavigate } from 'react-router';
 
 const Review = () => {
-  const [reviewCount, setReviewCount] = useState(0);
-  const [reviewList, setReviewList] = useState([]);
-  const [page, setPage] = useState(1);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [bordList, setBordList] = useState([]); 
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = date.getMonth()+1;
+    const day = date.getDate();
+    const [reviewCount,setReviewCount] = useState(0);
+    const [bordList, setBordList ] = useState([]);
+    const [page, setPage] = useState(1);
+    let cnt = 0;
 
-  useEffect(() => {
-    console.log('가져오는 중');
-    fetchReviewData();
-  }, [page]);
 
-  const fetchReviewData = async () => {
-    try {
-      setLoading(true);
-      setError(null);
-  
-      const response = await axios.get('http://localhost:8888/review');
-      console.log('리뷰 데이터를 불러오는 중...');
-      console.log(response.data.review);
-  
-      if (response.status === 200) {
-        console.log('리뷰 데이터 불러오기 성공.');
-        
-        if (response.data.review) {
-          setReviewList(response.data.review);
-        } else {
-          setReviewList([]); 
-          
+    
+            const [startNum,setStartNum] = useState(0);
+            //const [endNum ,setEndNum] =useState(info.length-1);
+            let pos = 0;
+    
+    useEffect(()=>{
+        setReviewCount(info.length);
+    },[reviewCount])
+
+    
+    useEffect(()=>{
+        //0~4  1  
+        //5~9   2  
+        //10~14  3 
+        console.log(page)
+        cnt =(page-1)*5
+        pos = cnt+4
+        ///let endNum = startNum+4;
+        if(pos>info.length){
+            pos=info.length-1
         }
-      } else {
-        console.log('리뷰 데이터 불러오기 실패.');
-        throw new Error('리뷰 데이터를 불러오는데 실패했습니다.');
-      }
-    } catch (error) {
-      console.log('오류 발생: ', error);
-      setError('리뷰 데이터를 불러오는데 실패했습니다. 나중에 다시 시도해주세요.');
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    //0~4  1  
-    //5~9   2  
-    //10~14  3 
-    console.log(page);
-    const cnt = (page - 1) * 5;
-    let pos = cnt + 4;
-    // 만약 위치가 리뷰 리스트 길이보다 크다면 조정
-    if (pos >= reviewList.length) {
-      pos = reviewList.length - 1;
-    }
-    const newList = reviewList && reviewList.map((item, index) => {
-      if (cnt <= index && index <= pos) {
-        return (
-          <ReviewCard
-            key={index}
-            member={item.user_id}
-            name={item.name}
-            date={item.review_at}
-            text={item.REVIEW_COMMENT}
-            url={item.review_img}
-          />
-        );
-      }
-      return null;
-    });
-    setBordList(newList);
-  }, [page, reviewList]);
-
-  return (
+        let newList = info.map((item,index)=>{
+        if(cnt<=index && index<=pos){
+                return(
+                    <ReviewCard key={index} member={item.member} name={item.name} date={item.date} text={item.text} url={item.url}/>
+                )
+        }      
+        })
+        setBordList(newList)
+    } ,[page])
+    
+    
+    return (
     <>
-      <div className="mainSec Review">
-        <h2>Review</h2>
-      </div>
-      <div className="contentBox">
-        <ReviewHead count={reviewCount} />
-        {loading ? (
-          <p>로딩 중...</p>
-        ) : error ? (
-          <p>{error}</p>
-        ) : (
-          <>{bordList}</>
-        )}
+    <div className='mainSec prl'><img src="https://ifh.cc/g/qmkJwR.jpg" alt="" /><h2 style={{marginLeft:'40px'}}>Review</h2></div>
+    <div className='contentBox'>
+        <ReviewHead count={reviewCount}/>
+        {bordList}
+        <button onClick={loginD} className='edit'>리뷰작성</button>
         <Paging count={reviewCount} page={page} setpage={setPage} />
       </div>
     </>

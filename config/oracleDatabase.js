@@ -3,6 +3,7 @@ const app = express()
 const cors = require('cors')
 const multer = require('multer')
 
+
 app.use(cors());
 
 const server = app.listen(8888, () => {
@@ -133,7 +134,7 @@ router.get('/NoticeList', async (req, res) => {
   }
 });
 
-// 공지사항 뷰
+
 router.get('/NoticeView/:noticeSeq', async (req, res) => {
   const noticeSeq = req.params.noticeSeq;
   console.log(`NOTI_SEQ가 ${noticeSeq}인 공지사항을 가져옵니다.`);
@@ -142,10 +143,19 @@ router.get('/NoticeView/:noticeSeq', async (req, res) => {
     const connection = await oracledb.getConnection(dbConfig);
     console.log('데이터베이스 연결 성공');
 
+    // Increment the view count for the notice
+    await connection.execute(
+        `UPDATE T_ANNOUN
+        SET NOTI_VIEWS = NOTI_VIEWS + 1
+        WHERE NOTI_SEQ = :noticeSeq`,
+      [noticeSeq]
+    );
+
+    // Fetch the notice details with the updated view count
     const result = await connection.execute(
-      `SELECT NOTI_SEQ, NOTI_TITLE, NOTI_NAME, NOTI_AT, NOTI_VIEWS, NOTI_TEXT
-      FROM T_ANNOUN
-      WHERE NOTI_SEQ = :noticeSeq`,
+        `SELECT NOTI_SEQ, NOTI_TITLE, NOTI_NAME, NOTI_AT, NOTI_VIEWS, NOTI_TEXT
+        FROM T_ANNOUN
+        WHERE NOTI_SEQ = :noticeSeq`,
       [noticeSeq]
     );
 
@@ -275,9 +285,9 @@ router.post('/review/edit', upload.single('file'), async (req, res) => {
       REVIEW_NAME,  REVIEW_IMG, REVIEW_AT)
       VALUES
       (:userid, :review_rating, :review_comment, :title, :review_image, SYSDATE )`,
-      [req.body.userid, req.body.review_rating, req.body.review_comment, req.body.title, req.body.review_image,]
-    )
-    res.json({ result: '리뷰가 추가 되었습니다.' });
+      [req.body.userid, req.body.review_rating, req.body.review_comment, req.body.title, req.body.review_image, ]
+      )
+    res.json({result: '리뷰가 추가 되었습니다.' });
 
     await connection.close();
   } catch (error) {
