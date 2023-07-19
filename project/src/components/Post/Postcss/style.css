@@ -1,3 +1,6 @@
+.notice_css {
+  white-space: pre-line;
+}
 .notice_css a {
   text-decoration: none;
   color: inherit;
