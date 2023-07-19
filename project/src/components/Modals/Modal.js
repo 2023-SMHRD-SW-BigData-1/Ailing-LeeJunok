@@ -1,10 +1,8 @@
-import '../../css/Modals/Modal.css';
-
 import '../../css/Modals/Modal.css'
-
 import React, { useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { LoginContext } from '../../context/LoginContext';
+import { FiChevronsDown, IconName } from "react-icons/fi";
 import swal from 'sweetalert'
 
 
@@ -46,9 +44,9 @@ const Modal = ({info,open,close}) => {
             <div className='modalMain'>
                 <div className="product_area">
                     <div className="imgArea">
-                        <img src={info.PROD_IMG} alt="준비중.." />
+                        <img src={info.PROD_IMG} alt="준비중.." className='infoImg' />
                     </div>
-                    <div className="infoArea"> 
+                    <div id="infoArea"> 
                     <div className="infoTop">
                         <p className='infoName'>{info.PROS_NAME}</p>
                         <p className='infoMaker'>{'('+info.PROD_MAKER+')'}</p>
@@ -82,6 +80,7 @@ const Modal = ({info,open,close}) => {
                             </div>
                         </div>
                     </div>
+                    <FiChevronsDown/>
                     <div className="purchase">
                         <button className='purchaseBtn' onClick={infoOut}>장바구니 추가</button>
                     </div>

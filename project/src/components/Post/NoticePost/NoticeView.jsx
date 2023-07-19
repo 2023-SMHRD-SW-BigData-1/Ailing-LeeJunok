@@ -26,13 +26,10 @@ const NoticeView = () => {
   return (
     <div className="notice_css">
       <div className="contentBox">
-        <div className="board_title">
-          <strong>공지사항</strong>
-          <p>Pill.Yo의 공지사항</p>
-        </div>
+      <div className='mainSec prl'><img src="https://ifh.cc/g/Sd6TGX.jpg" alt="" /><h2>공지사항</h2></div>
         <div className="board_view_wrap">
           <div className="board_view">
-            <div className="title_name">{notice?.NOTI_TITLE}</div>
+            <div className="title_name">{'제목 : '+notice?.NOTI_TITLE}</div>
             <div className="info">
               <dl>
                 <dt>번호</dt>

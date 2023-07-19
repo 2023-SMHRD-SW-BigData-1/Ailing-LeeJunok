@@ -61,7 +61,7 @@
   background-color: #f1f1f1;
   border-radius: 15px;
 }
-.modal section .modalMain .product_area .imgArea img {
+.modal section .modalMain .product_area .imgArea .infoImg {
   width: 100%;
   height: 100%;
 }
