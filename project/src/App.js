@@ -7,6 +7,7 @@ import LogInUI from './Page/Login/Login01';
 import Join from './Page/Login/Login05';
 import ProductBox from './Page/ProductBox';
 import Review from './Page/Review';
+
 import Introduce1 from './Page/Introduce1'
 import React, { useEffect, useState } from 'react';
 import Cart from './Page/Cart'
@@ -21,7 +22,7 @@ import NoticeList from './components/Post/NoticePost/NoticeList';
 import NoticeWrite from './components/Post/NoticePost/NoticeWrite';
 import EventEdit from './components/Post/EventPost/EventEdit';
 import EventList from './components/Post/EventPost/EventList';
-import EventView01 from './components/Post/EventPost/EventView01';
+import EventView from './components/Post/EventPost/EventView';
 import EventView02 from './components/Post/EventPost/EventView02';
 import EventView03 from './components/Post/EventPost/EventView03';
 import EventWrite from './components/Post/EventPost/EventWrite';
@@ -30,7 +31,8 @@ import NoticeView02 from './components/Post/NoticePost/NoticeView02';
 import NoticeView03 from './components/Post/NoticePost/NoticeView03';
 import NoticeView04 from './components/Post/NoticePost/NoticeView04';
 import NoticeView05 from './components/Post/NoticePost/NoticeView05';
-import { Switch } from '@mui/material';
+
+
 
 function App() {
   const [cookies] = useCookies(['user_id']);
@@ -110,10 +112,11 @@ function App() {
 
               <Route path='/EventEdit' element={<EventEdit />} />
               <Route path='/EventList' element={<EventList />} />
-              <Route path='/EventView01' element={<EventView01 />} />
+              <Route path='`/EventView/:eventSeq' element={<EventView />} />
               <Route path='/EventView02' element={<EventView02 />} />
               <Route path='/EventView03' element={<EventView03 />} />
               <Route path='/EventWrite' element={<EventWrite />} />
+              
 
             </Routes>
           </productContext.Provider>
