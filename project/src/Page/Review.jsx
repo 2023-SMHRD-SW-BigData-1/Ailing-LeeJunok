@@ -1,12 +1,14 @@
-import '../css/Review/Review.css';
+import '../css/Review/Review.css'
 import React, { useContext, useEffect, useState } from 'react'
-import ReviewHead from '../components/Review/ReviewHead';
+import ReviewHead from '../components/Review/ReviewHead'
 import Paging from '../components/Review/Paging';
 import ReviewCard from '../components/Review/ReviewCard';
-import axios from 'axios';
 import swal from 'sweetalert';
 import { LoginContext } from '../context/LoginContext';
 import { useNavigate } from 'react-router';
+import axios from 'axios';
+
+
 
 const Review = () => {
     const date = new Date();
@@ -16,43 +18,46 @@ const Review = () => {
     const [reviewCount,setReviewCount] = useState(0);
     const [bordList, setBordList ] = useState([]);
     const [page, setPage] = useState(1);
+    const [reviews, setReviews] = useState([]);
+    const nav = useNavigate();
+    const {isLogin} = useContext(LoginContext);
+    const [startNum,setStartNum] = useState(0);
+    //const [endNum ,setEndNum] =useState(info.length-1);
+    let pos = 0;
     let cnt = 0;
 
-     const fetchReviewData = async () => {
-    try {
-      setLoading(true);
-      setError(null);
 
-      const response = await axios.get('http://localhost:8888/review');
-      console.log('리뷰 데이터를 불러오는 중...');
 
-      if (response.status === 200) {
-        console.log('리뷰 데이터 불러오기 성공.');
-        const reviews = response.data.review || [];
-
-        setReviewCount(reviews.length);
-        setReviewList(reviews);
-      } else {
-        console.log('리뷰 데이터 불러오기 실패.');
-        throw new Error('리뷰 데이터를 불러오는데 실패했습니다.');
-      }
-    } catch (error) {
-      console.log('오류 발생: ', error);
-      setError('리뷰 데이터를 불러오는데 실패했습니다. 나중에 다시 시도해주세요.');
-    } finally {
-      setLoading(false);
+    const loginD=()=>{
+        if (isLogin===false) {
+            swal ( "죄송합니다" ,  "로그인이 필요한 서비스입니다." ,  "error" )
+        }else{
+            nav('/review/edit');
+        }
     }
-  };
-      
 
+    useEffect(()=>{
+        console.log('리뷰 가져오는 중.....');
+        fetchReviews()
+    }, []);
+
+    const fetchReviews = async () => {
+        try {
+            const response = await axios.get('http://localhost:8888/review');
+            console.log('리뷰 : ', response.data.reviews);
+            setReviews(response.data.reviews);
+        } catch (error) {
+            console.log('또 오류다 : ', error);
+        }
+    }
     
-            const [startNum,setStartNum] = useState(0);
-            //const [endNum ,setEndNum] =useState(info.length-1);
-            let pos = 0;
+    const info = reviews;
+            
+
     
     useEffect(()=>{
         setReviewCount(info.length);
-    },[reviewCount])
+    },[reviews])
 
     
     useEffect(()=>{
@@ -66,28 +71,28 @@ const Review = () => {
         if(pos>info.length){
             pos=info.length-1
         }
-        let newList = info.map((item,index)=>{
+        let newList = reviews&&reviews.map((item,index)=>{
         if(cnt<=index && index<=pos){
                 return(
-                    <ReviewCard key={index} member={item.member} name={item.name} date={item.date} text={item.text} url={item.url}/>
+                    <ReviewCard key={index} member={item.USER_ID} name={item.REVIEW_NAME} date={item.REVIEW_AT} text={item.REVIEW_COMMENT} url={item.REVIEW_IMG}/>
                 )
         }      
         })
+
         setBordList(newList)
-    } ,[page])
-    
+    } ,[page,reviews])
     
     return (
     <>
-    <div className='mainSec prl'><img src="https://ifh.cc/g/qmkJwR.jpg" alt="" /><h2 style={{marginLeft:'40px'}}>Review</h2></div>
+    <div className='mainSec prl'><img src="https://ifh.cc/g/qmkJwR.jpg" alt="" /><h2 style={{marginLeft:'5px'}}>Review</h2></div>
     <div className='contentBox'>
         <ReviewHead count={reviewCount}/>
         {bordList}
         <button onClick={loginD} className='edit'>리뷰작성</button>
         <Paging count={reviewCount} page={page} setpage={setPage} />
-      </div>
+    </div>
     </>
-  );
-};
+    )
+}
 
-export default Review;
+export default Review

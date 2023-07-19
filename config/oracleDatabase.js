@@ -298,27 +298,24 @@ router.post('/review/edit', upload.single('file'), async (req, res) => {
 
 
 // 리뷰 불러오기
-router.get('/review', async (req, res) => {
-  console.log('리뷰 데이터에 접근합니다.');
-
-  try {
+router.get('/review', async (req, res)=>{
+  console.log('리뷰에 접근');
+  try{
     const connection = await oracledb.getConnection(dbConfig);
-    console.log('데이터베이스 연결에 성공했습니다.');
+    console.log('DB 연결완료!');
+    const result = await connection.execute(
+      'select USER_ID, REVIEW_NAME, REVIEW_AT, REVIEW_RATING, REVIEW_COMMENT, REVIEW_IMG from T_REVIEW'
+      )
+      const reviews = result.rows;
+      console.log(reviews);
 
-    const result = await connection.execute(`
-    select REVIEW_NAME, REVIEW_AT, REVIEW_RATING, REVIEW_COMMENT, REVIEW_IMG
-    from T_REVIEW`);
-    const review = result.rows;
-    console.log(review);
-    console.log('쿼리가 성공적으로 실행되었습니다.');
- 
-res.json({review})
+      res.json({reviews});
 
-await connection.close();
-} catch (error) {
-  console.log('오류가 발생했습니다: ', error);
-  res.json({ result: '이벤트를 검색하는 데 실패했습니다.' });
-}
+      await connection.close();
+  } catch (error) {
+    console.log('오류다! 오류야! :', error);
+    res.json({result: '검색하는데 실패'});
+  }
 });
 
 

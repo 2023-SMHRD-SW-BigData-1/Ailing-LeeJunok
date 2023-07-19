@@ -6,10 +6,7 @@ const ReviewCard = ({ name, date, text, url, member }) => {
     <div className='reviewCard'>
       <Link className='link_area'>
         <p className='cardName'>
-          {/* 리뷰어의 이름이 배열 형태로 전달되므로 각 이름을 span으로 렌더링 */}
-          {name && name.map((item, index) => (
-            <span key={index}>{item}</span>
-          ))}
+          {name}
         </p>
         <div className='cardTop'>
           <p className='star star50'></p>
