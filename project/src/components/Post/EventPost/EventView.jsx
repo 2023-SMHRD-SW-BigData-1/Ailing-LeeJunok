@@ -12,17 +12,16 @@ const EventView = () => {
     fetchEventDetails();
   }, [eventSeq]);
 
-  
-    const fetchEventDetails = async () => {
-      try {
-        const response = await axios.get(`http://localhost:8888/EventView/${eventSeq}`);
-        const eventData = response.data.event;
-        console.log('공지사항 상세정보:', eventData);
-        setEvent(eventData);
-      } catch (error) {
-        console.log('오류가 발생했습니다:', error);
-      }
-    };
+  const fetchEventeDetails = async () => {
+    try {
+      const response = await axios.get(`http://localhost:8888/EventView/${eventSeq}`);
+      const eventData = response.data.event;
+      console.log('공지사항 상세정보:', eventData);
+      setEvent(eventData);
+    } catch (error) {
+      console.log('오류가 발생했습니다:', error);
+    }
+  };
 
 
       
