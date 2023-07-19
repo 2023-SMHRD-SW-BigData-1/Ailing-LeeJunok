@@ -137,7 +137,7 @@ const handleSubmit = async (event) => {
                 onChange={handleCommentChange}
                 required
 
-              ></textarea>
+              />
             </div>
 
             {/* <div className="image-div">

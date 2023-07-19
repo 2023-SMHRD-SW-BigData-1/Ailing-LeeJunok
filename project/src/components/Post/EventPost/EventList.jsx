@@ -2,9 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import '../Postcss/css.css';
+import Paging from '../../Review/Paging';
 
 const EventList = () => {
     const [events, setEvents] = useState([]);
+    const [eveCount,setEveCount] = useState(0);
+    const [page, setPage] = useState(1);
+    const [bordList, setBordList ] = useState([]);
+    let cnt = 0;
+    let pos = 0;
   
     useEffect(() => {
       console.log('이벤트를 가져오는 중...');
@@ -21,58 +27,62 @@ const EventList = () => {
         console.log('오류가 발생했습니다:', error);
       }
     };
+
+    useEffect(()=>{
+      setEveCount(events.length);
+    },[events])
+
+
+    useEffect(()=>{
+    
+      //0~4  1  
+      //5~9   2  
+      //10~14  3 
+      console.log(page)
+      cnt =(page-1)*5
+      pos = cnt+4
+      ///let endNum = startNum+4;
+      if(pos>events.length){
+          pos=events.length-1
+      }
+      let newList = events.map((item,index)=>{
+      if(cnt<=index && index<=pos){
+              return(
+              <div key={item.EVENT_SEQ}>
+              <div className="num">{item.EVENT_SEQ}</div>
+              <div className="title_name">
+                <Link to={`/NoticeView/${item.EVENT_SEQ}`}>{item.NOTI_TITLE}</Link>
+              </div>
+              <div className="writer">{item.EVENT_NAME}</div>
+              <div className="date">{item.EVENT_AT}</div>
+              <div className="count">{item.EVENT_VIEWS}</div>
+            </div>
+              )
+      }      
+      })
+      setBordList(newList)
+  } ,[page,events])
+
   
 
   console.log('EventList 컴포넌트 렌더링 중...');
 
   return (
     <div class ="notice_css">
-      <div className='mainSec prl'><img src="https://ifh.cc/g/Sd6TGX.jpg" alt="" /><h2 style={{marginLeft:'30px'}}>이벤트 게시판</h2></div>
+      <div className='mainSec prl'><img src="https://ifh.cc/g/HfaqVS.jpg" alt="" /><h2 style={{marginLeft:'20px'}}>이벤트 게시판</h2></div>
     <div class="contentBox">
         <div class="board_list_wrap">
             <div class="board_list">
                 <div class="top">
                     <div class="num">번호</div>
                     <div className="title_name">제목</div>
-                    <div class="writer">글쓴이</div>
+                    <div class="writer">작성자</div>
                     <div class="date">작성일</div>
-                    <div class="count">조회</div>
+                    <div class="count">조회수</div>
                 </div>
-
-
-                <div>
-                    <div class="num">3</div>
-                    <div class="title_name"><Link to='/EventView03'>제목</Link></div>
-                    <div class="writer"><Link to='/EventView03'>이름</Link></div>
-                    <div class="date"><Link to='/EventView03'>YYYY.MM.DD</Link></div>
-                    <div class="count"><Link to='/EventView03'>12</Link></div>
-                </div>
-                <div className='write_list'>
-                    <div class="num">2</div>
-                    <div class="title_name"><Link to='/EventView02'>제목</Link></div>
-                    <div class="writer"><Link to='/EventView02'>이름</Link></div>
-                    <div class="date"><Link to='/EventView02'>YYYY.MM.DD</Link></div>
-                    <div class="count"><Link to='/EventView02'>12</Link></div>
-                </div>
-                <div>
-                    <div class="num">1</div>
-                    <div class="title_name"><Link to='/EventView01'>제목</Link></div>
-                    <div class="writer"><Link to='/EventView01'>이름</Link></div>
-                    <div class="date"><Link to='/EventView01'>YYYY.MM.DD</Link></div>
-                    <div class="count"><Link to='/EventView01'>12</Link></div>
-                </div>
-
+                {bordList}
             </div>
-            <div class="board_page">
-                <a href="#" class="bt first"></a>
-                <a href="#" class="bt prev"></a>
-                <a href="#" class="num on">1</a>
-                <a href="#" class="num">2</a>
-                <a href="#" class="num">3</a>
-                <a href="#" class="bt next"></a>
-                <a href="#" class="bt last"></a>
-            </div>
-
+            <Paging count={eveCount} page={page} setpage={setPage}/>
         </div>
       </div>
     </div>
