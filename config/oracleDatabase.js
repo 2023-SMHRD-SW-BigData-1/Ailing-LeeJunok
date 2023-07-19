@@ -1,6 +1,6 @@
-const express = require('express');
-const app = express();
-const cors = require('cors');
+const express = require('express')
+const app = express()
+const cors = require('cors')
 
 app.use(cors());
 
@@ -18,10 +18,11 @@ router.use(express.urlencoded({ extended: false }));
 oracledb.initOracleClient({ libDir: 'C:/Users/smhrd/Desktop/oracleClient' });
 
 const dbConfig = {
-  user: 'campus_h_230627_2',
-  password: 'smhrd2',
-  connectString: 'project-db-stu2.smhrd.com:1524/XE',
-};
+    user: "campus_h_230627_2",
+    password: "smhrd2",
+    connectString: 'project-db-stu2.smhrd.com:1524/'
+}
+  
 
 router.post('/login/join', async (req, res) => {
   console.log('join 접근!', req.body);
@@ -168,6 +169,49 @@ router.get('/NoticeView/:noticeSeq', async (req, res) => {
   }
 });
 
+
+// 리뷰
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads/'); // 파일이 저장될 경로 설정
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname); // 저장되는 파일명 설정
+  }
+});
+
+const upload = multer({ storage: storage });
+
+// 리뷰 데이터를 axios로 받아오고 데이터베이스에 값 등록
+router.post('/review/edit', upload.single('file') ,async (req, res) => {
+  console.log('리뷰 작성에 접근');
+ 
+  try {
+    const connection = await oracledb.getConnection(dbConfig);
+    console.log('db접속');
+    // console.log(req.formData);
+
+    // await connection.execute(
+    //   `INSERT INTO `,
+    //   [req.body.title, req.body.name, req.body.text]
+    // );
+    console.log(req.body.userid);
+    const reviewR = await connection.execute(`
+    insert into T_REVIEW 
+    (USER_ID, REVIEW_RATING, REVIEW_COMMENT, 
+      REVIEW_NAME,  REVIEW_IMG, REVIEW_AT)
+      VALUES
+      (:userid, :review_rating, :review_comment, :title, :review_image, SYSDATE )`,
+      [req.body.userid, req.body.review_rating, req.body.comment, req.body.title, req.body.review_image, ]
+      )
+    res.json({result: '리뷰가 추가 되었습니다.' });
+
+    await connection.close();
+  } catch (error) {
+    console.log('에러 발생: ', error);
+    res.json({result: '리뷰 추가 실패했습니다.' });
+  }
+});
 
 
 app.use('/', router);
