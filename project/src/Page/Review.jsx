@@ -18,6 +18,32 @@ const Review = () => {
     const [page, setPage] = useState(1);
     let cnt = 0;
 
+     const fetchReviewData = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+
+      const response = await axios.get('http://localhost:8888/review');
+      console.log('리뷰 데이터를 불러오는 중...');
+
+      if (response.status === 200) {
+        console.log('리뷰 데이터 불러오기 성공.');
+        const reviews = response.data.review || [];
+
+        setReviewCount(reviews.length);
+        setReviewList(reviews);
+      } else {
+        console.log('리뷰 데이터 불러오기 실패.');
+        throw new Error('리뷰 데이터를 불러오는데 실패했습니다.');
+      }
+    } catch (error) {
+      console.log('오류 발생: ', error);
+      setError('리뷰 데이터를 불러오는데 실패했습니다. 나중에 다시 시도해주세요.');
+    } finally {
+      setLoading(false);
+    }
+  };
+      
 
     
             const [startNum,setStartNum] = useState(0);
