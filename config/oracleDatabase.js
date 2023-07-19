@@ -131,7 +131,7 @@ router.get('/NoticeList', async (req, res) => {
   }
 });
 
-// 공지사항 뷰
+
 router.get('/NoticeView/:noticeSeq', async (req, res) => {
   const noticeSeq = req.params.noticeSeq;
   console.log(`NOTI_SEQ가 ${noticeSeq}인 공지사항을 가져옵니다.`);
@@ -140,10 +140,19 @@ router.get('/NoticeView/:noticeSeq', async (req, res) => {
     const connection = await oracledb.getConnection(dbConfig);
     console.log('데이터베이스 연결 성공');
 
+    // Increment the view count for the notice
+    await connection.execute(
+        `UPDATE T_ANNOUN
+        SET NOTI_VIEWS = NOTI_VIEWS + 1
+        WHERE NOTI_SEQ = :noticeSeq`,
+      [noticeSeq]
+    );
+
+    // Fetch the notice details with the updated view count
     const result = await connection.execute(
-      `SELECT NOTI_SEQ, NOTI_TITLE, NOTI_NAME, NOTI_AT, NOTI_VIEWS, NOTI_TEXT
-      FROM T_ANNOUN
-      WHERE NOTI_SEQ = :noticeSeq`,
+        `SELECT NOTI_SEQ, NOTI_TITLE, NOTI_NAME, NOTI_AT, NOTI_VIEWS, NOTI_TEXT
+        FROM T_ANNOUN
+        WHERE NOTI_SEQ = :noticeSeq`,
       [noticeSeq]
     );
 
