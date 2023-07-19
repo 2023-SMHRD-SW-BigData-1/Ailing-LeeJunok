@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const cors = require('cors')
+const multer = require('multer')
 
 app.use(cors());
 
@@ -18,11 +19,11 @@ router.use(express.urlencoded({ extended: false }));
 oracledb.initOracleClient({ libDir: 'C:/Users/smhrd/Desktop/oracleClient' });
 
 const dbConfig = {
-    user: "campus_h_230627_2",
-    password: "smhrd2",
-    connectString: 'project-db-stu2.smhrd.com:1524/'
+  user: "campus_h_230627_2",
+  password: "smhrd2",
+  connectString: 'project-db-stu2.smhrd.com:1524/'
 }
-  
+
 
 router.post('/login/join', async (req, res) => {
   console.log('join 접근!', req.body);
@@ -255,9 +256,9 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 // 리뷰 데이터를 axios로 받아오고 데이터베이스에 값 등록
-router.post('/review/edit', upload.single('file') ,async (req, res) => {
+router.post('/review/edit', upload.single('file'), async (req, res) => {
   console.log('리뷰 작성에 접근');
- 
+
   try {
     const connection = await oracledb.getConnection(dbConfig);
     console.log('db접속');
@@ -267,22 +268,47 @@ router.post('/review/edit', upload.single('file') ,async (req, res) => {
     //   `INSERT INTO `,
     //   [req.body.title, req.body.name, req.body.text]
     // );
-    console.log(req.body.userid);
+    console.log(req.body);
     const reviewR = await connection.execute(`
     insert into T_REVIEW 
     (USER_ID, REVIEW_RATING, REVIEW_COMMENT, 
       REVIEW_NAME,  REVIEW_IMG, REVIEW_AT)
       VALUES
       (:userid, :review_rating, :review_comment, :title, :review_image, SYSDATE )`,
-      [req.body.userid, req.body.review_rating, req.body.comment, req.body.title, req.body.review_image, ]
-      )
-    res.json({result: '리뷰가 추가 되었습니다.' });
+      [req.body.userid, req.body.review_rating, req.body.review_comment, req.body.title, req.body.review_image,]
+    )
+    res.json({ result: '리뷰가 추가 되었습니다.' });
 
     await connection.close();
   } catch (error) {
     console.log('에러 발생: ', error);
-    res.json({result: '리뷰 추가 실패했습니다.' });
+    res.json({ result: '리뷰 추가 실패했습니다.' });
   }
+});
+
+
+// 리뷰 불러오기
+router.get('/review', async (req, res) => {
+  console.log('리뷰 데이터에 접근합니다.');
+
+  try {
+    const connection = await oracledb.getConnection(dbConfig);
+    console.log('데이터베이스 연결에 성공했습니다.');
+
+    const result = await connection.execute(`
+    select REVIEW_NAME, REVIEW_AT, REVIEW_RATING, REVIEW_COMMENT, REVIEW_IMG
+    from T_REVIEW`);
+    const review = result.rows;
+    console.log(review);
+    console.log('쿼리가 성공적으로 실행되었습니다.');
+ 
+res.json({review})
+
+await connection.close();
+} catch (error) {
+  console.log('오류가 발생했습니다: ', error);
+  res.json({ result: '이벤트를 검색하는 데 실패했습니다.' });
+}
 });
 
 
