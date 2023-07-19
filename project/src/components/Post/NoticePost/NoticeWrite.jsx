@@ -77,7 +77,7 @@ const NoticeWrite = () => {
                         </div>
                     </div>
                     <div className="bt_wrap">
-                        <Link to={'/NoticeView'} onClick={handleRegister} className="on">
+                        <Link to={`/NoticeList`} onClick={handleRegister} className="on">
                             등록
                         </Link>
                         <Link to={'/NoticeList'} onClick={handleCancel}>

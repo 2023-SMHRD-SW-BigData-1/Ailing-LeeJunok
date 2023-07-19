@@ -1,55 +1,68 @@
-import React from 'react'
-import {Link} from 'react-router-dom';
-// import "../../Postcss/css.css"
-import "../Postcss/css.css"
+import React, { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import axios from 'axios';
+import '../Postcss/css.css';
 
-const EventView01 = () => {
+const EventView = () => {
+  const { eventSeq } = useParams();
+  const [event, setEvent] = useState(null);
+
+  useEffect(() => {
+    console.log(`EVENT_SEQ ${eventSeq}에 해당하는 공지사항 상세정보를 가져오는 중...`);
+    fetchEventeDetails();
+  }, [eventSeq]);
+
+  const fetchEventeDetails = async () => {
+    try {
+      const response = await axios.get(`http://localhost:8888/EventView/${eventSeq}`);
+      const eventData = response.data.event;
+      console.log('공지사항 상세정보:', eventData);
+      setEvent(eventData);
+    } catch (error) {
+      console.log('오류가 발생했습니다:', error);
+    }
+  };
+
   return (
-    <div class ="Notice_css">
-    <div class="board_wrap">
-        <div class="board_title">
-        <strong>이벤트 게시판</strong>
-            <p> Pill. Yo 의 이벤트 게시판 입니다. </p>
+    <div className="notice_css">
+      <div className="contentBox">
+        <div className="board_title">
+          <strong>이벤트 게시판</strong>
+          <p>Pill.Yo의 이벤트 게시판 입니다.</p>
         </div>
-        <div class="board_view_wrap">
-            <div class="board_view">
-                <div class="title_name">
-                    글 제목
-                </div>
-                <div class="info">
-                    <dl>
-                        <td>번호</td>
-                        <dd>1</dd>
-                    </dl>
-                    <dl>
-                        <dt>글쓴이</dt>
-                        <dd>정준옥</dd>
-                    </dl>
-                    <dl>
-                        <dt>작성일</dt>
-                        <dd>YYYY.MM.DD</dd>
-                    </dl>
-                    <dl>
-                        <dt>조회</dt>
-                        <dd>33</dd>
-                    </dl>
-                </div>
-                <div class="cont">
-                    내용
-                </div>
+        <div className="board_view_wrap">
+          <div className="board_view">
+            <div className="title_name">{event?.EVENT_TITLE}</div>
+            <div className="info">
+              <dl>
+                <dt>번호</dt>
+                <dd>{event?.EVENT_SEQ}</dd>
+              </dl>
+              <dl>
+                <dt>작성자</dt>
+                <dd>{event?.EVENT_NAME}</dd>
+              </dl>
+              <dl>
+                <dt>작성일</dt>
+                <dd>{event?.EVENT_AT}</dd>
+              </dl>
+              <dl>
+                <dt>조회수</dt>
+                <dd>{event?.EVENT_VIEWS}</dd>
+              </dl>
             </div>
-            <div class="bt_wrap">
-                <Link to='/EventList' class="on">목록</Link>
-                <Link to='/EventEdit'>수정</Link>
-            </div>
+            <div className="cont">{event?.EVENT_TEXT}</div>
+          </div>
+          <div className="bt_wrap">
+            <Link to="/EventList" className="on">
+              목록
+            </Link>
+            {/* <Link to="/NoticeEdit">수정</Link> */}
+          </div>
         </div>
+      </div>
     </div>
-    </div>
+  );
+};
 
-
-
-
-  )
-}
-
-export default EventView01
+export default EventView;

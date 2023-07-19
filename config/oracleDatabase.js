@@ -171,6 +171,87 @@ router.get('/NoticeView/:noticeSeq', async (req, res) => {
 });
 
 
+// 이벤트 추가
+router.post('/EventWrite', async (req, res) => {
+  console.log('이벤트에 접근');
+  try {
+    const connection = await oracledb.getConnection(dbConfig);
+    console.log('db접속');
+    console.log(req.body.title, req.body.name, req.body.text);
+
+    // 데이터베이스에서 현재 최대 noti_seq 값을 가져옵니다.
+    const result = await connection.execute('SELECT MAX(event_seq) as max_seq FROM T_EVENT');
+    const maxSeq = result.rows[0].max_seq || 0;
+
+    // noti_seq를 1 증가
+    const eventSeq = maxSeq + 1;
+
+    await connection.execute(
+      `INSERT INTO T_EVENT ( event_title, event_name, event_text)
+      VALUES ( :title, :name, :text)`,
+      [req.body.title, req.body.name, req.body.text]
+    );
+
+    console.log('이벤트가 추가되었습니다!');
+    res.json({ result: '이벤트가 추가되었습니다!' });
+
+    await connection.close();
+  } catch (error) {
+    console.log('에러 발생: ', error);
+    res.json({ result: '이벤트 추가에 실패했습니다.' });
+  }
+});
+
+// 이벤트 목록 검색
+router.get('/EventList', async (req, res) => {
+  console.log('이벤트 목록에 접근했습니다!');
+  try {
+    const connection = await oracledb.getConnection(dbConfig);
+    console.log('데이터베이스 연결 성공');
+    const result = await connection.execute('SELECT EVENT_SEQ, EVENT_TITLE, EVENT_NAME, EVENT_AT, EVENT_VIEWS FROM T_EVENT ORDER BY EVENT_SEQ DESC');
+    const event = result.rows;
+    console.log(event);
+
+    res.json({ event });
+
+    await connection.close();
+  } catch (error) {
+    console.log('오류가 발생했습니다: ', error);
+    res.json({ result: '이벤트를 검색하는 데 실패했습니다.' });
+  }
+});
+
+// 이벤트 뷰
+router.get('/EventView/:eventSeq', async (req, res) => {
+  const eventSeq = req.params.eventSeq;
+  console.log(`EVENT_SEQ ${eventSeq}인 공지사항을 가져옵니다.`);
+
+  try {
+    const connection = await oracledb.getConnection(dbConfig);
+    console.log('데이터베이스 연결 성공');
+
+    const result = await connection.execute(
+      `SELECT EVENT_SEQ, EVENT_TITLE, EVENT_NAME, EVENT_AT, EVENT_VIEWS, EVENT_TEXT
+      FROM T_EVENT
+      WHERE EVENT_SEQ = :eventSeq`,
+      [eventSeq]
+    );
+
+    const event = result.rows[0];
+    console.log('공지사항:', event);
+
+    res.json({ event });
+
+    await connection.close();
+  } catch (error) {
+    console.log('오류가 발생했습니다:', error);
+    res.json({ result: '이벤트 세부 정보를 가져오는 데 실패했습니다.' });
+  }
+});
+
+
+
+
 // 리뷰
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
