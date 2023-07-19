@@ -51,7 +51,7 @@ const EventList = () => {
               <div key={item.EVENT_SEQ}>
               <div className="num">{item.EVENT_SEQ}</div>
               <div className="title_name">
-                <Link to={`/NoticeView/${item.EVENT_SEQ}`}>{item.NOTI_TITLE}</Link>
+                <Link to={`/EventView/${item.EVENT_SEQ}`}>{item.EVENT_TITLE}</Link>
               </div>
               <div className="writer">{item.EVENT_NAME}</div>
               <div className="date">{item.EVENT_AT}</div>

@@ -9,10 +9,10 @@ const EventView = () => {
 
   useEffect(() => {
     console.log(`EVENT_SEQ ${eventSeq}에 해당하는 공지사항 상세정보를 가져오는 중...`);
-    fetchEventeDetails();
+    fetchEventDetails();
   }, [eventSeq]);
 
-  const fetchEventeDetails = async () => {
+  const fetchEventDetails = async () => {
     try {
       const response = await axios.get(`http://localhost:8888/EventView/${eventSeq}`);
       const eventData = response.data.event;
