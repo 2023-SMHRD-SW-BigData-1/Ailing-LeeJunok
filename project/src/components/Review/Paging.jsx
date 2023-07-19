@@ -4,6 +4,7 @@ import Pagination from "react-js-pagination";
 import React from 'react'
 import { useNavigate } from "react-router";
 import { BiChevronLeft, BiChevronRight, IconName } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 const Paging = ({count,setpage,page}) => {
     const navi = useNavigate();
@@ -25,7 +26,7 @@ const Paging = ({count,setpage,page}) => {
         limit={5}
         onChange={handlePageChange}
         />
-        <a href=""><p>리뷰작성</p></a>
+        <Link to='/review/edit'><p>리뷰작성</p></Link>
         </div>
     )
 }
