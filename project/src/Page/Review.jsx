@@ -1,8 +1,11 @@
 import '../css/Review/Review.css'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import ReviewHead from '../components/Review/ReviewHead'
 import Paging from '../components/Review/Paging';
 import ReviewCard from '../components/Review/ReviewCard';
+import swal from 'sweetalert';
+import { LoginContext } from '../context/LoginContext';
+import { useNavigate } from 'react-router';
 
 const Review = () => {
     const date = new Date();
@@ -12,7 +15,17 @@ const Review = () => {
     const [reviewCount,setReviewCount] = useState(0);
     const [bordList, setBordList ] = useState([]);
     const [page, setPage] = useState(1);
+    const nav = useNavigate();
+    const {isLogin} = useContext(LoginContext);
     let cnt = 0;
+
+    const loginD=()=>{
+        if (isLogin===false) {
+            swal ( "죄송합니다" ,  "로그인이 필요한 서비스입니다." ,  "error" )
+        }else{
+            nav('/review/edit');
+        }
+    }
 
 
     const info = [{name:['밀크시슬','비타민','영양제','test','집에가고싶다','빨리'],
@@ -71,12 +84,11 @@ const Review = () => {
     
     return (
     <>
-    <div className='mainSec Review'>
-        <h2>Review</h2>
-    </div>
+    <div className='mainSec prl'><img src="https://ifh.cc/g/qmkJwR.jpg" alt="" /><h2 style={{marginLeft:'5px'}}>Review</h2></div>
     <div className='contentBox'>
         <ReviewHead count={reviewCount}/>
         {bordList}
+        <button onClick={loginD} className='edit'>리뷰작성</button>
         <Paging count={reviewCount} page={page} setpage={setPage} />
     </div>
     </>

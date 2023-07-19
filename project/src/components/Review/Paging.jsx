@@ -26,7 +26,6 @@ const Paging = ({count,setpage,page}) => {
         limit={5}
         onChange={handlePageChange}
         />
-        <Link to='/review/edit'><p>리뷰작성</p></Link>
         </div>
     )
 }

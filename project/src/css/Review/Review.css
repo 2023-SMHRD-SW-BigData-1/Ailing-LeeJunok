@@ -184,4 +184,15 @@
   content: "";
   display: block;
   clear: both;
+}
+
+.edit {
+  position: relative;
+  border-style: none;
+  background-color: #78C1F3;
+  color: white;
+  border-radius: 15px;
+  top: 10px;
+  left: 1490px;
+  width: 100px;
 }/*# sourceMappingURL=Review.css.map */

@@ -92,7 +92,10 @@ function App() {
               {/* ProductList */}
               <Route path='/productList' element={<ProductBox />} />
               <Route path='/Cart' element={<Cart />} />
+
+              {/* Review */}
               <Route path='/review' element={<Review />} />
+              <Route path='/review/edit' element={<ReviewWrite/>}/>
 
               {/* Login */}
               <Route path='/login' element={<LogInUI />} />
@@ -117,8 +120,6 @@ function App() {
               <Route path='/EventView03' element={<EventView03 />} />
               <Route path='/EventWrite' element={<EventWrite />} />
 
-
-              <Route path='/review/edit' element={<ReviewWrite/>}/>
 =======
 
             </Routes>

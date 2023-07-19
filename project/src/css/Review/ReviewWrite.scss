@@ -1,0 +1,167 @@
+.rating {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    overflow: hidden;
+    flex-direction: row-reverse;
+    position: relative;
+    .rating-0 {
+        filter: grayscale(100%);
+    }
+    input {
+        display: none;
+    }
+    label {
+        cursor: pointer;
+        width: 70px;
+        height: 70px;
+        margin-top: auto;
+        background-image: url("https://ifh.cc/g/P1tsAy.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 76%;
+        transition: .3s;
+    }
+}
+
+
+
+.rating > input:checked ~ label,
+.rating > input:checked ~ label ~ label {
+    background-image: url("https://ifh.cc/g/rXRf3H.png");
+}
+
+
+.rating > input:not(:checked) ~ label:hover,
+.rating > input:not(:checked) ~ label:hover ~ label {
+    background-image: url("https://ifh.cc/g/rXRf3H.png");
+}
+
+.feedback {
+    background-color: #fff;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 90%;
+    padding: 100px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 30px rgba(0,0,0,.05);
+    p{
+        position: relative;
+        top: 10px;
+        span{
+            font-size: 20px;
+            color: #007aff;
+        }
+    }
+    .name-div{
+        width: 100%;
+        input{
+            border-radius: 5px;
+            border: 1px solid #e5e8eb;
+            width: 100%;
+        }
+    }
+    .comment-div{
+        width: 100%;
+        textarea{
+            width: 100%;
+            height: 400px;
+            resize: none;
+            border: 1px solid #e5e8eb;
+            border-radius: 5px;
+        }
+    }
+    .container {
+        width: 50%;
+        height: 300px;
+        padding: 40px;
+    }
+    .input-file-container{
+        width: 50%;
+        cursor: pointer;
+        .input-file {
+            width: 100%;
+            height: 30px;
+            margin-top: 40px;
+            border: 1px solid #e5e8eb;
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            .input-file__name {
+                width: 83%;
+                display: flex;
+                align-items: center;
+                font-size: 14px;
+                padding: 0 15px ;
+                color: black;
+                margin-bottom: 15px;
+            }
+            .input-file__button {
+                width: 17%;
+                font-size: 2em;
+                padding: 0;
+                border: none;
+                border: 1px solid #78C1F3;
+                background-color: #78C1F3;
+                color: #ffffff;
+            }
+            #avatarInput {
+                position: absolute;
+                width: 100%;
+                left: 0;
+                top: 0;
+                opacity: 0;
+            }
+        }
+        
+    }
+}
+
+.rvImgarea{
+    width: 100%;
+    height: 320px;
+    margin: 20px auto 0;
+    border-radius: 8px;
+    background-color: #e5e8eb5d;
+    border: 1px solid #e5e8eb;
+    .image-preview { 
+        width: 100%;
+        height: 320px;
+        object-fit: contain;
+    }
+}
+.submit-div{
+    position: relative;
+    top: 50px;
+    width: 100%;
+    text-align: center;
+    .submit-btn{
+        border-style: none;
+        padding: 10px 10px 10px 10px;
+        border-radius: 15px;
+        color: white;
+        background-color: #78C1F3;
+    }
+}
+.fa-upload{
+    position: relative;
+    bottom: 15px;
+    font-size: 25px;
+}
+
+.rvImgSec{
+    display: flex;
+    white-space: pre-line;
+
+    align-items: center;
+    p{
+        font-size: 14px;
+        margin: 0 auto;
+        width: 40%;
+    }
+}

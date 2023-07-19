@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const cors = require('cors')
+const multer = require('multer')
 
 app.use(cors());
 
@@ -185,7 +186,7 @@ const upload = multer({ storage: storage });
 // 리뷰 데이터를 axios로 받아오고 데이터베이스에 값 등록
 router.post('/review/edit', upload.single('file') ,async (req, res) => {
   console.log('리뷰 작성에 접근');
- 
+
   try {
     const connection = await oracledb.getConnection(dbConfig);
     console.log('db접속');
@@ -202,7 +203,7 @@ router.post('/review/edit', upload.single('file') ,async (req, res) => {
       REVIEW_NAME,  REVIEW_IMG, REVIEW_AT)
       VALUES
       (:userid, :review_rating, :review_comment, :title, :review_image, SYSDATE )`,
-      [req.body.userid, req.body.review_rating, req.body.comment, req.body.title, req.body.review_image, ]
+      [req.body.userid, req.body.review_rating, req.body.review_comment, req.body.title, req.body.review_image, ]
       )
     res.json({result: '리뷰가 추가 되었습니다.' });
 
