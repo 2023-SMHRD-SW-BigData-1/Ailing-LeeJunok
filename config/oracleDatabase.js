@@ -304,7 +304,7 @@ router.get('/review', async (req, res)=>{
     const connection = await oracledb.getConnection(dbConfig);
     console.log('DB 연결완료!');
     const result = await connection.execute(
-      'select USER_ID, REVIEW_NAME, REVIEW_AT, REVIEW_RATING, REVIEW_COMMENT, REVIEW_IMG from T_REVIEW'
+      'select USER_ID, REVIEW_NAME, REVIEW_AT, REVIEW_RATING, REVIEW_COMMENT, REVIEW_IMG from T_REVIEW ORDER BY REVIEW_SEQ DESC'
       )
       const reviews = result.rows;
       console.log(reviews);
