@@ -23,6 +23,9 @@ const EventView = () => {
     }
   };
 
+
+      
+
   return (
     <div className="notice_css">
       <div className='mainSec prl'><img src="https://ifh.cc/g/HfaqVS.jpg" alt="" /><h2 style={{marginLeft:'20px'}}>이벤트 게시판</h2></div>
@@ -48,7 +51,10 @@ const EventView = () => {
                 <dd>{event?.EVENT_VIEWS}</dd>
               </dl>
             </div>
-            <div className="cont">{event?.EVENT_TEXT}</div>
+            <div className="cont">
+              <img src={event?.EVENT_IMG} alt="준비중.." />
+              <p>{event?.EVENT_TEXT}</p>
+            </div>
           </div>
           <div className="bt_wrap">
             <Link to="/EventList" className="on">

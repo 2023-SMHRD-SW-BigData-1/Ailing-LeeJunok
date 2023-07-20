@@ -3,7 +3,10 @@ import axios from 'axios';
 import '../css/Review/ReviewWrite.css';
 import { useCookies } from 'react-cookie';
 import { FiLink, IconName } from "react-icons/fi";
-
+import $ from 'jquery';
+import { redirect, useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
+window.$ = $;
 
 const ReviewForm = () => {
     // 기본적인 초기값(form에서 전송될 값)
@@ -12,7 +15,9 @@ const ReviewForm = () => {
   const [comment, setComment] = useState('');
   const [image, setImage] = useState(null);
   const [cookies] = useCookies(['user_id']);
+  const nav= useNavigate();
   let text = '*작성하신 후기는 Pill.Yo 이용자에게 공개됩니다.\n*상품과 관련된 실제 촬영한 사진 혹은 동영상을 첨부할 때 해당 상품과 관련 없 \u00A0거나, 이미 등록된 사진, 화면 캡처 등의 무성의한 리뷰는 등록이 제한될 수 있습 \u00A0니다.\n*후기를 작성하고 올리실 때 의학적인 단어나 효능, 효과의 구체적인 표현들은 자 \u00A0제 부탁드립니다.\n*의도치핞게 식품관련 법규에 위반사항에 해당될 수 있으므로, 임의수정처리 될 수  \u00A0있습니다.'
+
 
 // handle~ 은 useState로 변화하는 값을 잡아냄, 변화한 값으로 세팅하고 보낼 준비함
 const handleRatingChange = (value) => {
@@ -37,7 +42,6 @@ const handleImageChange = (event) => {
   }
 };
 console.log('안녕'+image);
-
 
 
 const handleSubmit = async (event) => {
@@ -69,7 +73,11 @@ const handleSubmit = async (event) => {
     setUsername('');
     setComment('');
     setImage(null);
+
+    nav('/review');
   };
+  
+
 
   return (
     <div id="form-div">
@@ -169,9 +177,11 @@ const handleSubmit = async (event) => {
             
 
             <div className="submit-div">
-              <button type="submit" className="submit-btn">
+              
+              <button  className="submit-btn">
                 제출하기
               </button>
+              
             </div>
           </div>
       </form>
