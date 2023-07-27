@@ -104,24 +104,20 @@
     <td align="center"><img src="https://pbs.twimg.com/media/B-n6uPYUUAAZSUx.png" width="100" height="100"/></td>
   </tr>
   <tr>
-    <td align="center"><strong>홍O동</strong></td>
-    <td align="center"><strong>홍O동</strong></td>
-    <td align="center"><strong>홍O동</strong></td>
-    <td align="center"><strong>홍O동</strong></td>
-    <td align="center"><strong>홍O동</strong></td>
+    <td align="center"><strong>이준</strong></td>
+    <td align="center"><strong>이수호</strong></td>
+    <td align="center"><strong>정준옥</strong></td>
+    <td align="center"><strong>정병인</strong></td>
+    <td align="center"><strong>김민준</strong></td>
   </tr>
   <tr>
-    <td align="center"><b>Frontend</b></td>
+    <td align="center"><b>Backend</b></td>
     <td align="center"><b>Frontend</b></td>
     <td align="center"><b>Backend</b></td>
     <td align="center"><b>Backend</b></td>
-    <td align="center"><b>Deep Learning</b></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
+    <td align="center"><b>Backend</b></td>
   </tr>
 </table>
+
+## 트러블 슈팅
+##### 문제 1
