@@ -1,17 +1,17 @@
-# 팀명 : 병든이준옥
+# 🏳️‍🌈팀명 : 병든이준옥
 ![image](https://ifh.cc/g/YsNAHD.png)
-## 서비스 소개
+## 🪄서비스 소개
 <br>
 * 서비스명 : 사용자 맞춤 영양제 정보제공 및 판매 서비스
 <br>
 <br>
 
-## 프로젝트 기간
+## 📆프로젝트 기간
 2023.06.08 ~ 2023.07.20 (6주)
 <br>
 <br>
 
-## 주요 기능
+## ✨주요 기능
 * 카카오 로그인 API
 * 건강별 맞춤 영양제 추천
 * 장바구니
@@ -19,7 +19,7 @@
 * INICIS API를 이용한 결제
 <br>
 
-## 기술스택
+## 🎇기술스택
 <table>
   <tr>
     <th>구분</th>
@@ -70,27 +70,27 @@
 </table>
 <br>
 
-## 서비스 흐름도
+## 🎈서비스 흐름도
 ![image](https://ifh.cc/g/sFZPvl.png)
 
-## ER 다이어그램
+## 🎈ER 다이어그램
 ![image](https://ifh.cc/g/y5xLaS.png)
 
-## 화면 구성
+## 🎈화면 구성
 
-### 로그인/회원가입
+### 🎈로그인/회원가입
 ![image](https://ifh.cc/g/qm9CJC.png)
 <br>
 
-### 건강별 맞춤 영양제 추천
+### 🎈건강별 맞춤 영양제 추천
 ![image](https://ifh.cc/g/VfXxgk.png)
 <br>
 
-### 장바구니
+### 🎈장바구니
 ![image](https://ifh.cc/g/xwqCQZ.png)
 <br>
 
-### 리뷰 게시판
+### 🎈리뷰 게시판
 ![image](https://ifh.cc/g/Yb1CSP.png)
 <br>
 
