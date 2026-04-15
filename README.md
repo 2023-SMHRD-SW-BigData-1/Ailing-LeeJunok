@@ -114,7 +114,7 @@
     <td align="center"><b>Backend</b><br>제품 리스트 페이지 구현<br>회원가입 & 로그인 구현 및 DB 연동</td>
     <td align="center"><b>Frontend</b><br>UI&UX담당<br>CSS 구상</td>
     <td align="center"><b>Frontend</b><br>배너 디자인<br>INICIS API 결제</td>
-    <td align="center"><b>Backend</b><br>DB 총괄<br>크롤링</td>
+    <td align="center"><b>Backend</b><br>DB 총괄<br>크롤링&서버</td>
     <td align="center"><b>Backend</b><br>장바구니 페이지 구현<br>리뷰 게시판 페이지 구현</td>
   </tr>
 </table>
